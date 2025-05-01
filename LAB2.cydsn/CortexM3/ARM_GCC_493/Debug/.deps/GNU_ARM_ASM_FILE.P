@@ -1,0 +1,10 @@
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/CyBootAsmGnu.o : D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevicegnu.inc D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfittergnu.inc 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevicegnu.inc : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfittergnu.inc : 
+

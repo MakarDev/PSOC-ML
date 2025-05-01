@@ -1,0 +1,11 @@
+--------------- Clean Started: 05/01/2025 13:25:47 Project: LAB2, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\main.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\LAB2.hex"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\LAB2.elf"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\LAB2.map"
+Deleting file ".\LAB2.cycdx"
+Deleting file ".\LAB2.svd"
+Deleting file ".\LAB2.rpt"
+Deleting file ".\LAB2_timing.html"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\.deps\C_FILE.P"
+--------------- Clean Succeeded: 05/01/2025 13:25:47 ---------------

@@ -1,0 +1,744 @@
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccDVPJam.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"cymetadata.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	cy_metadata
+  19              		.global	cy_meta_flashprotect
+  20              		.global	cy_meta_wonvl
+  21              		.global	cy_meta_custnvl
+  22              		.global	cy_meta_configecc
+  23              		.section	.cyconfigecc,"a",%progbits
+  24              		.align	2
+  25              		.type	cy_meta_configecc, %object
+  26              		.size	cy_meta_configecc, 256
+  27              	cy_meta_configecc:
+  28 0000 02       		.byte	2
+  29 0001 52       		.byte	82
+  30 0002 00       		.byte	0
+  31 0003 40       		.byte	64
+  32 0004 28       		.byte	40
+  33 0005 14       		.byte	20
+  34 0006 01       		.byte	1
+  35 0007 40       		.byte	64
+  36 0008 13       		.byte	19
+  37 0009 15       		.byte	21
+  38 000a 01       		.byte	1
+  39 000b 40       		.byte	64
+  40 000c 02       		.byte	2
+  41 000d 1B       		.byte	27
+  42 000e 01       		.byte	1
+  43 000f 40       		.byte	64
+  44 0010 02       		.byte	2
+  45 0011 44       		.byte	68
+  46 0012 01       		.byte	1
+  47 0013 40       		.byte	64
+  48 0014 01       		.byte	1
+  49 0015 45       		.byte	69
+  50 0016 01       		.byte	1
+  51 0017 40       		.byte	64
+  52 0018 03       		.byte	3
+  53 0019 46       		.byte	70
+  54 001a 01       		.byte	1
+  55 001b 40       		.byte	64
+  56 001c 02       		.byte	2
+  57 001d 47       		.byte	71
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccDVPJam.s 			page 2
+
+
+  58 001e 01       		.byte	1
+  59 001f 40       		.byte	64
+  60 0020 02       		.byte	2
+  61 0021 48       		.byte	72
+  62 0022 01       		.byte	1
+  63 0023 40       		.byte	64
+  64 0024 05       		.byte	5
+  65 0025 49       		.byte	73
+  66 0026 01       		.byte	1
+  67 0027 40       		.byte	64
+  68 0028 02       		.byte	2
+  69 0029 4C       		.byte	76
+  70 002a 01       		.byte	1
+  71 002b 40       		.byte	64
+  72 002c 05       		.byte	5
+  73 002d 4D       		.byte	77
+  74 002e 01       		.byte	1
+  75 002f 40       		.byte	64
+  76 0030 02       		.byte	2
+  77 0031 50       		.byte	80
+  78 0032 01       		.byte	1
+  79 0033 40       		.byte	64
+  80 0034 18       		.byte	24
+  81 0035 08       		.byte	8
+  82 0036 19       		.byte	25
+  83 0037 08       		.byte	8
+  84 0038 38       		.byte	56
+  85 0039 80       		.byte	-128
+  86 003a 3E       		.byte	62
+  87 003b 40       		.byte	64
+  88 003c 58       		.byte	88
+  89 003d 04       		.byte	4
+  90 003e 5F       		.byte	95
+  91 003f 01       		.byte	1
+  92 0040 8F       		.byte	-113
+  93 0041 03       		.byte	3
+  94 0042 90       		.byte	-112
+  95 0043 07       		.byte	7
+  96 0044 92       		.byte	-110
+  97 0045 18       		.byte	24
+  98 0046 94       		.byte	-108
+  99 0047 1B       		.byte	27
+ 100 0048 96       		.byte	-106
+ 101 0049 04       		.byte	4
+ 102 004a 99       		.byte	-103
+ 103 004b 02       		.byte	2
+ 104 004c 9F       		.byte	-97
+ 105 004d 01       		.byte	1
+ 106 004e AE       		.byte	-82
+ 107 004f 09       		.byte	9
+ 108 0050 B0       		.byte	-80
+ 109 0051 0C       		.byte	12
+ 110 0052 B1       		.byte	-79
+ 111 0053 03       		.byte	3
+ 112 0054 B2       		.byte	-78
+ 113 0055 01       		.byte	1
+ 114 0056 B3       		.byte	-77
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccDVPJam.s 			page 3
+
+
+ 115 0057 03       		.byte	3
+ 116 0058 B4       		.byte	-76
+ 117 0059 02       		.byte	2
+ 118 005a B6       		.byte	-74
+ 119 005b 10       		.byte	16
+ 120 005c BE       		.byte	-66
+ 121 005d 50       		.byte	80
+ 122 005e C0       		.byte	-64
+ 123 005f 12       		.byte	18
+ 124 0060 C9       		.byte	-55
+ 125 0061 FF       		.byte	-1
+ 126 0062 CA       		.byte	-54
+ 127 0063 FF       		.byte	-1
+ 128 0064 CB       		.byte	-53
+ 129 0065 FF       		.byte	-1
+ 130 0066 CD       		.byte	-51
+ 131 0067 20       		.byte	32
+ 132 0068 CE       		.byte	-50
+ 133 0069 F0       		.byte	-16
+ 134 006a D1       		.byte	-47
+ 135 006b 10       		.byte	16
+ 136 006c D2       		.byte	-46
+ 137 006d 01       		.byte	1
+ 138 006e D6       		.byte	-42
+ 139 006f 10       		.byte	16
+ 140 0070 D8       		.byte	-40
+ 141 0071 04       		.byte	4
+ 142 0072 D9       		.byte	-39
+ 143 0073 04       		.byte	4
+ 144 0074 DA       		.byte	-38
+ 145 0075 04       		.byte	4
+ 146 0076 DB       		.byte	-37
+ 147 0077 04       		.byte	4
+ 148 0078 DC       		.byte	-36
+ 149 0079 11       		.byte	17
+ 150 007a DD       		.byte	-35
+ 151 007b 11       		.byte	17
+ 152 007c DF       		.byte	-33
+ 153 007d 01       		.byte	1
+ 154 007e E0       		.byte	-32
+ 155 007f 40       		.byte	64
+ 156 0080 E1       		.byte	-31
+ 157 0081 60       		.byte	96
+ 158 0082 E2       		.byte	-30
+ 159 0083 40       		.byte	64
+ 160 0084 E3       		.byte	-29
+ 161 0085 A8       		.byte	-88
+ 162 0086 E4       		.byte	-28
+ 163 0087 40       		.byte	64
+ 164 0088 0E       		.byte	14
+ 165 0089 A0       		.byte	-96
+ 166 008a 15       		.byte	21
+ 167 008b 40       		.byte	64
+ 168 008c 18       		.byte	24
+ 169 008d 01       		.byte	1
+ 170 008e 1D       		.byte	29
+ 171 008f A0       		.byte	-96
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccDVPJam.s 			page 4
+
+
+ 172 0090 1E       		.byte	30
+ 173 0091 E0       		.byte	-32
+ 174 0092 27       		.byte	39
+ 175 0093 A0       		.byte	-96
+ 176 0094 36       		.byte	54
+ 177 0095 10       		.byte	16
+ 178 0096 37       		.byte	55
+ 179 0097 80       		.byte	-128
+ 180 0098 3E       		.byte	62
+ 181 0099 40       		.byte	64
+ 182 009a 45       		.byte	69
+ 183 009b A0       		.byte	-96
+ 184 009c 6D       		.byte	109
+ 185 009d 40       		.byte	64
+ 186 009e 83       		.byte	-125
+ 187 009f 20       		.byte	32
+ 188 00a0 8C       		.byte	-116
+ 189 00a1 01       		.byte	1
+ 190 00a2 C2       		.byte	-62
+ 191 00a3 30       		.byte	48
+ 192 00a4 C4       		.byte	-60
+ 193 00a5 80       		.byte	-128
+ 194 00a6 CC       		.byte	-52
+ 195 00a7 30       		.byte	48
+ 196 00a8 CE       		.byte	-50
+ 197 00a9 10       		.byte	16
+ 198 00aa D0       		.byte	-48
+ 199 00ab 30       		.byte	48
+ 200 00ac EC       		.byte	-20
+ 201 00ad 10       		.byte	16
+ 202 00ae E4       		.byte	-28
+ 203 00af 10       		.byte	16
+ 204 00b0 EC       		.byte	-20
+ 205 00b1 10       		.byte	16
+ 206 00b2 7C       		.byte	124
+ 207 00b3 01       		.byte	1
+ 208 00b4 DE       		.byte	-34
+ 209 00b5 01       		.byte	1
+ 210 00b6 94       		.byte	-108
+ 211 00b7 01       		.byte	1
+ 212 00b8 45       		.byte	69
+ 213 00b9 08       		.byte	8
+ 214 00ba 94       		.byte	-108
+ 215 00bb 01       		.byte	1
+ 216 00bc D0       		.byte	-48
+ 217 00bd 01       		.byte	1
+ 218 00be 94       		.byte	-108
+ 219 00bf 01       		.byte	1
+ 220 00c0 A5       		.byte	-91
+ 221 00c1 08       		.byte	8
+ 222 00c2 25       		.byte	37
+ 223 00c3 10       		.byte	16
+ 224 00c4 C8       		.byte	-56
+ 225 00c5 20       		.byte	32
+ 226 00c6 5F       		.byte	95
+ 227 00c7 80       		.byte	-128
+ 228 00c8 83       		.byte	-125
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccDVPJam.s 			page 5
+
+
+ 229 00c9 80       		.byte	-128
+ 230 00ca B5       		.byte	-75
+ 231 00cb 10       		.byte	16
+ 232 00cc D6       		.byte	-42
+ 233 00cd 20       		.byte	32
+ 234 00ce E2       		.byte	-30
+ 235 00cf 80       		.byte	-128
+ 236 00d0 94       		.byte	-108
+ 237 00d1 01       		.byte	1
+ 238 00d2 A5       		.byte	-91
+ 239 00d3 08       		.byte	8
+ 240 00d4 8C       		.byte	-116
+ 241 00d5 01       		.byte	1
+ 242 00d6 94       		.byte	-108
+ 243 00d7 01       		.byte	1
+ 244 00d8 B5       		.byte	-75
+ 245 00d9 08       		.byte	8
+ 246 00da E4       		.byte	-28
+ 247 00db 08       		.byte	8
+ 248 00dc EC       		.byte	-20
+ 249 00dd 08       		.byte	8
+ 250 00de 10       		.byte	16
+ 251 00df 02       		.byte	2
+ 252 00e0 1A       		.byte	26
+ 253 00e1 02       		.byte	2
+ 254 00e2 00       		.byte	0
+ 255 00e3 00       		.byte	0
+ 256 00e4 00       		.byte	0
+ 257 00e5 7F       		.byte	127
+ 258 00e6 7F       		.byte	127
+ 259 00e7 00       		.byte	0
+ 260 00e8 00       		.byte	0
+ 261 00e9 00       		.byte	0
+ 262 00ea 00       		.byte	0
+ 263 00eb 00       		.byte	0
+ 264 00ec 00       		.byte	0
+ 265 00ed 08       		.byte	8
+ 266 00ee 08       		.byte	8
+ 267 00ef 00       		.byte	0
+ 268 00f0 08       		.byte	8
+ 269 00f1 00       		.byte	0
+ 270 00f2 00       		.byte	0
+ 271 00f3 00       		.byte	0
+ 272 00f4 00       		.byte	0
+ 273 00f5 00       		.byte	0
+ 274 00f6 00       		.byte	0
+ 275 00f7 00       		.byte	0
+ 276 00f8 00       		.byte	0
+ 277 00f9 00       		.byte	0
+ 278 00fa 20       		.byte	32
+ 279 00fb 00       		.byte	0
+ 280 00fc B6       		.byte	-74
+ 281 00fd 00       		.byte	0
+ 282 00fe 18       		.byte	24
+ 283 00ff 01       		.byte	1
+ 284              		.section	.cywolatch,"a",%progbits
+ 285              		.align	2
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccDVPJam.s 			page 6
+
+
+ 286              		.type	cy_meta_wonvl, %object
+ 287              		.size	cy_meta_wonvl, 4
+ 288              	cy_meta_wonvl:
+ 289 0000 BC       		.byte	-68
+ 290 0001 90       		.byte	-112
+ 291 0002 AC       		.byte	-84
+ 292 0003 AF       		.byte	-81
+ 293              		.section	.cycustnvl,"a",%progbits
+ 294              		.align	2
+ 295              		.type	cy_meta_custnvl, %object
+ 296              		.size	cy_meta_custnvl, 4
+ 297              	cy_meta_custnvl:
+ 298 0000 00       		.byte	0
+ 299 0001 00       		.byte	0
+ 300 0002 40       		.byte	64
+ 301 0003 05       		.byte	5
+ 302              		.section	.cymeta,"a",%progbits
+ 303              		.align	2
+ 304              		.type	cy_metadata, %object
+ 305              		.size	cy_metadata, 12
+ 306              	cy_metadata:
+ 307 0000 00       		.byte	0
+ 308 0001 01       		.byte	1
+ 309 0002 2E       		.byte	46
+ 310 0003 12       		.byte	18
+ 311 0004 30       		.byte	48
+ 312 0005 69       		.byte	105
+ 313 0006 00       		.byte	0
+ 314 0007 01       		.byte	1
+ 315 0008 00       		.byte	0
+ 316 0009 00       		.byte	0
+ 317 000a 00       		.byte	0
+ 318 000b 00       		.byte	0
+ 319              		.section	.cyflashprotect,"a",%progbits
+ 320              		.align	2
+ 321              		.type	cy_meta_flashprotect, %object
+ 322              		.size	cy_meta_flashprotect, 256
+ 323              	cy_meta_flashprotect:
+ 324 0000 00000000 		.space	256
+ 324      00000000 
+ 324      00000000 
+ 324      00000000 
+ 324      00000000 
+ 325              		.text
+ 326              	.Letext0:
+ 327              		.file 1 ".\\Generated_Source\\PSoC5\\cymetadata.c"
+ 328              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 329              		.section	.debug_info,"",%progbits
+ 330              	.Ldebug_info0:
+ 331 0000 26010000 		.4byte	0x126
+ 332 0004 0400     		.2byte	0x4
+ 333 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 334 000a 04       		.byte	0x4
+ 335 000b 01       		.uleb128 0x1
+ 336 000c 94000000 		.4byte	.LASF18
+ 337 0010 01       		.byte	0x1
+ 338 0011 00000000 		.4byte	.LASF19
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccDVPJam.s 			page 7
+
+
+ 339 0015 80010000 		.4byte	.LASF20
+ 340 0019 00000000 		.4byte	.Ldebug_line0
+ 341 001d 02       		.uleb128 0x2
+ 342 001e 01       		.byte	0x1
+ 343 001f 06       		.byte	0x6
+ 344 0020 C9010000 		.4byte	.LASF0
+ 345 0024 02       		.uleb128 0x2
+ 346 0025 01       		.byte	0x1
+ 347 0026 08       		.byte	0x8
+ 348 0027 38000000 		.4byte	.LASF1
+ 349 002b 02       		.uleb128 0x2
+ 350 002c 02       		.byte	0x2
+ 351 002d 05       		.byte	0x5
+ 352 002e AB010000 		.4byte	.LASF2
+ 353 0032 02       		.uleb128 0x2
+ 354 0033 02       		.byte	0x2
+ 355 0034 07       		.byte	0x7
+ 356 0035 58000000 		.4byte	.LASF3
+ 357 0039 02       		.uleb128 0x2
+ 358 003a 04       		.byte	0x4
+ 359 003b 05       		.byte	0x5
+ 360 003c BB010000 		.4byte	.LASF4
+ 361 0040 02       		.uleb128 0x2
+ 362 0041 04       		.byte	0x4
+ 363 0042 07       		.byte	0x7
+ 364 0043 46000000 		.4byte	.LASF5
+ 365 0047 02       		.uleb128 0x2
+ 366 0048 08       		.byte	0x8
+ 367 0049 05       		.byte	0x5
+ 368 004a 72010000 		.4byte	.LASF6
+ 369 004e 02       		.uleb128 0x2
+ 370 004f 08       		.byte	0x8
+ 371 0050 07       		.byte	0x7
+ 372 0051 2F010000 		.4byte	.LASF7
+ 373 0055 03       		.uleb128 0x3
+ 374 0056 04       		.byte	0x4
+ 375 0057 05       		.byte	0x5
+ 376 0058 696E7400 		.ascii	"int\000"
+ 377 005c 02       		.uleb128 0x2
+ 378 005d 04       		.byte	0x4
+ 379 005e 07       		.byte	0x7
+ 380 005f 22010000 		.4byte	.LASF8
+ 381 0063 04       		.uleb128 0x4
+ 382 0064 B5010000 		.4byte	.LASF21
+ 383 0068 02       		.byte	0x2
+ 384 0069 9201     		.2byte	0x192
+ 385 006b 24000000 		.4byte	0x24
+ 386 006f 02       		.uleb128 0x2
+ 387 0070 04       		.byte	0x4
+ 388 0071 04       		.byte	0x4
+ 389 0072 32000000 		.4byte	.LASF9
+ 390 0076 02       		.uleb128 0x2
+ 391 0077 08       		.byte	0x8
+ 392 0078 04       		.byte	0x4
+ 393 0079 6B000000 		.4byte	.LASF10
+ 394 007d 02       		.uleb128 0x2
+ 395 007e 01       		.byte	0x1
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccDVPJam.s 			page 8
+
+
+ 396 007f 08       		.byte	0x8
+ 397 0080 C4010000 		.4byte	.LASF11
+ 398 0084 05       		.uleb128 0x5
+ 399 0085 63000000 		.4byte	0x63
+ 400 0089 94000000 		.4byte	0x94
+ 401 008d 06       		.uleb128 0x6
+ 402 008e 94000000 		.4byte	0x94
+ 403 0092 FF       		.byte	0xff
+ 404 0093 00       		.byte	0
+ 405 0094 02       		.uleb128 0x2
+ 406 0095 04       		.byte	0x4
+ 407 0096 07       		.byte	0x7
+ 408 0097 69010000 		.4byte	.LASF12
+ 409 009b 07       		.uleb128 0x7
+ 410 009c 82000000 		.4byte	.LASF13
+ 411 00a0 01       		.byte	0x1
+ 412 00a1 1F       		.byte	0x1f
+ 413 00a2 AC000000 		.4byte	0xac
+ 414 00a6 05       		.uleb128 0x5
+ 415 00a7 03       		.byte	0x3
+ 416 00a8 00000000 		.4byte	cy_meta_configecc
+ 417 00ac 08       		.uleb128 0x8
+ 418 00ad 84000000 		.4byte	0x84
+ 419 00b1 05       		.uleb128 0x5
+ 420 00b2 63000000 		.4byte	0x63
+ 421 00b6 C1000000 		.4byte	0xc1
+ 422 00ba 06       		.uleb128 0x6
+ 423 00bb 94000000 		.4byte	0x94
+ 424 00bf 03       		.byte	0x3
+ 425 00c0 00       		.byte	0
+ 426 00c1 07       		.uleb128 0x7
+ 427 00c2 72000000 		.4byte	.LASF14
+ 428 00c6 01       		.byte	0x1
+ 429 00c7 4C       		.byte	0x4c
+ 430 00c8 D2000000 		.4byte	0xd2
+ 431 00cc 05       		.uleb128 0x5
+ 432 00cd 03       		.byte	0x3
+ 433 00ce 00000000 		.4byte	cy_meta_custnvl
+ 434 00d2 08       		.uleb128 0x8
+ 435 00d3 B1000000 		.4byte	0xb1
+ 436 00d7 07       		.uleb128 0x7
+ 437 00d8 5B010000 		.4byte	.LASF15
+ 438 00dc 01       		.byte	0x1
+ 439 00dd 5A       		.byte	0x5a
+ 440 00de E8000000 		.4byte	0xe8
+ 441 00e2 05       		.uleb128 0x5
+ 442 00e3 03       		.byte	0x3
+ 443 00e4 00000000 		.4byte	cy_meta_wonvl
+ 444 00e8 08       		.uleb128 0x8
+ 445 00e9 B1000000 		.4byte	0xb1
+ 446 00ed 07       		.uleb128 0x7
+ 447 00ee 46010000 		.4byte	.LASF16
+ 448 00f2 01       		.byte	0x1
+ 449 00f3 68       		.byte	0x68
+ 450 00f4 FE000000 		.4byte	0xfe
+ 451 00f8 05       		.uleb128 0x5
+ 452 00f9 03       		.byte	0x3
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccDVPJam.s 			page 9
+
+
+ 453 00fa 00000000 		.4byte	cy_meta_flashprotect
+ 454 00fe 08       		.uleb128 0x8
+ 455 00ff 84000000 		.4byte	0x84
+ 456 0103 05       		.uleb128 0x5
+ 457 0104 63000000 		.4byte	0x63
+ 458 0108 13010000 		.4byte	0x113
+ 459 010c 06       		.uleb128 0x6
+ 460 010d 94000000 		.4byte	0x94
+ 461 0111 0B       		.byte	0xb
+ 462 0112 00       		.byte	0
+ 463 0113 07       		.uleb128 0x7
+ 464 0114 26000000 		.4byte	.LASF17
+ 465 0118 01       		.byte	0x1
+ 466 0119 95       		.byte	0x95
+ 467 011a 24010000 		.4byte	0x124
+ 468 011e 05       		.uleb128 0x5
+ 469 011f 03       		.byte	0x3
+ 470 0120 00000000 		.4byte	cy_metadata
+ 471 0124 08       		.uleb128 0x8
+ 472 0125 03010000 		.4byte	0x103
+ 473 0129 00       		.byte	0
+ 474              		.section	.debug_abbrev,"",%progbits
+ 475              	.Ldebug_abbrev0:
+ 476 0000 01       		.uleb128 0x1
+ 477 0001 11       		.uleb128 0x11
+ 478 0002 01       		.byte	0x1
+ 479 0003 25       		.uleb128 0x25
+ 480 0004 0E       		.uleb128 0xe
+ 481 0005 13       		.uleb128 0x13
+ 482 0006 0B       		.uleb128 0xb
+ 483 0007 03       		.uleb128 0x3
+ 484 0008 0E       		.uleb128 0xe
+ 485 0009 1B       		.uleb128 0x1b
+ 486 000a 0E       		.uleb128 0xe
+ 487 000b 10       		.uleb128 0x10
+ 488 000c 17       		.uleb128 0x17
+ 489 000d 00       		.byte	0
+ 490 000e 00       		.byte	0
+ 491 000f 02       		.uleb128 0x2
+ 492 0010 24       		.uleb128 0x24
+ 493 0011 00       		.byte	0
+ 494 0012 0B       		.uleb128 0xb
+ 495 0013 0B       		.uleb128 0xb
+ 496 0014 3E       		.uleb128 0x3e
+ 497 0015 0B       		.uleb128 0xb
+ 498 0016 03       		.uleb128 0x3
+ 499 0017 0E       		.uleb128 0xe
+ 500 0018 00       		.byte	0
+ 501 0019 00       		.byte	0
+ 502 001a 03       		.uleb128 0x3
+ 503 001b 24       		.uleb128 0x24
+ 504 001c 00       		.byte	0
+ 505 001d 0B       		.uleb128 0xb
+ 506 001e 0B       		.uleb128 0xb
+ 507 001f 3E       		.uleb128 0x3e
+ 508 0020 0B       		.uleb128 0xb
+ 509 0021 03       		.uleb128 0x3
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccDVPJam.s 			page 10
+
+
+ 510 0022 08       		.uleb128 0x8
+ 511 0023 00       		.byte	0
+ 512 0024 00       		.byte	0
+ 513 0025 04       		.uleb128 0x4
+ 514 0026 16       		.uleb128 0x16
+ 515 0027 00       		.byte	0
+ 516 0028 03       		.uleb128 0x3
+ 517 0029 0E       		.uleb128 0xe
+ 518 002a 3A       		.uleb128 0x3a
+ 519 002b 0B       		.uleb128 0xb
+ 520 002c 3B       		.uleb128 0x3b
+ 521 002d 05       		.uleb128 0x5
+ 522 002e 49       		.uleb128 0x49
+ 523 002f 13       		.uleb128 0x13
+ 524 0030 00       		.byte	0
+ 525 0031 00       		.byte	0
+ 526 0032 05       		.uleb128 0x5
+ 527 0033 01       		.uleb128 0x1
+ 528 0034 01       		.byte	0x1
+ 529 0035 49       		.uleb128 0x49
+ 530 0036 13       		.uleb128 0x13
+ 531 0037 01       		.uleb128 0x1
+ 532 0038 13       		.uleb128 0x13
+ 533 0039 00       		.byte	0
+ 534 003a 00       		.byte	0
+ 535 003b 06       		.uleb128 0x6
+ 536 003c 21       		.uleb128 0x21
+ 537 003d 00       		.byte	0
+ 538 003e 49       		.uleb128 0x49
+ 539 003f 13       		.uleb128 0x13
+ 540 0040 2F       		.uleb128 0x2f
+ 541 0041 0B       		.uleb128 0xb
+ 542 0042 00       		.byte	0
+ 543 0043 00       		.byte	0
+ 544 0044 07       		.uleb128 0x7
+ 545 0045 34       		.uleb128 0x34
+ 546 0046 00       		.byte	0
+ 547 0047 03       		.uleb128 0x3
+ 548 0048 0E       		.uleb128 0xe
+ 549 0049 3A       		.uleb128 0x3a
+ 550 004a 0B       		.uleb128 0xb
+ 551 004b 3B       		.uleb128 0x3b
+ 552 004c 0B       		.uleb128 0xb
+ 553 004d 49       		.uleb128 0x49
+ 554 004e 13       		.uleb128 0x13
+ 555 004f 3F       		.uleb128 0x3f
+ 556 0050 19       		.uleb128 0x19
+ 557 0051 02       		.uleb128 0x2
+ 558 0052 18       		.uleb128 0x18
+ 559 0053 00       		.byte	0
+ 560 0054 00       		.byte	0
+ 561 0055 08       		.uleb128 0x8
+ 562 0056 26       		.uleb128 0x26
+ 563 0057 00       		.byte	0
+ 564 0058 49       		.uleb128 0x49
+ 565 0059 13       		.uleb128 0x13
+ 566 005a 00       		.byte	0
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccDVPJam.s 			page 11
+
+
+ 567 005b 00       		.byte	0
+ 568 005c 00       		.byte	0
+ 569              		.section	.debug_aranges,"",%progbits
+ 570 0000 14000000 		.4byte	0x14
+ 571 0004 0200     		.2byte	0x2
+ 572 0006 00000000 		.4byte	.Ldebug_info0
+ 573 000a 04       		.byte	0x4
+ 574 000b 00       		.byte	0
+ 575 000c 0000     		.2byte	0
+ 576 000e 0000     		.2byte	0
+ 577 0010 00000000 		.4byte	0
+ 578 0014 00000000 		.4byte	0
+ 579              		.section	.debug_line,"",%progbits
+ 580              	.Ldebug_line0:
+ 581 0000 4F000000 		.section	.debug_str,"MS",%progbits,1
+ 581      02004900 
+ 581      00000201 
+ 581      FB0E0D00 
+ 581      01010101 
+ 582              	.LASF19:
+ 583 0000 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\cymetadata.c\000"
+ 583      6E657261 
+ 583      7465645F 
+ 583      536F7572 
+ 583      63655C50 
+ 584              	.LASF17:
+ 585 0026 63795F6D 		.ascii	"cy_metadata\000"
+ 585      65746164 
+ 585      61746100 
+ 586              	.LASF9:
+ 587 0032 666C6F61 		.ascii	"float\000"
+ 587      7400
+ 588              	.LASF1:
+ 589 0038 756E7369 		.ascii	"unsigned char\000"
+ 589      676E6564 
+ 589      20636861 
+ 589      7200
+ 590              	.LASF5:
+ 591 0046 6C6F6E67 		.ascii	"long unsigned int\000"
+ 591      20756E73 
+ 591      69676E65 
+ 591      6420696E 
+ 591      7400
+ 592              	.LASF3:
+ 593 0058 73686F72 		.ascii	"short unsigned int\000"
+ 593      7420756E 
+ 593      7369676E 
+ 593      65642069 
+ 593      6E7400
+ 594              	.LASF10:
+ 595 006b 646F7562 		.ascii	"double\000"
+ 595      6C6500
+ 596              	.LASF14:
+ 597 0072 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 597      6574615F 
+ 597      63757374 
+ 597      6E766C00 
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccDVPJam.s 			page 12
+
+
+ 598              	.LASF13:
+ 599 0082 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 599      6574615F 
+ 599      636F6E66 
+ 599      69676563 
+ 599      6300
+ 600              	.LASF18:
+ 601 0094 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 601      4320342E 
+ 601      392E3320 
+ 601      32303135 
+ 601      30333033 
+ 602 00c7 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 602      20726576 
+ 602      6973696F 
+ 602      6E203232 
+ 602      31323230 
+ 603 00fa 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 603      66756E63 
+ 603      74696F6E 
+ 603      2D736563 
+ 603      74696F6E 
+ 604              	.LASF8:
+ 605 0122 756E7369 		.ascii	"unsigned int\000"
+ 605      676E6564 
+ 605      20696E74 
+ 605      00
+ 606              	.LASF7:
+ 607 012f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 607      206C6F6E 
+ 607      6720756E 
+ 607      7369676E 
+ 607      65642069 
+ 608              	.LASF16:
+ 609 0146 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 609      6574615F 
+ 609      666C6173 
+ 609      6870726F 
+ 609      74656374 
+ 610              	.LASF15:
+ 611 015b 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 611      6574615F 
+ 611      776F6E76 
+ 611      6C00
+ 612              	.LASF12:
+ 613 0169 73697A65 		.ascii	"sizetype\000"
+ 613      74797065 
+ 613      00
+ 614              	.LASF6:
+ 615 0172 6C6F6E67 		.ascii	"long long int\000"
+ 615      206C6F6E 
+ 615      6720696E 
+ 615      7400
+ 616              	.LASF20:
+ 617 0180 443A5C4D 		.ascii	"D:\\MIT\\Microcomputer\\Exercise_4\\LAB2.cydsn\000"
+ 617      49545C4D 
+ 617      6963726F 
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccDVPJam.s 			page 13
+
+
+ 617      636F6D70 
+ 617      75746572 
+ 618              	.LASF2:
+ 619 01ab 73686F72 		.ascii	"short int\000"
+ 619      7420696E 
+ 619      7400
+ 620              	.LASF21:
+ 621 01b5 75696E74 		.ascii	"uint8\000"
+ 621      3800
+ 622              	.LASF4:
+ 623 01bb 6C6F6E67 		.ascii	"long int\000"
+ 623      20696E74 
+ 623      00
+ 624              	.LASF11:
+ 625 01c4 63686172 		.ascii	"char\000"
+ 625      00
+ 626              	.LASF0:
+ 627 01c9 7369676E 		.ascii	"signed char\000"
+ 627      65642063 
+ 627      68617200 
+ 628              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

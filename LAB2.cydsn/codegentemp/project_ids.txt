@@ -1,0 +1,6 @@
+D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\LAB2.cyprj|fa123971-1607-40af-ad91-3c212e5cdb32
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|4031580e-7f28-43d2-ba14-05e0f0a13b6b
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|dccbd82d-2fd7-47ac-83a9-197458094f89
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|bd5e78ec-3b10-4497-9f8d-20d737bc0a52
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|f0fb5efd-eae1-4981-a39f-d34c6a25a87b
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|2fe9eb8b-9e76-463b-b270-c7005fa46cfd
