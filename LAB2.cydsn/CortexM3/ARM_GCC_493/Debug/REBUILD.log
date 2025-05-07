@@ -1,13 +1,4 @@
---------------- Rebuild Started: 05/01/2025 13:38:54 Project: LAB2, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
-Deleting file ".\CortexM3\ARM_GCC_493\Debug\main.o"
-Deleting file ".\CortexM3\ARM_GCC_493\Debug\LAB2.hex"
-Deleting file ".\CortexM3\ARM_GCC_493\Debug\LAB2.elf"
-Deleting file ".\CortexM3\ARM_GCC_493\Debug\LAB2.map"
-Deleting file ".\LAB2.cycdx"
-Deleting file ".\LAB2.svd"
-Deleting file ".\LAB2.rpt"
-Deleting file ".\LAB2_timing.html"
-Deleting file ".\CortexM3\ARM_GCC_493\Debug\.deps\C_FILE.P"
+--------------- Rebuild Started: 05/01/2025 17:24:42 Project: LAB2, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
 cydsfit.exe -.appdatapath "C:\Users\kuzni\AppData\Local\Cypress Semiconductor\PSoC Creator\3.3" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\LAB2.cyprj -d CY8C5868AXI-LP035 -s D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
 Elaborating Design...
 ADD: sdb.M0065: information: Analog terminal "ADC_DelSig_1.vminus" on TopDesign is unconnected.
@@ -18,6 +9,8 @@ Synthesis ...
 Place and Route ...
 Tech mapping ...
 ADD: pft.M0040: information: The following 1 pin(s) will be assigned a location by the fitter: Pin_2(0)
+ADD: mpr.M0037: information: Unused pieces of the design have been optimized out. See the Tech mapping section of the report file for details.
+ * D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\LAB2.rpt (Tech mapping)
 Analog Placement ...
 Info: apr.M0002: Analog signal "Net_17" is connected to one terminal only. (App=cydsfit)
 Analog Routing ...
@@ -54,11 +47,38 @@ arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\P
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/cyPm.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\Generated_Source\PSoC5\cyPm.c -o .\CortexM3\ARM_GCC_493\Debug\cyPm.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/CySpc.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\Generated_Source\PSoC5\CySpc.c -o .\CortexM3\ARM_GCC_493\Debug\CySpc.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/cyutils.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\Generated_Source\PSoC5\cyutils.c -o .\CortexM3\ARM_GCC_493\Debug\cyutils.o
-arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_493\Debug\LAB2.a .\CortexM3\ARM_GCC_493\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_493\Debug\LCD_Char_1.o .\CortexM3\ARM_GCC_493\Debug\LCD_Char_1_PM.o .\CortexM3\ARM_GCC_493\Debug\Pin_1.o .\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1.o .\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_PM.o .\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_INT.o .\CortexM3\ARM_GCC_493\Debug\MAC_unit_1_go_to_mac.o .\CortexM3\ARM_GCC_493\Debug\MAC_unit_1_go_to_mac_PM.o .\CortexM3\ARM_GCC_493\Debug\Clock_1.o .\CortexM3\ARM_GCC_493\Debug\Pin_2.o .\CortexM3\ARM_GCC_493\Debug\LCD_Char_1_LCDPort.o .\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_Ext_CP_Clk.o .\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_IRQ.o .\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_theACLK.o .\CortexM3\ARM_GCC_493\Debug\CyBootAsmGnu.o .\CortexM3\ARM_GCC_493\Debug\CyDmac.o .\CortexM3\ARM_GCC_493\Debug\CyFlash.o .\CortexM3\ARM_GCC_493\Debug\CyLib.o .\CortexM3\ARM_GCC_493\Debug\cyPm.o .\CortexM3\ARM_GCC_493\Debug\CySpc.o .\CortexM3\ARM_GCC_493\Debug\cyutils.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/MAC_unit_1_input_a.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\Generated_Source\PSoC5\MAC_unit_1_input_a.c -o .\CortexM3\ARM_GCC_493\Debug\MAC_unit_1_input_a.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/MAC_unit_1_input_a_PM.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\Generated_Source\PSoC5\MAC_unit_1_input_a_PM.c -o .\CortexM3\ARM_GCC_493\Debug\MAC_unit_1_input_a_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/SPIM_1.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\Generated_Source\PSoC5\SPIM_1.c -o .\CortexM3\ARM_GCC_493\Debug\SPIM_1.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/SPIM_1_PM.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\Generated_Source\PSoC5\SPIM_1_PM.c -o .\CortexM3\ARM_GCC_493\Debug\SPIM_1_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/SPIM_1_INT.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\Generated_Source\PSoC5\SPIM_1_INT.c -o .\CortexM3\ARM_GCC_493\Debug\SPIM_1_INT.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/MISO.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\Generated_Source\PSoC5\MISO.c -o .\CortexM3\ARM_GCC_493\Debug\MISO.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/MOSI.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\Generated_Source\PSoC5\MOSI.c -o .\CortexM3\ARM_GCC_493\Debug\MOSI.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/SCLK.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\Generated_Source\PSoC5\SCLK.c -o .\CortexM3\ARM_GCC_493\Debug\SCLK.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/SS.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\Generated_Source\PSoC5\SS.c -o .\CortexM3\ARM_GCC_493\Debug\SS.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/RESET.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\Generated_Source\PSoC5\RESET.c -o .\CortexM3\ARM_GCC_493\Debug\RESET.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/LED.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\Generated_Source\PSoC5\LED.c -o .\CortexM3\ARM_GCC_493\Debug\LED.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/DC.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\Generated_Source\PSoC5\DC.c -o .\CortexM3\ARM_GCC_493\Debug\DC.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/SPIM_1_IntClock.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\Generated_Source\PSoC5\SPIM_1_IntClock.c -o .\CortexM3\ARM_GCC_493\Debug\SPIM_1_IntClock.o
+arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_493\Debug\LAB2.a .\CortexM3\ARM_GCC_493\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_493\Debug\LCD_Char_1.o .\CortexM3\ARM_GCC_493\Debug\LCD_Char_1_PM.o .\CortexM3\ARM_GCC_493\Debug\Pin_1.o .\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1.o .\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_PM.o .\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_INT.o .\CortexM3\ARM_GCC_493\Debug\MAC_unit_1_go_to_mac.o .\CortexM3\ARM_GCC_493\Debug\MAC_unit_1_go_to_mac_PM.o .\CortexM3\ARM_GCC_493\Debug\Clock_1.o .\CortexM3\ARM_GCC_493\Debug\Pin_2.o .\CortexM3\ARM_GCC_493\Debug\LCD_Char_1_LCDPort.o .\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_Ext_CP_Clk.o .\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_IRQ.o .\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_theACLK.o .\CortexM3\ARM_GCC_493\Debug\CyBootAsmGnu.o .\CortexM3\ARM_GCC_493\Debug\CyDmac.o .\CortexM3\ARM_GCC_493\Debug\CyFlash.o .\CortexM3\ARM_GCC_493\Debug\CyLib.o .\CortexM3\ARM_GCC_493\Debug\cyPm.o .\CortexM3\ARM_GCC_493\Debug\CySpc.o .\CortexM3\ARM_GCC_493\Debug\cyutils.o .\CortexM3\ARM_GCC_493\Debug\MAC_unit_1_input_a.o .\CortexM3\ARM_GCC_493\Debug\MAC_unit_1_input_a_PM.o .\CortexM3\ARM_GCC_493\Debug\SPIM_1.o .\CortexM3\ARM_GCC_493\Debug\SPIM_1_PM.o .\CortexM3\ARM_GCC_493\Debug\SPIM_1_INT.o .\CortexM3\ARM_GCC_493\Debug\MISO.o .\CortexM3\ARM_GCC_493\Debug\MOSI.o .\CortexM3\ARM_GCC_493\Debug\SCLK.o .\CortexM3\ARM_GCC_493\Debug\SS.o .\CortexM3\ARM_GCC_493\Debug\RESET.o .\CortexM3\ARM_GCC_493\Debug\LED.o .\CortexM3\ARM_GCC_493\Debug\DC.o .\CortexM3\ARM_GCC_493\Debug\SPIM_1_IntClock.o
 arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_493\Debug\LAB2.a
 arm-none-eabi-gcc.exe -Wl,--start-group -o .\CortexM3\ARM_GCC_493\Debug\LAB2.elf .\CortexM3\ARM_GCC_493\Debug\main.o .\CortexM3\ARM_GCC_493\Debug\cymetadata.o .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o .\CortexM3\ARM_GCC_493\Debug\LAB2.a "C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_493\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -g -ffunction-sections -Og -ffat-lto-objects -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_493\Debug/LAB2.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -Wl,--end-group
-cyelftool.exe -C D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\CortexM3\ARM_GCC_493\Debug\LAB2.elf --flash_row_size 256 --flash_size 262144
-cyelftool.exe -S D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\CortexM3\ARM_GCC_493\Debug\LAB2.elf
-Flash used: 70656 of 262144 bytes (27.0%).
-SRAM used: 20829 of 65536 bytes (31.8%). Stack: 16384 bytes. Heap: 4096 bytes.
---------------- Rebuild Succeeded: 05/01/2025 13:39:14 ---------------
+.\CortexM3\ARM_GCC_493\Debug\main.o: In function `display_tft':
+D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn/.\main.c:35: undefined reference to `tftStart'
+D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn/.\main.c:40: undefined reference to `write8_a0'
+D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn/.\main.c:41: undefined reference to `write8_a1'
+D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn/.\main.c:42: undefined reference to `write8_a1'
+D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn/.\main.c:43: undefined reference to `write8_a1'
+D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn/.\main.c:44: undefined reference to `write8_a1'
+D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn/.\main.c:45: undefined reference to `write8_a0'
+D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn/.\main.c:46: undefined reference to `write8_a1'
+D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn/.\main.c:47: undefined reference to `write8_a1'
+D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn/.\main.c:48: undefined reference to `write8_a1'
+D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn/.\main.c:49: undefined reference to `write8_a1'
+D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn/.\main.c:50: undefined reference to `write8_a0'
+D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn/.\main.c:54: undefined reference to `write8_a1'
+D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn/.\main.c:55: undefined reference to `write8_a1'
+D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn/.\main.c:57: undefined reference to `write8_a0'
+collect2.exe: error: ld returned 1 exit status
+The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
+--------------- Rebuild Failed: 05/01/2025 17:24:57 ---------------

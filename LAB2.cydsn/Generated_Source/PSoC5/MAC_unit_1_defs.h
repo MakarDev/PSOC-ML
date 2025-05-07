@@ -21,6 +21,7 @@
 #include "cytypes.h"
 #include "cyfitter.h"
 #include "MAC_unit_1_go_to_mac.h"
+#include "MAC_unit_1_input_a.h"
 
 /* Note: Register pointers (denoted by a _PTR suffix) should be accessed
  * via the CY_GET_REGn and CY_SET_REGn macros (defined in cytypes.h),

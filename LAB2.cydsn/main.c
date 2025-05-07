@@ -15,7 +15,10 @@
 
 #include <device.h>
 #include "lut_8bit.h"  // your generated LUT
-void LCD_Char_1_PrintHorizontalLine(uint16 length);
+#include <project.h>
+#include "tft.h"
+
+//void LCD_Char_1_PrintHorizontalLine(uint16 length);
 
 uint16 adcResult = 0;
 
@@ -24,10 +27,47 @@ uint16 adcResult = 0;
 // Accumulator result (optional mirror for debugging)
 static uint8_t acc_result = 0;
 static uint8_t acc_result_debug = 0;
-void run_mac(uint8_t a, uint8_t b)
+int display_tft()
 {
-    acc_result = 0;
-    acc_result_debug = 0;
+     CyGlobalIntEnable;                  // Enable global interrupts
+    SPIM_1_Start();                     // initialize SPIM component
+    
+    tftStart();                         // initialize the TFT display
+    uint16 SC = 20;                     // define a 10x10 square with the top left corner located at pixel (10, 50)
+    uint16 EC = 29;
+    uint16 SP = 50;
+    uint16 EP = 59;
+    write8_a0(0x2A);                 	// send Column Address Set command
+    write8_a1(0x00);                 // set SC[15:0]
+    write8_a1(SC & 0x00FF);
+    write8_a1(0x00);                 // set EC[15:0]
+    write8_a1(EC & 0x00FF);
+    write8_a0(0x2B);                 	// send Page Address Set command
+    write8_a1(0x00);                 // set SP[15:0]
+    write8_a1(SP & 0x00FF);
+    write8_a1(0x00);                 // set EP[15:0]
+    write8_a1(EP & 0x00FF);
+    write8_a0(0x2C);                    // send Memory Write command
+    int i;
+    for (i=0; i<100; i++)               // fill the square with the color orange
+	{
+		write8_a1(0xFF); 			    // 0xFF0F is the color orange
+		write8_a1(0x0F); 
+	}
+    write8_a0(0x00);    
+    //for(;;) {}                          // loop
+
+}
+
+void run_mac(uint8_t a, uint8_t b, uint8_t reset)
+{
+    if (reset) {
+        MAC_unit_1_go_to_mac_Write(0x00);  // Reset mode
+        acc_result = 0;
+        acc_result_debug = 0;
+        return;
+    }
+
     // Look up product from Flash LUT
     uint8_t product = mult_LUT[LUT_INDEX(a, b)];
 
@@ -38,10 +78,8 @@ void run_mac(uint8_t a, uint8_t b)
     MAC_unit_1_go_to_mac_Write(0x01);
     uint8 dsignal = Pin_2_Read();
     // Read the accumulated value from A0
-    //MAC_unit_1_Datapath_1_A0_REG = 0;
     //for debugging
     acc_result_debug += product;
-    //MAC_unit_1_Datapath_1_A0_REG = 0x01;
 
     // Clear MAC unit control bit to 0 after obtaining sum
     while(dsignal != 1) {
@@ -49,8 +87,9 @@ void run_mac(uint8_t a, uint8_t b)
     }
     acc_result = MAC_unit_1_Datapath_1_A0_REG;
 
-    MAC_unit_1_go_to_mac_Write(0x00);
-    }
+    // Set to accumulate mode
+    MAC_unit_1_go_to_mac_Write(0x03);
+}
 
 void LCD_Char_1_PrintHorizontalLine(uint16 length)
 {
@@ -71,17 +110,24 @@ void main()
     unsigned char j = 50;                // milliseconds delay
     uint16 lineLength;
 
-    LCD_Char_1_Start();                  // initialize lcd
-    LCD_Char_1_ClearDisplay();
-    LCD_Char_1_PrintString("");
+   // LCD_Char_1_Start();                  // initialize lcd
+   // LCD_Char_1_ClearDisplay();
+   // LCD_Char_1_PrintString("");
     
     ADC_DelSig_1_Start();                // start the ADC_DelSig_1
     ADC_DelSig_1_StartConvert();         // start the ADC_DelSig_1 conversion
 
+    // Initialize and display TFT
+    //DC_Write(0xFF); 
+    display_tft();
+    //display_tft();
     for(;;)
     {
+        // set DC line high
+
+        if (0){
         // Test case 1: 5 * 3
-        run_mac(5, 3);
+        run_mac(5, 3, 0);
         LCD_Char_1_Position(0, 0);
         LCD_Char_1_PrintString("SW:5*3=");
         LCD_Char_1_PrintNumber(acc_result_debug);
@@ -91,7 +137,7 @@ void main()
         CyDelay(2000);
         
         // Test case 2: 10 * 4
-        run_mac(10, 4);
+        run_mac(10, 4, 0);
         LCD_Char_1_Position(0, 0);
         LCD_Char_1_PrintString("SW:10*4=");
         LCD_Char_1_PrintNumber(acc_result_debug);
@@ -101,7 +147,7 @@ void main()
         CyDelay(2000);
         
         // Test case 3: 15 * 2
-        run_mac(15, 2);
+        run_mac(15, 2, 0);
         LCD_Char_1_Position(0, 0);
         LCD_Char_1_PrintString("SW:15*2=");
         LCD_Char_1_PrintNumber(acc_result_debug);
@@ -109,7 +155,7 @@ void main()
         LCD_Char_1_PrintString("HW:15*2=");
         LCD_Char_1_PrintNumber(acc_result);
         CyDelay(2000);
-
+        run_mac(0, 0, 1);
         // Display ADC result
         if( ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_WAIT_FOR_RESULT) )
         {
@@ -140,6 +186,7 @@ void main()
             LCD_Char_1_PrintHorizontalLine(lineLength);
 
             CyDelay(j);                                 // delay in milliseconds
+        }
         }
     }
 }

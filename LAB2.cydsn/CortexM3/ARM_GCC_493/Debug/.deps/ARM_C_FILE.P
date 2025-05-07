@@ -76,6 +76,16 @@ D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/CySpc.o : 
 
 D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/CySpc.c : 
 
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/DC.o : D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/DC.c D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/DC.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/DC_aliases.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfitter.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cypins.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cytypes.h 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/DC.c : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/DC.h : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/DC_aliases.h : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cypins.h : 
+
 D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/LCD_Char_1.o : D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/CyFlash.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/CyLib.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/CySpc.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/LCD_Char_1.c D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/LCD_Char_1.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyPm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfitter.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cytypes.h 
 
 D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/LCD_Char_1.c : 
@@ -90,11 +100,17 @@ D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/LCD_Char_1_LCD
 
 D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/LCD_Char_1_LCDPort_aliases.h : 
 
-D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cypins.h : 
-
 D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/LCD_Char_1_PM.o : D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/LCD_Char_1.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/LCD_Char_1_PM.c D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfitter.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cytypes.h 
 
 D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/LCD_Char_1_PM.c : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/LED.o : D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/LED.c D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/LED.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/LED_aliases.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfitter.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cypins.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cytypes.h 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/LED.c : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/LED.h : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/LED_aliases.h : 
 
 D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/MAC_unit_1_go_to_mac.o : D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MAC_unit_1_go_to_mac.c D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MAC_unit_1_go_to_mac.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfitter.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cytypes.h 
 
@@ -105,6 +121,32 @@ D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MAC_unit_1_go_
 D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/MAC_unit_1_go_to_mac_PM.o : D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MAC_unit_1_go_to_mac.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MAC_unit_1_go_to_mac_PM.c D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfitter.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cytypes.h 
 
 D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MAC_unit_1_go_to_mac_PM.c : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/MAC_unit_1_input_a.o : D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MAC_unit_1_input_a.c D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MAC_unit_1_input_a.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfitter.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cytypes.h 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MAC_unit_1_input_a.c : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MAC_unit_1_input_a.h : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/MAC_unit_1_input_a_PM.o : D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MAC_unit_1_input_a.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MAC_unit_1_input_a_PM.c D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfitter.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cytypes.h 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MAC_unit_1_input_a_PM.c : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/MISO.o : D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MISO.c D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MISO.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MISO_aliases.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfitter.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cypins.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cytypes.h 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MISO.c : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MISO.h : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MISO_aliases.h : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/MOSI.o : D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MOSI.c D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MOSI.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MOSI_aliases.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfitter.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cypins.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cytypes.h 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MOSI.c : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MOSI.h : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/MOSI_aliases.h : 
 
 D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/Pin_1.o : D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/Pin_1.c D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/Pin_1.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/Pin_1_aliases.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfitter.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cypins.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cytypes.h 
 
@@ -121,6 +163,52 @@ D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/Pin_2.c :
 D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/Pin_2.h : 
 
 D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/Pin_2_aliases.h : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/RESET.o : D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/RESET.c D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/RESET.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/RESET_aliases.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfitter.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cypins.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cytypes.h 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/RESET.c : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/RESET.h : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/RESET_aliases.h : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/SCLK.o : D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SCLK.c D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SCLK.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SCLK_aliases.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfitter.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cypins.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cytypes.h 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SCLK.c : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SCLK.h : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SCLK_aliases.h : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/SPIM_1.o : D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/CyFlash.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/CyLib.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/CySpc.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1.c D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1_IntClock.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1_PVT.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyPm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfitter.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cytypes.h 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1.c : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1.h : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1_IntClock.h : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1_PVT.h : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/SPIM_1_INT.o : D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/CyFlash.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/CyLib.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/CySpc.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1_INT.c D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1_IntClock.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1_PVT.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyPm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfitter.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cytypes.h 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1_INT.c : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/SPIM_1_IntClock.o : D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1_IntClock.c D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1_IntClock.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfitter.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cytypes.h 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1_IntClock.c : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/SPIM_1_PM.o : D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/CyFlash.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/CyLib.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/CySpc.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1_IntClock.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1_PM.c D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1_PVT.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyPm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfitter.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cytypes.h 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SPIM_1_PM.c : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/SS.o : D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SS.c D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SS.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SS_aliases.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfitter.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cypins.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cytypes.h 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SS.c : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SS.h : 
+
+D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/SS_aliases.h : 
 
 D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/CortexM3/ARM_GCC_493/Debug/cyPm.o : D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/CyFlash.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/CyLib.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/CySpc.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyPm.c D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyPm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cyfitter.h D:/MIT/Microcomputer/Exercise_4/LAB2.cydsn/Generated_Source/PSoC5/cytypes.h 
 
