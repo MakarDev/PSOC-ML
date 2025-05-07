@@ -31,6 +31,9 @@
 <v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1\ADC_DelSig_1.h</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1\ADC_DelSig_1_INT.c</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1\ADC_DelSig_1_PM.c</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1_AMux</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1_AMux\ADC_DelSig_1_AMux.c</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1_AMux\ADC_DelSig_1_AMux.h</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk\ADC_DelSig_1_Ext_CP_Clk.c</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk\ADC_DelSig_1_Ext_CP_Clk.h</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1_IRQ\ADC_DelSig_1_IRQ.c</v>
@@ -158,6 +161,9 @@
 <v>LAB2\LAB2\Generated_Source</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1_AMux</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1_AMux\ADC_DelSig_1_AMux.c</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1_AMux\ADC_DelSig_1_AMux.h</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1_IRQ</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1_theACLK</v>
@@ -177,9 +183,6 @@
 <v>LAB2\LAB2\Generated_Source\PSoC5\LCD_Char_1_LCDPort\LCD_Char_1_LCDPort_aliases.h</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\LED</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\LED\LED.c</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\LED\LED.h</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\LED\LED_aliases.h</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\MAC_unit_1</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="LAB2\LAB2\MAC_unit\MAC_unit.cysym">
@@ -211,6 +214,7 @@
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug</v>
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_1.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_1_AMux.lst</v>
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_1_Ext_CP_Clk.lst</v>
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_1_INT.lst</v>
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_1_IRQ.lst</v>
@@ -259,6 +263,39 @@
 <VisibleNodeIds>
 <v>LAB2</v>
 <v>LAB2\LAB2</v>
+<v>LAB2\LAB2\CortexM3</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_1.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_1_AMux.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_1_Ext_CP_Clk.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_1_INT.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_1_IRQ.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_1_PM.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_1_theACLK.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_1.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\DC.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_Char_1.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_Char_1_LCDPort.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_Char_1_PM.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\LED.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\MAC_unit_1_go_to_mac.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\MAC_unit_1_go_to_mac_PM.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\MAC_unit_1_input_a.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\MAC_unit_1_input_a_PM.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\MISO.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>

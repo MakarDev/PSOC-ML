@@ -47,6 +47,7 @@
 #include "DC.h"
 #include "LCD_Char_1_LCDPort_aliases.h"
 #include "LCD_Char_1_LCDPort.h"
+#include "ADC_DelSig_1_AMux.h"
 #include "ADC_DelSig_1_Ext_CP_Clk.h"
 #include "ADC_DelSig_1_IRQ.h"
 #include "ADC_DelSig_1_theACLK.h"

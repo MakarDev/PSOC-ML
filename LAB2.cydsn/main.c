@@ -17,6 +17,7 @@
 #include "lut_8bit.h"  // your generated LUT
 #include <project.h>
 #include "tft.h"
+#include <math.h>
 
 //void LCD_Char_1_PrintHorizontalLine(uint16 length);
 
@@ -27,36 +28,106 @@ uint16 adcResult = 0;
 // Accumulator result (optional mirror for debugging)
 static uint8_t acc_result = 0;
 static uint8_t acc_result_debug = 0;
+
+// Global variables for line drawing
+static uint16_t x_head = 0;
+static uint16_t y_head = 0;
+
+void draw_continuous_line(uint16_t x_in, uint16_t y_in) {
+    // If this is the first point, just update head position
+    if (x_head == 0 && y_head == 0) {
+        x_head = x_in;
+        y_head = y_in;
+        return;
+    }
+
+    // Draw horizontal line if x coordinates differ
+    if (x_in != x_head) {
+        uint16_t start_x = (x_in < x_head) ? x_in : x_head;
+        uint16_t end_x = (x_in < x_head) ? x_head : x_in;
+        uint16_t i;
+        
+        write8_a0(0x2A);  // Column Address Set
+        write8_a1(start_x >> 8);
+        write8_a1(start_x & 0x00FF);
+        write8_a1(end_x >> 8);
+        write8_a1(end_x & 0x00FF);
+        
+        write8_a0(0x2B);  // Page Address Set
+        write8_a1(y_in >> 8);
+        write8_a1(y_in & 0x00FF);
+        write8_a1(y_in >> 8);
+        write8_a1(y_in & 0x00FF);
+        
+        write8_a0(0x2C);  // Memory Write
+        for (i = start_x; i <= end_x; i++) {
+            write8_a1(0xFF);  // Orange color
+            write8_a1(0x0F);
+        }
+    }
+
+    // Draw vertical line if y coordinates differ
+    if (y_in != y_head) {
+        uint16_t start_y = (y_in < y_head) ? y_in : y_head;
+        uint16_t end_y = (y_in < y_head) ? y_head : y_in;
+        uint16_t i;
+        
+        write8_a0(0x2A);  // Column Address Set
+        write8_a1(x_in >> 8);
+        write8_a1(x_in & 0x00FF);
+        write8_a1(x_in >> 8);
+        write8_a1(x_in & 0x00FF);
+        
+        write8_a0(0x2B);  // Page Address Set
+        write8_a1(start_y >> 8);
+        write8_a1(start_y & 0x00FF);
+        write8_a1(end_y >> 8);
+        write8_a1(end_y & 0x00FF);
+        
+        write8_a0(0x2C);  // Memory Write
+        for (i = start_y; i <= end_y; i++) {
+            write8_a1(0xFF);  // Orange color
+            write8_a1(0x0F);
+        }
+    }
+
+    // Update head position
+    x_head = x_in;
+    y_head = y_in;
+}
+
 int display_tft()
 {
-     CyGlobalIntEnable;                  // Enable global interrupts
+    CyGlobalIntEnable;                  // Enable global interrupts
     SPIM_1_Start();                     // initialize SPIM component
     
     tftStart();                         // initialize the TFT display
-    uint16 SC = 20;                     // define a 10x10 square with the top left corner located at pixel (10, 50)
-    uint16 EC = 29;
-    uint16 SP = 50;
-    uint16 EP = 59;
-    write8_a0(0x2A);                 	// send Column Address Set command
-    write8_a1(0x00);                 // set SC[15:0]
-    write8_a1(SC & 0x00FF);
-    write8_a1(0x00);                 // set EC[15:0]
-    write8_a1(EC & 0x00FF);
-    write8_a0(0x2B);                 	// send Page Address Set command
-    write8_a1(0x00);                 // set SP[15:0]
-    write8_a1(SP & 0x00FF);
-    write8_a1(0x00);                 // set EP[15:0]
-    write8_a1(EP & 0x00FF);
-    write8_a0(0x2C);                    // send Memory Write command
+    
+    // Clear the screen with black color
+    write8_a0(0x2A);  // Column Address Set
+    write8_a1(0x00);
+    write8_a1(0x00);
+    write8_a1(0x01);
+    write8_a1(0x3F);  // 320 pixels wide
+    
+    write8_a0(0x2B);  // Page Address Set
+    write8_a1(0x00);
+    write8_a1(0x00);
+    write8_a1(0x00);
+    write8_a1(0xEF);  // 240 pixels high
+    
+    write8_a0(0x2C);  // Memory Write
     int i;
-    for (i=0; i<100; i++)               // fill the square with the color orange
-	{
-		write8_a1(0xFF); 			    // 0xFF0F is the color orange
-		write8_a1(0x0F); 
-	}
-    write8_a0(0x00);    
-    //for(;;) {}                          // loop
-
+    for (i = 0; i < 76800; i++) {  // 320 * 240 = 76800 pixels
+        write8_a1(0x00);  // Black color
+        write8_a1(0x00);
+    }
+    
+    // Reset head position
+    x_head = 0;
+    y_head = 0;
+    
+    return 0;
 }
 
 void run_mac(uint8_t a, uint8_t b, uint8_t reset)
@@ -120,48 +191,16 @@ void main()
     // Initialize and display TFT
     //DC_Write(0xFF); 
     display_tft();
-    //display_tft();
+    
+    // Test coordinates for line drawing
+    uint16_t test_x = 0;
+    uint16_t test_y = 120;  // Middle of the screen vertically
+    
     for(;;)
     {
-        // set DC line high
-
-        if (0){
-        // Test case 1: 5 * 3
-        run_mac(5, 3, 0);
-        LCD_Char_1_Position(0, 0);
-        LCD_Char_1_PrintString("SW:5*3=");
-        LCD_Char_1_PrintNumber(acc_result_debug);
-        LCD_Char_1_Position(1, 0);
-        LCD_Char_1_PrintString("HW:5*3=");
-        LCD_Char_1_PrintNumber(acc_result);
-        CyDelay(2000);
-        
-        // Test case 2: 10 * 4
-        run_mac(10, 4, 0);
-        LCD_Char_1_Position(0, 0);
-        LCD_Char_1_PrintString("SW:10*4=");
-        LCD_Char_1_PrintNumber(acc_result_debug);
-        LCD_Char_1_Position(1, 0);
-        LCD_Char_1_PrintString("HW:10*4=");
-        LCD_Char_1_PrintNumber(acc_result);
-        CyDelay(2000);
-        
-        // Test case 3: 15 * 2
-        run_mac(15, 2, 0);
-        LCD_Char_1_Position(0, 0);
-        LCD_Char_1_PrintString("SW:15*2=");
-        LCD_Char_1_PrintNumber(acc_result_debug);
-        LCD_Char_1_Position(1, 0);
-        LCD_Char_1_PrintString("HW:15*2=");
-        LCD_Char_1_PrintNumber(acc_result);
-        CyDelay(2000);
-        run_mac(0, 0, 1);
         // Display ADC result
         if( ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_WAIT_FOR_RESULT) )
         {
-            LCD_Char_1_Position(0, 6);
-            LCD_Char_1_PrintString("     ");            // clean up the previous display
-            LCD_Char_1_Position(0, 6);
             adcResult = ADC_DelSig_1_GetResult16();     // read the adc and assign the value adcResult 
             
             if (adcResult & 0x8000)
@@ -173,20 +212,13 @@ void main()
                 adcResult = 0xfff;   // ignore high ADC results
             }
             
-            /* Display the raw ADC value */
-            LCD_Char_1_PrintNumber(adcResult);
-
-            /* Scale ADC result (0-0xFFF) to line length (0-32) */
-            lineLength = (adcResult * 32) / 0xFFF;
+            // Map ADC result (0-0xFFF) to screen width (0-320)
+            test_x = adcResult*240/0xFFF;
             
-            /* Clear the line area and draw new line */
-            LCD_Char_1_Position(1, 0);
-            LCD_Char_1_PrintString("                                ");  // Clear the line
-            LCD_Char_1_Position(1, 0);
-            LCD_Char_1_PrintHorizontalLine(lineLength);
-
-            CyDelay(j);                                 // delay in milliseconds
-        }
+            // Draw the line at the new position
+            draw_continuous_line(test_x, test_y);
+            
+            CyDelay(50);  // Small delay to make the movement visible
         }
     }
 }

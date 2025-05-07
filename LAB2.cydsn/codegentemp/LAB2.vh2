@@ -2,7 +2,7 @@
 --	Conversion of LAB2.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed May 07 16:42:16 2025
+--	Wed May 07 17:54:25 2025
 --
 
 USE cypress.cypress.all;
@@ -43,10 +43,12 @@ TERMINAL Net_16 : bit;
 SIGNAL tmpIO_0__Pin_1_net_0 : bit;
 TERMINAL tmpSIOVREF__Pin_1_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__Pin_1_net_0 : bit;
+TERMINAL \ADC_DelSig_1:Net_244\ : bit;
 TERMINAL \ADC_DelSig_1:Net_690\ : bit;
 TERMINAL \ADC_DelSig_1:Net_35\ : bit;
 TERMINAL \ADC_DelSig_1:Net_34\ : bit;
 TERMINAL \ADC_DelSig_1:Net_677\ : bit;
+TERMINAL \ADC_DelSig_1:Net_20\ : bit;
 SIGNAL \ADC_DelSig_1:Net_488\ : bit;
 TERMINAL \ADC_DelSig_1:Net_520\ : bit;
 SIGNAL \ADC_DelSig_1:Net_481\ : bit;
@@ -72,7 +74,6 @@ SIGNAL \ADC_DelSig_1:Net_245_0\ : bit;
 TERMINAL \ADC_DelSig_1:Net_352\ : bit;
 TERMINAL \ADC_DelSig_1:Net_257\ : bit;
 TERMINAL \ADC_DelSig_1:Net_249\ : bit;
-TERMINAL Net_17 : bit;
 SIGNAL Net_19 : bit;
 SIGNAL \ADC_DelSig_1:Net_250\ : bit;
 SIGNAL \ADC_DelSig_1:Net_252\ : bit;
@@ -627,6 +628,12 @@ Pin_1:cy_psoc3_pins_v1_10
 		out_clock_en=>one,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__Pin_1_net_0);
+\ADC_DelSig_1:vRef_2\:cy_vref_v1_0
+	GENERIC MAP(guid=>"15B3DB15-B7B3-4d62-A2DF-25EA392A7161",
+		name=>"Vssa (GND)",
+		autoenable=>'1',
+		ignoresleep=>'0')
+	PORT MAP(vout=>\ADC_DelSig_1:Net_244\);
 \ADC_DelSig_1:cy_analog_virtualmux_6_connect\:cy_connect_v1_0
 	GENERIC MAP(sig_width=>1,
 		is_net_join=>'0')
@@ -639,6 +646,17 @@ Pin_1:cy_psoc3_pins_v1_10
 		is_net_join=>'0')
 	PORT MAP(signal1=>\ADC_DelSig_1:Net_677\,
 		signal2=>\ADC_DelSig_1:Net_34\);
+\ADC_DelSig_1:AMux\:cy_psoc3_amux_v1_0
+	GENERIC MAP(cy_registers=>"",
+		muxin_width=>2,
+		hw_control=>'0',
+		one_active=>'0',
+		init_mux_sel=>"00",
+		api_type=>0,
+		connect_mode=>1)
+	PORT MAP(muxin=>(\ADC_DelSig_1:Net_690\, \ADC_DelSig_1:Net_244\),
+		hw_ctrl_en=>(others => zero),
+		vout=>\ADC_DelSig_1:Net_20\);
 \ADC_DelSig_1:DSM\:cy_psoc3_ds_mod_v4_0
 	GENERIC MAP(cy_registers=>"",
 		resolution=>12)
@@ -693,7 +711,7 @@ Pin_1:cy_psoc3_pins_v1_10
 	GENERIC MAP(sig_width=>1,
 		is_net_join=>'0')
 	PORT MAP(signal1=>\ADC_DelSig_1:Net_520\,
-		signal2=>Net_17);
+		signal2=>\ADC_DelSig_1:Net_20\);
 \ADC_DelSig_1:IRQ\:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10")
 	PORT MAP(int_signal=>Net_19);

@@ -321,6 +321,63 @@ void SetAnalogRoutingPumps(uint8 enabled)
 }
 
 #define CY_AMUX_UNUSED CYREG_BOOST_SR
+/* This is an implementation detail of the AMux. Code that depends on it may be
+   incompatible with other versions of PSoC Creator. */
+uint8 CYXDATA * const CYCODE ADC_DelSig_1_AMux__addrTable[2] = {
+	(uint8 CYXDATA *)CYREG_DSM0_SW3, 
+	(uint8 CYXDATA *)CY_AMUX_UNUSED, 
+};
+
+/* This is an implementation detail of the AMux. Code that depends on it may be
+   incompatible with other versions of PSoC Creator. */
+const uint8 CYCODE ADC_DelSig_1_AMux__maskTable[2] = {
+	0x40u, 
+	0x00u, 
+};
+
+/*******************************************************************************
+* Function Name: ADC_DelSig_1_AMux_Set
+********************************************************************************
+* Summary:
+*  This function is used to set a particular channel as active on the AMux.
+*
+* Parameters:  
+*   channel - The mux channel input to set as active
+*
+* Return:
+*   void
+*
+*******************************************************************************/
+void ADC_DelSig_1_AMux_Set(uint8 channel)
+{
+	if (channel < 2)
+	{
+		*ADC_DelSig_1_AMux__addrTable[channel] |= ADC_DelSig_1_AMux__maskTable[channel];
+	}
+}
+
+/*******************************************************************************
+* Function Name: ADC_DelSig_1_AMux_Unset
+********************************************************************************
+* Summary:
+*  This function is used to clear a particular channel from being active on the
+*  AMux.
+*
+* Parameters:  
+*   channel - The mux channel input to mark inactive
+*
+* Return:
+*   void
+*
+*******************************************************************************/
+void ADC_DelSig_1_AMux_Unset(uint8 channel)
+{
+	if (channel < 2)
+	{
+		*ADC_DelSig_1_AMux__addrTable[channel] &= (uint8)~ADC_DelSig_1_AMux__maskTable[channel];
+	}
+}
+
 
 
 /*******************************************************************************
