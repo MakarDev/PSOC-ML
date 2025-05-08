@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 1
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccVXLkDs.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 1
   29:.\Generated_Source\PSoC5/DC.c **** * Summary:
   30:.\Generated_Source\PSoC5/DC.c **** *  Assign a new value to the digital port's data output register.  
   31:.\Generated_Source\PSoC5/DC.c **** *
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 2
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccVXLkDs.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/DC.c **** * Parameters:  
@@ -93,7 +93,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 1
   45              	.L3:
   46              		.align	2
   47              	.L2:
-  48 0014 20510040 		.word	1073762592
+  48 0014 50510040 		.word	1073762640
   49              		.cfi_endproc
   50              	.LFE0:
   51              		.size	DC_Write, .-DC_Write
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 1
   53:.\Generated_Source\PSoC5/DC.c **** * Parameters:  
   54:.\Generated_Source\PSoC5/DC.c **** *  mode:  Change the pins to one of the following drive modes.
   55:.\Generated_Source\PSoC5/DC.c **** *
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 3
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccVXLkDs.s 			page 3
 
 
   56:.\Generated_Source\PSoC5/DC.c **** *  DC_DM_STRONG     Strong Drive 
@@ -155,7 +155,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 1
   75              	.L6:
   76 0012 00BF     		.align	2
   77              	.L5:
-  78 0014 15500040 		.word	1073762325
+  78 0014 2D500040 		.word	1073762349
   79              		.cfi_endproc
   80              	.LFE1:
   81              		.size	DC_SetDriveMode, .-DC_SetDriveMode
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 1
   80:.\Generated_Source\PSoC5/DC.c **** *  Read the current value on the pins of the Digital Port in right justified 
   81:.\Generated_Source\PSoC5/DC.c **** *  form.
   82:.\Generated_Source\PSoC5/DC.c **** *
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 4
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccVXLkDs.s 			page 4
 
 
   83:.\Generated_Source\PSoC5/DC.c **** * Parameters:  
@@ -209,7 +209,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 1
  101              	.L9:
  102 000a 00BF     		.align	2
  103              	.L8:
- 104 000c 21510040 		.word	1073762593
+ 104 000c 51510040 		.word	1073762641
  105              		.cfi_endproc
  106              	.LFE2:
  107              		.size	DC_Read, .-DC_Read
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 1
  111:.\Generated_Source\PSoC5/DC.c **** *  
  112:.\Generated_Source\PSoC5/DC.c **** *******************************************************************************/
  113:.\Generated_Source\PSoC5/DC.c **** uint8 DC_ReadDataReg(void) 
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 5
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccVXLkDs.s 			page 5
 
 
  114:.\Generated_Source\PSoC5/DC.c **** {
@@ -258,7 +258,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 1
  127              	.L12:
  128 000a 00BF     		.align	2
  129              	.L11:
- 130 000c 20510040 		.word	1073762592
+ 130 000c 50510040 		.word	1073762640
  131              		.cfi_endproc
  132              	.LFE3:
  133              		.size	DC_ReadDataReg, .-DC_ReadDataReg
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 1
  167 0041 02       		.uleb128 0x2
  168 0042 04       		.byte	0x4
  169 0043 05       		.byte	0x5
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 6
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccVXLkDs.s 			page 6
 
 
  170 0044 A4010000 		.4byte	.LASF4
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 1
  224 00b2 07       		.uleb128 0x7
  225 00b3 18000000 		.4byte	.LASF16
  226 00b7 01       		.byte	0x1
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 7
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccVXLkDs.s 			page 7
 
 
  227 00b8 27       		.byte	0x27
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 1
  281 0006 0B       		.uleb128 0xb
  282 0007 03       		.uleb128 0x3
  283 0008 0E       		.uleb128 0xe
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 8
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccVXLkDs.s 			page 8
 
 
  284 0009 1B       		.uleb128 0x1b
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 1
  338 003f 01       		.byte	0x1
  339 0040 3F       		.uleb128 0x3f
  340 0041 19       		.uleb128 0x19
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 9
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccVXLkDs.s 			page 9
 
 
  341 0042 03       		.uleb128 0x3
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 1
  395 0079 19       		.uleb128 0x19
  396 007a 03       		.uleb128 0x3
  397 007b 0E       		.uleb128 0xe
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 10
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccVXLkDs.s 			page 10
 
 
  398 007c 3A       		.uleb128 0x3a
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 1
  452 000b 00       		.byte	0
  453 000c 0000     		.2byte	0
  454 000e 0000     		.2byte	0
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 11
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccVXLkDs.s 			page 11
 
 
  455 0010 00000000 		.4byte	.LFB0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 1
  493      00
  494              	.LASF19:
  495 0042 44435F52 		.ascii	"DC_ReadDataReg\000"
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 12
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccVXLkDs.s 			page 12
 
 
  495      65616444 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 1
  513      63655C50 
  514              	.LASF17:
  515 0156 6D6F6465 		.ascii	"mode\000"
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc8VISfd.s 			page 13
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccVXLkDs.s 			page 13
 
 
  515      00

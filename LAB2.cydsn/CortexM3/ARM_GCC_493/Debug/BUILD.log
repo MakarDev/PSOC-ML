@@ -1,5 +1,28 @@
---------------- Build Started: 05/08/2025 11:13:13 Project: LAB2, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
+--------------- Build Started: 05/08/2025 11:49:15 Project: LAB2, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
 The code generation step is up to date.
-The compile step is up to date, no work needs to be done.
-The link step is up to date, no work needs to be done.
---------------- Build Succeeded: 05/08/2025 11:13:13 ---------------
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\main.c -o .\CortexM3\ARM_GCC_493\Debug\main.o
+.\main.c: In function 'main':
+.\main.c:212:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+         sprintf(lcd_buffer, "Sum %d*%d=%d", 
+         ^
+.\main.c:212:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+.\main.c:224:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+     sprintf(lcd_buffer, "Final Sum: %d", acc_result);
+     ^
+.\main.c:183:11: warning: unused variable 'verticalReading' [-Wunused-variable]
+     int16 verticalReading = 0;
+           ^
+.\main.c:182:12: warning: unused variable 'lineLength' [-Wunused-variable]
+     uint16 lineLength;
+            ^
+.\main.c:181:19: warning: unused variable 'j' [-Wunused-variable]
+     unsigned char j = 50;                // milliseconds delay
+                   ^
+arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_493\Debug\LAB2.a .\CortexM3\ARM_GCC_493\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_493\Debug\LCD_Char_1.o .\CortexM3\ARM_GCC_493\Debug\LCD_Char_1_PM.o .\CortexM3\ARM_GCC_493\Debug\Pin_1.o .\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1.o .\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_PM.o .\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_INT.o .\CortexM3\ARM_GCC_493\Debug\MAC_unit_1_go_to_mac.o .\CortexM3\ARM_GCC_493\Debug\MAC_unit_1_go_to_mac_PM.o .\CortexM3\ARM_GCC_493\Debug\Clock_1.o .\CortexM3\ARM_GCC_493\Debug\Pin_2.o .\CortexM3\ARM_GCC_493\Debug\LCD_Char_1_LCDPort.o .\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_Ext_CP_Clk.o .\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_IRQ.o .\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_theACLK.o .\CortexM3\ARM_GCC_493\Debug\CyBootAsmGnu.o .\CortexM3\ARM_GCC_493\Debug\CyDmac.o .\CortexM3\ARM_GCC_493\Debug\CyFlash.o .\CortexM3\ARM_GCC_493\Debug\CyLib.o .\CortexM3\ARM_GCC_493\Debug\cyPm.o .\CortexM3\ARM_GCC_493\Debug\CySpc.o .\CortexM3\ARM_GCC_493\Debug\cyutils.o .\CortexM3\ARM_GCC_493\Debug\MAC_unit_1_input_a.o .\CortexM3\ARM_GCC_493\Debug\MAC_unit_1_input_a_PM.o .\CortexM3\ARM_GCC_493\Debug\SPIM_1.o .\CortexM3\ARM_GCC_493\Debug\SPIM_1_PM.o .\CortexM3\ARM_GCC_493\Debug\SPIM_1_INT.o .\CortexM3\ARM_GCC_493\Debug\MISO.o .\CortexM3\ARM_GCC_493\Debug\MOSI.o .\CortexM3\ARM_GCC_493\Debug\SCLK.o .\CortexM3\ARM_GCC_493\Debug\SS.o .\CortexM3\ARM_GCC_493\Debug\RESET.o .\CortexM3\ARM_GCC_493\Debug\LED.o .\CortexM3\ARM_GCC_493\Debug\DC.o .\CortexM3\ARM_GCC_493\Debug\SPIM_1_IntClock.o .\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_AMux.o .\CortexM3\ARM_GCC_493\Debug\Pot_V.o .\CortexM3\ARM_GCC_493\Debug\ADC_SAR_1.o .\CortexM3\ARM_GCC_493\Debug\ADC_SAR_1_INT.o .\CortexM3\ARM_GCC_493\Debug\ADC_SAR_1_PM.o .\CortexM3\ARM_GCC_493\Debug\ADC_SAR_1_IRQ.o .\CortexM3\ARM_GCC_493\Debug\ADC_SAR_1_theACLK.o .\CortexM3\ARM_GCC_493\Debug\ADC_SAR_1_Bypass.o
+arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_493\Debug\LAB2.a
+arm-none-eabi-gcc.exe -Wl,--start-group -o .\CortexM3\ARM_GCC_493\Debug\LAB2.elf .\CortexM3\ARM_GCC_493\Debug\main.o .\CortexM3\ARM_GCC_493\Debug\tft.o .\CortexM3\ARM_GCC_493\Debug\cymetadata.o .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o .\CortexM3\ARM_GCC_493\Debug\LAB2.a "C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_493\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -g -ffunction-sections -Og -ffat-lto-objects -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_493\Debug/LAB2.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -Wl,--end-group
+cyelftool.exe -C D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\CortexM3\ARM_GCC_493\Debug\LAB2.elf --flash_row_size 256 --flash_size 262144
+cyelftool.exe -S D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\CortexM3\ARM_GCC_493\Debug\LAB2.elf
+Flash used: 73472 of 262144 bytes (28.0%).
+SRAM used: 20965 of 65536 bytes (32.0%). Stack: 16384 bytes. Heap: 4096 bytes.
+--------------- Build Succeeded: 05/08/2025 11:49:17 ---------------

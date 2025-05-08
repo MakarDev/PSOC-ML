@@ -13,19 +13,16 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="LAB2\LAB2\Generated_Source\PSoC5\ADC_SAR_1\ADC_SAR_1.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="LAB2\LAB2\Header Files">
 <ExpandedNodeIds>
 <v>LAB2</v>
 <v>LAB2\LAB2</v>
 <v>LAB2\LAB2\TopDesign</v>
 <v>LAB2\LAB2\LAB2.cydwr</v>
-<v>LAB2\LAB2\Header Files</v>
 <v>LAB2\LAB2\Header Files\device.h</v>
 <v>LAB2\LAB2\Header Files\tft.h</v>
-<v>LAB2\LAB2\Source Files</v>
 <v>LAB2\LAB2\Source Files\main.c</v>
 <v>LAB2\LAB2\Source Files\tft.c</v>
-<v>LAB2\LAB2\Generated_Source</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1\ADC_DelSig_1.c</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1\ADC_DelSig_1.h</v>
@@ -169,39 +166,11 @@
 <v>LAB2\LAB2\TopDesign</v>
 <v>LAB2\LAB2\LAB2.cydwr</v>
 <v>LAB2\LAB2\Header Files</v>
-<v>LAB2\LAB2\Header Files\device.h</v>
-<v>LAB2\LAB2\Header Files\tft.h</v>
 <v>LAB2\LAB2\Source Files</v>
-<v>LAB2\LAB2\Source Files\main.c</v>
-<v>LAB2\LAB2\Source Files\tft.c</v>
 <v>LAB2\LAB2\Generated_Source</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1_AMux</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1_IRQ</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1_theACLK</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_SAR_1</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_SAR_1\ADC_SAR_1.c</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_SAR_1\ADC_SAR_1.h</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_SAR_1\ADC_SAR_1_INT.c</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_SAR_1\ADC_SAR_1_PM.c</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_SAR_1_Bypass</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_SAR_1_IRQ</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_SAR_1_theACLK</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_SAR_1_theACLK\ADC_SAR_1_theACLK.c</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_SAR_1_theACLK\ADC_SAR_1_theACLK.h</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\Clock_1</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\cy_boot</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\DC</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\DC\DC.c</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\DC\DC.h</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\DC\DC_aliases.h</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\LCD_Char_1</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\LCD_Char_1\LCD_Char_1.c</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="LAB2\LAB2\MAC_unit\MAC_unit.cysym">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="LAB2\LAB2\MAC_unit\MAC_unit.cyudb">
 <ExpandedNodeIds>
 <v>LAB2</v>
 <v>LAB2\LAB2</v>

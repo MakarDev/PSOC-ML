@@ -181,22 +181,60 @@ void main()
     unsigned char j = 50;                // milliseconds delay
     uint16 lineLength;
     int16 verticalReading = 0;
-   // LCD_Char_1_Start();                  // initialize lcd
-   // LCD_Char_1_ClearDisplay();
-   // LCD_Char_1_PrintString("");
+    LCD_Char_1_Start();                  // initialize lcd
+    LCD_Char_1_ClearDisplay();
     
-
+    // Test cases for multiplication
+    uint8_t test_cases[][2] = {
+        {5, 6},    // 5 * 6 = 30
+        {10, 10},  // 10 * 10 = 100
+        {15, 7},   // 15 * 7 = 105
+        {8, 12}    // 8 * 12 = 96
+    };
+    
+    char lcd_buffer[16];  // Buffer for LCD display
+    int i = 0;
+    
+    // Reset MAC unit once at the start
+    run_mac(0, 0, 1);
+    
+    // Run multiplication tests with accumulation
+    //First multiplication: 5 * 6 = 30
+    //Second multiplication: 10 * 10 = 100, sum becomes 130
+    //Third multiplication: 15 * 7 = 105, sum becomes 235
+    //Fourth multiplication: 8 * 12 = 96, final sum becomes 331
+    for(i = 0; i < 4; i++) {
+        // Perform multiplication (no reset between operations)
+        run_mac(test_cases[i][0], test_cases[i][1], 0);
+        
+        // Display result on LCD
+        LCD_Char_1_ClearDisplay();
+        sprintf(lcd_buffer, "Sum %d*%d=%d", 
+                test_cases[i][0], 
+                test_cases[i][1], 
+                acc_result);
+        LCD_Char_1_PrintString(lcd_buffer);
+        
+        // Wait for 2 seconds before next test
+        CyDelay(2000);
+    }
+    
+    // Display final accumulated result
+    LCD_Char_1_ClearDisplay();
+    sprintf(lcd_buffer, "Final Sum: %d", acc_result);
+    LCD_Char_1_PrintString(lcd_buffer);
+    CyDelay(2000);
+    
+    // Continue with the rest of your original code...
     //ADC for horizontal movement
     ADC_DelSig_1_Start();                // start the ADC_DelSig_1
     ADC_DelSig_1_StartConvert();         // start the ADC_DelSig_1 conversion
 
     //ADC for vertical movement
     ADC_SAR_1_Start();            // Initialize and enable ADC
-    //ADC_SAR_1_IRQ_Enable();       // Enable ADC interrupt
     ADC_SAR_1_StartConvert();     // Start continuous ADC conversion
 
     // Initialize and display TFT
-    //DC_Write(0xFF); 
     display_tft();
     
     // Test coordinates for line drawing

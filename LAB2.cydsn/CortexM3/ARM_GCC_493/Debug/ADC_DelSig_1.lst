@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
   30:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** 
   31:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** /***************************************
   32:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** * Global data allocation
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 2
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 2
 
 
   33:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** ***************************************/
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
   87:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** * Return:
   88:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *  None
   89:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 3
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 3
 
 
   90:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *******************************************************************************/
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  144:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     #endif /* ADC_DelSig_1_DEFAULT_NUM_CONFIGS > 1 */
  145:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     #if(ADC_DelSig_1_DEFAULT_NUM_CONFIGS > 2)
  146:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         ADC_DelSig_1_GainCompensation(ADC_DelSig_1_CFG3_INPUT_RANGE,
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 4
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 4
 
 
  147:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****                                           ADC_DelSig_1_CFG3_IDEAL_DEC_GAIN,
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  201:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     /* Disable PRES, Enable power to VCMBUF0, REFBUF0 and REFBUF1, enable PRES */
  202:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     ADC_DelSig_1_RESET_CR4_REG |= ADC_DelSig_1_IGNORE_PRESA1;
  203:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     ADC_DelSig_1_RESET_CR5_REG |= ADC_DelSig_1_IGNORE_PRESA2;
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 5
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 5
 
 
  204:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  258:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****              ((ADC_DelSig_1_CFG4_REFERENCE != ADC_DelSig_1_EXT_REF_ON_P03) &&
  259:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****              (ADC_DelSig_1_CFG4_REFERENCE != ADC_DelSig_1_EXT_REF_ON_P32))))
  260:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         {
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 6
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 6
 
 
  261:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****             /* Enable the REFBUF1 */
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  315:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *  ADC_DelSig_1_SelectConfiguration( ) function has been called to change
  316:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *  the default setting.
  317:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 7
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 7
 
 
  318:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** * Parameters:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  372:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****        enable PRES */
  373:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     ADC_DelSig_1_RESET_CR4_REG |= ADC_DelSig_1_IGNORE_PRESA1;
  374:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     ADC_DelSig_1_RESET_CR5_REG |= ADC_DelSig_1_IGNORE_PRESA2;
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 8
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 8
 
 
  375:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  429:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** void ADC_DelSig_1_SetBufferGain(uint8 gain) 
  430:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** {
  431:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     uint8 tmpReg;
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 9
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 9
 
 
  432:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     tmpReg = ADC_DelSig_1_DSM_BUF1_REG & (uint8)~ADC_DelSig_1_DSM_GAIN_MASK;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  486:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *  0xFFFF -> 1.99997
  487:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *  When executing the function, the old GCOR value is multiplied by
  488:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *  gainAdjust and reloaded into the GCOR register.
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 10
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 10
 
 
  489:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  543:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *  (Actual GCOR value = 0x0812, returned value = 0x8120)
  544:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *
  545:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** * Parameters:
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 11
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 11
 
 
  546:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *  None
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  600:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *  conversion.
  601:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *
  602:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** * Parameters:
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 12
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 12
 
 
  603:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *  None
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  657:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         else
  658:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         {
  659:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****             status = ADC_DelSig_1_DEC_SR_REG & ADC_DelSig_1_DEC_CONV_DONE;
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 13
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 13
 
 
  660:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         }
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  714:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     {
  715:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         ADC_DelSig_1_convDone = 0u;
  716:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     }
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 14
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 14
 
 
  717:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     return (result);
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  771:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         {   /* Dummy read of the MSB byte to unlock the coherency */
  772:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****             (void)ADC_DelSig_1_DEC_SAMPH_REG;
  773:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         }
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 15
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 15
 
 
  774:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     }
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  828:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****             result = (result << 16u) | (CY_GET_REG16(ADC_DelSig_1_DEC_SAMP_16B_PTR));
  829:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         #endif /* CY_PSOC3 */
  830:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     }
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 16
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 16
 
 
  831:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     else if(coherency == ADC_DelSig_1_DEC_SAMP_KEY_MID)
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  885:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** * Return:
  886:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *  None
  887:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 17
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 17
 
 
  888:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** * Global variables:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  942:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *
  943:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** * Summary:
  944:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *  Converts the ADC counts output to mVolts as a 16-bit integer. For
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 18
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 18
 
 
  945:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *  example, if the ADC measured 0.534 volts, the return value would
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  999:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** 
 1000:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** /*******************************************************************************
 1001:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** * Function Name: ADC_DelSig_1_CountsTo_Volts
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 19
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 19
 
 
 1002:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** ********************************************************************************
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
 1056:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** 
 1057:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     return( Volts );
 1058:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** }
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 20
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 20
 
 
 1059:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
 1113:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         resolution = ADC_DelSig_1_CFG3_RESOLUTION;
 1114:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         #if(ADC_DelSig_1_CFG3_DEC_DIV != 0)
 1115:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****             adcCounts /= ADC_DelSig_1_CFG3_DEC_DIV;
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 21
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 21
 
 
 1116:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         #endif /* ADC_DelSig_1_CFG3_DEC_DIV */
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
 1170:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****                 coefB = ADC_DelSig_1_DIVISOR_32;
 1171:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****                 break;
 1172:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         #endif /* ADC_DelSig_1__BITS_16 */    
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 22
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 22
 
 
 1173:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         #if( (ADC_DelSig_1_CFG1_RESOLUTION == ADC_DelSig_1__BITS_17) || \
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
 1227:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *  Initializes all registers based on customizer settings
 1228:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *
 1229:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** * Parameters:
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 23
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 23
 
 
 1230:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *   void
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
 1284:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         #if(ADC_DelSig_1_DEFAULT_INPUT_MODE)
 1285:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****             #if (ADC_DelSig_1_CFG1_INPUT_RANGE == ADC_DelSig_1_IR_VSSA_TO_2VREF)
 1286:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****                 ADC_DelSig_1_AMux_Select(1u);
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 24
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 24
 
 
 1287:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****             #else
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
 1341:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****             /* Set DSM_REF0_REG by disabling and enabling the PRESS cirucit */
 1342:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****             ADC_DelSig_1_SetDSMRef0Reg(ADC_DelSig_1_CFG2_DSM_REF0);
 1343:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****             ADC_DelSig_1_DSM_REF2_REG    = ADC_DelSig_1_CFG2_DSM_REF2;
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 25
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 25
 
 
 1344:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****             ADC_DelSig_1_DSM_REF3_REG    = ADC_DelSig_1_CFG2_DSM_REF3;
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
 1398:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****             ADC_DelSig_1_DEC_OCORM_REG   = ADC_DelSig_1_CFG3_DEC_OCORM;
 1399:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****             ADC_DelSig_1_DEC_OCORH_REG   = ADC_DelSig_1_CFG3_DEC_OCORH;
 1400:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****             ADC_DelSig_1_DEC_COHER_REG   = ADC_DelSig_1_CFG3_DEC_COHER;
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 26
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 26
 
 
 1401:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** 
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
 1455:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     #endif /* ADC_DelSig_1_DEFAULT_NUM_CONFIGS > 2 */
 1456:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** 
 1457:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     #if(ADC_DelSig_1_DEFAULT_NUM_CONFIGS > 3)
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 27
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 27
 
 
 1458:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         if (config == 4u)
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
 1512:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** 
 1513:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****             ADC_DelSig_1_Ext_CP_Clk_SetDividerRegister(ADC_DelSig_1_CFG4_CP_CLK_DIVIDER, 1u);
 1514:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** 
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 28
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 28
 
 
 1515:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****             /* This is only valid if there is an internal clock */
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
 1569:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         /* Stop the ADC  */
 1570:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         ADC_DelSig_1_Stop();
 1571:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** 
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 29
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 29
 
 
 1572:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         /* Set the  ADC registers based on the configuration */
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
   32              		.cfi_def_cfa_offset 8
   33              		.cfi_offset 4, -8
   34              		.cfi_offset 14, -4
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 30
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 30
 
 
   35 0002 9DF80840 		ldrb	r4, [sp, #8]	@ zero_extendqisi2
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
   70 002a 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
   71              	.LVL4:
   72 002c 18E0     		b	.L3
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 31
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 31
 
 
   73              	.LVL5:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  103 0048 1C48     		ldr	r0, .L18+20
  104 004a 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
  105              	.LVL12:
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 32
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 32
 
 
  106 004c 08E0     		b	.L3
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
 1686:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         gcorValue = (uint16)(gcorTmp / ADC_DelSig_1_IDEAL_GAIN_CONST);
  137              		.loc 1 1686 0
  138 006a C90B     		lsrs	r1, r1, #15
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 33
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 33
 
 
  139              	.LVL21:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
 1704:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         /* Halt CPU in debug mode if config is out of valid range */
 1705:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         CYASSERT(0u != 0u);
  176              		.loc 1 1705 0 discriminator 1
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 34
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 34
 
 
  177 00a0 0020     		movs	r0, #0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  211              		.cfi_def_cfa_offset 24
  212              		.cfi_offset 3, -24
  213              		.cfi_offset 4, -20
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 35
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 35
 
 
  214              		.cfi_offset 5, -16
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  253 003e F8BD     		pop	{r3, r4, r5, r6, r7, pc}
  254              	.LVL38:
  255              	.L23:
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 36
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 36
 
 
  256              		.align	2
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  302              		.loc 1 1252 0
  303 001e 0024     		movs	r4, #0
  304 0020 0133     		adds	r3, r3, #1
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 37
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 37
 
 
  305 0022 1C70     		strb	r4, [r3]
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  347 0060 0133     		adds	r3, r3, #1
  348 0062 1A70     		strb	r2, [r3]
 1266:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         ADC_DelSig_1_DSM_CR14_REG    = ADC_DelSig_1_CFG1_DSM_CR14;
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 38
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 38
 
 
  349              		.loc 1 1266 0
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  391              		.loc 1 1288 0
  392 009e 2046     		mov	r0, r4
  393 00a0 FFF7FEFF 		bl	ADC_DelSig_1_AMux_Select
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 39
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 39
 
 
  394              	.LVL42:
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  443              		.cfi_startproc
  444              		@ args = 0, pretend = 0, frame = 0
  445              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 40
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 40
 
 
  446 0000 F0B5     		push	{r4, r5, r6, r7, lr}
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  114:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** 
  491              		.loc 1 114 0
  492 003c 1E4B     		ldr	r3, .L32+16
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 41
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 41
 
 
  493 003e 1C70     		strb	r4, [r3]
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  536 008a 13F8022C 		ldrb	r2, [r3, #-2]	@ zero_extendqisi2
  537 008e 0B4B     		ldr	r3, .L32+20
  538 0090 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 42
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 42
 
 
  162:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** 
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  588 0006 0646     		mov	r6, r0
  589              	.LVL53:
  191:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 43
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 43
 
 
  590              		.loc 1 191 0
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  275:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** 
  635              		.loc 1 275 0
  636 005c 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 44
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 44
 
 
  637 005e 03F0FD03 		and	r3, r3, #253
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  682 00b2 00BF     		.align	2
  683              	.L36:
  684 00b4 00000000 		.word	.LANCHOR1
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 45
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 45
 
 
  685 00b8 AA430040 		.word	1073759146
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  733 0020 08BD     		pop	{r3, pc}
  734              	.L43:
  735 0022 00BF     		.align	2
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 46
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 46
 
 
  736              	.L42:
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  376:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     ADC_DelSig_1_DSM_REF0_REG &= (uint8)~ADC_DelSig_1_DSM_EN_BUF_VREF_INN;
  784              		.loc 1 376 0
  785 0030 02F52962 		add	r2, r2, #2704
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 47
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 47
 
 
  786 0034 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  830 008a A2F5A652 		sub	r2, r2, #5312
  831 008e 163A     		subs	r2, r2, #22
  832 0090 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 48
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 48
 
 
  833 0092 03F0FE03 		and	r3, r3, #254
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  881              		.loc 1 430 0
  882              		.cfi_startproc
  883              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 49
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 49
 
 
  884              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  471:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** }
  932              		.loc 1 471 0
  933 000e 1070     		strb	r0, [r2]
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 50
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 50
 
 
  934 0010 7047     		bx	lr
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  984              	.LVL79:
  515:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     {
  985              		.loc 1 515 0
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 51
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 51
 
 
  986 0024 FFF7FEFF 		bl	__aeabi_f2d
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  1033              		.cfi_endproc
  1034              	.LFE6:
  1035              		.size	ADC_DelSig_1_SetGCOR, .-ADC_DelSig_1_SetGCOR
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 52
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 52
 
 
  1036 0074 AFF30080 		.section	.text.ADC_DelSig_1_ReadGCOR,"ax",%progbits
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  1084              		.thumb_func
  1085              		.type	ADC_DelSig_1_StartConvert, %function
  1086              	ADC_DelSig_1_StartConvert:
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 53
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 53
 
 
  1087              	.LFB8:
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  1137              		.type	ADC_DelSig_1_IsEndConversion, %function
  1138              	ADC_DelSig_1_IsEndConversion:
  1139              	.LFB10:
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 54
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 54
 
 
  645:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     uint8 status;
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  1187              		.global	ADC_DelSig_1_GetResult8
  1188              		.thumb
  1189              		.thumb_func
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 55
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 55
 
 
  1190              		.type	ADC_DelSig_1_GetResult8, %function
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  718:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** 
  1235              		.loc 1 718 0
  1236 002e 40B2     		sxtb	r0, r0
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 56
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 56
 
 
  1237 0030 7047     		bx	lr
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  1285 001a 0878     		ldrb	r0, [r1]	@ zero_extendqisi2
  1286 001c 42EA0020 		orr	r0, r2, r0, lsl #8
  1287              	.LVL110:
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 57
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 57
 
 
  770:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****         {   /* Dummy read of the MSB byte to unlock the coherency */
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  1335 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  1336 0004 03F00303 		and	r3, r3, #3
  1337              	.LVL112:
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 58
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 58
 
 
  816:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     {   /*  Use default method to read result registers i.e. LSB byte read at the end*/
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  1383 003c 074A     		ldr	r2, .L94+4
  1384 003e 1088     		ldrh	r0, [r2]
  1385 0040 43EA0040 		orr	r0, r3, r0, lsl #16
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 59
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 59
 
 
  1386              	.LVL124:
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  1435              		.size	ADC_DelSig_1_SetOffset, .-ADC_DelSig_1_SetOffset
  1436              		.section	.text.ADC_DelSig_1_SetGain,"ax",%progbits
  1437              		.align	2
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 60
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 60
 
 
  1438              		.global	ADC_DelSig_1_SetGain
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  1487              	.LVL130:
  997:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** 
  1488              		.loc 1 997 0
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 61
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 61
 
 
  1489 0016 00B2     		sxth	r0, r0
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  1539              		.align	2
  1540              	.L107:
  1541 0020 00000000 		.word	ADC_DelSig_1_Offset
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 62
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 62
 
 
  1542 0024 00000000 		.word	ADC_DelSig_1_CountsPerVolt
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  1589              	.LVL138:
 1126:.\Generated_Source\PSoC5/ADC_DelSig_1.c ****     {
  1590              		.loc 1 1126 0
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 63
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 63
 
 
  1591 0024 0C2B     		cmp	r3, #12
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  1635              	.LVL146:
  1636 005e 5DF8044B 		ldr	r4, [sp], #4
  1637              		.cfi_restore 4
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 64
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 64
 
 
  1638              		.cfi_def_cfa_offset 0
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  1687 0018 1C70     		strb	r4, [r3]
 1570:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** 
  1688              		.loc 1 1570 0
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 65
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 65
 
 
  1689 001a FFF7FEFF 		bl	ADC_DelSig_1_Stop
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  1736              		.align	2
  1737              		.global	ADC_DelSig_1_Read8
  1738              		.thumb
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 66
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 66
 
 
  1739              		.thumb_func
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  1763              		.loc 1 1770 0
  1764 0016 FFF7FEFF 		bl	ADC_DelSig_1_GetResult8
  1765              	.LVL158:
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 67
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 67
 
 
  1766 001a 0446     		mov	r4, r0
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  1794 0000 10B5     		push	{r4, lr}
  1795              		.cfi_def_cfa_offset 8
  1796              		.cfi_offset 4, -8
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 68
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 68
 
 
  1797              		.cfi_offset 14, -4
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
 1811:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** * Function Name: ADC_DelSig_1_Read32
 1812:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** ********************************************************************************
 1813:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** *
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 69
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 69
 
 
 1814:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** * Summary:
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
 1840:.\Generated_Source\PSoC5/ADC_DelSig_1.c **** }
  1865              		.loc 1 1840 0
  1866 0020 2046     		mov	r0, r4
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 70
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 70
 
 
  1867 0022 10BD     		pop	{r4, pc}
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  1921              	.Ldebug_info0:
  1922 0000 760A0000 		.4byte	0xa76
  1923 0004 0400     		.2byte	0x4
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 71
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 71
 
 
  1924 0006 00000000 		.4byte	.Ldebug_abbrev0
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  1978 0072 04       		.uleb128 0x4
  1979 0073 43010000 		.4byte	.LASF10
  1980 0077 02       		.byte	0x2
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 72
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 72
 
 
  1981 0078 9201     		.2byte	0x192
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  2035 00f6 04       		.uleb128 0x4
  2036 00f7 98020000 		.4byte	.LASF21
  2037 00fb 02       		.byte	0x2
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 73
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 73
 
 
  2038 00fc 3E02     		.2byte	0x23e
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  2092 016f 00000000 		.4byte	.LLST0
  2093 0173 0C       		.uleb128 0xc
  2094 0174 D3030000 		.4byte	.LASF28
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 74
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 74
 
 
  2095 0178 01       		.byte	0x1
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  2149 0201 00       		.byte	0
  2150 0202 00       		.byte	0
  2151 0203 0B       		.uleb128 0xb
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 75
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 75
 
 
  2152 0204 BC040000 		.4byte	.LASF37
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  2206 027d 9F040000 		.4byte	.LASF31
  2207 0281 01       		.byte	0x1
  2208 0282 DA04     		.2byte	0x4da
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 76
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 76
 
 
  2209 0284 72000000 		.4byte	0x72
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  2263 02e4 02       		.uleb128 0x2
  2264 02e5 08       		.byte	0x8
  2265 02e6 B6       		.byte	0xb6
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 77
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 77
 
 
  2266 02e7 00       		.byte	0
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  2320 034a 00       		.byte	0
  2321 034b 11       		.uleb128 0x11
  2322 034c 84000000 		.4byte	.LVL50
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 78
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 78
 
 
  2323 0350 4D010000 		.4byte	0x14d
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  2377 03a9 72000000 		.4byte	0x72
  2378 03ad 47020000 		.4byte	.LLST12
  2379 03b1 10       		.uleb128 0x10
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 79
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 79
 
 
  2380 03b2 06000000 		.4byte	.LVL52
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  2434 042d 10       		.uleb128 0x10
  2435 042e 06000000 		.4byte	.LVL60
  2436 0432 C1090000 		.4byte	0x9c1
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 80
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 80
 
 
  2437 0436 11       		.uleb128 0x11
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  2491 04ac 01       		.byte	0x1
  2492 04ad D101     		.2byte	0x1d1
  2493 04af 72000000 		.4byte	0x72
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 81
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 81
 
 
  2494 04b3 AC020000 		.4byte	.LLST16
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  2548 053e 6E050000 		.4byte	.LASF55
  2549 0542 01       		.byte	0x1
  2550 0543 2A02     		.2byte	0x22a
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 82
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 82
 
 
  2551 0545 72000000 		.4byte	0x72
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  2605 05cd 48000000 		.4byte	.LFE11-.LFB11
  2606 05d1 01       		.uleb128 0x1
  2607 05d2 9C       		.byte	0x9c
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 83
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 83
 
 
  2608 05d3 F6050000 		.4byte	0x5f6
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  2662 065b 0D       		.uleb128 0xd
  2663 065c 42030000 		.4byte	.LASF49
  2664 0660 01       		.byte	0x1
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 84
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 84
 
 
  2665 0661 2803     		.2byte	0x328
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  2719 06e0 19       		.uleb128 0x19
  2720 06e1 8B020000 		.4byte	.LASF70
  2721 06e5 01       		.byte	0x1
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 85
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 85
 
 
  2722 06e6 C303     		.2byte	0x3c3
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  2776 0768 4304     		.2byte	0x443
  2777 076a AE000000 		.4byte	0xae
  2778 076e 9E050000 		.4byte	.LLST35
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 86
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 86
 
 
  2779 0772 0D       		.uleb128 0xd
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  2833 07f8 0E       		.uleb128 0xe
  2834 07f9 4E000000 		.4byte	.LVL155
  2835 07fd B0090000 		.4byte	0x9b0
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 87
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 87
 
 
  2836 0801 0F       		.uleb128 0xf
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  2890 087c DB060000 		.4byte	.LASF61
  2891 0880 01       		.byte	0x1
  2892 0881 0507     		.2byte	0x705
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 88
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 88
 
 
  2893 0883 A2000000 		.4byte	0xa2
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  2947 0909 10       		.uleb128 0x10
  2948 090a 20000000 		.4byte	.LVL172
  2949 090e 70050000 		.4byte	0x570
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 89
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 89
 
 
  2950 0912 00       		.byte	0
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  3004 0984 03       		.byte	0x3
  3005 0985 00000000 		.4byte	ADC_DelSig_1_Config
  3006 0989 1E       		.uleb128 0x1e
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 90
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 90
 
 
  3007 098a BA030000 		.4byte	.LASF88
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  3061 09ff 1F       		.uleb128 0x1f
  3062 0a00 60020000 		.4byte	.LASF94
  3063 0a04 06       		.byte	0x6
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 91
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 91
 
 
  3064 0a05 2F       		.byte	0x2f
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  3118              		.section	.debug_abbrev,"",%progbits
  3119              	.Ldebug_abbrev0:
  3120 0000 01       		.uleb128 0x1
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 92
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 92
 
 
  3121 0001 11       		.uleb128 0x11
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  3175 0037 35       		.uleb128 0x35
  3176 0038 00       		.byte	0
  3177 0039 49       		.uleb128 0x49
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 93
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 93
 
 
  3178 003a 13       		.uleb128 0x13
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  3232 0070 3B       		.uleb128 0x3b
  3233 0071 0B       		.uleb128 0xb
  3234 0072 49       		.uleb128 0x49
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 94
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 94
 
 
  3235 0073 13       		.uleb128 0x13
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  3289 00aa 00       		.byte	0
  3290 00ab 00       		.byte	0
  3291 00ac 0E       		.uleb128 0xe
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 95
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 95
 
 
  3292 00ad 898201   		.uleb128 0x4109
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  3346 00ec 40       		.uleb128 0x40
  3347 00ed 18       		.uleb128 0x18
  3348 00ee 9742     		.uleb128 0x2117
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 96
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 96
 
 
  3349 00f0 19       		.uleb128 0x19
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  3403 0127 01       		.uleb128 0x1
  3404 0128 13       		.uleb128 0x13
  3405 0129 00       		.byte	0
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 97
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 97
 
 
  3406 012a 00       		.byte	0
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  3460 0162 00       		.byte	0
  3461 0163 18       		.uleb128 0x18
  3462 0164 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 98
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 98
 
 
  3463 0165 00       		.byte	0
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  3517 019c 49       		.uleb128 0x49
  3518 019d 13       		.uleb128 0x13
  3519 019e 01       		.uleb128 0x1
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 99
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 99
 
 
  3520 019f 13       		.uleb128 0x13
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  3574 01d5 0B       		.uleb128 0xb
  3575 01d6 27       		.uleb128 0x27
  3576 01d7 19       		.uleb128 0x19
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 100
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 100
 
 
  3577 01d8 3C       		.uleb128 0x3c
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  3631 020e 2E       		.uleb128 0x2e
  3632 020f 01       		.byte	0x1
  3633 0210 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 101
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 101
 
 
  3634 0211 19       		.uleb128 0x19
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  3688 0057 A5000000 		.4byte	.LVL31-1
  3689 005b 0100     		.2byte	0x1
  3690 005d 51       		.byte	0x51
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 102
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 102
 
 
  3691 005e A5000000 		.4byte	.LVL31-1
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  3745 00dd 01       		.uleb128 0x1
  3746 00de 53       		.byte	0x53
  3747 00df 9F       		.byte	0x9f
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 103
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 103
 
 
  3748 00e0 A0000000 		.4byte	.LVL29
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  3802 016c 0100     		.2byte	0x1
  3803 016e 50       		.byte	0x50
  3804 016f 56000000 		.4byte	.LVL14
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 104
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 104
 
 
  3805 0173 58000000 		.4byte	.LVL15
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  3859 0200 00000000 		.4byte	0
  3860 0204 00000000 		.4byte	0
  3861              	.LLST10:
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 105
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 105
 
 
  3862 0208 0A000000 		.4byte	.LVL35
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  3916 0292 10000000 		.4byte	.LVL68
  3917 0296 0100     		.2byte	0x1
  3918 0298 53       		.byte	0x53
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 106
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 106
 
 
  3919 0299 10000000 		.4byte	.LVL68
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  3973 0321 0A00     		.2byte	0xa
  3974 0323 73       		.byte	0x73
  3975 0324 00       		.sleb128 0
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 107
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 107
 
 
  3976 0325 32       		.byte	0x32
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  4030 03a7 00000000 		.4byte	0
  4031 03ab 00000000 		.4byte	0
  4032              	.LLST22:
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 108
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 108
 
 
  4033 03af 06000000 		.4byte	.LVL90
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  4087 043d 12000000 		.4byte	.LVL107
  4088 0441 14000000 		.4byte	.LVL108
  4089 0445 0100     		.2byte	0x1
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 109
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 109
 
 
  4090 0447 50       		.byte	0x50
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  4144 04cb 44000000 		.4byte	.LVL124
  4145 04cf 0100     		.2byte	0x1
  4146 04d1 53       		.byte	0x53
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 110
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 110
 
 
  4147 04d2 44000000 		.4byte	.LVL124
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  4201 055e 4C000000 		.4byte	.LVL144
  4202 0562 0100     		.2byte	0x1
  4203 0564 50       		.byte	0x50
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 111
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 111
 
 
  4204 0565 4C000000 		.4byte	.LVL144
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  4258 05ea 53       		.byte	0x53
  4259 05eb 00000000 		.4byte	0
  4260 05ef 00000000 		.4byte	0
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 112
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 112
 
 
  4261              	.LLST38:
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  4315 0671 54       		.byte	0x54
  4316 0672 00000000 		.4byte	0
  4317 0676 00000000 		.4byte	0
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 113
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 113
 
 
  4318              	.LLST41:
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  4372 0070 00000000 		.4byte	.LFB9
  4373 0074 10000000 		.4byte	.LFE9-.LFB9
  4374 0078 00000000 		.4byte	.LFB10
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 114
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 114
 
 
  4375 007c 30000000 		.4byte	.LFE10-.LFB10
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  4429 0064 10000000 		.4byte	.LFE9
  4430 0068 00000000 		.4byte	.LFB10
  4431 006c 30000000 		.4byte	.LFE10
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 115
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 115
 
 
  4432 0070 00000000 		.4byte	.LFB11
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  4470      6E747350 
  4471              	.LASF95:
  4472 0049 4144435F 		.ascii	"ADC_DelSig_1_theACLK_SetDividerRegister\000"
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 116
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 116
 
 
  4472      44656C53 
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  4493              	.LASF81:
  4494 0120 4144435F 		.ascii	"ADC_DelSig_1_Read32\000"
  4494      44656C53 
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 117
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 117
 
 
  4494      69675F31 
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  4522      69675F31 
  4522      5F696E69 
  4522      74566172 
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 118
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 118
 
 
  4523              	.LASF6:
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  4546      44656C53 
  4546      69675F31 
  4546      5F436F75 
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 119
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 119
 
 
  4546      6E747354 
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  4568      69675F31 
  4568      5F457874 
  4568      5F43505F 
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 120
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 120
 
 
  4569              	.LASF26:
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  4593              	.LASF56:
  4594 0429 4144435F 		.ascii	"ADC_DelSig_1_StartConvert\000"
  4594      44656C53 
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 121
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 121
 
 
  4594      69675F31 
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  4620      657400
  4621              	.LASF97:
  4622 04de 4144435F 		.ascii	"ADC_DelSig_1_theACLK_SetModeRegister\000"
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 122
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 122
 
 
  4622      44656C53 
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  4641              	.LASF50:
  4642 060a 6761696E 		.ascii	"gainAdjust\000"
  4642      41646A75 
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 123
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 123
 
 
  4642      737400
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 1
  4662      643800
  4663              	.LASF61:
  4664 06db 72657375 		.ascii	"result\000"
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cczNpM6r.s 			page 124
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccs8ltt0.s 			page 124
 
 
  4664      6C7400

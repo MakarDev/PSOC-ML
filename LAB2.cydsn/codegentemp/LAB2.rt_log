@@ -14,11 +14,11 @@ I1204: Reading architecture from file C:\Program Files (x86)\Cypress\PSoC Creato
 I1206: Completed Reading of file C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\dev/psoc5/psoc5lp/route_arch-rrg.cydata
 I1209: Started routing
 I1223: Total Nets : 39 
-I1212: Iteration  1 :    24 unrouted : 0 seconds
-I1212: Iteration  2 :     8 unrouted : 0 seconds
-I1212: Iteration  3 :     4 unrouted : 0 seconds
-I1212: Iteration  4 :     2 unrouted : 0 seconds
-I1212: Iteration  5 :     2 unrouted : 0 seconds
+I1212: Iteration  1 :    26 unrouted : 0 seconds
+I1212: Iteration  2 :    15 unrouted : 0 seconds
+I1212: Iteration  3 :     5 unrouted : 0 seconds
+I1212: Iteration  4 :     5 unrouted : 0 seconds
+I1212: Iteration  5 :     4 unrouted : 0 seconds
 I1212: Iteration  6 :     2 unrouted : 0 seconds
 I1212: Iteration  7 :     2 unrouted : 0 seconds
 I1212: Iteration  8 :     2 unrouted : 0 seconds
