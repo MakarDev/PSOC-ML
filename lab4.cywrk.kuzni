@@ -353,6 +353,12 @@
 <name v=".\LAB2.cydsn\LAB2.cydwr" />
 <name v=".\LAB2.cydsn\tft.c" />
 <name v=".\LAB2.cydsn\tft.h" />
+<name v=".\LAB2.cydsn\Generated_Source\PSoC5\LCD_Char_1.c" />
+<name v=".\LAB2.cydsn\Generated_Source\PSoC5\LCD_Char_1_LCDPort.c" />
+<name v=".\LAB2.cydsn\Generated_Source\PSoC5\DC.c" />
+<name v=".\LAB2.cydsn\Generated_Source\PSoC5\DC_aliases.h" />
+<name v=".\LAB2.cydsn\Generated_Source\PSoC5\DC.h" />
+<name v=".\LAB2.cydsn\Generated_Source\PSoC5\SPIM_1.c" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />
