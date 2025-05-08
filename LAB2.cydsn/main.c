@@ -98,7 +98,6 @@ void draw_continuous_line(uint16_t x_in, uint16_t y_in) {
 
 int display_tft()
 {
-    CyGlobalIntEnable;                  // Enable global interrupts
     SPIM_1_Start();                     // initialize SPIM component
     
     tftStart();                         // initialize the TFT display
@@ -177,16 +176,24 @@ void LCD_Char_1_PrintHorizontalLine(uint16 length)
 
 void main()
 {
+    CyGlobalIntEnable;                  // Enable global interrupts
     /* Declare all variables at the start of the block */
     unsigned char j = 50;                // milliseconds delay
     uint16 lineLength;
-
+    int16 verticalReading = 0;
    // LCD_Char_1_Start();                  // initialize lcd
    // LCD_Char_1_ClearDisplay();
    // LCD_Char_1_PrintString("");
     
+
+    //ADC for horizontal movement
     ADC_DelSig_1_Start();                // start the ADC_DelSig_1
     ADC_DelSig_1_StartConvert();         // start the ADC_DelSig_1 conversion
+
+    //ADC for vertical movement
+    ADC_SAR_1_Start();            // Initialize and enable ADC
+    //ADC_SAR_1_IRQ_Enable();       // Enable ADC interrupt
+    ADC_SAR_1_StartConvert();     // Start continuous ADC conversion
 
     // Initialize and display TFT
     //DC_Write(0xFF); 
@@ -214,6 +221,27 @@ void main()
             
             // Map ADC result (0-0xFFF) to screen width (0-320)
             test_x = adcResult*240/0xFFF;
+            
+            // Draw the line at the new position
+            draw_continuous_line(test_x, test_y);
+            
+            CyDelay(50);  // Small delay to make the movement visible
+        }
+        if( ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT) )
+        {
+            adcResult = ADC_SAR_1_GetResult16();     // read the adc and assign the value adcResult 
+            
+            if (adcResult & 0x8000)
+            {
+                adcResult = 0;       // ignore negative ADC results
+            }
+            else if (adcResult >= 0xfff)
+            {
+                adcResult = 0xfff;   // ignore high ADC results
+            }
+            
+            // Map ADC result (0-0xFFF) to screen width (0-320)
+            test_y = adcResult*240/0xFFF;
             
             // Draw the line at the new position
             draw_continuous_line(test_x, test_y);

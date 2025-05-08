@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 1
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 1
 
 
    1              		.syntax unified
@@ -26,107 +26,107 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 1
   23              		.section	.cyconfigecc,"a",%progbits
   24              		.align	2
   25              		.type	cy_meta_configecc, %object
-  26              		.size	cy_meta_configecc, 876
+  26              		.size	cy_meta_configecc, 928
   27              	cy_meta_configecc:
   28 0000 04       		.byte	4
   29 0001 52       		.byte	82
   30 0002 00       		.byte	0
   31 0003 40       		.byte	64
   32 0004 01       		.byte	1
-  33 0005 64       		.byte	100
+  33 0005 5B       		.byte	91
   34 0006 00       		.byte	0
   35 0007 40       		.byte	64
-  36 0008 26       		.byte	38
-  37 0009 02       		.byte	2
-  38 000a 01       		.byte	1
+  36 0008 01       		.byte	1
+  37 0009 64       		.byte	100
+  38 000a 00       		.byte	0
   39 000b 40       		.byte	64
-  40 000c 12       		.byte	18
-  41 000d 03       		.byte	3
+  40 000c 2A       		.byte	42
+  41 000d 02       		.byte	2
   42 000e 01       		.byte	1
   43 000f 40       		.byte	64
-  44 0010 04       		.byte	4
-  45 0011 04       		.byte	4
+  44 0010 14       		.byte	20
+  45 0011 03       		.byte	3
   46 0012 01       		.byte	1
   47 0013 40       		.byte	64
-  48 0014 01       		.byte	1
-  49 0015 05       		.byte	5
+  48 0014 04       		.byte	4
+  49 0015 0B       		.byte	11
   50 0016 01       		.byte	1
   51 0017 40       		.byte	64
-  52 0018 02       		.byte	2
-  53 0019 07       		.byte	7
+  52 0018 11       		.byte	17
+  53 0019 0C       		.byte	12
   54 001a 01       		.byte	1
   55 001b 40       		.byte	64
-  56 001c 01       		.byte	1
-  57 001d 09       		.byte	9
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 2
+  56 001c 44       		.byte	68
+  57 001d 0D       		.byte	13
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 2
 
 
   58 001e 01       		.byte	1
   59 001f 40       		.byte	64
-  60 0020 03       		.byte	3
-  61 0021 0B       		.byte	11
+  60 0020 45       		.byte	69
+  61 0021 0E       		.byte	14
   62 0022 01       		.byte	1
   63 0023 40       		.byte	64
-  64 0024 46       		.byte	70
-  65 0025 0C       		.byte	12
+  64 0024 2E       		.byte	46
+  65 0025 0F       		.byte	15
   66 0026 01       		.byte	1
   67 0027 40       		.byte	64
-  68 0028 3D       		.byte	61
-  69 0029 0D       		.byte	13
+  68 0028 02       		.byte	2
+  69 0029 15       		.byte	21
   70 002a 01       		.byte	1
   71 002b 40       		.byte	64
-  72 002c 0D       		.byte	13
-  73 002d 0E       		.byte	14
+  72 002c 02       		.byte	2
+  73 002d 1B       		.byte	27
   74 002e 01       		.byte	1
   75 002f 40       		.byte	64
-  76 0030 30       		.byte	48
-  77 0031 0F       		.byte	15
+  76 0030 02       		.byte	2
+  77 0031 40       		.byte	64
   78 0032 01       		.byte	1
   79 0033 40       		.byte	64
-  80 0034 01       		.byte	1
-  81 0035 15       		.byte	21
+  80 0034 05       		.byte	5
+  81 0035 41       		.byte	65
   82 0036 01       		.byte	1
   83 0037 40       		.byte	64
   84 0038 01       		.byte	1
-  85 0039 1B       		.byte	27
+  85 0039 42       		.byte	66
   86 003a 01       		.byte	1
   87 003b 40       		.byte	64
-  88 003c 04       		.byte	4
-  89 003d 41       		.byte	65
+  88 003c 01       		.byte	1
+  89 003d 43       		.byte	67
   90 003e 01       		.byte	1
   91 003f 40       		.byte	64
   92 0040 02       		.byte	2
   93 0041 44       		.byte	68
   94 0042 01       		.byte	1
   95 0043 40       		.byte	64
-  96 0044 10       		.byte	16
+  96 0044 0E       		.byte	14
   97 0045 45       		.byte	69
   98 0046 01       		.byte	1
   99 0047 40       		.byte	64
- 100 0048 06       		.byte	6
+ 100 0048 04       		.byte	4
  101 0049 46       		.byte	70
  102 004a 01       		.byte	1
  103 004b 40       		.byte	64
- 104 004c 02       		.byte	2
+ 104 004c 01       		.byte	1
  105 004d 47       		.byte	71
  106 004e 01       		.byte	1
  107 004f 40       		.byte	64
- 108 0050 02       		.byte	2
+ 108 0050 03       		.byte	3
  109 0051 48       		.byte	72
  110 0052 01       		.byte	1
  111 0053 40       		.byte	64
- 112 0054 01       		.byte	1
+ 112 0054 04       		.byte	4
  113 0055 49       		.byte	73
  114 0056 01       		.byte	1
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 3
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 3
 
 
  115 0057 40       		.byte	64
- 116 0058 01       		.byte	1
+ 116 0058 05       		.byte	5
  117 0059 4C       		.byte	76
  118 005a 01       		.byte	1
  119 005b 40       		.byte	64
- 120 005c 02       		.byte	2
+ 120 005c 04       		.byte	4
  121 005d 4D       		.byte	77
  122 005e 01       		.byte	1
  123 005f 40       		.byte	64
@@ -134,1280 +134,1335 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 1
  125 0061 50       		.byte	80
  126 0062 01       		.byte	1
  127 0063 40       		.byte	64
- 128 0064 00       		.byte	0
- 129 0065 01       		.byte	1
+ 128 0064 01       		.byte	1
+ 129 0065 51       		.byte	81
  130 0066 01       		.byte	1
- 131 0067 01       		.byte	1
- 132 0068 10       		.byte	16
- 133 0069 58       		.byte	88
- 134 006a 11       		.byte	17
- 135 006b 1C       		.byte	28
- 136 006c 8D       		.byte	-115
- 137 006d 0F       		.byte	15
- 138 006e 0F       		.byte	15
- 139 006f 03       		.byte	3
- 140 0070 10       		.byte	16
- 141 0071 0D       		.byte	13
- 142 0072 12       		.byte	18
- 143 0073 22       		.byte	34
- 144 0074 14       		.byte	20
- 145 0075 3E       		.byte	62
- 146 0076 16       		.byte	22
- 147 0077 01       		.byte	1
- 148 0078 19       		.byte	25
- 149 0079 02       		.byte	2
- 150 007a 1F       		.byte	31
- 151 007b 01       		.byte	1
- 152 007c 24       		.byte	36
- 153 007d 02       		.byte	2
- 154 007e 26       		.byte	38
- 155 007f 10       		.byte	16
- 156 0080 2E       		.byte	46
- 157 0081 1A       		.byte	26
- 158 0082 30       		.byte	48
- 159 0083 03       		.byte	3
- 160 0084 31       		.byte	49
- 161 0085 03       		.byte	3
- 162 0086 32       		.byte	50
- 163 0087 18       		.byte	24
- 164 0088 33       		.byte	51
+ 131 0067 40       		.byte	64
+ 132 0068 00       		.byte	0
+ 133 0069 01       		.byte	1
+ 134 006a 01       		.byte	1
+ 135 006b 01       		.byte	1
+ 136 006c 10       		.byte	16
+ 137 006d 9C       		.byte	-100
+ 138 006e 11       		.byte	17
+ 139 006f 84       		.byte	-124
+ 140 0070 2F       		.byte	47
+ 141 0071 84       		.byte	-124
+ 142 0072 8E       		.byte	-114
+ 143 0073 0F       		.byte	15
+ 144 0074 0F       		.byte	15
+ 145 0075 03       		.byte	3
+ 146 0076 10       		.byte	16
+ 147 0077 0D       		.byte	13
+ 148 0078 12       		.byte	18
+ 149 0079 22       		.byte	34
+ 150 007a 14       		.byte	20
+ 151 007b 3E       		.byte	62
+ 152 007c 16       		.byte	22
+ 153 007d 01       		.byte	1
+ 154 007e 19       		.byte	25
+ 155 007f 02       		.byte	2
+ 156 0080 1F       		.byte	31
+ 157 0081 01       		.byte	1
+ 158 0082 24       		.byte	36
+ 159 0083 02       		.byte	2
+ 160 0084 26       		.byte	38
+ 161 0085 10       		.byte	16
+ 162 0086 2E       		.byte	46
+ 163 0087 1A       		.byte	26
+ 164 0088 30       		.byte	48
  165 0089 03       		.byte	3
- 166 008a 34       		.byte	52
- 167 008b 04       		.byte	4
- 168 008c 36       		.byte	54
- 169 008d 20       		.byte	32
- 170 008e 3E       		.byte	62
- 171 008f 50       		.byte	80
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 4
+ 166 008a 31       		.byte	49
+ 167 008b 03       		.byte	3
+ 168 008c 32       		.byte	50
+ 169 008d 18       		.byte	24
+ 170 008e 33       		.byte	51
+ 171 008f 03       		.byte	3
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 4
 
 
- 172 0090 40       		.byte	64
- 173 0091 12       		.byte	18
- 174 0092 49       		.byte	73
- 175 0093 FF       		.byte	-1
- 176 0094 4A       		.byte	74
- 177 0095 FF       		.byte	-1
- 178 0096 4B       		.byte	75
- 179 0097 FF       		.byte	-1
- 180 0098 4D       		.byte	77
- 181 0099 20       		.byte	32
- 182 009a 4E       		.byte	78
- 183 009b F0       		.byte	-16
- 184 009c 51       		.byte	81
- 185 009d 10       		.byte	16
- 186 009e 52       		.byte	82
- 187 009f 03       		.byte	3
- 188 00a0 56       		.byte	86
- 189 00a1 10       		.byte	16
- 190 00a2 58       		.byte	88
- 191 00a3 04       		.byte	4
- 192 00a4 59       		.byte	89
- 193 00a5 04       		.byte	4
- 194 00a6 5A       		.byte	90
- 195 00a7 04       		.byte	4
- 196 00a8 5B       		.byte	91
+ 172 0090 34       		.byte	52
+ 173 0091 04       		.byte	4
+ 174 0092 36       		.byte	54
+ 175 0093 20       		.byte	32
+ 176 0094 3E       		.byte	62
+ 177 0095 50       		.byte	80
+ 178 0096 40       		.byte	64
+ 179 0097 12       		.byte	18
+ 180 0098 49       		.byte	73
+ 181 0099 FF       		.byte	-1
+ 182 009a 4A       		.byte	74
+ 183 009b FF       		.byte	-1
+ 184 009c 4B       		.byte	75
+ 185 009d FF       		.byte	-1
+ 186 009e 4D       		.byte	77
+ 187 009f 20       		.byte	32
+ 188 00a0 4E       		.byte	78
+ 189 00a1 F0       		.byte	-16
+ 190 00a2 51       		.byte	81
+ 191 00a3 10       		.byte	16
+ 192 00a4 52       		.byte	82
+ 193 00a5 03       		.byte	3
+ 194 00a6 56       		.byte	86
+ 195 00a7 10       		.byte	16
+ 196 00a8 58       		.byte	88
  197 00a9 04       		.byte	4
- 198 00aa 5C       		.byte	92
- 199 00ab 11       		.byte	17
- 200 00ac 5D       		.byte	93
- 201 00ad 11       		.byte	17
- 202 00ae 5F       		.byte	95
- 203 00af 01       		.byte	1
- 204 00b0 60       		.byte	96
- 205 00b1 40       		.byte	64
- 206 00b2 61       		.byte	97
- 207 00b3 60       		.byte	96
- 208 00b4 62       		.byte	98
- 209 00b5 40       		.byte	64
- 210 00b6 63       		.byte	99
- 211 00b7 A8       		.byte	-88
- 212 00b8 64       		.byte	100
- 213 00b9 40       		.byte	64
- 214 00ba 0E       		.byte	14
- 215 00bb A0       		.byte	-96
- 216 00bc 15       		.byte	21
- 217 00bd 40       		.byte	64
- 218 00be 17       		.byte	23
- 219 00bf 04       		.byte	4
- 220 00c0 1D       		.byte	29
- 221 00c1 A0       		.byte	-96
- 222 00c2 1E       		.byte	30
- 223 00c3 E0       		.byte	-32
- 224 00c4 27       		.byte	39
- 225 00c5 A0       		.byte	-96
- 226 00c6 36       		.byte	54
- 227 00c7 10       		.byte	16
- 228 00c8 37       		.byte	55
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 5
+ 198 00aa 59       		.byte	89
+ 199 00ab 04       		.byte	4
+ 200 00ac 5A       		.byte	90
+ 201 00ad 04       		.byte	4
+ 202 00ae 5B       		.byte	91
+ 203 00af 04       		.byte	4
+ 204 00b0 5C       		.byte	92
+ 205 00b1 11       		.byte	17
+ 206 00b2 5D       		.byte	93
+ 207 00b3 11       		.byte	17
+ 208 00b4 5F       		.byte	95
+ 209 00b5 01       		.byte	1
+ 210 00b6 60       		.byte	96
+ 211 00b7 40       		.byte	64
+ 212 00b8 61       		.byte	97
+ 213 00b9 60       		.byte	96
+ 214 00ba 62       		.byte	98
+ 215 00bb 40       		.byte	64
+ 216 00bc 63       		.byte	99
+ 217 00bd A8       		.byte	-88
+ 218 00be 64       		.byte	100
+ 219 00bf 40       		.byte	64
+ 220 00c0 B8       		.byte	-72
+ 221 00c1 20       		.byte	32
+ 222 00c2 BE       		.byte	-66
+ 223 00c3 10       		.byte	16
+ 224 00c4 D8       		.byte	-40
+ 225 00c5 04       		.byte	4
+ 226 00c6 DF       		.byte	-33
+ 227 00c7 01       		.byte	1
+ 228 00c8 0E       		.byte	14
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 5
 
 
- 229 00c9 80       		.byte	-128
- 230 00ca 3E       		.byte	62
+ 229 00c9 A0       		.byte	-96
+ 230 00ca 15       		.byte	21
  231 00cb 40       		.byte	64
- 232 00cc 45       		.byte	69
- 233 00cd A0       		.byte	-96
- 234 00ce 6D       		.byte	109
- 235 00cf 40       		.byte	64
- 236 00d0 6F       		.byte	111
- 237 00d1 04       		.byte	4
- 238 00d2 83       		.byte	-125
- 239 00d3 20       		.byte	32
- 240 00d4 C2       		.byte	-62
- 241 00d5 30       		.byte	48
- 242 00d6 C4       		.byte	-60
- 243 00d7 A0       		.byte	-96
- 244 00d8 CC       		.byte	-52
- 245 00d9 30       		.byte	48
- 246 00da CE       		.byte	-50
- 247 00db 10       		.byte	16
- 248 00dc D0       		.byte	-48
- 249 00dd 30       		.byte	48
- 250 00de B8       		.byte	-72
- 251 00df 80       		.byte	-128
- 252 00e0 BE       		.byte	-66
- 253 00e1 40       		.byte	64
- 254 00e2 D8       		.byte	-40
- 255 00e3 04       		.byte	4
- 256 00e4 DF       		.byte	-33
- 257 00e5 01       		.byte	1
- 258 00e6 1F       		.byte	31
- 259 00e7 40       		.byte	64
- 260 00e8 AF       		.byte	-81
- 261 00e9 40       		.byte	64
- 262 00ea E8       		.byte	-24
- 263 00eb 08       		.byte	8
- 264 00ec E8       		.byte	-24
- 265 00ed 08       		.byte	8
- 266 00ee AE       		.byte	-82
- 267 00ef 10       		.byte	16
- 268 00f0 B4       		.byte	-76
+ 232 00cc 17       		.byte	23
+ 233 00cd 04       		.byte	4
+ 234 00ce 1B       		.byte	27
+ 235 00cf 20       		.byte	32
+ 236 00d0 1D       		.byte	29
+ 237 00d1 A0       		.byte	-96
+ 238 00d2 1E       		.byte	30
+ 239 00d3 E0       		.byte	-32
+ 240 00d4 27       		.byte	39
+ 241 00d5 A0       		.byte	-96
+ 242 00d6 36       		.byte	54
+ 243 00d7 10       		.byte	16
+ 244 00d8 37       		.byte	55
+ 245 00d9 80       		.byte	-128
+ 246 00da 3E       		.byte	62
+ 247 00db 40       		.byte	64
+ 248 00dc 45       		.byte	69
+ 249 00dd A0       		.byte	-96
+ 250 00de 6D       		.byte	109
+ 251 00df 40       		.byte	64
+ 252 00e0 6F       		.byte	111
+ 253 00e1 04       		.byte	4
+ 254 00e2 83       		.byte	-125
+ 255 00e3 20       		.byte	32
+ 256 00e4 8B       		.byte	-117
+ 257 00e5 20       		.byte	32
+ 258 00e6 C2       		.byte	-62
+ 259 00e7 30       		.byte	48
+ 260 00e8 C4       		.byte	-60
+ 261 00e9 A0       		.byte	-96
+ 262 00ea CC       		.byte	-52
+ 263 00eb 30       		.byte	48
+ 264 00ec CE       		.byte	-50
+ 265 00ed 10       		.byte	16
+ 266 00ee D0       		.byte	-48
+ 267 00ef 30       		.byte	48
+ 268 00f0 AA       		.byte	-86
  269 00f1 10       		.byte	16
- 270 00f2 EC       		.byte	-20
- 271 00f3 08       		.byte	8
- 272 00f4 00       		.byte	0
- 273 00f5 10       		.byte	16
- 274 00f6 04       		.byte	4
- 275 00f7 18       		.byte	24
- 276 00f8 05       		.byte	5
- 277 00f9 09       		.byte	9
- 278 00fa 06       		.byte	6
- 279 00fb 07       		.byte	7
- 280 00fc 07       		.byte	7
- 281 00fd 06       		.byte	6
- 282 00fe 08       		.byte	8
- 283 00ff 10       		.byte	16
- 284 0100 0A       		.byte	10
- 285 0101 03       		.byte	3
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 6
+ 270 00f2 AF       		.byte	-81
+ 271 00f3 80       		.byte	-128
+ 272 00f4 EC       		.byte	-20
+ 273 00f5 04       		.byte	4
+ 274 00f6 EE       		.byte	-18
+ 275 00f7 08       		.byte	8
+ 276 00f8 00       		.byte	0
+ 277 00f9 04       		.byte	4
+ 278 00fa 04       		.byte	4
+ 279 00fb 01       		.byte	1
+ 280 00fc 05       		.byte	5
+ 281 00fd 01       		.byte	1
+ 282 00fe 06       		.byte	6
+ 283 00ff 02       		.byte	2
+ 284 0100 0C       		.byte	12
+ 285 0101 04       		.byte	4
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 6
 
 
- 286 0102 16       		.byte	22
- 287 0103 02       		.byte	2
- 288 0104 19       		.byte	25
- 289 0105 05       		.byte	5
- 290 0106 1B       		.byte	27
- 291 0107 0A       		.byte	10
- 292 0108 1D       		.byte	29
- 293 0109 02       		.byte	2
- 294 010a 1F       		.byte	31
- 295 010b 0D       		.byte	13
- 296 010c 25       		.byte	37
- 297 010d 03       		.byte	3
- 298 010e 27       		.byte	39
- 299 010f 0C       		.byte	12
- 300 0110 28       		.byte	40
- 301 0111 05       		.byte	5
- 302 0112 2A       		.byte	42
- 303 0113 08       		.byte	8
- 304 0114 31       		.byte	49
- 305 0115 0F       		.byte	15
- 306 0116 32       		.byte	50
+ 286 0102 15       		.byte	21
+ 287 0103 01       		.byte	1
+ 288 0104 21       		.byte	33
+ 289 0105 01       		.byte	1
+ 290 0106 24       		.byte	36
+ 291 0107 06       		.byte	6
+ 292 0108 26       		.byte	38
+ 293 0109 01       		.byte	1
+ 294 010a 36       		.byte	54
+ 295 010b 07       		.byte	7
+ 296 010c 37       		.byte	55
+ 297 010d 01       		.byte	1
+ 298 010e 3A       		.byte	58
+ 299 010f 80       		.byte	-128
+ 300 0110 3F       		.byte	63
+ 301 0111 40       		.byte	64
+ 302 0112 58       		.byte	88
+ 303 0113 04       		.byte	4
+ 304 0114 59       		.byte	89
+ 305 0115 04       		.byte	4
+ 306 0116 5C       		.byte	92
  307 0117 03       		.byte	3
- 308 0118 34       		.byte	52
- 309 0119 1C       		.byte	28
- 310 011a 3A       		.byte	58
- 311 011b 20       		.byte	32
- 312 011c 3B       		.byte	59
+ 308 0118 5F       		.byte	95
+ 309 0119 01       		.byte	1
+ 310 011a 00       		.byte	0
+ 311 011b 44       		.byte	68
+ 312 011c 01       		.byte	1
  313 011d 02       		.byte	2
- 314 011e 58       		.byte	88
- 315 011f 04       		.byte	4
- 316 0120 59       		.byte	89
+ 314 011e 03       		.byte	3
+ 315 011f 08       		.byte	8
+ 316 0120 04       		.byte	4
  317 0121 04       		.byte	4
- 318 0122 5C       		.byte	92
- 319 0123 22       		.byte	34
- 320 0124 5F       		.byte	95
- 321 0125 01       		.byte	1
- 322 0126 80       		.byte	-128
- 323 0127 04       		.byte	4
- 324 0128 84       		.byte	-124
- 325 0129 56       		.byte	86
- 326 012a 85       		.byte	-123
- 327 012b 21       		.byte	33
- 328 012c 86       		.byte	-122
- 329 012d 09       		.byte	9
- 330 012e 87       		.byte	-121
- 331 012f 58       		.byte	88
- 332 0130 88       		.byte	-120
- 333 0131 01       		.byte	1
- 334 0132 89       		.byte	-119
- 335 0133 02       		.byte	2
- 336 0134 8B       		.byte	-117
- 337 0135 08       		.byte	8
- 338 0136 8C       		.byte	-116
- 339 0137 04       		.byte	4
- 340 0138 8D       		.byte	-115
- 341 0139 0A       		.byte	10
- 342 013a 90       		.byte	-112
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 7
+ 318 0122 05       		.byte	5
+ 319 0123 40       		.byte	64
+ 320 0124 06       		.byte	6
+ 321 0125 40       		.byte	64
+ 322 0126 08       		.byte	8
+ 323 0127 84       		.byte	-124
+ 324 0128 0A       		.byte	10
+ 325 0129 80       		.byte	-128
+ 326 012a 10       		.byte	16
+ 327 012b 28       		.byte	40
+ 328 012c 12       		.byte	18
+ 329 012d 01       		.byte	1
+ 330 012e 13       		.byte	19
+ 331 012f 02       		.byte	2
+ 332 0130 15       		.byte	21
+ 333 0131 08       		.byte	8
+ 334 0132 18       		.byte	24
+ 335 0133 40       		.byte	64
+ 336 0134 1B       		.byte	27
+ 337 0135 18       		.byte	24
+ 338 0136 1D       		.byte	29
+ 339 0137 40       		.byte	64
+ 340 0138 1F       		.byte	31
+ 341 0139 40       		.byte	64
+ 342 013a 22       		.byte	34
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 7
 
 
- 343 013b 04       		.byte	4
- 344 013c 91       		.byte	-111
- 345 013d 08       		.byte	8
- 346 013e 95       		.byte	-107
- 347 013f 70       		.byte	112
- 348 0140 96       		.byte	-106
- 349 0141 04       		.byte	4
- 350 0142 98       		.byte	-104
- 351 0143 04       		.byte	4
- 352 0144 99       		.byte	-103
- 353 0145 08       		.byte	8
- 354 0146 9B       		.byte	-101
- 355 0147 02       		.byte	2
- 356 0148 9D       		.byte	-99
- 357 0149 0A       		.byte	10
- 358 014a A0       		.byte	-96
- 359 014b 07       		.byte	7
- 360 014c A1       		.byte	-95
- 361 014d 08       		.byte	8
- 362 014e A2       		.byte	-94
- 363 014f 38       		.byte	56
- 364 0150 A3       		.byte	-93
- 365 0151 02       		.byte	2
- 366 0152 A4       		.byte	-92
- 367 0153 0A       		.byte	10
- 368 0154 A5       		.byte	-91
- 369 0155 13       		.byte	19
- 370 0156 A6       		.byte	-90
- 371 0157 10       		.byte	16
- 372 0158 A7       		.byte	-89
- 373 0159 24       		.byte	36
- 374 015a A8       		.byte	-88
- 375 015b 60       		.byte	96
- 376 015c A9       		.byte	-87
- 377 015d 2C       		.byte	44
- 378 015e AB       		.byte	-85
- 379 015f 43       		.byte	67
- 380 0160 AC       		.byte	-84
+ 343 013b 10       		.byte	16
+ 344 013c 27       		.byte	39
+ 345 013d 01       		.byte	1
+ 346 013e 28       		.byte	40
+ 347 013f 08       		.byte	8
+ 348 0140 29       		.byte	41
+ 349 0141 40       		.byte	64
+ 350 0142 2A       		.byte	42
+ 351 0143 05       		.byte	5
+ 352 0144 2F       		.byte	47
+ 353 0145 40       		.byte	64
+ 354 0146 30       		.byte	48
+ 355 0147 05       		.byte	5
+ 356 0148 32       		.byte	50
+ 357 0149 58       		.byte	88
+ 358 014a 36       		.byte	54
+ 359 014b 08       		.byte	8
+ 360 014c 39       		.byte	57
+ 361 014d 14       		.byte	20
+ 362 014e 3B       		.byte	59
+ 363 014f 40       		.byte	64
+ 364 0150 3C       		.byte	60
+ 365 0151 04       		.byte	4
+ 366 0152 40       		.byte	64
+ 367 0153 8C       		.byte	-116
+ 368 0154 41       		.byte	65
+ 369 0155 04       		.byte	4
+ 370 0156 43       		.byte	67
+ 371 0157 80       		.byte	-128
+ 372 0158 46       		.byte	70
+ 373 0159 80       		.byte	-128
+ 374 015a 47       		.byte	71
+ 375 015b 01       		.byte	1
+ 376 015c 49       		.byte	73
+ 377 015d 12       		.byte	18
+ 378 015e 4A       		.byte	74
+ 379 015f 80       		.byte	-128
+ 380 0160 4B       		.byte	75
  381 0161 04       		.byte	4
- 382 0162 AD       		.byte	-83
- 383 0163 02       		.byte	2
- 384 0164 B2       		.byte	-78
- 385 0165 7F       		.byte	127
- 386 0166 B3       		.byte	-77
- 387 0167 71       		.byte	113
- 388 0168 B5       		.byte	-75
- 389 0169 0F       		.byte	15
- 390 016a B8       		.byte	-72
- 391 016b 08       		.byte	8
- 392 016c B9       		.byte	-71
- 393 016d 08       		.byte	8
- 394 016e BB       		.byte	-69
- 395 016f 20       		.byte	32
- 396 0170 D6       		.byte	-42
- 397 0171 02       		.byte	2
- 398 0172 D7       		.byte	-41
- 399 0173 2C       		.byte	44
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 8
+ 382 0162 52       		.byte	82
+ 383 0163 54       		.byte	84
+ 384 0164 62       		.byte	98
+ 385 0165 90       		.byte	-112
+ 386 0166 63       		.byte	99
+ 387 0167 20       		.byte	32
+ 388 0168 64       		.byte	100
+ 389 0169 80       		.byte	-128
+ 390 016a 67       		.byte	103
+ 391 016b 80       		.byte	-128
+ 392 016c 80       		.byte	-128
+ 393 016d 40       		.byte	64
+ 394 016e 87       		.byte	-121
+ 395 016f 08       		.byte	8
+ 396 0170 90       		.byte	-112
+ 397 0171 04       		.byte	4
+ 398 0172 91       		.byte	-111
+ 399 0173 1C       		.byte	28
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 8
 
 
- 400 0174 D8       		.byte	-40
- 401 0175 04       		.byte	4
- 402 0176 D9       		.byte	-39
- 403 0177 04       		.byte	4
- 404 0178 DB       		.byte	-37
- 405 0179 04       		.byte	4
- 406 017a DC       		.byte	-36
- 407 017b 22       		.byte	34
- 408 017c DD       		.byte	-35
- 409 017d 20       		.byte	32
- 410 017e DF       		.byte	-33
+ 400 0174 92       		.byte	-110
+ 401 0175 80       		.byte	-128
+ 402 0176 93       		.byte	-109
+ 403 0177 40       		.byte	64
+ 404 0178 97       		.byte	-105
+ 405 0179 84       		.byte	-124
+ 406 017a 98       		.byte	-104
+ 407 017b 01       		.byte	1
+ 408 017c 99       		.byte	-103
+ 409 017d 10       		.byte	16
+ 410 017e 9A       		.byte	-102
  411 017f 01       		.byte	1
- 412 0180 00       		.byte	0
- 413 0181 18       		.byte	24
- 414 0182 01       		.byte	1
- 415 0183 41       		.byte	65
- 416 0184 04       		.byte	4
- 417 0185 04       		.byte	4
- 418 0186 05       		.byte	5
- 419 0187 10       		.byte	16
- 420 0188 06       		.byte	6
+ 412 0180 9B       		.byte	-101
+ 413 0181 02       		.byte	2
+ 414 0182 9E       		.byte	-98
+ 415 0183 C0       		.byte	-64
+ 416 0184 A0       		.byte	-96
+ 417 0185 28       		.byte	40
+ 418 0186 A2       		.byte	-94
+ 419 0187 08       		.byte	8
+ 420 0188 AE       		.byte	-82
  421 0189 40       		.byte	64
- 422 018a 0A       		.byte	10
- 423 018b 54       		.byte	84
- 424 018c 0E       		.byte	14
- 425 018d 20       		.byte	32
- 426 018e 12       		.byte	18
- 427 018f 26       		.byte	38
- 428 0190 13       		.byte	19
- 429 0191 02       		.byte	2
- 430 0192 16       		.byte	22
- 431 0193 08       		.byte	8
- 432 0194 18       		.byte	24
- 433 0195 10       		.byte	16
- 434 0196 1C       		.byte	28
- 435 0197 08       		.byte	8
- 436 0198 1D       		.byte	29
- 437 0199 10       		.byte	16
- 438 019a 1E       		.byte	30
- 439 019b 20       		.byte	32
- 440 019c 20       		.byte	32
- 441 019d 04       		.byte	4
- 442 019e 21       		.byte	33
- 443 019f 08       		.byte	8
- 444 01a0 22       		.byte	34
- 445 01a1 20       		.byte	32
- 446 01a2 24       		.byte	36
- 447 01a3 40       		.byte	64
- 448 01a4 27       		.byte	39
- 449 01a5 80       		.byte	-128
- 450 01a6 29       		.byte	41
- 451 01a7 10       		.byte	16
- 452 01a8 2A       		.byte	42
- 453 01a9 48       		.byte	72
- 454 01aa 2B       		.byte	43
- 455 01ab 40       		.byte	64
- 456 01ac 2E       		.byte	46
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 9
+ 422 018a AF       		.byte	-81
+ 423 018b 10       		.byte	16
+ 424 018c C0       		.byte	-64
+ 425 018d BF       		.byte	-65
+ 426 018e C2       		.byte	-62
+ 427 018f 0D       		.byte	13
+ 428 0190 C4       		.byte	-60
+ 429 0191 2F       		.byte	47
+ 430 0192 CA       		.byte	-54
+ 431 0193 8F       		.byte	-113
+ 432 0194 CC       		.byte	-52
+ 433 0195 4F       		.byte	79
+ 434 0196 CE       		.byte	-50
+ 435 0197 4E       		.byte	78
+ 436 0198 D0       		.byte	-48
+ 437 0199 0F       		.byte	15
+ 438 019a D2       		.byte	-46
+ 439 019b 04       		.byte	4
+ 440 019c D8       		.byte	-40
+ 441 019d 0E       		.byte	14
+ 442 019e E0       		.byte	-32
+ 443 019f 80       		.byte	-128
+ 444 01a0 E4       		.byte	-28
+ 445 01a1 06       		.byte	6
+ 446 01a2 00       		.byte	0
+ 447 01a3 02       		.byte	2
+ 448 01a4 01       		.byte	1
+ 449 01a5 FC       		.byte	-4
+ 450 01a6 02       		.byte	2
+ 451 01a7 0D       		.byte	13
+ 452 01a8 03       		.byte	3
+ 453 01a9 03       		.byte	3
+ 454 01aa 04       		.byte	4
+ 455 01ab 01       		.byte	1
+ 456 01ac 05       		.byte	5
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 9
 
 
- 457 01ad 08       		.byte	8
- 458 01ae 30       		.byte	48
- 459 01af 20       		.byte	32
- 460 01b0 31       		.byte	49
- 461 01b1 08       		.byte	8
- 462 01b2 32       		.byte	50
+ 457 01ad 98       		.byte	-104
+ 458 01ae 06       		.byte	6
+ 459 01af 02       		.byte	2
+ 460 01b0 07       		.byte	7
+ 461 01b1 02       		.byte	2
+ 462 01b2 09       		.byte	9
  463 01b3 02       		.byte	2
- 464 01b4 33       		.byte	51
- 465 01b5 40       		.byte	64
- 466 01b6 36       		.byte	54
- 467 01b7 20       		.byte	32
- 468 01b8 37       		.byte	55
- 469 01b9 80       		.byte	-128
- 470 01ba 38       		.byte	56
- 471 01bb 84       		.byte	-124
- 472 01bc 39       		.byte	57
- 473 01bd 50       		.byte	80
- 474 01be 3C       		.byte	60
- 475 01bf 08       		.byte	8
- 476 01c0 3E       		.byte	62
- 477 01c1 40       		.byte	64
- 478 01c2 3F       		.byte	63
- 479 01c3 80       		.byte	-128
- 480 01c4 60       		.byte	96
- 481 01c5 40       		.byte	64
- 482 01c6 68       		.byte	104
- 483 01c7 60       		.byte	96
- 484 01c8 69       		.byte	105
- 485 01c9 11       		.byte	17
- 486 01ca 6A       		.byte	106
- 487 01cb 54       		.byte	84
- 488 01cc 6B       		.byte	107
- 489 01cd 40       		.byte	64
- 490 01ce 70       		.byte	112
- 491 01cf 40       		.byte	64
- 492 01d0 72       		.byte	114
- 493 01d1 01       		.byte	1
- 494 01d2 81       		.byte	-127
- 495 01d3 08       		.byte	8
- 496 01d4 88       		.byte	-120
- 497 01d5 01       		.byte	1
- 498 01d6 8A       		.byte	-118
- 499 01d7 08       		.byte	8
- 500 01d8 8B       		.byte	-117
- 501 01d9 02       		.byte	2
- 502 01da 94       		.byte	-108
- 503 01db 04       		.byte	4
- 504 01dc 96       		.byte	-106
- 505 01dd 51       		.byte	81
- 506 01de 9A       		.byte	-102
- 507 01df 4C       		.byte	76
- 508 01e0 9D       		.byte	-99
- 509 01e1 10       		.byte	16
- 510 01e2 A2       		.byte	-94
- 511 01e3 02       		.byte	2
- 512 01e4 A4       		.byte	-92
- 513 01e5 61       		.byte	97
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 10
+ 464 01b4 0B       		.byte	11
+ 465 01b5 98       		.byte	-104
+ 466 01b6 0C       		.byte	12
+ 467 01b7 1D       		.byte	29
+ 468 01b8 0D       		.byte	13
+ 469 01b9 38       		.byte	56
+ 470 01ba 0F       		.byte	15
+ 471 01bb C0       		.byte	-64
+ 472 01bc 10       		.byte	16
+ 473 01bd 02       		.byte	2
+ 474 01be 11       		.byte	17
+ 475 01bf 98       		.byte	-104
+ 476 01c0 12       		.byte	18
+ 477 01c1 08       		.byte	8
+ 478 01c2 13       		.byte	19
+ 479 01c3 02       		.byte	2
+ 480 01c4 14       		.byte	20
+ 481 01c5 02       		.byte	2
+ 482 01c6 15       		.byte	21
+ 483 01c7 21       		.byte	33
+ 484 01c8 16       		.byte	22
+ 485 01c9 04       		.byte	4
+ 486 01ca 17       		.byte	23
+ 487 01cb D8       		.byte	-40
+ 488 01cc 19       		.byte	25
+ 489 01cd 13       		.byte	19
+ 490 01ce 1B       		.byte	27
+ 491 01cf 64       		.byte	100
+ 492 01d0 1C       		.byte	28
+ 493 01d1 1D       		.byte	29
+ 494 01d2 1D       		.byte	29
+ 495 01d3 9A       		.byte	-102
+ 496 01d4 21       		.byte	33
+ 497 01d5 9A       		.byte	-102
+ 498 01d6 24       		.byte	36
+ 499 01d7 1D       		.byte	29
+ 500 01d8 28       		.byte	40
+ 501 01d9 1D       		.byte	29
+ 502 01da 2C       		.byte	44
+ 503 01db 0D       		.byte	13
+ 504 01dc 2D       		.byte	45
+ 505 01dd 02       		.byte	2
+ 506 01de 2E       		.byte	46
+ 507 01df 10       		.byte	16
+ 508 01e0 31       		.byte	49
+ 509 01e1 E0       		.byte	-32
+ 510 01e2 33       		.byte	51
+ 511 01e3 0F       		.byte	15
+ 512 01e4 34       		.byte	52
+ 513 01e5 10       		.byte	16
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 10
 
 
- 514 01e6 AE       		.byte	-82
- 515 01e7 40       		.byte	64
- 516 01e8 AF       		.byte	-81
- 517 01e9 10       		.byte	16
- 518 01ea C0       		.byte	-64
- 519 01eb 7F       		.byte	127
- 520 01ec C2       		.byte	-62
- 521 01ed 2E       		.byte	46
- 522 01ee C4       		.byte	-60
- 523 01ef 4F       		.byte	79
- 524 01f0 CA       		.byte	-54
- 525 01f1 4F       		.byte	79
- 526 01f2 CC       		.byte	-52
- 527 01f3 3F       		.byte	63
- 528 01f4 CE       		.byte	-50
- 529 01f5 4E       		.byte	78
- 530 01f6 D8       		.byte	-40
- 531 01f7 01       		.byte	1
- 532 01f8 E0       		.byte	-32
- 533 01f9 01       		.byte	1
- 534 01fa 84       		.byte	-124
- 535 01fb 03       		.byte	3
- 536 01fc 88       		.byte	-120
- 537 01fd 02       		.byte	2
- 538 01fe 8A       		.byte	-118
+ 514 01e6 35       		.byte	53
+ 515 01e7 13       		.byte	19
+ 516 01e8 36       		.byte	54
+ 517 01e9 0F       		.byte	15
+ 518 01ea 3A       		.byte	58
+ 519 01eb 80       		.byte	-128
+ 520 01ec 3B       		.byte	59
+ 521 01ed 0A       		.byte	10
+ 522 01ee 3E       		.byte	62
+ 523 01ef 10       		.byte	16
+ 524 01f0 56       		.byte	86
+ 525 01f1 02       		.byte	2
+ 526 01f2 57       		.byte	87
+ 527 01f3 2C       		.byte	44
+ 528 01f4 58       		.byte	88
+ 529 01f5 04       		.byte	4
+ 530 01f6 59       		.byte	89
+ 531 01f7 04       		.byte	4
+ 532 01f8 5B       		.byte	91
+ 533 01f9 04       		.byte	4
+ 534 01fa 5C       		.byte	92
+ 535 01fb 33       		.byte	51
+ 536 01fc 5D       		.byte	93
+ 537 01fd 30       		.byte	48
+ 538 01fe 5F       		.byte	95
  539 01ff 01       		.byte	1
- 540 0200 A8       		.byte	-88
- 541 0201 02       		.byte	2
- 542 0202 AA       		.byte	-86
- 543 0203 01       		.byte	1
- 544 0204 B0       		.byte	-80
- 545 0205 02       		.byte	2
- 546 0206 B6       		.byte	-74
- 547 0207 01       		.byte	1
- 548 0208 BE       		.byte	-66
- 549 0209 41       		.byte	65
- 550 020a D4       		.byte	-44
- 551 020b 09       		.byte	9
- 552 020c D8       		.byte	-40
- 553 020d 04       		.byte	4
- 554 020e DB       		.byte	-37
- 555 020f 04       		.byte	4
- 556 0210 DD       		.byte	-35
- 557 0211 20       		.byte	32
- 558 0212 DF       		.byte	-33
- 559 0213 01       		.byte	1
- 560 0214 00       		.byte	0
- 561 0215 84       		.byte	-124
- 562 0216 01       		.byte	1
- 563 0217 40       		.byte	64
- 564 0218 03       		.byte	3
- 565 0219 08       		.byte	8
- 566 021a 04       		.byte	4
- 567 021b 04       		.byte	4
- 568 021c 05       		.byte	5
- 569 021d 10       		.byte	16
- 570 021e 08       		.byte	8
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 11
+ 540 0200 84       		.byte	-124
+ 541 0201 03       		.byte	3
+ 542 0202 86       		.byte	-122
+ 543 0203 0C       		.byte	12
+ 544 0204 87       		.byte	-121
+ 545 0205 01       		.byte	1
+ 546 0206 90       		.byte	-112
+ 547 0207 02       		.byte	2
+ 548 0208 92       		.byte	-110
+ 549 0209 0D       		.byte	13
+ 550 020a 95       		.byte	-107
+ 551 020b 01       		.byte	1
+ 552 020c A0       		.byte	-96
+ 553 020d 09       		.byte	9
+ 554 020e A2       		.byte	-94
+ 555 020f 06       		.byte	6
+ 556 0210 A3       		.byte	-93
+ 557 0211 01       		.byte	1
+ 558 0212 A4       		.byte	-92
+ 559 0213 05       		.byte	5
+ 560 0214 A6       		.byte	-90
+ 561 0215 0A       		.byte	10
+ 562 0216 B0       		.byte	-80
+ 563 0217 0F       		.byte	15
+ 564 0218 B1       		.byte	-79
+ 565 0219 01       		.byte	1
+ 566 021a BA       		.byte	-70
+ 567 021b 02       		.byte	2
+ 568 021c BF       		.byte	-65
+ 569 021d 01       		.byte	1
+ 570 021e D4       		.byte	-44
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 11
 
 
- 571 021f 48       		.byte	72
- 572 0220 0A       		.byte	10
- 573 0221 D9       		.byte	-39
- 574 0222 10       		.byte	16
- 575 0223 A8       		.byte	-88
- 576 0224 16       		.byte	22
- 577 0225 08       		.byte	8
- 578 0226 17       		.byte	23
- 579 0227 20       		.byte	32
- 580 0228 18       		.byte	24
- 581 0229 40       		.byte	64
- 582 022a 19       		.byte	25
- 583 022b 02       		.byte	2
- 584 022c 1B       		.byte	27
- 585 022d 18       		.byte	24
- 586 022e 1E       		.byte	30
- 587 022f 02       		.byte	2
- 588 0230 1F       		.byte	31
- 589 0231 01       		.byte	1
- 590 0232 21       		.byte	33
- 591 0233 05       		.byte	5
- 592 0234 22       		.byte	34
- 593 0235 06       		.byte	6
- 594 0236 23       		.byte	35
- 595 0237 20       		.byte	32
- 596 0238 28       		.byte	40
- 597 0239 48       		.byte	72
- 598 023a 2A       		.byte	42
- 599 023b 48       		.byte	72
- 600 023c 30       		.byte	48
- 601 023d 28       		.byte	40
- 602 023e 32       		.byte	50
- 603 023f 40       		.byte	64
- 604 0240 38       		.byte	56
- 605 0241 04       		.byte	4
- 606 0242 39       		.byte	57
- 607 0243 42       		.byte	66
- 608 0244 40       		.byte	64
- 609 0245 44       		.byte	68
- 610 0246 41       		.byte	65
- 611 0247 04       		.byte	4
- 612 0248 48       		.byte	72
- 613 0249 89       		.byte	-119
- 614 024a 49       		.byte	73
- 615 024b 18       		.byte	24
- 616 024c 4A       		.byte	74
- 617 024d 80       		.byte	-128
- 618 024e 52       		.byte	82
- 619 024f 54       		.byte	84
- 620 0250 5C       		.byte	92
+ 571 021f 09       		.byte	9
+ 572 0220 D8       		.byte	-40
+ 573 0221 04       		.byte	4
+ 574 0222 D9       		.byte	-39
+ 575 0223 04       		.byte	4
+ 576 0224 DB       		.byte	-37
+ 577 0225 04       		.byte	4
+ 578 0226 DC       		.byte	-36
+ 579 0227 03       		.byte	3
+ 580 0228 DD       		.byte	-35
+ 581 0229 30       		.byte	48
+ 582 022a DF       		.byte	-33
+ 583 022b 01       		.byte	1
+ 584 022c 00       		.byte	0
+ 585 022d 84       		.byte	-124
+ 586 022e 02       		.byte	2
+ 587 022f 01       		.byte	1
+ 588 0230 03       		.byte	3
+ 589 0231 80       		.byte	-128
+ 590 0232 04       		.byte	4
+ 591 0233 04       		.byte	4
+ 592 0234 09       		.byte	9
+ 593 0235 88       		.byte	-120
+ 594 0236 0B       		.byte	11
+ 595 0237 80       		.byte	-128
+ 596 0238 0E       		.byte	14
+ 597 0239 80       		.byte	-128
+ 598 023a 10       		.byte	16
+ 599 023b 29       		.byte	41
+ 600 023c 11       		.byte	17
+ 601 023d 40       		.byte	64
+ 602 023e 15       		.byte	21
+ 603 023f 09       		.byte	9
+ 604 0240 19       		.byte	25
+ 605 0241 10       		.byte	16
+ 606 0242 1B       		.byte	27
+ 607 0243 80       		.byte	-128
+ 608 0244 1C       		.byte	28
+ 609 0245 40       		.byte	64
+ 610 0246 1E       		.byte	30
+ 611 0247 80       		.byte	-128
+ 612 0248 20       		.byte	32
+ 613 0249 04       		.byte	4
+ 614 024a 21       		.byte	33
+ 615 024b 0C       		.byte	12
+ 616 024c 22       		.byte	34
+ 617 024d 18       		.byte	24
+ 618 024e 23       		.byte	35
+ 619 024f 40       		.byte	64
+ 620 0250 27       		.byte	39
  621 0251 80       		.byte	-128
- 622 0252 5D       		.byte	93
- 623 0253 0A       		.byte	10
- 624 0254 5F       		.byte	95
- 625 0255 10       		.byte	16
- 626 0256 62       		.byte	98
- 627 0257 90       		.byte	-112
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 12
+ 622 0252 2A       		.byte	42
+ 623 0253 41       		.byte	65
+ 624 0254 2D       		.byte	45
+ 625 0255 01       		.byte	1
+ 626 0256 2F       		.byte	47
+ 627 0257 40       		.byte	64
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 12
 
 
- 628 0258 63       		.byte	99
- 629 0259 20       		.byte	32
- 630 025a 67       		.byte	103
- 631 025b 02       		.byte	2
- 632 025c 78       		.byte	120
- 633 025d 80       		.byte	-128
- 634 025e 7A       		.byte	122
- 635 025f 01       		.byte	1
- 636 0260 C0       		.byte	-64
- 637 0261 67       		.byte	103
- 638 0262 C2       		.byte	-62
- 639 0263 0F       		.byte	15
- 640 0264 C4       		.byte	-60
- 641 0265 4E       		.byte	78
- 642 0266 CA       		.byte	-54
- 643 0267 0F       		.byte	15
- 644 0268 CC       		.byte	-52
- 645 0269 0E       		.byte	14
- 646 026a CE       		.byte	-50
- 647 026b 0B       		.byte	11
- 648 026c D0       		.byte	-48
- 649 026d 07       		.byte	7
- 650 026e D2       		.byte	-46
- 651 026f 0C       		.byte	12
- 652 0270 D6       		.byte	-42
- 653 0271 F0       		.byte	-16
- 654 0272 D8       		.byte	-40
- 655 0273 1E       		.byte	30
- 656 0274 EC       		.byte	-20
- 657 0275 10       		.byte	16
- 658 0276 EC       		.byte	-20
- 659 0277 10       		.byte	16
- 660 0278 5F       		.byte	95
- 661 0279 80       		.byte	-128
- 662 027a 83       		.byte	-125
- 663 027b 80       		.byte	-128
- 664 027c D6       		.byte	-42
- 665 027d 20       		.byte	32
- 666 027e E2       		.byte	-30
- 667 027f 80       		.byte	-128
- 668 0280 7C       		.byte	124
- 669 0281 01       		.byte	1
- 670 0282 DE       		.byte	-34
- 671 0283 01       		.byte	1
- 672 0284 05       		.byte	5
- 673 0285 02       		.byte	2
- 674 0286 53       		.byte	83
- 675 0287 01       		.byte	1
- 676 0288 57       		.byte	87
- 677 0289 01       		.byte	1
- 678 028a 5C       		.byte	92
- 679 028b 01       		.byte	1
- 680 028c 5F       		.byte	95
- 681 028d 08       		.byte	8
- 682 028e 63       		.byte	99
- 683 028f 01       		.byte	1
- 684 0290 66       		.byte	102
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 13
+ 628 0258 30       		.byte	48
+ 629 0259 01       		.byte	1
+ 630 025a 31       		.byte	49
+ 631 025b 88       		.byte	-120
+ 632 025c 32       		.byte	50
+ 633 025d 50       		.byte	80
+ 634 025e 36       		.byte	54
+ 635 025f 08       		.byte	8
+ 636 0260 39       		.byte	57
+ 637 0261 15       		.byte	21
+ 638 0262 3B       		.byte	59
+ 639 0263 40       		.byte	64
+ 640 0264 3C       		.byte	60
+ 641 0265 04       		.byte	4
+ 642 0266 5D       		.byte	93
+ 643 0267 02       		.byte	2
+ 644 0268 5F       		.byte	95
+ 645 0269 94       		.byte	-108
+ 646 026a 60       		.byte	96
+ 647 026b 40       		.byte	64
+ 648 026c 66       		.byte	102
+ 649 026d 80       		.byte	-128
+ 650 026e 68       		.byte	104
+ 651 026f 68       		.byte	104
+ 652 0270 69       		.byte	105
+ 653 0271 54       		.byte	84
+ 654 0272 6B       		.byte	107
+ 655 0273 02       		.byte	2
+ 656 0274 71       		.byte	113
+ 657 0275 80       		.byte	-128
+ 658 0276 8D       		.byte	-115
+ 659 0277 12       		.byte	18
+ 660 0278 C0       		.byte	-64
+ 661 0279 2D       		.byte	45
+ 662 027a C2       		.byte	-62
+ 663 027b 1D       		.byte	29
+ 664 027c C4       		.byte	-60
+ 665 027d 37       		.byte	55
+ 666 027e CA       		.byte	-54
+ 667 027f 89       		.byte	-119
+ 668 0280 CC       		.byte	-52
+ 669 0281 4F       		.byte	79
+ 670 0282 CE       		.byte	-50
+ 671 0283 4F       		.byte	79
+ 672 0284 D6       		.byte	-42
+ 673 0285 F0       		.byte	-16
+ 674 0286 D8       		.byte	-40
+ 675 0287 11       		.byte	17
+ 676 0288 EC       		.byte	-20
+ 677 0289 30       		.byte	48
+ 678 028a EE       		.byte	-18
+ 679 028b 08       		.byte	8
+ 680 028c EC       		.byte	-20
+ 681 028d 30       		.byte	48
+ 682 028e EE       		.byte	-18
+ 683 028f 08       		.byte	8
+ 684 0290 33       		.byte	51
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 13
 
 
- 685 0291 08       		.byte	8
- 686 0292 67       		.byte	103
- 687 0293 02       		.byte	2
- 688 0294 83       		.byte	-125
- 689 0295 01       		.byte	1
- 690 0296 89       		.byte	-119
- 691 0297 02       		.byte	2
- 692 0298 94       		.byte	-108
- 693 0299 01       		.byte	1
- 694 029a C0       		.byte	-64
- 695 029b 04       		.byte	4
- 696 029c D4       		.byte	-44
- 697 029d 01       		.byte	1
- 698 029e D6       		.byte	-42
- 699 029f 07       		.byte	7
- 700 02a0 D8       		.byte	-40
- 701 02a1 01       		.byte	1
- 702 02a2 E2       		.byte	-30
- 703 02a3 01       		.byte	1
- 704 02a4 45       		.byte	69
- 705 02a5 08       		.byte	8
- 706 02a6 9F       		.byte	-97
- 707 02a7 08       		.byte	8
- 708 02a8 AF       		.byte	-81
- 709 02a9 01       		.byte	1
- 710 02aa B6       		.byte	-74
- 711 02ab 08       		.byte	8
- 712 02ac D0       		.byte	-48
- 713 02ad 01       		.byte	1
- 714 02ae E8       		.byte	-24
- 715 02af 08       		.byte	8
- 716 02b0 A5       		.byte	-91
- 717 02b1 08       		.byte	8
- 718 02b2 AF       		.byte	-81
+ 685 0291 20       		.byte	32
+ 686 0292 CC       		.byte	-52
+ 687 0293 10       		.byte	16
+ 688 0294 5F       		.byte	95
+ 689 0295 80       		.byte	-128
+ 690 0296 83       		.byte	-125
+ 691 0297 80       		.byte	-128
+ 692 0298 A7       		.byte	-89
+ 693 0299 20       		.byte	32
+ 694 029a D6       		.byte	-42
+ 695 029b 20       		.byte	32
+ 696 029c E2       		.byte	-30
+ 697 029d 80       		.byte	-128
+ 698 029e A7       		.byte	-89
+ 699 029f 20       		.byte	32
+ 700 02a0 A7       		.byte	-89
+ 701 02a1 20       		.byte	32
+ 702 02a2 7F       		.byte	127
+ 703 02a3 20       		.byte	32
+ 704 02a4 DE       		.byte	-34
+ 705 02a5 01       		.byte	1
+ 706 02a6 05       		.byte	5
+ 707 02a7 02       		.byte	2
+ 708 02a8 57       		.byte	87
+ 709 02a9 81       		.byte	-127
+ 710 02aa 63       		.byte	99
+ 711 02ab 02       		.byte	2
+ 712 02ac 66       		.byte	102
+ 713 02ad 08       		.byte	8
+ 714 02ae 67       		.byte	103
+ 715 02af 02       		.byte	2
+ 716 02b0 83       		.byte	-125
+ 717 02b1 80       		.byte	-128
+ 718 02b2 86       		.byte	-122
  719 02b3 08       		.byte	8
- 720 02b4 25       		.byte	37
- 721 02b5 10       		.byte	16
- 722 02b6 C8       		.byte	-56
+ 720 02b4 8B       		.byte	-117
+ 721 02b5 21       		.byte	33
+ 722 02b6 A7       		.byte	-89
  723 02b7 20       		.byte	32
- 724 02b8 B5       		.byte	-75
- 725 02b9 10       		.byte	16
- 726 02ba A5       		.byte	-91
- 727 02bb 08       		.byte	8
- 728 02bc B5       		.byte	-75
- 729 02bd 08       		.byte	8
- 730 02be EC       		.byte	-20
- 731 02bf 08       		.byte	8
- 732 02c0 00       		.byte	0
- 733 02c1 06       		.byte	6
- 734 02c2 08       		.byte	8
- 735 02c3 02       		.byte	2
- 736 02c4 0E       		.byte	14
- 737 02c5 04       		.byte	4
- 738 02c6 00       		.byte	0
- 739 02c7 00       		.byte	0
- 740 02c8 00       		.byte	0
- 741 02c9 0A       		.byte	10
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 14
+ 724 02b8 C0       		.byte	-64
+ 725 02b9 04       		.byte	4
+ 726 02ba D4       		.byte	-44
+ 727 02bb 02       		.byte	2
+ 728 02bc D6       		.byte	-42
+ 729 02bd 07       		.byte	7
+ 730 02be D8       		.byte	-40
+ 731 02bf 01       		.byte	1
+ 732 02c0 E0       		.byte	-32
+ 733 02c1 01       		.byte	1
+ 734 02c2 45       		.byte	69
+ 735 02c3 08       		.byte	8
+ 736 02c4 AB       		.byte	-85
+ 737 02c5 01       		.byte	1
+ 738 02c6 AD       		.byte	-83
+ 739 02c7 02       		.byte	2
+ 740 02c8 D0       		.byte	-48
+ 741 02c9 01       		.byte	1
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 14
 
 
- 742 02ca 00       		.byte	0
- 743 02cb 30       		.byte	48
- 744 02cc 02       		.byte	2
- 745 02cd 09       		.byte	9
- 746 02ce 04       		.byte	4
- 747 02cf 32       		.byte	50
- 748 02d0 02       		.byte	2
- 749 02d1 00       		.byte	0
- 750 02d2 0D       		.byte	13
- 751 02d3 00       		.byte	0
- 752 02d4 3D       		.byte	61
- 753 02d5 26       		.byte	38
- 754 02d6 00       		.byte	0
- 755 02d7 00       		.byte	0
- 756 02d8 0D       		.byte	13
- 757 02d9 00       		.byte	0
- 758 02da 30       		.byte	48
- 759 02db 00       		.byte	0
- 760 02dc 3D       		.byte	61
- 761 02dd 3A       		.byte	58
- 762 02de 00       		.byte	0
- 763 02df 05       		.byte	5
- 764 02e0 01       		.byte	1
- 765 02e1 22       		.byte	34
- 766 02e2 02       		.byte	2
- 767 02e3 04       		.byte	4
- 768 02e4 3D       		.byte	61
- 769 02e5 22       		.byte	34
- 770 02e6 00       		.byte	0
- 771 02e7 04       		.byte	4
- 772 02e8 00       		.byte	0
- 773 02e9 26       		.byte	38
- 774 02ea 10       		.byte	16
- 775 02eb 00       		.byte	0
- 776 02ec 3D       		.byte	61
- 777 02ed 07       		.byte	7
- 778 02ee 00       		.byte	0
- 779 02ef 18       		.byte	24
- 780 02f0 02       		.byte	2
- 781 02f1 04       		.byte	4
- 782 02f2 08       		.byte	8
- 783 02f3 22       		.byte	34
+ 742 02ca A5       		.byte	-91
+ 743 02cb 08       		.byte	8
+ 744 02cc 25       		.byte	37
+ 745 02cd 12       		.byte	18
+ 746 02ce A7       		.byte	-89
+ 747 02cf 20       		.byte	32
+ 748 02d0 C8       		.byte	-56
+ 749 02d1 A0       		.byte	-96
+ 750 02d2 AF       		.byte	-81
+ 751 02d3 20       		.byte	32
+ 752 02d4 B1       		.byte	-79
+ 753 02d5 02       		.byte	2
+ 754 02d6 B5       		.byte	-75
+ 755 02d7 10       		.byte	16
+ 756 02d8 EE       		.byte	-18
+ 757 02d9 10       		.byte	16
+ 758 02da 1F       		.byte	31
+ 759 02db 80       		.byte	-128
+ 760 02dc 34       		.byte	52
+ 761 02dd 01       		.byte	1
+ 762 02de A5       		.byte	-91
+ 763 02df 08       		.byte	8
+ 764 02e0 C6       		.byte	-58
+ 765 02e1 01       		.byte	1
+ 766 02e2 CC       		.byte	-52
+ 767 02e3 01       		.byte	1
+ 768 02e4 AF       		.byte	-81
+ 769 02e5 80       		.byte	-128
+ 770 02e6 B0       		.byte	-80
+ 771 02e7 01       		.byte	1
+ 772 02e8 B5       		.byte	-75
+ 773 02e9 08       		.byte	8
+ 774 02ea EC       		.byte	-20
+ 775 02eb 0C       		.byte	12
+ 776 02ec 00       		.byte	0
+ 777 02ed 0A       		.byte	10
+ 778 02ee 08       		.byte	8
+ 779 02ef 02       		.byte	2
+ 780 02f0 0E       		.byte	14
+ 781 02f1 08       		.byte	8
+ 782 02f2 00       		.byte	0
+ 783 02f3 03       		.byte	3
  784 02f4 00       		.byte	0
- 785 02f5 04       		.byte	4
- 786 02f6 00       		.byte	0
+ 785 02f5 00       		.byte	0
+ 786 02f6 40       		.byte	64
  787 02f7 00       		.byte	0
- 788 02f8 20       		.byte	32
- 789 02f9 38       		.byte	56
- 790 02fa 0F       		.byte	15
- 791 02fb 07       		.byte	7
- 792 02fc 10       		.byte	16
+ 788 02f8 13       		.byte	19
+ 789 02f9 04       		.byte	4
+ 790 02fa 04       		.byte	4
+ 791 02fb 00       		.byte	0
+ 792 02fc 0E       		.byte	14
  793 02fd 00       		.byte	0
  794 02fe 00       		.byte	0
- 795 02ff 00       		.byte	0
+ 795 02ff 04       		.byte	4
  796 0300 00       		.byte	0
- 797 0301 00       		.byte	0
- 798 0302 08       		.byte	8
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 15
+ 797 0301 04       		.byte	4
+ 798 0302 20       		.byte	32
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 15
 
 
- 799 0303 02       		.byte	2
- 800 0304 00       		.byte	0
- 801 0305 00       		.byte	0
- 802 0306 11       		.byte	17
+ 799 0303 00       		.byte	0
+ 800 0304 40       		.byte	64
+ 801 0305 04       		.byte	4
+ 802 0306 00       		.byte	0
  803 0307 00       		.byte	0
- 804 0308 26       		.byte	38
- 805 0309 03       		.byte	3
- 806 030a 40       		.byte	64
- 807 030b 00       		.byte	0
- 808 030c 05       		.byte	5
- 809 030d DE       		.byte	-34
- 810 030e FC       		.byte	-4
- 811 030f 0B       		.byte	11
- 812 0310 1F       		.byte	31
- 813 0311 FF       		.byte	-1
- 814 0312 FF       		.byte	-1
- 815 0313 FF       		.byte	-1
- 816 0314 22       		.byte	34
- 817 0315 00       		.byte	0
- 818 0316 F0       		.byte	-16
- 819 0317 08       		.byte	8
- 820 0318 04       		.byte	4
- 821 0319 00       		.byte	0
+ 804 0308 05       		.byte	5
+ 805 0309 0A       		.byte	10
+ 806 030a 3A       		.byte	58
+ 807 030b 10       		.byte	16
+ 808 030c 00       		.byte	0
+ 809 030d 01       		.byte	1
+ 810 030e 00       		.byte	0
+ 811 030f 00       		.byte	0
+ 812 0310 04       		.byte	4
+ 813 0311 04       		.byte	4
+ 814 0312 39       		.byte	57
+ 815 0313 00       		.byte	0
+ 816 0314 00       		.byte	0
+ 817 0315 04       		.byte	4
+ 818 0316 40       		.byte	64
+ 819 0317 00       		.byte	0
+ 820 0318 40       		.byte	64
+ 821 0319 60       		.byte	96
  822 031a 00       		.byte	0
  823 031b 00       		.byte	0
  824 031c 40       		.byte	64
- 825 031d 00       		.byte	0
+ 825 031d 07       		.byte	7
  826 031e 00       		.byte	0
- 827 031f 00       		.byte	0
- 828 0320 04       		.byte	4
- 829 0321 04       		.byte	4
- 830 0322 04       		.byte	4
- 831 0323 04       		.byte	4
- 832 0324 22       		.byte	34
- 833 0325 22       		.byte	34
- 834 0326 00       		.byte	0
- 835 0327 01       		.byte	1
- 836 0328 00       		.byte	0
- 837 0329 00       		.byte	0
- 838 032a C0       		.byte	-64
+ 827 031f 38       		.byte	56
+ 828 0320 40       		.byte	64
+ 829 0321 56       		.byte	86
+ 830 0322 00       		.byte	0
+ 831 0323 09       		.byte	9
+ 832 0324 30       		.byte	48
+ 833 0325 00       		.byte	0
+ 834 0326 0F       		.byte	15
+ 835 0327 00       		.byte	0
+ 836 0328 40       		.byte	64
+ 837 0329 7F       		.byte	127
+ 838 032a 00       		.byte	0
  839 032b 00       		.byte	0
- 840 032c 40       		.byte	64
- 841 032d 01       		.byte	1
- 842 032e 10       		.byte	16
- 843 032f 11       		.byte	17
- 844 0330 C0       		.byte	-64
- 845 0331 01       		.byte	1
- 846 0332 00       		.byte	0
- 847 0333 11       		.byte	17
- 848 0334 40       		.byte	64
- 849 0335 01       		.byte	1
- 850 0336 40       		.byte	64
- 851 0337 01       		.byte	1
- 852 0338 00       		.byte	0
- 853 0339 00       		.byte	0
- 854 033a 00       		.byte	0
- 855 033b 00       		.byte	0
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 16
+ 840 032c 08       		.byte	8
+ 841 032d 20       		.byte	32
+ 842 032e 00       		.byte	0
+ 843 032f 00       		.byte	0
+ 844 0330 00       		.byte	0
+ 845 0331 00       		.byte	0
+ 846 0332 10       		.byte	16
+ 847 0333 00       		.byte	0
+ 848 0334 34       		.byte	52
+ 849 0335 02       		.byte	2
+ 850 0336 60       		.byte	96
+ 851 0337 00       		.byte	0
+ 852 0338 01       		.byte	1
+ 853 0339 DE       		.byte	-34
+ 854 033a FC       		.byte	-4
+ 855 033b 0B       		.byte	11
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 16
 
 
- 856 033c 00       		.byte	0
- 857 033d 00       		.byte	0
- 858 033e 00       		.byte	0
- 859 033f 00       		.byte	0
- 860 0340 00       		.byte	0
+ 856 033c 1F       		.byte	31
+ 857 033d FF       		.byte	-1
+ 858 033e FF       		.byte	-1
+ 859 033f FF       		.byte	-1
+ 860 0340 22       		.byte	34
  861 0341 00       		.byte	0
- 862 0342 00       		.byte	0
- 863 0343 00       		.byte	0
- 864 0344 00       		.byte	0
+ 862 0342 F0       		.byte	-16
+ 863 0343 08       		.byte	8
+ 864 0344 04       		.byte	4
  865 0345 00       		.byte	0
  866 0346 00       		.byte	0
  867 0347 00       		.byte	0
- 868 0348 00       		.byte	0
- 869 0349 01       		.byte	1
- 870 034a 01       		.byte	1
+ 868 0348 40       		.byte	64
+ 869 0349 00       		.byte	0
+ 870 034a 00       		.byte	0
  871 034b 00       		.byte	0
- 872 034c 01       		.byte	1
- 873 034d 00       		.byte	0
- 874 034e 00       		.byte	0
- 875 034f 00       		.byte	0
- 876 0350 02       		.byte	2
- 877 0351 FC       		.byte	-4
- 878 0352 FC       		.byte	-4
- 879 0353 00       		.byte	0
- 880 0354 DC       		.byte	-36
+ 872 034c 04       		.byte	4
+ 873 034d 04       		.byte	4
+ 874 034e 04       		.byte	4
+ 875 034f 04       		.byte	4
+ 876 0350 33       		.byte	51
+ 877 0351 33       		.byte	51
+ 878 0352 00       		.byte	0
+ 879 0353 01       		.byte	1
+ 880 0354 00       		.byte	0
  881 0355 00       		.byte	0
- 882 0356 00       		.byte	0
+ 882 0356 C0       		.byte	-64
  883 0357 00       		.byte	0
- 884 0358 00       		.byte	0
- 885 0359 FE       		.byte	-2
- 886 035a FE       		.byte	-2
- 887 035b 00       		.byte	0
- 888 035c 00       		.byte	0
- 889 035d 00       		.byte	0
+ 884 0358 40       		.byte	64
+ 885 0359 01       		.byte	1
+ 886 035a 10       		.byte	16
+ 887 035b 11       		.byte	17
+ 888 035c C0       		.byte	-64
+ 889 035d 01       		.byte	1
  890 035e 00       		.byte	0
- 891 035f 00       		.byte	0
- 892 0360 00       		.byte	0
- 893 0361 00       		.byte	0
- 894 0362 00       		.byte	0
- 895 0363 00       		.byte	0
+ 891 035f 11       		.byte	17
+ 892 0360 40       		.byte	64
+ 893 0361 01       		.byte	1
+ 894 0362 40       		.byte	64
+ 895 0363 01       		.byte	1
  896 0364 00       		.byte	0
  897 0365 00       		.byte	0
- 898 0366 20       		.byte	32
+ 898 0366 00       		.byte	0
  899 0367 00       		.byte	0
- 900 0368 B6       		.byte	-74
+ 900 0368 00       		.byte	0
  901 0369 00       		.byte	0
- 902 036a 18       		.byte	24
- 903 036b 01       		.byte	1
- 904              		.section	.cywolatch,"a",%progbits
- 905              		.align	2
- 906              		.type	cy_meta_wonvl, %object
- 907              		.size	cy_meta_wonvl, 4
- 908              	cy_meta_wonvl:
- 909 0000 BC       		.byte	-68
- 910 0001 90       		.byte	-112
- 911 0002 AC       		.byte	-84
- 912 0003 AF       		.byte	-81
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 17
+ 902 036a 00       		.byte	0
+ 903 036b 00       		.byte	0
+ 904 036c 00       		.byte	0
+ 905 036d 00       		.byte	0
+ 906 036e 00       		.byte	0
+ 907 036f 00       		.byte	0
+ 908 0370 00       		.byte	0
+ 909 0371 00       		.byte	0
+ 910 0372 00       		.byte	0
+ 911 0373 00       		.byte	0
+ 912 0374 00       		.byte	0
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 17
 
 
- 913              		.section	.cycustnvl,"a",%progbits
- 914              		.align	2
- 915              		.type	cy_meta_custnvl, %object
- 916              		.size	cy_meta_custnvl, 4
- 917              	cy_meta_custnvl:
- 918 0000 00       		.byte	0
- 919 0001 00       		.byte	0
- 920 0002 40       		.byte	64
- 921 0003 05       		.byte	5
- 922              		.section	.cymeta,"a",%progbits
- 923              		.align	2
- 924              		.type	cy_metadata, %object
- 925              		.size	cy_metadata, 12
- 926              	cy_metadata:
- 927 0000 00       		.byte	0
- 928 0001 01       		.byte	1
- 929 0002 2E       		.byte	46
- 930 0003 12       		.byte	18
- 931 0004 30       		.byte	48
- 932 0005 69       		.byte	105
- 933 0006 00       		.byte	0
- 934 0007 01       		.byte	1
- 935 0008 00       		.byte	0
- 936 0009 00       		.byte	0
- 937 000a 00       		.byte	0
- 938 000b 00       		.byte	0
- 939              		.section	.cyflashprotect,"a",%progbits
- 940              		.align	2
- 941              		.type	cy_meta_flashprotect, %object
- 942              		.size	cy_meta_flashprotect, 256
- 943              	cy_meta_flashprotect:
- 944 0000 00000000 		.space	256
- 944      00000000 
- 944      00000000 
- 944      00000000 
- 944      00000000 
- 945              		.text
- 946              	.Letext0:
- 947              		.file 1 ".\\Generated_Source\\PSoC5\\cymetadata.c"
- 948              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
- 949              		.section	.debug_info,"",%progbits
- 950              	.Ldebug_info0:
- 951 0000 37010000 		.4byte	0x137
- 952 0004 0400     		.2byte	0x4
- 953 0006 00000000 		.4byte	.Ldebug_abbrev0
- 954 000a 04       		.byte	0x4
- 955 000b 01       		.uleb128 0x1
- 956 000c 94000000 		.4byte	.LASF18
- 957 0010 01       		.byte	0x1
- 958 0011 00000000 		.4byte	.LASF19
- 959 0015 80010000 		.4byte	.LASF20
- 960 0019 00000000 		.4byte	.Ldebug_line0
- 961 001d 02       		.uleb128 0x2
- 962 001e 01       		.byte	0x1
- 963 001f 06       		.byte	0x6
- 964 0020 C9010000 		.4byte	.LASF0
- 965 0024 02       		.uleb128 0x2
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 18
+ 913 0375 01       		.byte	1
+ 914 0376 01       		.byte	1
+ 915 0377 00       		.byte	0
+ 916 0378 01       		.byte	1
+ 917 0379 00       		.byte	0
+ 918 037a 04       		.byte	4
+ 919 037b 00       		.byte	0
+ 920 037c 00       		.byte	0
+ 921 037d 00       		.byte	0
+ 922 037e 00       		.byte	0
+ 923 037f 00       		.byte	0
+ 924 0380 00       		.byte	0
+ 925 0381 00       		.byte	0
+ 926 0382 40       		.byte	64
+ 927 0383 00       		.byte	0
+ 928 0384 02       		.byte	2
+ 929 0385 FC       		.byte	-4
+ 930 0386 FC       		.byte	-4
+ 931 0387 00       		.byte	0
+ 932 0388 DC       		.byte	-36
+ 933 0389 00       		.byte	0
+ 934 038a 00       		.byte	0
+ 935 038b 00       		.byte	0
+ 936 038c 00       		.byte	0
+ 937 038d FE       		.byte	-2
+ 938 038e FE       		.byte	-2
+ 939 038f 00       		.byte	0
+ 940 0390 00       		.byte	0
+ 941 0391 00       		.byte	0
+ 942 0392 00       		.byte	0
+ 943 0393 00       		.byte	0
+ 944 0394 00       		.byte	0
+ 945 0395 00       		.byte	0
+ 946 0396 00       		.byte	0
+ 947 0397 00       		.byte	0
+ 948 0398 00       		.byte	0
+ 949 0399 00       		.byte	0
+ 950 039a 20       		.byte	32
+ 951 039b 00       		.byte	0
+ 952 039c B6       		.byte	-74
+ 953 039d 00       		.byte	0
+ 954 039e 18       		.byte	24
+ 955 039f 01       		.byte	1
+ 956              		.section	.cywolatch,"a",%progbits
+ 957              		.align	2
+ 958              		.type	cy_meta_wonvl, %object
+ 959              		.size	cy_meta_wonvl, 4
+ 960              	cy_meta_wonvl:
+ 961 0000 BC       		.byte	-68
+ 962 0001 90       		.byte	-112
+ 963 0002 AC       		.byte	-84
+ 964 0003 AF       		.byte	-81
+ 965              		.section	.cycustnvl,"a",%progbits
+ 966              		.align	2
+ 967              		.type	cy_meta_custnvl, %object
+ 968              		.size	cy_meta_custnvl, 4
+ 969              	cy_meta_custnvl:
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 18
 
 
- 966 0025 01       		.byte	0x1
- 967 0026 08       		.byte	0x8
- 968 0027 38000000 		.4byte	.LASF1
- 969 002b 02       		.uleb128 0x2
- 970 002c 02       		.byte	0x2
- 971 002d 05       		.byte	0x5
- 972 002e AB010000 		.4byte	.LASF2
- 973 0032 02       		.uleb128 0x2
- 974 0033 02       		.byte	0x2
- 975 0034 07       		.byte	0x7
- 976 0035 58000000 		.4byte	.LASF3
- 977 0039 02       		.uleb128 0x2
- 978 003a 04       		.byte	0x4
- 979 003b 05       		.byte	0x5
- 980 003c BB010000 		.4byte	.LASF4
- 981 0040 02       		.uleb128 0x2
- 982 0041 04       		.byte	0x4
- 983 0042 07       		.byte	0x7
- 984 0043 46000000 		.4byte	.LASF5
- 985 0047 02       		.uleb128 0x2
- 986 0048 08       		.byte	0x8
- 987 0049 05       		.byte	0x5
- 988 004a 72010000 		.4byte	.LASF6
- 989 004e 02       		.uleb128 0x2
- 990 004f 08       		.byte	0x8
- 991 0050 07       		.byte	0x7
- 992 0051 2F010000 		.4byte	.LASF7
- 993 0055 03       		.uleb128 0x3
- 994 0056 04       		.byte	0x4
- 995 0057 05       		.byte	0x5
- 996 0058 696E7400 		.ascii	"int\000"
- 997 005c 02       		.uleb128 0x2
- 998 005d 04       		.byte	0x4
- 999 005e 07       		.byte	0x7
- 1000 005f 22010000 		.4byte	.LASF8
- 1001 0063 04       		.uleb128 0x4
- 1002 0064 B5010000 		.4byte	.LASF21
- 1003 0068 02       		.byte	0x2
- 1004 0069 9201     		.2byte	0x192
- 1005 006b 24000000 		.4byte	0x24
- 1006 006f 02       		.uleb128 0x2
- 1007 0070 04       		.byte	0x4
- 1008 0071 04       		.byte	0x4
- 1009 0072 32000000 		.4byte	.LASF9
- 1010 0076 02       		.uleb128 0x2
- 1011 0077 08       		.byte	0x8
- 1012 0078 04       		.byte	0x4
- 1013 0079 6B000000 		.4byte	.LASF10
- 1014 007d 02       		.uleb128 0x2
- 1015 007e 01       		.byte	0x1
- 1016 007f 08       		.byte	0x8
- 1017 0080 C4010000 		.4byte	.LASF11
- 1018 0084 05       		.uleb128 0x5
- 1019 0085 63000000 		.4byte	0x63
- 1020 0089 95000000 		.4byte	0x95
- 1021 008d 06       		.uleb128 0x6
- 1022 008e 95000000 		.4byte	0x95
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 19
+ 970 0000 00       		.byte	0
+ 971 0001 00       		.byte	0
+ 972 0002 40       		.byte	64
+ 973 0003 05       		.byte	5
+ 974              		.section	.cymeta,"a",%progbits
+ 975              		.align	2
+ 976              		.type	cy_metadata, %object
+ 977              		.size	cy_metadata, 12
+ 978              	cy_metadata:
+ 979 0000 00       		.byte	0
+ 980 0001 01       		.byte	1
+ 981 0002 2E       		.byte	46
+ 982 0003 12       		.byte	18
+ 983 0004 30       		.byte	48
+ 984 0005 69       		.byte	105
+ 985 0006 00       		.byte	0
+ 986 0007 01       		.byte	1
+ 987 0008 00       		.byte	0
+ 988 0009 00       		.byte	0
+ 989 000a 00       		.byte	0
+ 990 000b 00       		.byte	0
+ 991              		.section	.cyflashprotect,"a",%progbits
+ 992              		.align	2
+ 993              		.type	cy_meta_flashprotect, %object
+ 994              		.size	cy_meta_flashprotect, 256
+ 995              	cy_meta_flashprotect:
+ 996 0000 00000000 		.space	256
+ 996      00000000 
+ 996      00000000 
+ 996      00000000 
+ 996      00000000 
+ 997              		.text
+ 998              	.Letext0:
+ 999              		.file 1 ".\\Generated_Source\\PSoC5\\cymetadata.c"
+ 1000              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 1001              		.section	.debug_info,"",%progbits
+ 1002              	.Ldebug_info0:
+ 1003 0000 37010000 		.4byte	0x137
+ 1004 0004 0400     		.2byte	0x4
+ 1005 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1006 000a 04       		.byte	0x4
+ 1007 000b 01       		.uleb128 0x1
+ 1008 000c 94000000 		.4byte	.LASF18
+ 1009 0010 01       		.byte	0x1
+ 1010 0011 00000000 		.4byte	.LASF19
+ 1011 0015 80010000 		.4byte	.LASF20
+ 1012 0019 00000000 		.4byte	.Ldebug_line0
+ 1013 001d 02       		.uleb128 0x2
+ 1014 001e 01       		.byte	0x1
+ 1015 001f 06       		.byte	0x6
+ 1016 0020 C9010000 		.4byte	.LASF0
+ 1017 0024 02       		.uleb128 0x2
+ 1018 0025 01       		.byte	0x1
+ 1019 0026 08       		.byte	0x8
+ 1020 0027 38000000 		.4byte	.LASF1
+ 1021 002b 02       		.uleb128 0x2
+ 1022 002c 02       		.byte	0x2
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 19
 
 
- 1023 0092 6B03     		.2byte	0x36b
- 1024 0094 00       		.byte	0
- 1025 0095 02       		.uleb128 0x2
- 1026 0096 04       		.byte	0x4
- 1027 0097 07       		.byte	0x7
- 1028 0098 69010000 		.4byte	.LASF12
- 1029 009c 07       		.uleb128 0x7
- 1030 009d 82000000 		.4byte	.LASF13
- 1031 00a1 01       		.byte	0x1
- 1032 00a2 1F       		.byte	0x1f
- 1033 00a3 AD000000 		.4byte	0xad
- 1034 00a7 05       		.uleb128 0x5
- 1035 00a8 03       		.byte	0x3
- 1036 00a9 00000000 		.4byte	cy_meta_configecc
- 1037 00ad 08       		.uleb128 0x8
- 1038 00ae 84000000 		.4byte	0x84
- 1039 00b2 05       		.uleb128 0x5
- 1040 00b3 63000000 		.4byte	0x63
- 1041 00b7 C2000000 		.4byte	0xc2
- 1042 00bb 09       		.uleb128 0x9
- 1043 00bc 95000000 		.4byte	0x95
- 1044 00c0 03       		.byte	0x3
- 1045 00c1 00       		.byte	0
- 1046 00c2 07       		.uleb128 0x7
- 1047 00c3 72000000 		.4byte	.LASF14
- 1048 00c7 01       		.byte	0x1
- 1049 00c8 9A       		.byte	0x9a
- 1050 00c9 D3000000 		.4byte	0xd3
- 1051 00cd 05       		.uleb128 0x5
- 1052 00ce 03       		.byte	0x3
- 1053 00cf 00000000 		.4byte	cy_meta_custnvl
- 1054 00d3 08       		.uleb128 0x8
- 1055 00d4 B2000000 		.4byte	0xb2
- 1056 00d8 07       		.uleb128 0x7
- 1057 00d9 5B010000 		.4byte	.LASF15
- 1058 00dd 01       		.byte	0x1
- 1059 00de A8       		.byte	0xa8
- 1060 00df E9000000 		.4byte	0xe9
- 1061 00e3 05       		.uleb128 0x5
- 1062 00e4 03       		.byte	0x3
- 1063 00e5 00000000 		.4byte	cy_meta_wonvl
- 1064 00e9 08       		.uleb128 0x8
- 1065 00ea B2000000 		.4byte	0xb2
- 1066 00ee 05       		.uleb128 0x5
- 1067 00ef 63000000 		.4byte	0x63
- 1068 00f3 FE000000 		.4byte	0xfe
- 1069 00f7 09       		.uleb128 0x9
- 1070 00f8 95000000 		.4byte	0x95
- 1071 00fc FF       		.byte	0xff
- 1072 00fd 00       		.byte	0
- 1073 00fe 07       		.uleb128 0x7
- 1074 00ff 46010000 		.4byte	.LASF16
- 1075 0103 01       		.byte	0x1
- 1076 0104 B6       		.byte	0xb6
- 1077 0105 0F010000 		.4byte	0x10f
- 1078 0109 05       		.uleb128 0x5
- 1079 010a 03       		.byte	0x3
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 20
+ 1023 002d 05       		.byte	0x5
+ 1024 002e AB010000 		.4byte	.LASF2
+ 1025 0032 02       		.uleb128 0x2
+ 1026 0033 02       		.byte	0x2
+ 1027 0034 07       		.byte	0x7
+ 1028 0035 58000000 		.4byte	.LASF3
+ 1029 0039 02       		.uleb128 0x2
+ 1030 003a 04       		.byte	0x4
+ 1031 003b 05       		.byte	0x5
+ 1032 003c BB010000 		.4byte	.LASF4
+ 1033 0040 02       		.uleb128 0x2
+ 1034 0041 04       		.byte	0x4
+ 1035 0042 07       		.byte	0x7
+ 1036 0043 46000000 		.4byte	.LASF5
+ 1037 0047 02       		.uleb128 0x2
+ 1038 0048 08       		.byte	0x8
+ 1039 0049 05       		.byte	0x5
+ 1040 004a 72010000 		.4byte	.LASF6
+ 1041 004e 02       		.uleb128 0x2
+ 1042 004f 08       		.byte	0x8
+ 1043 0050 07       		.byte	0x7
+ 1044 0051 2F010000 		.4byte	.LASF7
+ 1045 0055 03       		.uleb128 0x3
+ 1046 0056 04       		.byte	0x4
+ 1047 0057 05       		.byte	0x5
+ 1048 0058 696E7400 		.ascii	"int\000"
+ 1049 005c 02       		.uleb128 0x2
+ 1050 005d 04       		.byte	0x4
+ 1051 005e 07       		.byte	0x7
+ 1052 005f 22010000 		.4byte	.LASF8
+ 1053 0063 04       		.uleb128 0x4
+ 1054 0064 B5010000 		.4byte	.LASF21
+ 1055 0068 02       		.byte	0x2
+ 1056 0069 9201     		.2byte	0x192
+ 1057 006b 24000000 		.4byte	0x24
+ 1058 006f 02       		.uleb128 0x2
+ 1059 0070 04       		.byte	0x4
+ 1060 0071 04       		.byte	0x4
+ 1061 0072 32000000 		.4byte	.LASF9
+ 1062 0076 02       		.uleb128 0x2
+ 1063 0077 08       		.byte	0x8
+ 1064 0078 04       		.byte	0x4
+ 1065 0079 6B000000 		.4byte	.LASF10
+ 1066 007d 02       		.uleb128 0x2
+ 1067 007e 01       		.byte	0x1
+ 1068 007f 08       		.byte	0x8
+ 1069 0080 C4010000 		.4byte	.LASF11
+ 1070 0084 05       		.uleb128 0x5
+ 1071 0085 63000000 		.4byte	0x63
+ 1072 0089 95000000 		.4byte	0x95
+ 1073 008d 06       		.uleb128 0x6
+ 1074 008e 95000000 		.4byte	0x95
+ 1075 0092 9F03     		.2byte	0x39f
+ 1076 0094 00       		.byte	0
+ 1077 0095 02       		.uleb128 0x2
+ 1078 0096 04       		.byte	0x4
+ 1079 0097 07       		.byte	0x7
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 20
 
 
- 1080 010b 00000000 		.4byte	cy_meta_flashprotect
- 1081 010f 08       		.uleb128 0x8
- 1082 0110 EE000000 		.4byte	0xee
- 1083 0114 05       		.uleb128 0x5
- 1084 0115 63000000 		.4byte	0x63
- 1085 0119 24010000 		.4byte	0x124
- 1086 011d 09       		.uleb128 0x9
- 1087 011e 95000000 		.4byte	0x95
- 1088 0122 0B       		.byte	0xb
- 1089 0123 00       		.byte	0
- 1090 0124 07       		.uleb128 0x7
- 1091 0125 26000000 		.4byte	.LASF17
- 1092 0129 01       		.byte	0x1
- 1093 012a E3       		.byte	0xe3
- 1094 012b 35010000 		.4byte	0x135
- 1095 012f 05       		.uleb128 0x5
- 1096 0130 03       		.byte	0x3
- 1097 0131 00000000 		.4byte	cy_metadata
- 1098 0135 08       		.uleb128 0x8
- 1099 0136 14010000 		.4byte	0x114
- 1100 013a 00       		.byte	0
- 1101              		.section	.debug_abbrev,"",%progbits
- 1102              	.Ldebug_abbrev0:
- 1103 0000 01       		.uleb128 0x1
- 1104 0001 11       		.uleb128 0x11
- 1105 0002 01       		.byte	0x1
- 1106 0003 25       		.uleb128 0x25
- 1107 0004 0E       		.uleb128 0xe
- 1108 0005 13       		.uleb128 0x13
- 1109 0006 0B       		.uleb128 0xb
- 1110 0007 03       		.uleb128 0x3
- 1111 0008 0E       		.uleb128 0xe
- 1112 0009 1B       		.uleb128 0x1b
- 1113 000a 0E       		.uleb128 0xe
- 1114 000b 10       		.uleb128 0x10
- 1115 000c 17       		.uleb128 0x17
- 1116 000d 00       		.byte	0
- 1117 000e 00       		.byte	0
- 1118 000f 02       		.uleb128 0x2
- 1119 0010 24       		.uleb128 0x24
- 1120 0011 00       		.byte	0
- 1121 0012 0B       		.uleb128 0xb
- 1122 0013 0B       		.uleb128 0xb
- 1123 0014 3E       		.uleb128 0x3e
- 1124 0015 0B       		.uleb128 0xb
- 1125 0016 03       		.uleb128 0x3
- 1126 0017 0E       		.uleb128 0xe
- 1127 0018 00       		.byte	0
- 1128 0019 00       		.byte	0
- 1129 001a 03       		.uleb128 0x3
- 1130 001b 24       		.uleb128 0x24
- 1131 001c 00       		.byte	0
- 1132 001d 0B       		.uleb128 0xb
- 1133 001e 0B       		.uleb128 0xb
- 1134 001f 3E       		.uleb128 0x3e
- 1135 0020 0B       		.uleb128 0xb
- 1136 0021 03       		.uleb128 0x3
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 21
+ 1080 0098 69010000 		.4byte	.LASF12
+ 1081 009c 07       		.uleb128 0x7
+ 1082 009d 82000000 		.4byte	.LASF13
+ 1083 00a1 01       		.byte	0x1
+ 1084 00a2 1F       		.byte	0x1f
+ 1085 00a3 AD000000 		.4byte	0xad
+ 1086 00a7 05       		.uleb128 0x5
+ 1087 00a8 03       		.byte	0x3
+ 1088 00a9 00000000 		.4byte	cy_meta_configecc
+ 1089 00ad 08       		.uleb128 0x8
+ 1090 00ae 84000000 		.4byte	0x84
+ 1091 00b2 05       		.uleb128 0x5
+ 1092 00b3 63000000 		.4byte	0x63
+ 1093 00b7 C2000000 		.4byte	0xc2
+ 1094 00bb 09       		.uleb128 0x9
+ 1095 00bc 95000000 		.4byte	0x95
+ 1096 00c0 03       		.byte	0x3
+ 1097 00c1 00       		.byte	0
+ 1098 00c2 07       		.uleb128 0x7
+ 1099 00c3 72000000 		.4byte	.LASF14
+ 1100 00c7 01       		.byte	0x1
+ 1101 00c8 A0       		.byte	0xa0
+ 1102 00c9 D3000000 		.4byte	0xd3
+ 1103 00cd 05       		.uleb128 0x5
+ 1104 00ce 03       		.byte	0x3
+ 1105 00cf 00000000 		.4byte	cy_meta_custnvl
+ 1106 00d3 08       		.uleb128 0x8
+ 1107 00d4 B2000000 		.4byte	0xb2
+ 1108 00d8 07       		.uleb128 0x7
+ 1109 00d9 5B010000 		.4byte	.LASF15
+ 1110 00dd 01       		.byte	0x1
+ 1111 00de AE       		.byte	0xae
+ 1112 00df E9000000 		.4byte	0xe9
+ 1113 00e3 05       		.uleb128 0x5
+ 1114 00e4 03       		.byte	0x3
+ 1115 00e5 00000000 		.4byte	cy_meta_wonvl
+ 1116 00e9 08       		.uleb128 0x8
+ 1117 00ea B2000000 		.4byte	0xb2
+ 1118 00ee 05       		.uleb128 0x5
+ 1119 00ef 63000000 		.4byte	0x63
+ 1120 00f3 FE000000 		.4byte	0xfe
+ 1121 00f7 09       		.uleb128 0x9
+ 1122 00f8 95000000 		.4byte	0x95
+ 1123 00fc FF       		.byte	0xff
+ 1124 00fd 00       		.byte	0
+ 1125 00fe 07       		.uleb128 0x7
+ 1126 00ff 46010000 		.4byte	.LASF16
+ 1127 0103 01       		.byte	0x1
+ 1128 0104 BC       		.byte	0xbc
+ 1129 0105 0F010000 		.4byte	0x10f
+ 1130 0109 05       		.uleb128 0x5
+ 1131 010a 03       		.byte	0x3
+ 1132 010b 00000000 		.4byte	cy_meta_flashprotect
+ 1133 010f 08       		.uleb128 0x8
+ 1134 0110 EE000000 		.4byte	0xee
+ 1135 0114 05       		.uleb128 0x5
+ 1136 0115 63000000 		.4byte	0x63
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 21
 
 
- 1137 0022 08       		.uleb128 0x8
- 1138 0023 00       		.byte	0
- 1139 0024 00       		.byte	0
- 1140 0025 04       		.uleb128 0x4
- 1141 0026 16       		.uleb128 0x16
- 1142 0027 00       		.byte	0
- 1143 0028 03       		.uleb128 0x3
- 1144 0029 0E       		.uleb128 0xe
- 1145 002a 3A       		.uleb128 0x3a
- 1146 002b 0B       		.uleb128 0xb
- 1147 002c 3B       		.uleb128 0x3b
- 1148 002d 05       		.uleb128 0x5
- 1149 002e 49       		.uleb128 0x49
- 1150 002f 13       		.uleb128 0x13
- 1151 0030 00       		.byte	0
- 1152 0031 00       		.byte	0
- 1153 0032 05       		.uleb128 0x5
- 1154 0033 01       		.uleb128 0x1
- 1155 0034 01       		.byte	0x1
- 1156 0035 49       		.uleb128 0x49
- 1157 0036 13       		.uleb128 0x13
- 1158 0037 01       		.uleb128 0x1
- 1159 0038 13       		.uleb128 0x13
- 1160 0039 00       		.byte	0
- 1161 003a 00       		.byte	0
- 1162 003b 06       		.uleb128 0x6
- 1163 003c 21       		.uleb128 0x21
- 1164 003d 00       		.byte	0
- 1165 003e 49       		.uleb128 0x49
- 1166 003f 13       		.uleb128 0x13
- 1167 0040 2F       		.uleb128 0x2f
- 1168 0041 05       		.uleb128 0x5
- 1169 0042 00       		.byte	0
- 1170 0043 00       		.byte	0
- 1171 0044 07       		.uleb128 0x7
- 1172 0045 34       		.uleb128 0x34
- 1173 0046 00       		.byte	0
- 1174 0047 03       		.uleb128 0x3
- 1175 0048 0E       		.uleb128 0xe
- 1176 0049 3A       		.uleb128 0x3a
- 1177 004a 0B       		.uleb128 0xb
- 1178 004b 3B       		.uleb128 0x3b
- 1179 004c 0B       		.uleb128 0xb
- 1180 004d 49       		.uleb128 0x49
- 1181 004e 13       		.uleb128 0x13
- 1182 004f 3F       		.uleb128 0x3f
- 1183 0050 19       		.uleb128 0x19
- 1184 0051 02       		.uleb128 0x2
- 1185 0052 18       		.uleb128 0x18
- 1186 0053 00       		.byte	0
- 1187 0054 00       		.byte	0
- 1188 0055 08       		.uleb128 0x8
- 1189 0056 26       		.uleb128 0x26
- 1190 0057 00       		.byte	0
- 1191 0058 49       		.uleb128 0x49
- 1192 0059 13       		.uleb128 0x13
- 1193 005a 00       		.byte	0
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 22
+ 1137 0119 24010000 		.4byte	0x124
+ 1138 011d 09       		.uleb128 0x9
+ 1139 011e 95000000 		.4byte	0x95
+ 1140 0122 0B       		.byte	0xb
+ 1141 0123 00       		.byte	0
+ 1142 0124 07       		.uleb128 0x7
+ 1143 0125 26000000 		.4byte	.LASF17
+ 1144 0129 01       		.byte	0x1
+ 1145 012a E9       		.byte	0xe9
+ 1146 012b 35010000 		.4byte	0x135
+ 1147 012f 05       		.uleb128 0x5
+ 1148 0130 03       		.byte	0x3
+ 1149 0131 00000000 		.4byte	cy_metadata
+ 1150 0135 08       		.uleb128 0x8
+ 1151 0136 14010000 		.4byte	0x114
+ 1152 013a 00       		.byte	0
+ 1153              		.section	.debug_abbrev,"",%progbits
+ 1154              	.Ldebug_abbrev0:
+ 1155 0000 01       		.uleb128 0x1
+ 1156 0001 11       		.uleb128 0x11
+ 1157 0002 01       		.byte	0x1
+ 1158 0003 25       		.uleb128 0x25
+ 1159 0004 0E       		.uleb128 0xe
+ 1160 0005 13       		.uleb128 0x13
+ 1161 0006 0B       		.uleb128 0xb
+ 1162 0007 03       		.uleb128 0x3
+ 1163 0008 0E       		.uleb128 0xe
+ 1164 0009 1B       		.uleb128 0x1b
+ 1165 000a 0E       		.uleb128 0xe
+ 1166 000b 10       		.uleb128 0x10
+ 1167 000c 17       		.uleb128 0x17
+ 1168 000d 00       		.byte	0
+ 1169 000e 00       		.byte	0
+ 1170 000f 02       		.uleb128 0x2
+ 1171 0010 24       		.uleb128 0x24
+ 1172 0011 00       		.byte	0
+ 1173 0012 0B       		.uleb128 0xb
+ 1174 0013 0B       		.uleb128 0xb
+ 1175 0014 3E       		.uleb128 0x3e
+ 1176 0015 0B       		.uleb128 0xb
+ 1177 0016 03       		.uleb128 0x3
+ 1178 0017 0E       		.uleb128 0xe
+ 1179 0018 00       		.byte	0
+ 1180 0019 00       		.byte	0
+ 1181 001a 03       		.uleb128 0x3
+ 1182 001b 24       		.uleb128 0x24
+ 1183 001c 00       		.byte	0
+ 1184 001d 0B       		.uleb128 0xb
+ 1185 001e 0B       		.uleb128 0xb
+ 1186 001f 3E       		.uleb128 0x3e
+ 1187 0020 0B       		.uleb128 0xb
+ 1188 0021 03       		.uleb128 0x3
+ 1189 0022 08       		.uleb128 0x8
+ 1190 0023 00       		.byte	0
+ 1191 0024 00       		.byte	0
+ 1192 0025 04       		.uleb128 0x4
+ 1193 0026 16       		.uleb128 0x16
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 22
 
 
- 1194 005b 00       		.byte	0
- 1195 005c 09       		.uleb128 0x9
- 1196 005d 21       		.uleb128 0x21
- 1197 005e 00       		.byte	0
- 1198 005f 49       		.uleb128 0x49
- 1199 0060 13       		.uleb128 0x13
- 1200 0061 2F       		.uleb128 0x2f
- 1201 0062 0B       		.uleb128 0xb
- 1202 0063 00       		.byte	0
- 1203 0064 00       		.byte	0
- 1204 0065 00       		.byte	0
- 1205              		.section	.debug_aranges,"",%progbits
- 1206 0000 14000000 		.4byte	0x14
- 1207 0004 0200     		.2byte	0x2
- 1208 0006 00000000 		.4byte	.Ldebug_info0
- 1209 000a 04       		.byte	0x4
- 1210 000b 00       		.byte	0
- 1211 000c 0000     		.2byte	0
- 1212 000e 0000     		.2byte	0
- 1213 0010 00000000 		.4byte	0
- 1214 0014 00000000 		.4byte	0
- 1215              		.section	.debug_line,"",%progbits
- 1216              	.Ldebug_line0:
- 1217 0000 4F000000 		.section	.debug_str,"MS",%progbits,1
- 1217      02004900 
- 1217      00000201 
- 1217      FB0E0D00 
- 1217      01010101 
- 1218              	.LASF19:
- 1219 0000 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\cymetadata.c\000"
- 1219      6E657261 
- 1219      7465645F 
- 1219      536F7572 
- 1219      63655C50 
- 1220              	.LASF17:
- 1221 0026 63795F6D 		.ascii	"cy_metadata\000"
- 1221      65746164 
- 1221      61746100 
- 1222              	.LASF9:
- 1223 0032 666C6F61 		.ascii	"float\000"
- 1223      7400
- 1224              	.LASF1:
- 1225 0038 756E7369 		.ascii	"unsigned char\000"
- 1225      676E6564 
- 1225      20636861 
- 1225      7200
- 1226              	.LASF5:
- 1227 0046 6C6F6E67 		.ascii	"long unsigned int\000"
- 1227      20756E73 
- 1227      69676E65 
- 1227      6420696E 
- 1227      7400
- 1228              	.LASF3:
- 1229 0058 73686F72 		.ascii	"short unsigned int\000"
- 1229      7420756E 
- 1229      7369676E 
- 1229      65642069 
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 23
+ 1194 0027 00       		.byte	0
+ 1195 0028 03       		.uleb128 0x3
+ 1196 0029 0E       		.uleb128 0xe
+ 1197 002a 3A       		.uleb128 0x3a
+ 1198 002b 0B       		.uleb128 0xb
+ 1199 002c 3B       		.uleb128 0x3b
+ 1200 002d 05       		.uleb128 0x5
+ 1201 002e 49       		.uleb128 0x49
+ 1202 002f 13       		.uleb128 0x13
+ 1203 0030 00       		.byte	0
+ 1204 0031 00       		.byte	0
+ 1205 0032 05       		.uleb128 0x5
+ 1206 0033 01       		.uleb128 0x1
+ 1207 0034 01       		.byte	0x1
+ 1208 0035 49       		.uleb128 0x49
+ 1209 0036 13       		.uleb128 0x13
+ 1210 0037 01       		.uleb128 0x1
+ 1211 0038 13       		.uleb128 0x13
+ 1212 0039 00       		.byte	0
+ 1213 003a 00       		.byte	0
+ 1214 003b 06       		.uleb128 0x6
+ 1215 003c 21       		.uleb128 0x21
+ 1216 003d 00       		.byte	0
+ 1217 003e 49       		.uleb128 0x49
+ 1218 003f 13       		.uleb128 0x13
+ 1219 0040 2F       		.uleb128 0x2f
+ 1220 0041 05       		.uleb128 0x5
+ 1221 0042 00       		.byte	0
+ 1222 0043 00       		.byte	0
+ 1223 0044 07       		.uleb128 0x7
+ 1224 0045 34       		.uleb128 0x34
+ 1225 0046 00       		.byte	0
+ 1226 0047 03       		.uleb128 0x3
+ 1227 0048 0E       		.uleb128 0xe
+ 1228 0049 3A       		.uleb128 0x3a
+ 1229 004a 0B       		.uleb128 0xb
+ 1230 004b 3B       		.uleb128 0x3b
+ 1231 004c 0B       		.uleb128 0xb
+ 1232 004d 49       		.uleb128 0x49
+ 1233 004e 13       		.uleb128 0x13
+ 1234 004f 3F       		.uleb128 0x3f
+ 1235 0050 19       		.uleb128 0x19
+ 1236 0051 02       		.uleb128 0x2
+ 1237 0052 18       		.uleb128 0x18
+ 1238 0053 00       		.byte	0
+ 1239 0054 00       		.byte	0
+ 1240 0055 08       		.uleb128 0x8
+ 1241 0056 26       		.uleb128 0x26
+ 1242 0057 00       		.byte	0
+ 1243 0058 49       		.uleb128 0x49
+ 1244 0059 13       		.uleb128 0x13
+ 1245 005a 00       		.byte	0
+ 1246 005b 00       		.byte	0
+ 1247 005c 09       		.uleb128 0x9
+ 1248 005d 21       		.uleb128 0x21
+ 1249 005e 00       		.byte	0
+ 1250 005f 49       		.uleb128 0x49
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 23
 
 
- 1229      6E7400
- 1230              	.LASF10:
- 1231 006b 646F7562 		.ascii	"double\000"
- 1231      6C6500
- 1232              	.LASF14:
- 1233 0072 63795F6D 		.ascii	"cy_meta_custnvl\000"
- 1233      6574615F 
- 1233      63757374 
- 1233      6E766C00 
- 1234              	.LASF13:
- 1235 0082 63795F6D 		.ascii	"cy_meta_configecc\000"
- 1235      6574615F 
- 1235      636F6E66 
- 1235      69676563 
- 1235      6300
- 1236              	.LASF18:
- 1237 0094 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 1237      4320342E 
- 1237      392E3320 
- 1237      32303135 
- 1237      30333033 
- 1238 00c7 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 1238      20726576 
- 1238      6973696F 
- 1238      6E203232 
- 1238      31323230 
- 1239 00fa 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1239      66756E63 
- 1239      74696F6E 
- 1239      2D736563 
- 1239      74696F6E 
- 1240              	.LASF8:
- 1241 0122 756E7369 		.ascii	"unsigned int\000"
- 1241      676E6564 
- 1241      20696E74 
- 1241      00
- 1242              	.LASF7:
- 1243 012f 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1243      206C6F6E 
- 1243      6720756E 
- 1243      7369676E 
- 1243      65642069 
- 1244              	.LASF16:
- 1245 0146 63795F6D 		.ascii	"cy_meta_flashprotect\000"
- 1245      6574615F 
- 1245      666C6173 
- 1245      6870726F 
- 1245      74656374 
- 1246              	.LASF15:
- 1247 015b 63795F6D 		.ascii	"cy_meta_wonvl\000"
- 1247      6574615F 
- 1247      776F6E76 
- 1247      6C00
- 1248              	.LASF12:
- 1249 0169 73697A65 		.ascii	"sizetype\000"
- 1249      74797065 
- 1249      00
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccefzDuT.s 			page 24
+ 1251 0060 13       		.uleb128 0x13
+ 1252 0061 2F       		.uleb128 0x2f
+ 1253 0062 0B       		.uleb128 0xb
+ 1254 0063 00       		.byte	0
+ 1255 0064 00       		.byte	0
+ 1256 0065 00       		.byte	0
+ 1257              		.section	.debug_aranges,"",%progbits
+ 1258 0000 14000000 		.4byte	0x14
+ 1259 0004 0200     		.2byte	0x2
+ 1260 0006 00000000 		.4byte	.Ldebug_info0
+ 1261 000a 04       		.byte	0x4
+ 1262 000b 00       		.byte	0
+ 1263 000c 0000     		.2byte	0
+ 1264 000e 0000     		.2byte	0
+ 1265 0010 00000000 		.4byte	0
+ 1266 0014 00000000 		.4byte	0
+ 1267              		.section	.debug_line,"",%progbits
+ 1268              	.Ldebug_line0:
+ 1269 0000 4F000000 		.section	.debug_str,"MS",%progbits,1
+ 1269      02004900 
+ 1269      00000201 
+ 1269      FB0E0D00 
+ 1269      01010101 
+ 1270              	.LASF19:
+ 1271 0000 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\cymetadata.c\000"
+ 1271      6E657261 
+ 1271      7465645F 
+ 1271      536F7572 
+ 1271      63655C50 
+ 1272              	.LASF17:
+ 1273 0026 63795F6D 		.ascii	"cy_metadata\000"
+ 1273      65746164 
+ 1273      61746100 
+ 1274              	.LASF9:
+ 1275 0032 666C6F61 		.ascii	"float\000"
+ 1275      7400
+ 1276              	.LASF1:
+ 1277 0038 756E7369 		.ascii	"unsigned char\000"
+ 1277      676E6564 
+ 1277      20636861 
+ 1277      7200
+ 1278              	.LASF5:
+ 1279 0046 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1279      20756E73 
+ 1279      69676E65 
+ 1279      6420696E 
+ 1279      7400
+ 1280              	.LASF3:
+ 1281 0058 73686F72 		.ascii	"short unsigned int\000"
+ 1281      7420756E 
+ 1281      7369676E 
+ 1281      65642069 
+ 1281      6E7400
+ 1282              	.LASF10:
+ 1283 006b 646F7562 		.ascii	"double\000"
+ 1283      6C6500
+ 1284              	.LASF14:
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 24
 
 
- 1250              	.LASF6:
- 1251 0172 6C6F6E67 		.ascii	"long long int\000"
- 1251      206C6F6E 
- 1251      6720696E 
- 1251      7400
- 1252              	.LASF20:
- 1253 0180 443A5C4D 		.ascii	"D:\\MIT\\Microcomputer\\Exercise_4\\LAB2.cydsn\000"
- 1253      49545C4D 
- 1253      6963726F 
- 1253      636F6D70 
- 1253      75746572 
- 1254              	.LASF2:
- 1255 01ab 73686F72 		.ascii	"short int\000"
- 1255      7420696E 
- 1255      7400
- 1256              	.LASF21:
- 1257 01b5 75696E74 		.ascii	"uint8\000"
- 1257      3800
- 1258              	.LASF4:
- 1259 01bb 6C6F6E67 		.ascii	"long int\000"
- 1259      20696E74 
- 1259      00
- 1260              	.LASF11:
- 1261 01c4 63686172 		.ascii	"char\000"
- 1261      00
- 1262              	.LASF0:
- 1263 01c9 7369676E 		.ascii	"signed char\000"
- 1263      65642063 
- 1263      68617200 
- 1264              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 1285 0072 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 1285      6574615F 
+ 1285      63757374 
+ 1285      6E766C00 
+ 1286              	.LASF13:
+ 1287 0082 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 1287      6574615F 
+ 1287      636F6E66 
+ 1287      69676563 
+ 1287      6300
+ 1288              	.LASF18:
+ 1289 0094 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1289      4320342E 
+ 1289      392E3320 
+ 1289      32303135 
+ 1289      30333033 
+ 1290 00c7 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1290      20726576 
+ 1290      6973696F 
+ 1290      6E203232 
+ 1290      31323230 
+ 1291 00fa 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1291      66756E63 
+ 1291      74696F6E 
+ 1291      2D736563 
+ 1291      74696F6E 
+ 1292              	.LASF8:
+ 1293 0122 756E7369 		.ascii	"unsigned int\000"
+ 1293      676E6564 
+ 1293      20696E74 
+ 1293      00
+ 1294              	.LASF7:
+ 1295 012f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1295      206C6F6E 
+ 1295      6720756E 
+ 1295      7369676E 
+ 1295      65642069 
+ 1296              	.LASF16:
+ 1297 0146 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 1297      6574615F 
+ 1297      666C6173 
+ 1297      6870726F 
+ 1297      74656374 
+ 1298              	.LASF15:
+ 1299 015b 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 1299      6574615F 
+ 1299      776F6E76 
+ 1299      6C00
+ 1300              	.LASF12:
+ 1301 0169 73697A65 		.ascii	"sizetype\000"
+ 1301      74797065 
+ 1301      00
+ 1302              	.LASF6:
+ 1303 0172 6C6F6E67 		.ascii	"long long int\000"
+ 1303      206C6F6E 
+ 1303      6720696E 
+ 1303      7400
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccuDIrZL.s 			page 25
+
+
+ 1304              	.LASF20:
+ 1305 0180 443A5C4D 		.ascii	"D:\\MIT\\Microcomputer\\Exercise_4\\LAB2.cydsn\000"
+ 1305      49545C4D 
+ 1305      6963726F 
+ 1305      636F6D70 
+ 1305      75746572 
+ 1306              	.LASF2:
+ 1307 01ab 73686F72 		.ascii	"short int\000"
+ 1307      7420696E 
+ 1307      7400
+ 1308              	.LASF21:
+ 1309 01b5 75696E74 		.ascii	"uint8\000"
+ 1309      3800
+ 1310              	.LASF4:
+ 1311 01bb 6C6F6E67 		.ascii	"long int\000"
+ 1311      20696E74 
+ 1311      00
+ 1312              	.LASF11:
+ 1313 01c4 63686172 		.ascii	"char\000"
+ 1313      00
+ 1314              	.LASF0:
+ 1315 01c9 7369676E 		.ascii	"signed char\000"
+ 1315      65642063 
+ 1315      68617200 
+ 1316              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

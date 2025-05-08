@@ -1,6 +1,6 @@
-D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\LAB2.cyprj|949ca556-52a2-484a-932b-f891dd4b9f15
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|37a30c1f-2b28-4350-993d-2983bd5c602d
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|0c91f2d9-e16c-4e2e-8579-76a3cc7c667b
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|d201ea03-420a-409a-af4b-8a0378fabda7
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|1d055132-6634-4d57-8627-40e23ef1d68f
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|06705794-e5a2-46dd-a162-45c6409afbf6
+D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\LAB2.cyprj|eec78f4a-8155-4aaa-912e-9f2ba4fa281b
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|f6a6f070-d34e-4100-8c9b-b5791d7d17a3
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|0f51f430-1041-456e-a1d2-96b0229a9fa0
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|9578ec55-2911-4c36-a23f-c4c260d315bf
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|158c3399-4e2c-47ac-8909-8170a1efe02c
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|339f4dc8-2bf4-4b07-9efc-b3d04c4f134c

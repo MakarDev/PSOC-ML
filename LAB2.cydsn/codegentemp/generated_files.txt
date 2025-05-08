@@ -68,6 +68,13 @@
   <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\DC_aliases.h" value="NONE;DC" />
   <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\DC.c" value="ARM_C_FILE;DC" />
   <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\DC.h" value="NONE;DC" />
+  <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\Pot_V_aliases.h" value="NONE;Pot_V" />
+  <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\Pot_V.c" value="ARM_C_FILE;Pot_V" />
+  <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\Pot_V.h" value="NONE;Pot_V" />
+  <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\ADC_SAR_1.c" value="ARM_C_FILE;ADC_SAR_1" />
+  <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\ADC_SAR_1.h" value="NONE;ADC_SAR_1" />
+  <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\ADC_SAR_1_INT.c" value="ARM_C_FILE;ADC_SAR_1" />
+  <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\ADC_SAR_1_PM.c" value="ARM_C_FILE;ADC_SAR_1" />
   <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\LCD_Char_1_LCDPort_aliases.h" value="NONE;LCD_Char_1_LCDPort" />
   <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\LCD_Char_1_LCDPort.c" value="ARM_C_FILE;LCD_Char_1_LCDPort" />
   <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\LCD_Char_1_LCDPort.h" value="NONE;LCD_Char_1_LCDPort" />
@@ -81,6 +88,13 @@
   <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\ADC_DelSig_1_theACLK.h" value="NONE;ADC_DelSig_1_theACLK" />
   <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\SPIM_1_IntClock.c" value="ARM_C_FILE;SPIM_1_IntClock" />
   <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\SPIM_1_IntClock.h" value="NONE;SPIM_1_IntClock" />
+  <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\ADC_SAR_1_IRQ.c" value="ARM_C_FILE;ADC_SAR_1_IRQ" />
+  <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\ADC_SAR_1_IRQ.h" value="NONE;ADC_SAR_1_IRQ" />
+  <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\ADC_SAR_1_theACLK.c" value="ARM_C_FILE;ADC_SAR_1_theACLK" />
+  <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\ADC_SAR_1_theACLK.h" value="NONE;ADC_SAR_1_theACLK" />
+  <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\ADC_SAR_1_Bypass_aliases.h" value="NONE;ADC_SAR_1_Bypass" />
+  <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\ADC_SAR_1_Bypass.c" value="ARM_C_FILE;ADC_SAR_1_Bypass" />
+  <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\ADC_SAR_1_Bypass.h" value="NONE;ADC_SAR_1_Bypass" />
   <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\cycodeshareimport.ld" value="NONE;" />
   <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\cycodeshareexport.ld" value="NONE;" />
   <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\cycodeshareimport.scat" value="NONE;" />
