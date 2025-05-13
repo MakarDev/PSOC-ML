@@ -32,6 +32,41 @@
 <build_action v="C_FILE" />
 <PropertyDeltas />
 </CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="tm_model.c" persistent=".\tm_model.c">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="tm_layers.c" persistent=".\tm_layers.c">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="tm_stat.c" persistent=".\tm_stat.c">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="BitNet_test.c" persistent=".\BitNet_test.c">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="BitNetMCU_inference.c" persistent=".\BitNetMCU_inference.c">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
 </dependencies>
 </CyGuid_0820c2e7-528d-4137-9a08-97257b946089>
 </CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8>
@@ -58,6 +93,48 @@
 </CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
 <CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
 <CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="tft.h" persistent=".\tft.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="tinymaix.h" persistent=".\tinymaix.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="tm_port.h" persistent=".\tm_port.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="arch_cpu.h" persistent=".\arch_cpu.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="BitNetMCU_inference.h" persistent=".\BitNetMCU_inference.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="BitNetMCU_MNIST_test_data.h" persistent=".\BitNetMCU_MNIST_test_data.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="BitNetMCU_model.h" persistent=".\BitNetMCU_model.h">
 <Hidden v="False" />
 </CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
 <build_action v="NONE" />
@@ -488,6 +565,45 @@
 </CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0>
 <CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFolder" version="2">
 <CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtBaseContainer" version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="MAC_unit_1_input_a" persistent="">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<CyGuid_0820c2e7-528d-4137-9a08-97257b946089 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItemList" version="2">
+<dependencies>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="MAC_unit_1_input_a.h" persistent=".\Generated_Source\PSoC5\MAC_unit_1_input_a.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="MAC_unit_1_input_a.c" persistent=".\Generated_Source\PSoC5\MAC_unit_1_input_a.c">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="ARM_C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="MAC_unit_1_input_a_PM.c" persistent=".\Generated_Source\PSoC5\MAC_unit_1_input_a_PM.c">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="ARM_C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+</dependencies>
+</CyGuid_0820c2e7-528d-4137-9a08-97257b946089>
+</CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8>
+<filters />
+</CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0>
+<CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFolder" version="2">
+<CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtBaseContainer" version="1">
 <CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="MAC_unit_1" persistent="">
 <Hidden v="False" />
 </CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
@@ -568,456 +684,6 @@
 <Hidden v="False" />
 </CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
 <build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-</dependencies>
-</CyGuid_0820c2e7-528d-4137-9a08-97257b946089>
-</CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8>
-<filters />
-</CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0>
-<CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFolder" version="2">
-<CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtBaseContainer" version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="LCD_Char_1_LCDPort" persistent="">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<CyGuid_0820c2e7-528d-4137-9a08-97257b946089 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItemList" version="2">
-<dependencies>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="LCD_Char_1_LCDPort_aliases.h" persistent=".\Generated_Source\PSoC5\LCD_Char_1_LCDPort_aliases.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="LCD_Char_1_LCDPort.c" persistent=".\Generated_Source\PSoC5\LCD_Char_1_LCDPort.c">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="ARM_C_FILE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="LCD_Char_1_LCDPort.h" persistent=".\Generated_Source\PSoC5\LCD_Char_1_LCDPort.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-</dependencies>
-</CyGuid_0820c2e7-528d-4137-9a08-97257b946089>
-</CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8>
-<filters />
-</CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0>
-<CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFolder" version="2">
-<CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtBaseContainer" version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_Ext_CP_Clk" persistent="">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<CyGuid_0820c2e7-528d-4137-9a08-97257b946089 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItemList" version="2">
-<dependencies>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_Ext_CP_Clk.c" persistent=".\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk.c">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="ARM_C_FILE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_Ext_CP_Clk.h" persistent=".\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-</dependencies>
-</CyGuid_0820c2e7-528d-4137-9a08-97257b946089>
-</CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8>
-<filters />
-</CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0>
-<CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFolder" version="2">
-<CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtBaseContainer" version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_IRQ" persistent="">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<CyGuid_0820c2e7-528d-4137-9a08-97257b946089 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItemList" version="2">
-<dependencies>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_IRQ.c" persistent=".\Generated_Source\PSoC5\ADC_DelSig_1_IRQ.c">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="ARM_C_FILE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_IRQ.h" persistent=".\Generated_Source\PSoC5\ADC_DelSig_1_IRQ.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-</dependencies>
-</CyGuid_0820c2e7-528d-4137-9a08-97257b946089>
-</CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8>
-<filters />
-</CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0>
-<CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFolder" version="2">
-<CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtBaseContainer" version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_theACLK" persistent="">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<CyGuid_0820c2e7-528d-4137-9a08-97257b946089 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItemList" version="2">
-<dependencies>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_theACLK.c" persistent=".\Generated_Source\PSoC5\ADC_DelSig_1_theACLK.c">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="ARM_C_FILE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_theACLK.h" persistent=".\Generated_Source\PSoC5\ADC_DelSig_1_theACLK.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-</dependencies>
-</CyGuid_0820c2e7-528d-4137-9a08-97257b946089>
-</CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8>
-<filters />
-</CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cycodeshareimport.ld" persistent=".\Generated_Source\PSoC5\cycodeshareimport.ld">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cycodeshareexport.ld" persistent=".\Generated_Source\PSoC5\cycodeshareexport.ld">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cycodeshareimport.scat" persistent=".\Generated_Source\PSoC5\cycodeshareimport.scat">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFolder" version="2">
-<CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtBaseContainer" version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cy_boot" persistent="">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<CyGuid_0820c2e7-528d-4137-9a08-97257b946089 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItemList" version="2">
-<dependencies>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cm3gcc.ld" persistent=".\Generated_Source\PSoC5\cm3gcc.ld">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="Cm3RealView.scat" persistent=".\Generated_Source\PSoC5\Cm3RealView.scat">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="Cm3Start.c" persistent=".\Generated_Source\PSoC5\Cm3Start.c">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="ARM_C_FILE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="core_cm3.h" persistent=".\Generated_Source\PSoC5\core_cm3.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="core_cm3_psoc5.h" persistent=".\Generated_Source\PSoC5\core_cm3_psoc5.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CyBootAsmGnu.s" persistent=".\Generated_Source\PSoC5\CyBootAsmGnu.s">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="GNU_ARM_ASM_FILE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CyBootAsmRv.s" persistent=".\Generated_Source\PSoC5\CyBootAsmRv.s">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="REALVIEW_ARM_ASM_FILE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CyDmac.c" persistent=".\Generated_Source\PSoC5\CyDmac.c">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="ARM_C_FILE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CyDmac.h" persistent=".\Generated_Source\PSoC5\CyDmac.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CyFlash.c" persistent=".\Generated_Source\PSoC5\CyFlash.c">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="ARM_C_FILE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CyFlash.h" persistent=".\Generated_Source\PSoC5\CyFlash.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CyLib.c" persistent=".\Generated_Source\PSoC5\CyLib.c">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="ARM_C_FILE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CyLib.h" persistent=".\Generated_Source\PSoC5\CyLib.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cypins.h" persistent=".\Generated_Source\PSoC5\cypins.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cyPm.c" persistent=".\Generated_Source\PSoC5\cyPm.c">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="ARM_C_FILE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cyPm.h" persistent=".\Generated_Source\PSoC5\cyPm.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CySpc.c" persistent=".\Generated_Source\PSoC5\CySpc.c">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="ARM_C_FILE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CySpc.h" persistent=".\Generated_Source\PSoC5\CySpc.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cytypes.h" persistent=".\Generated_Source\PSoC5\cytypes.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cyutils.c" persistent=".\Generated_Source\PSoC5\cyutils.c">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="ARM_C_FILE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="core_cmFunc.h" persistent=".\Generated_Source\PSoC5\core_cmFunc.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="core_cmInstr.h" persistent=".\Generated_Source\PSoC5\core_cmInstr.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="Cm3Iar.icf" persistent=".\Generated_Source\PSoC5\Cm3Iar.icf">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CyBootAsmIar.s" persistent=".\Generated_Source\PSoC5\CyBootAsmIar.s">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="IAR_ASM_FILE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cmsis_armcc.h" persistent=".\Generated_Source\PSoC5\cmsis_armcc.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cmsis_gcc.h" persistent=".\Generated_Source\PSoC5\cmsis_gcc.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-</dependencies>
-</CyGuid_0820c2e7-528d-4137-9a08-97257b946089>
-</CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8>
-<filters />
-</CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="project.h" persistent=".\Generated_Source\PSoC5\project.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFolder" version="2">
-<CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtBaseContainer" version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="MAC_unit_1_input_a" persistent="">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<CyGuid_0820c2e7-528d-4137-9a08-97257b946089 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItemList" version="2">
-<dependencies>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="MAC_unit_1_input_a.h" persistent=".\Generated_Source\PSoC5\MAC_unit_1_input_a.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="MAC_unit_1_input_a.c" persistent=".\Generated_Source\PSoC5\MAC_unit_1_input_a.c">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="ARM_C_FILE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="MAC_unit_1_input_a_PM.c" persistent=".\Generated_Source\PSoC5\MAC_unit_1_input_a_PM.c">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="ARM_C_FILE" />
 <PropertyDeltas />
 </CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
 </CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
@@ -1358,66 +1024,6 @@
 </CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0>
 <CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFolder" version="2">
 <CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtBaseContainer" version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="SPIM_1_IntClock" persistent="">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<CyGuid_0820c2e7-528d-4137-9a08-97257b946089 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItemList" version="2">
-<dependencies>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="SPIM_1_IntClock.c" persistent=".\Generated_Source\PSoC5\SPIM_1_IntClock.c">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="ARM_C_FILE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="SPIM_1_IntClock.h" persistent=".\Generated_Source\PSoC5\SPIM_1_IntClock.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-</dependencies>
-</CyGuid_0820c2e7-528d-4137-9a08-97257b946089>
-</CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8>
-<filters />
-</CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0>
-<CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFolder" version="2">
-<CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtBaseContainer" version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_AMux" persistent="">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<CyGuid_0820c2e7-528d-4137-9a08-97257b946089 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItemList" version="2">
-<dependencies>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_AMux.c" persistent=".\Generated_Source\PSoC5\ADC_DelSig_1_AMux.c">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="ARM_C_FILE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
-<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
-<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_AMux.h" persistent=".\Generated_Source\PSoC5\ADC_DelSig_1_AMux.h">
-<Hidden v="False" />
-</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
-<build_action v="NONE" />
-<PropertyDeltas />
-</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
-</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
-</dependencies>
-</CyGuid_0820c2e7-528d-4137-9a08-97257b946089>
-</CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8>
-<filters />
-</CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0>
-<CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFolder" version="2">
-<CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtBaseContainer" version="1">
 <CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="Pot_V" persistent="">
 <Hidden v="False" />
 </CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
@@ -1495,6 +1101,195 @@
 <Hidden v="False" />
 </CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
 <build_action v="ARM_C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+</dependencies>
+</CyGuid_0820c2e7-528d-4137-9a08-97257b946089>
+</CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8>
+<filters />
+</CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0>
+<CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFolder" version="2">
+<CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtBaseContainer" version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="LCD_Char_1_LCDPort" persistent="">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<CyGuid_0820c2e7-528d-4137-9a08-97257b946089 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItemList" version="2">
+<dependencies>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="LCD_Char_1_LCDPort_aliases.h" persistent=".\Generated_Source\PSoC5\LCD_Char_1_LCDPort_aliases.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="LCD_Char_1_LCDPort.c" persistent=".\Generated_Source\PSoC5\LCD_Char_1_LCDPort.c">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="ARM_C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="LCD_Char_1_LCDPort.h" persistent=".\Generated_Source\PSoC5\LCD_Char_1_LCDPort.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+</dependencies>
+</CyGuid_0820c2e7-528d-4137-9a08-97257b946089>
+</CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8>
+<filters />
+</CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0>
+<CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFolder" version="2">
+<CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtBaseContainer" version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_AMux" persistent="">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<CyGuid_0820c2e7-528d-4137-9a08-97257b946089 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItemList" version="2">
+<dependencies>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_AMux.c" persistent=".\Generated_Source\PSoC5\ADC_DelSig_1_AMux.c">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="ARM_C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_AMux.h" persistent=".\Generated_Source\PSoC5\ADC_DelSig_1_AMux.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+</dependencies>
+</CyGuid_0820c2e7-528d-4137-9a08-97257b946089>
+</CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8>
+<filters />
+</CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0>
+<CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFolder" version="2">
+<CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtBaseContainer" version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_Ext_CP_Clk" persistent="">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<CyGuid_0820c2e7-528d-4137-9a08-97257b946089 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItemList" version="2">
+<dependencies>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_Ext_CP_Clk.c" persistent=".\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk.c">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="ARM_C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_Ext_CP_Clk.h" persistent=".\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+</dependencies>
+</CyGuid_0820c2e7-528d-4137-9a08-97257b946089>
+</CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8>
+<filters />
+</CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0>
+<CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFolder" version="2">
+<CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtBaseContainer" version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_IRQ" persistent="">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<CyGuid_0820c2e7-528d-4137-9a08-97257b946089 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItemList" version="2">
+<dependencies>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_IRQ.c" persistent=".\Generated_Source\PSoC5\ADC_DelSig_1_IRQ.c">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="ARM_C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_IRQ.h" persistent=".\Generated_Source\PSoC5\ADC_DelSig_1_IRQ.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+</dependencies>
+</CyGuid_0820c2e7-528d-4137-9a08-97257b946089>
+</CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8>
+<filters />
+</CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0>
+<CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFolder" version="2">
+<CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtBaseContainer" version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_theACLK" persistent="">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<CyGuid_0820c2e7-528d-4137-9a08-97257b946089 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItemList" version="2">
+<dependencies>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_theACLK.c" persistent=".\Generated_Source\PSoC5\ADC_DelSig_1_theACLK.c">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="ARM_C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="ADC_DelSig_1_theACLK.h" persistent=".\Generated_Source\PSoC5\ADC_DelSig_1_theACLK.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+</dependencies>
+</CyGuid_0820c2e7-528d-4137-9a08-97257b946089>
+</CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8>
+<filters />
+</CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0>
+<CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFolder" version="2">
+<CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtBaseContainer" version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="SPIM_1_IntClock" persistent="">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<CyGuid_0820c2e7-528d-4137-9a08-97257b946089 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItemList" version="2">
+<dependencies>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="SPIM_1_IntClock.c" persistent=".\Generated_Source\PSoC5\SPIM_1_IntClock.c">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="ARM_C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="SPIM_1_IntClock.h" persistent=".\Generated_Source\PSoC5\SPIM_1_IntClock.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
 <PropertyDeltas />
 </CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
 </CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
@@ -1602,6 +1397,288 @@
 </CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8>
 <filters />
 </CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cycodeshareimport.ld" persistent=".\Generated_Source\PSoC5\cycodeshareimport.ld">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cycodeshareexport.ld" persistent=".\Generated_Source\PSoC5\cycodeshareexport.ld">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cycodeshareimport.scat" persistent=".\Generated_Source\PSoC5\cycodeshareimport.scat">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFolder" version="2">
+<CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtBaseContainer" version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cy_boot" persistent="">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<CyGuid_0820c2e7-528d-4137-9a08-97257b946089 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItemList" version="2">
+<dependencies>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cm3gcc.ld" persistent=".\Generated_Source\PSoC5\cm3gcc.ld">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="Cm3RealView.scat" persistent=".\Generated_Source\PSoC5\Cm3RealView.scat">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="Cm3Start.c" persistent=".\Generated_Source\PSoC5\Cm3Start.c">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="ARM_C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="core_cm3.h" persistent=".\Generated_Source\PSoC5\core_cm3.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="core_cm3_psoc5.h" persistent=".\Generated_Source\PSoC5\core_cm3_psoc5.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CyBootAsmGnu.s" persistent=".\Generated_Source\PSoC5\CyBootAsmGnu.s">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="GNU_ARM_ASM_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CyBootAsmRv.s" persistent=".\Generated_Source\PSoC5\CyBootAsmRv.s">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="REALVIEW_ARM_ASM_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CyDmac.c" persistent=".\Generated_Source\PSoC5\CyDmac.c">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="ARM_C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CyDmac.h" persistent=".\Generated_Source\PSoC5\CyDmac.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CyFlash.c" persistent=".\Generated_Source\PSoC5\CyFlash.c">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="ARM_C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CyFlash.h" persistent=".\Generated_Source\PSoC5\CyFlash.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CyLib.c" persistent=".\Generated_Source\PSoC5\CyLib.c">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="ARM_C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CyLib.h" persistent=".\Generated_Source\PSoC5\CyLib.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cypins.h" persistent=".\Generated_Source\PSoC5\cypins.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cyPm.c" persistent=".\Generated_Source\PSoC5\cyPm.c">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="ARM_C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cyPm.h" persistent=".\Generated_Source\PSoC5\cyPm.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CySpc.c" persistent=".\Generated_Source\PSoC5\CySpc.c">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="ARM_C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CySpc.h" persistent=".\Generated_Source\PSoC5\CySpc.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cytypes.h" persistent=".\Generated_Source\PSoC5\cytypes.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cyutils.c" persistent=".\Generated_Source\PSoC5\cyutils.c">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="ARM_C_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="core_cmFunc.h" persistent=".\Generated_Source\PSoC5\core_cmFunc.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="core_cmInstr.h" persistent=".\Generated_Source\PSoC5\core_cmInstr.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="Cm3Iar.icf" persistent=".\Generated_Source\PSoC5\Cm3Iar.icf">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="CyBootAsmIar.s" persistent=".\Generated_Source\PSoC5\CyBootAsmIar.s">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="IAR_ASM_FILE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cmsis_armcc.h" persistent=".\Generated_Source\PSoC5\cmsis_armcc.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="cmsis_gcc.h" persistent=".\Generated_Source\PSoC5\cmsis_gcc.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
+</dependencies>
+</CyGuid_0820c2e7-528d-4137-9a08-97257b946089>
+</CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8>
+<filters />
+</CyGuid_ebc4f06d-207f-49c2-a540-72acf4adabc0>
+<CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileGenerated" version="1">
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFile" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItem" version="2" name="project.h" persistent=".\Generated_Source\PSoC5\project.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="NONE" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+</CyGuid_405e30c3-81d4-4133-98d6-c3ecf21fec0d>
 </dependencies>
 </CyGuid_0820c2e7-528d-4137-9a08-97257b946089>
 </CyGuid_2f73275c-45bf-46ba-b3b1-00a2fe0c8dd8>

@@ -80,6 +80,21 @@
 <CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256 type_name="CyDesigner.Common.ProjMgmt.Model.CyConfigDependencies" version="1">
 <dependency_info name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" xml_contents_version="2">
 <CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
+<file name=".\CortexM3\ARM_GCC_493\Debug\BitNet_test.o">
+<dep name=".\BitNetMCU_MNIST_test_data.h" />
+<dep name=".\BitNetMCU_inference.h" />
+<dep name=".\BitNetMCU_model.h" />
+<dep name=".\BitNet_test.c" />
+</file>
+<file name=".\BitNetMCU_MNIST_test_data.h" />
+<file name=".\BitNetMCU_inference.h" />
+<file name=".\BitNetMCU_model.h" />
+<file name=".\BitNet_test.c" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\BitNetMCU_inference.o">
+<dep name=".\BitNetMCU_inference.c" />
+<dep name=".\BitNetMCU_inference.h" />
+</file>
+<file name=".\BitNetMCU_inference.c" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\main.o">
 <dep name=".\Generated_Source\PSoC5\ADC_DelSig_1.h" />
 <dep name=".\Generated_Source\PSoC5\ADC_DelSig_1_AMux.h" />
@@ -140,10 +155,18 @@
 <dep name=".\Generated_Source\PSoC5\cypins.h" />
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 <dep name=".\Generated_Source\PSoC5\project.h" />
+<dep name=".\B1.h" />
+<dep name=".\B2.h" />
+<dep name=".\W1.h" />
+<dep name=".\W2.h" />
 <dep name=".\device.h" />
 <dep name=".\lut_8bit.h" />
 <dep name=".\main.c" />
+<dep name=".\ml.c" />
+<dep name=".\mnist_valid_q.h" />
 <dep name=".\tft.h" />
+<dep name=".\tinymaix.h" />
+<dep name=".\tm_port.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\ADC_DelSig_1.h" />
 <file name=".\Generated_Source\PSoC5\ADC_DelSig_1_AMux.h" />
@@ -204,10 +227,38 @@
 <file name=".\Generated_Source\PSoC5\cypins.h" />
 <file name=".\Generated_Source\PSoC5\cytypes.h" />
 <file name=".\Generated_Source\PSoC5\project.h" />
+<file name=".\B1.h" />
+<file name=".\B2.h" />
+<file name=".\W1.h" />
+<file name=".\W2.h" />
 <file name=".\device.h" />
 <file name=".\lut_8bit.h" />
 <file name=".\main.c" />
+<file name=".\ml.c" />
+<file name=".\mnist_valid_q.h" />
 <file name=".\tft.h" />
+<file name=".\tinymaix.h" />
+<file name=".\tm_port.h" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\tm_layers.o">
+<dep name=".\arch_cpu.h" />
+<dep name=".\tinymaix.h" />
+<dep name=".\tm_layers.c" />
+<dep name=".\tm_port.h" />
+</file>
+<file name=".\arch_cpu.h" />
+<file name=".\tm_layers.c" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\tm_model.o">
+<dep name=".\tinymaix.h" />
+<dep name=".\tm_model.c" />
+<dep name=".\tm_port.h" />
+</file>
+<file name=".\tm_model.c" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\tm_stat.o">
+<dep name=".\tinymaix.h" />
+<dep name=".\tm_port.h" />
+<dep name=".\tm_stat.c" />
+</file>
+<file name=".\tm_stat.c" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\tft.o">
 <dep name=".\Generated_Source\PSoC5\ADC_DelSig_1.h" />
 <dep name=".\Generated_Source\PSoC5\ADC_DelSig_1_AMux.h" />
@@ -802,6 +853,11 @@
 <file name=".\CortexM3\ARM_GCC_493\Debug\LAB2.hex">
 <dep name=".\CortexM3\ARM_GCC_493\Debug\main.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\tft.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\tm_model.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\tm_layers.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\tm_stat.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\BitNet_test.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\BitNetMCU_inference.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\cyfitter_cfg.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\cymetadata.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\LCD_Char_1.o" />
@@ -812,22 +868,10 @@
 <dep name=".\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_INT.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\MAC_unit_1_go_to_mac.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\MAC_unit_1_go_to_mac_PM.o" />
-<dep name=".\CortexM3\ARM_GCC_493\Debug\Clock_1.o" />
-<dep name=".\CortexM3\ARM_GCC_493\Debug\Pin_2.o" />
-<dep name=".\CortexM3\ARM_GCC_493\Debug\LCD_Char_1_LCDPort.o" />
-<dep name=".\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_Ext_CP_Clk.o" />
-<dep name=".\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_IRQ.o" />
-<dep name=".\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_theACLK.o" />
-<dep name=".\CortexM3\ARM_GCC_493\Debug\Cm3Start.o" />
-<dep name=".\CortexM3\ARM_GCC_493\Debug\CyBootAsmGnu.o" />
-<dep name=".\CortexM3\ARM_GCC_493\Debug\CyDmac.o" />
-<dep name=".\CortexM3\ARM_GCC_493\Debug\CyFlash.o" />
-<dep name=".\CortexM3\ARM_GCC_493\Debug\CyLib.o" />
-<dep name=".\CortexM3\ARM_GCC_493\Debug\cyPm.o" />
-<dep name=".\CortexM3\ARM_GCC_493\Debug\CySpc.o" />
-<dep name=".\CortexM3\ARM_GCC_493\Debug\cyutils.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\MAC_unit_1_input_a.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\MAC_unit_1_input_a_PM.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\Clock_1.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\Pin_2.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\SPIM_1.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\SPIM_1_PM.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\SPIM_1_INT.o" />
@@ -838,15 +882,27 @@
 <dep name=".\CortexM3\ARM_GCC_493\Debug\RESET.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\LED.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\DC.o" />
-<dep name=".\CortexM3\ARM_GCC_493\Debug\SPIM_1_IntClock.o" />
-<dep name=".\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_AMux.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\Pot_V.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\ADC_SAR_1.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\ADC_SAR_1_INT.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\ADC_SAR_1_PM.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\LCD_Char_1_LCDPort.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_AMux.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_Ext_CP_Clk.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_IRQ.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\ADC_DelSig_1_theACLK.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\SPIM_1_IntClock.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\ADC_SAR_1_IRQ.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\ADC_SAR_1_theACLK.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\ADC_SAR_1_Bypass.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\Cm3Start.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\CyBootAsmGnu.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\CyDmac.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\CyFlash.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\CyLib.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\cyPm.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\CySpc.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\cyutils.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\LAB2.a" />
 <dep name="${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_493\Debug\CyComponentLibrary.a" />
 </file>
@@ -910,6 +966,11 @@
 <name_val_pair name=".\Generated_Source\PSoC5\ADC_SAR_1_IRQ.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
 <name_val_pair name=".\Generated_Source\PSoC5\ADC_SAR_1_theACLK.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
 <name_val_pair name=".\Generated_Source\PSoC5\ADC_SAR_1_Bypass.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name=".\tm_model.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name=".\tm_layers.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name=".\tm_stat.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name=".\BitNet_test.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name=".\BitNetMCU_inference.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
 </name>
 </genericCmdLineData>
 <codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\kuzni\AppData\Local\Cypress Semiconductor\PSoC Creator\3.3&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\LAB2.cyprj -d CY8C5868AXI-LP035 -s D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
@@ -917,7 +978,7 @@
 </dataGuid>
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
-<deps_time v="133911929575464035" />
+<deps_time v="133915832181526027" />
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
 <dataGuid v="504337dd-7d07-4bc7-9057-90e60cf6c469">
@@ -1779,21 +1840,68 @@
 <v>.\Generated_Source\PSoC5\MAC_unit_1_go_to_mac.h</v>
 <v>.\Generated_Source\PSoC5\MAC_unit_1_go_to_mac.c</v>
 <v>.\Generated_Source\PSoC5\MAC_unit_1_go_to_mac_PM.c</v>
+<v>.\Generated_Source\PSoC5\MAC_unit_1_input_a.h</v>
+<v>.\Generated_Source\PSoC5\MAC_unit_1_input_a.c</v>
+<v>.\Generated_Source\PSoC5\MAC_unit_1_input_a_PM.c</v>
 <v>.\Generated_Source\PSoC5\MAC_unit_1_defs.h</v>
 <v>.\Generated_Source\PSoC5\Clock_1.c</v>
 <v>.\Generated_Source\PSoC5\Clock_1.h</v>
 <v>.\Generated_Source\PSoC5\Pin_2_aliases.h</v>
 <v>.\Generated_Source\PSoC5\Pin_2.c</v>
 <v>.\Generated_Source\PSoC5\Pin_2.h</v>
+<v>.\Generated_Source\PSoC5\SPIM_1.c</v>
+<v>.\Generated_Source\PSoC5\SPIM_1.h</v>
+<v>.\Generated_Source\PSoC5\SPIM_1_PM.c</v>
+<v>.\Generated_Source\PSoC5\SPIM_1_INT.c</v>
+<v>.\Generated_Source\PSoC5\SPIM_1_PVT.h</v>
+<v>.\Generated_Source\PSoC5\MISO_aliases.h</v>
+<v>.\Generated_Source\PSoC5\MISO.c</v>
+<v>.\Generated_Source\PSoC5\MISO.h</v>
+<v>.\Generated_Source\PSoC5\MOSI_aliases.h</v>
+<v>.\Generated_Source\PSoC5\MOSI.c</v>
+<v>.\Generated_Source\PSoC5\MOSI.h</v>
+<v>.\Generated_Source\PSoC5\SCLK_aliases.h</v>
+<v>.\Generated_Source\PSoC5\SCLK.c</v>
+<v>.\Generated_Source\PSoC5\SCLK.h</v>
+<v>.\Generated_Source\PSoC5\SS_aliases.h</v>
+<v>.\Generated_Source\PSoC5\SS.c</v>
+<v>.\Generated_Source\PSoC5\SS.h</v>
+<v>.\Generated_Source\PSoC5\RESET_aliases.h</v>
+<v>.\Generated_Source\PSoC5\RESET.c</v>
+<v>.\Generated_Source\PSoC5\RESET.h</v>
+<v>.\Generated_Source\PSoC5\LED_aliases.h</v>
+<v>.\Generated_Source\PSoC5\LED.c</v>
+<v>.\Generated_Source\PSoC5\LED.h</v>
+<v>.\Generated_Source\PSoC5\DC_aliases.h</v>
+<v>.\Generated_Source\PSoC5\DC.c</v>
+<v>.\Generated_Source\PSoC5\DC.h</v>
+<v>.\Generated_Source\PSoC5\Pot_V_aliases.h</v>
+<v>.\Generated_Source\PSoC5\Pot_V.c</v>
+<v>.\Generated_Source\PSoC5\Pot_V.h</v>
+<v>.\Generated_Source\PSoC5\ADC_SAR_1.c</v>
+<v>.\Generated_Source\PSoC5\ADC_SAR_1.h</v>
+<v>.\Generated_Source\PSoC5\ADC_SAR_1_INT.c</v>
+<v>.\Generated_Source\PSoC5\ADC_SAR_1_PM.c</v>
 <v>.\Generated_Source\PSoC5\LCD_Char_1_LCDPort_aliases.h</v>
 <v>.\Generated_Source\PSoC5\LCD_Char_1_LCDPort.c</v>
 <v>.\Generated_Source\PSoC5\LCD_Char_1_LCDPort.h</v>
+<v>.\Generated_Source\PSoC5\ADC_DelSig_1_AMux.c</v>
+<v>.\Generated_Source\PSoC5\ADC_DelSig_1_AMux.h</v>
 <v>.\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk.c</v>
 <v>.\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk.h</v>
 <v>.\Generated_Source\PSoC5\ADC_DelSig_1_IRQ.c</v>
 <v>.\Generated_Source\PSoC5\ADC_DelSig_1_IRQ.h</v>
 <v>.\Generated_Source\PSoC5\ADC_DelSig_1_theACLK.c</v>
 <v>.\Generated_Source\PSoC5\ADC_DelSig_1_theACLK.h</v>
+<v>.\Generated_Source\PSoC5\SPIM_1_IntClock.c</v>
+<v>.\Generated_Source\PSoC5\SPIM_1_IntClock.h</v>
+<v>.\Generated_Source\PSoC5\ADC_SAR_1_IRQ.c</v>
+<v>.\Generated_Source\PSoC5\ADC_SAR_1_IRQ.h</v>
+<v>.\Generated_Source\PSoC5\ADC_SAR_1_theACLK.c</v>
+<v>.\Generated_Source\PSoC5\ADC_SAR_1_theACLK.h</v>
+<v>.\Generated_Source\PSoC5\ADC_SAR_1_Bypass_aliases.h</v>
+<v>.\Generated_Source\PSoC5\ADC_SAR_1_Bypass.c</v>
+<v>.\Generated_Source\PSoC5\ADC_SAR_1_Bypass.h</v>
 <v>.\Generated_Source\PSoC5\cycodeshareimport.ld</v>
 <v>.\Generated_Source\PSoC5\cycodeshareexport.ld</v>
 <v>.\Generated_Source\PSoC5\cycodeshareimport.scat</v>
@@ -1824,53 +1932,6 @@
 <v>.\Generated_Source\PSoC5\cmsis_armcc.h</v>
 <v>.\Generated_Source\PSoC5\cmsis_gcc.h</v>
 <v>.\Generated_Source\PSoC5\project.h</v>
-<v>.\Generated_Source\PSoC5\MAC_unit_1_input_a.h</v>
-<v>.\Generated_Source\PSoC5\MAC_unit_1_input_a.c</v>
-<v>.\Generated_Source\PSoC5\MAC_unit_1_input_a_PM.c</v>
-<v>.\Generated_Source\PSoC5\SPIM_1.c</v>
-<v>.\Generated_Source\PSoC5\SPIM_1.h</v>
-<v>.\Generated_Source\PSoC5\SPIM_1_PM.c</v>
-<v>.\Generated_Source\PSoC5\SPIM_1_INT.c</v>
-<v>.\Generated_Source\PSoC5\SPIM_1_PVT.h</v>
-<v>.\Generated_Source\PSoC5\MISO_aliases.h</v>
-<v>.\Generated_Source\PSoC5\MISO.c</v>
-<v>.\Generated_Source\PSoC5\MISO.h</v>
-<v>.\Generated_Source\PSoC5\MOSI_aliases.h</v>
-<v>.\Generated_Source\PSoC5\MOSI.c</v>
-<v>.\Generated_Source\PSoC5\MOSI.h</v>
-<v>.\Generated_Source\PSoC5\SCLK_aliases.h</v>
-<v>.\Generated_Source\PSoC5\SCLK.c</v>
-<v>.\Generated_Source\PSoC5\SCLK.h</v>
-<v>.\Generated_Source\PSoC5\SS_aliases.h</v>
-<v>.\Generated_Source\PSoC5\SS.c</v>
-<v>.\Generated_Source\PSoC5\SS.h</v>
-<v>.\Generated_Source\PSoC5\RESET_aliases.h</v>
-<v>.\Generated_Source\PSoC5\RESET.c</v>
-<v>.\Generated_Source\PSoC5\RESET.h</v>
-<v>.\Generated_Source\PSoC5\LED_aliases.h</v>
-<v>.\Generated_Source\PSoC5\LED.c</v>
-<v>.\Generated_Source\PSoC5\LED.h</v>
-<v>.\Generated_Source\PSoC5\DC_aliases.h</v>
-<v>.\Generated_Source\PSoC5\DC.c</v>
-<v>.\Generated_Source\PSoC5\DC.h</v>
-<v>.\Generated_Source\PSoC5\SPIM_1_IntClock.c</v>
-<v>.\Generated_Source\PSoC5\SPIM_1_IntClock.h</v>
-<v>.\Generated_Source\PSoC5\ADC_DelSig_1_AMux.c</v>
-<v>.\Generated_Source\PSoC5\ADC_DelSig_1_AMux.h</v>
-<v>.\Generated_Source\PSoC5\Pot_V_aliases.h</v>
-<v>.\Generated_Source\PSoC5\Pot_V.c</v>
-<v>.\Generated_Source\PSoC5\Pot_V.h</v>
-<v>.\Generated_Source\PSoC5\ADC_SAR_1.c</v>
-<v>.\Generated_Source\PSoC5\ADC_SAR_1.h</v>
-<v>.\Generated_Source\PSoC5\ADC_SAR_1_INT.c</v>
-<v>.\Generated_Source\PSoC5\ADC_SAR_1_PM.c</v>
-<v>.\Generated_Source\PSoC5\ADC_SAR_1_IRQ.c</v>
-<v>.\Generated_Source\PSoC5\ADC_SAR_1_IRQ.h</v>
-<v>.\Generated_Source\PSoC5\ADC_SAR_1_theACLK.c</v>
-<v>.\Generated_Source\PSoC5\ADC_SAR_1_theACLK.h</v>
-<v>.\Generated_Source\PSoC5\ADC_SAR_1_Bypass_aliases.h</v>
-<v>.\Generated_Source\PSoC5\ADC_SAR_1_Bypass.c</v>
-<v>.\Generated_Source\PSoC5\ADC_SAR_1_Bypass.h</v>
 </gen_list>
 <warp_dep>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\ieee\work\stdlogic.vif</v>
@@ -1880,7 +1941,7 @@
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif</v>
 </warp_dep>
-<deps_time v="133911916441697469" />
+<deps_time v="133911947164462687" />
 <top_block v="TopDesign" />
 <last_generation v="4" />
 </CyGuid_925cc1e1-309e-4e08-b0a1-09a83c35b157>
