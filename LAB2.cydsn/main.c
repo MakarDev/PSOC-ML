@@ -64,29 +64,26 @@ void downscale_to_16x16(int8_t* output) {
     int x;
     for (y = 0; y < TARGET_SIZE; y++) {
         for (x = 0; x < TARGET_SIZE; x++) {
-            int pixel_count = 0;
-            int total_pixels = 0;
+            int pixel_drawn = 0;
             
-            // Count pixels in this block
+            // Check if any pixel in this block is drawn
             int by;
             int bx;
-            for (by = 0; by < block_height; by++) {
-                for (bx = 0; bx < block_width; bx++) {
+            for (by = 0; by < block_height && !pixel_drawn; by++) {
+                for (bx = 0; bx < block_width && !pixel_drawn; bx++) {
                     int screen_x = x * block_width + bx;
                     int screen_y = y * block_height + by;
                     if (screen_x < SCREEN_WIDTH && screen_y < SCREEN_HEIGHT) {
                         index = screen_y * SCREEN_WIDTH + screen_x;
                         if (drawn_pixels[index / 8] & (1 << (index % 8))) {
-                            pixel_count++;
+                            pixel_drawn = 1;
                         }
-                        total_pixels++;
                     }
                 }
             }
             
-            // Calculate average and store in output
-            // If more than 50% of pixels in block are set, mark as drawn
-            output[y * TARGET_SIZE + x] = (pixel_count > total_pixels / 2) ? 127 : 0;
+            // If any pixel in the block is drawn, mark the whole block as drawn
+            output[y * TARGET_SIZE + x] = pixel_drawn ? 127 : 0;
         }
     }
 }
@@ -173,8 +170,8 @@ void draw_continuous_line(uint16_t x_in, uint16_t y_in) {
         for (i = start_x; i <= end_x; i++) {
             // Draw 7x7 block for each point
             int dy, dx;
-            for(dy = -3; dy <= 3; dy++) {
-                for(dx = -3; dx <= 3; dx++) {
+            for(dy = -1; dy <= 1; dy++) {
+                for(dx = -1; dx <= 1; dx++) {
                     if(i + dx >= 0 && i + dx < SCREEN_WIDTH && 
                        y_in + dy >= 0 && y_in + dy < SCREEN_HEIGHT) {
                         // Set display window for this pixel
@@ -209,8 +206,8 @@ void draw_continuous_line(uint16_t x_in, uint16_t y_in) {
         for (i = start_y; i <= end_y; i++) {
             // Draw 7x7 block for each point
             int dy, dx;
-            for(dy = -3; dy <= 3; dy++) {
-                for(dx = -3; dx <= 3; dx++) {
+            for(dy = -1; dy <= 1; dy++) {
+                for(dx = -1; dx <= 1; dx++) {
                     if(x_in + dx >= 0 && x_in + dx < SCREEN_WIDTH && 
                        i + dy >= 0 && i + dy < SCREEN_HEIGHT) {
                         // Set display window for this pixel
@@ -496,11 +493,15 @@ void main()
                 // Downscale the drawing to 16x16
                 int8_t digit_drawn[256] = {0};
                 downscale_to_16x16(digit_drawn);
+                
+                // Flip the image horizontally
+                //flip_image_horizontal(digit_drawn);
+
+                // Display the downscaled image
+                display_downscaled_image(digit_drawn);
 
                 // Run BitNet inference on the drawn digit
                 uint8_t predicted_label = run_bitnet_test(digit_drawn);
-                
-                
                 
                 // Display completion message and prediction
                 LCD_Char_1_ClearDisplay();
@@ -508,6 +509,65 @@ void main()
                 LCD_Char_1_PrintString(lcd_buffer);
                 CyDelay(2000);
             }
+        }
+    }
+}
+
+// Function to display the downscaled image
+void display_downscaled_image(int8_t* downscaled) {
+    int scale_factor = SCREEN_WIDTH / TARGET_SIZE;  // 240/16 = 15
+    int y, x, sy, sx;
+    
+    // Display each pixel of the downscaled image
+    for (y = 0; y < TARGET_SIZE; y++) {
+        for (x = 0; x < TARGET_SIZE; x++) {
+            // Calculate block coordinates
+            uint16_t start_x = x * scale_factor;
+            uint16_t end_x = (x + 1) * scale_factor - 1;
+            uint16_t start_y = y * scale_factor;
+            uint16_t end_y = (y + 1) * scale_factor - 1;
+            
+            // Set display window for this block
+            write8_a0(0x2A);  // Column Address Set
+            write8_a1(start_x >> 8);
+            write8_a1(start_x & 0xFF);
+            write8_a1(end_x >> 8);
+            write8_a1(end_x & 0xFF);
+            
+            write8_a0(0x2B);  // Page Address Set
+            write8_a1(start_y >> 8);
+            write8_a1(start_y & 0xFF);
+            write8_a1(end_y >> 8);
+            write8_a1(end_y & 0xFF);
+            
+            write8_a0(0x2C);  // Memory Write
+            
+            // Fill the block with the appropriate color
+            for (sy = 0; sy < scale_factor; sy++) {
+                for (sx = 0; sx < scale_factor; sx++) {
+                    if (downscaled[y * TARGET_SIZE + x] == 127) {
+                        write8_a1(0xFF);  // White color
+                        write8_a1(0xFF);
+                    } else {
+                        write8_a1(0x00);  // Black color
+                        write8_a1(0x00);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Function to flip the downscaled image horizontally
+void flip_image_horizontal(int8_t* image) {
+    int8_t temp;
+    int y,x;
+    for (y = 0; y < TARGET_SIZE; y++) {
+        for (x = 0; x < TARGET_SIZE/2; x++) {
+            // Swap pixels from left and right sides
+            temp = image[y * TARGET_SIZE + x];
+            image[y * TARGET_SIZE + x] = image[y * TARGET_SIZE + (TARGET_SIZE-1-x)];
+            image[y * TARGET_SIZE + (TARGET_SIZE-1-x)] = temp;
         }
     }
 }
