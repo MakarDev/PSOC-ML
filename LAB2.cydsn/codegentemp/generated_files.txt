@@ -75,6 +75,12 @@
   <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\ADC_SAR_1.h" value="NONE;ADC_SAR_1" />
   <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\ADC_SAR_1_INT.c" value="ARM_C_FILE;ADC_SAR_1" />
   <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\ADC_SAR_1_PM.c" value="ARM_C_FILE;ADC_SAR_1" />
+  <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\Pin_3_aliases.h" value="NONE;Pin_3" />
+  <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\Pin_3.c" value="ARM_C_FILE;Pin_3" />
+  <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\Pin_3.h" value="NONE;Pin_3" />
+  <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\CLR_aliases.h" value="NONE;CLR" />
+  <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\CLR.c" value="ARM_C_FILE;CLR" />
+  <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\CLR.h" value="NONE;CLR" />
   <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\LCD_Char_1_LCDPort_aliases.h" value="NONE;LCD_Char_1_LCDPort" />
   <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\LCD_Char_1_LCDPort.c" value="ARM_C_FILE;LCD_Char_1_LCDPort" />
   <file name="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\codegentemp\LCD_Char_1_LCDPort.h" value="NONE;LCD_Char_1_LCDPort" />

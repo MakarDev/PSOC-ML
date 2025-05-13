@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
   33              		.cfi_def_cfa_offset 8
   34              		.cfi_offset 4, -8
   35              		.cfi_offset 14, -4
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 2
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 2
 
 
   36 0002 0446     		mov	r4, r0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
   75              		.loc 1 37 0
   76 0004 0120     		movs	r0, #1
   77              	.LVL6:
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 3
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 3
 
 
   78 0006 FFF7FEFF 		bl	DC_Write
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
  117 0006 0120     		movs	r0, #1
  118              	.LVL11:
  119 0008 FFF7FEFF 		bl	DC_Write
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 4
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 4
 
 
  120              	.LVL12:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
  158              		@ Volatile: function does not return.
  159              		@ args = 0, pretend = 0, frame = 0
  160              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 5
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 5
 
 
  161              		@ link register save eliminated.
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
   85:.\tft.c       **** // tftStart()
   86:.\tft.c       **** // this function must be called to initializes the TFT
   87:.\tft.c       **** //==============================================================
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 6
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 6
 
 
   88:.\tft.c       **** void tftStart(void)
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
  240              	.LVL26:
  241 0038 08BD     		pop	{r3, pc}
  242              		.cfi_endproc
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 7
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 7
 
 
  243              	.LFE68:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
  297 005a 02       		.uleb128 0x2
  298 005b 08       		.byte	0x8
  299 005c 05       		.byte	0x5
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 8
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 8
 
 
  300 005d B4010000 		.4byte	.LASF6
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
  354 00cb 5B000000 		.4byte	.LASF19
  355 00cf 01       		.byte	0x1
  356 00d0 15       		.byte	0x15
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 9
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 9
 
 
  357 00d1 81000000 		.4byte	0x81
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
  411 0146 F1020000 		.4byte	0x2f1
  412 014a 55010000 		.4byte	0x155
  413 014e 09       		.uleb128 0x9
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 10
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 10
 
 
  414 014f 01       		.uleb128 0x1
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
  468 01c3 0D       		.uleb128 0xd
  469 01c4 04       		.byte	0x4
  470 01c5 81000000 		.4byte	0x81
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 11
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 11
 
 
  471 01c9 0E       		.uleb128 0xe
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
  525 0239 0D030000 		.4byte	0x30d
  526 023d 47020000 		.4byte	0x247
  527 0241 09       		.uleb128 0x9
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 12
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 12
 
 
  528 0242 01       		.uleb128 0x1
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
  582 02a5 01       		.uleb128 0x1
  583 02a6 50       		.byte	0x50
  584 02a7 01       		.uleb128 0x1
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 13
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 13
 
 
  585 02a8 41       		.byte	0x41
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
  639 0312 08       		.byte	0x8
  640 0313 76       		.byte	0x76
  641 0314 15       		.uleb128 0x15
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 14
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 14
 
 
  642 0315 8D000000 		.4byte	0x8d
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
  696 0031 0B       		.uleb128 0xb
  697 0032 03       		.uleb128 0x3
  698 0033 08       		.uleb128 0x8
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 15
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 15
 
 
  699 0034 00       		.byte	0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
  753 006b 00       		.byte	0
  754 006c 08       		.uleb128 0x8
  755 006d 898201   		.uleb128 0x4109
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 16
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 16
 
 
  756 0070 01       		.byte	0x1
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
  810 00ab 17       		.uleb128 0x17
  811 00ac 00       		.byte	0
  812 00ad 00       		.byte	0
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 17
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 17
 
 
  813 00ae 0D       		.uleb128 0xd
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
  867 00e5 3A       		.uleb128 0x3a
  868 00e6 0B       		.uleb128 0xb
  869 00e7 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 18
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 18
 
 
  870 00e8 0B       		.uleb128 0xb
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
  924 0120 19       		.uleb128 0x19
  925 0121 01       		.uleb128 0x1
  926 0122 13       		.uleb128 0x13
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 19
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 19
 
 
  927 0123 00       		.byte	0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
  981 000f 1C000000 		.4byte	.LFE63
  982 0013 0400     		.2byte	0x4
  983 0015 F3       		.byte	0xf3
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 20
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 20
 
 
  984 0016 01       		.uleb128 0x1
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
  1038 0000 44000000 		.4byte	0x44
  1039 0004 0200     		.2byte	0x2
  1040 0006 00000000 		.4byte	.Ldebug_info0
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 21
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 21
 
 
  1041 000a 04       		.byte	0x4
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
  1083      6E7400
  1084              	.LASF17:
  1085 0027 77726974 		.ascii	"write8_a0\000"
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 22
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 22
 
 
  1085      65385F61 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
  1110              	.LASF14:
  1111 00d0 646F7562 		.ascii	"double\000"
  1111      6C6500
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 23
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 23
 
 
  1112              	.LASF12:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 1
  1135      7420696E 
  1135      7400
  1136              	.LASF23:
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccPpAP4a.s 			page 24
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccvgrqgE.s 			page 24
 
 
  1137 01d1 74667453 		.ascii	"tftStart\000"

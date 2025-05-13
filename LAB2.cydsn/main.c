@@ -19,7 +19,6 @@
 #include "tft.h"
 #include <math.h>
 #include "ml.c"
-#include "tinymaix.h"
 #include "mnist_valid_q.h"
 #include "BitNet_test.h"
 //void LCD_Char_1_PrintHorizontalLine(uint16 length);
@@ -35,6 +34,62 @@ static uint8_t acc_result_debug = 0;
 // Global variables for line drawing
 static uint16_t x_head = 0;
 static uint16_t y_head = 0;
+
+// Add these declarations after the global variables
+#define SCREEN_WIDTH 320
+#define SCREEN_HEIGHT 240
+#define TARGET_SIZE 16
+
+// Buffer to store drawn pixels (1 bit per pixel)
+static uint8_t drawn_pixels[SCREEN_WIDTH * SCREEN_HEIGHT / 8] = {0};
+
+// Function to set a pixel in the buffer
+void set_pixel(uint16_t x, uint16_t y) {
+    if (x >= SCREEN_WIDTH || y >= SCREEN_HEIGHT) return;
+    uint32_t index = y * SCREEN_WIDTH + x;
+    drawn_pixels[index / 8] |= (1 << (index % 8));
+}
+
+// Function to clear the pixel buffer
+void clear_pixel_buffer() {
+    memset(drawn_pixels, 0, sizeof(drawn_pixels));
+}
+
+// Function to downscale the drawing to 16x16
+void downscale_to_16x16(int8_t* output) {
+    int block_width = SCREEN_WIDTH / TARGET_SIZE;
+    int block_height = SCREEN_HEIGHT / TARGET_SIZE;
+    uint32_t index;
+    int y;
+    int x;
+    for (y = 0; y < TARGET_SIZE; y++) {
+        for (x = 0; x < TARGET_SIZE; x++) {
+            int pixel_count = 0;
+            int total_pixels = 0;
+            
+            // Count pixels in this block
+            int by;
+            int bx;
+            for (by = 0; by < block_height; by++) {
+                for (bx = 0; bx < block_width; bx++) {
+                    int screen_x = x * block_width + bx;
+                    int screen_y = y * block_height + by;
+                    if (screen_x < SCREEN_WIDTH && screen_y < SCREEN_HEIGHT) {
+                        index = screen_y * SCREEN_WIDTH + screen_x;
+                        if (drawn_pixels[index / 8] & (1 << (index % 8))) {
+                            pixel_count++;
+                        }
+                        total_pixels++;
+                    }
+                }
+            }
+            
+            // Calculate average and store in output
+            // If more than 50% of pixels in block are set, mark as drawn
+            output[y * TARGET_SIZE + x] = (pixel_count > total_pixels / 2) ? 127 : 0;
+        }
+    }
+}
 
 /*uint8_t mnist_pic[28*28]={
   0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
@@ -96,59 +151,8 @@ static uint16_t y_head = 0;
 //   0,  0,  0,  0,  0,  0,  0,  0,  0,113,255,108,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
 //   0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
 // };
-static tm_err_t layer_cb(tm_mdl_t* mdl, tml_head_t* lh)
-{   //dump middle result
-    int h = lh->out_dims[1];
-    int w = lh->out_dims[2];
-    int ch= lh->out_dims[3];
-    mtype_t* output = TML_GET_OUTPUT(mdl, lh);
-    return TM_OK;
-    //TM_PRINTF("Layer %d callback ========\n", mdl->layer_i);
-    #if 1
-    int y, x, c;
-    for(y=0; y<h; y++){
-        //TM_PRINTF("[");
-        for(x=0; x<w; x++){
-          //  TM_PRINTF("[");
-            for(c=0; c<ch; c++){
-            #if TM_MDL_TYPE == TM_MDL_FP32
-                //TM_PRINTF("%.3f,", output[(y*w+x)*ch+c]);
-            #else
-                //TM_PRINTF("%.3f,", TML_DEQUANT(lh,output[(y*w+x)*ch+c]));
-            #endif
-            }
-            //TM_PRINTF("],");
-        }
-        //TM_PRINTF("],\n");
-    }
-    //TM_PRINTF("\n");
-    #endif
-    return TM_OK;
-}
 
-static void parse_output(tm_mat_t* outs)
-{
-    tm_mat_t out = outs[0];
-    float* data  = out.dataf;
-    float maxp = 0;
-    int maxi = -1;
-    int i;
-    for(i=0; i<10; i++){
-        printf("%d: %.3f\n", i, data[i]);
-        if(data[i] > maxp) {
-            maxi = i;
-            maxp = data[i];
-        }
-    }
- // Display result
-    LCD_Char_1_ClearDisplay();
-    char lcd_buffer[16];  // Buffer for LCD display
 
-    sprintf(lcd_buffer, "Predicted: %d", maxi);
-    LCD_Char_1_PrintString(lcd_buffer);
-    CyDelay(2000);
-    return;
-}
 
 
 
@@ -180,8 +184,20 @@ void draw_continuous_line(uint16_t x_in, uint16_t y_in) {
         
         write8_a0(0x2C);  // Memory Write
         for (i = start_x; i <= end_x; i++) {
-            write8_a1(0xFF);  // Orange color
-            write8_a1(0x0F);
+            // Draw 3x3 block for each point
+            int dy;
+            int dx;
+
+            for(dy = -3; dy <= 3; dy++) {
+                for(dx = -3; dx <= 3; dx++) {
+                    if(i + dx >= 0 && i + dx < SCREEN_WIDTH && 
+                       y_in + dy >= 0 && y_in + dy < SCREEN_HEIGHT) {
+                        write8_a1(0xFF);  // Orange color
+                        write8_a1(0x0F);
+                        set_pixel(i + dx, y_in + dy);  // Store pixel in buffer
+                    }
+                }
+            }
         }
     }
 
@@ -205,8 +221,18 @@ void draw_continuous_line(uint16_t x_in, uint16_t y_in) {
         
         write8_a0(0x2C);  // Memory Write
         for (i = start_y; i <= end_y; i++) {
-            write8_a1(0xFF);  // Orange color
-            write8_a1(0x0F);
+            // Draw 3x3 block for each point
+            int dx,dy;
+            for(dy = -3; dy <= 3; dy++) {
+                for(dx = -3; dx <= 3; dx++) {
+                    if(x_in + dx >= 0 && x_in + dx < SCREEN_WIDTH && 
+                       i + dy >= 0 && i + dy < SCREEN_HEIGHT) {
+                        write8_a1(0xFF);  // Orange color
+                        write8_a1(0x0F);
+                        set_pixel(x_in + dx, i + dy);  // Store pixel in buffer
+                    }
+                }
+            }
         }
     }
 
@@ -340,7 +366,7 @@ void main()
         LCD_Char_1_PrintString(lcd_buffer);
         
         // Wait for 2 seconds before next test
-        CyDelay(2000);
+        CyDelay(20);
     }
     
     // Display final accumulated result
@@ -350,7 +376,7 @@ void main()
     LCD_Char_1_Position(1, 0);
     sprintf(lcd_buffer, "Debug=%d", acc_result_debug);
     LCD_Char_1_PrintString(lcd_buffer);
-    CyDelay(2000);
+    CyDelay(200);
     
     // Test digit recognition
     LCD_Char_1_ClearDisplay();
@@ -365,36 +391,15 @@ void main()
         test_image[i] = (i % 28 < 10 || i % 28 > 18) ? 0 : 127;  // Simple vertical line pattern
     }
     
-    // Run inference
-    //int predicted_digit = run_inference(test_image);
-    //  TM_DBGT_INIT();
-    // tm_mdl_t mdl;
 
-    // tm_mat_t in_uint8 = {3,28,28,1, {(mtype_t*)mnist_pic}};
-    // tm_mat_t in = {3,28,28,1, {NULL}};
-    // tm_mat_t outs[1];
-    // tm_err_t res;
-    // //tm_stat((tm_mdlbin_t*)mdl_data); 
-    // res = tm_load(&mdl, mdl_data, NULL, layer_cb, &in);
-    // if(res != TM_OK) {
-    //     //TM_PRINTF("tm model load err %d\n", res);
-    //     return -1;
-    // }
-    // TM_DBGT_START();
-    // res = tm_run(&mdl, &in, outs);
-    // TM_DBGT("tm_run");
-    // if(res==TM_OK) parse_output(outs);  
-    // //else TM_PRINTF("tm run error: %d\n", res);
-    // tm_unload(&mdl);                 
-   
     // Run BitNet test
-    uint8_t predicted_label = run_bitnet_test();
+    //uint8_t predicted_label = run_bitnet_test(test_image);
     
     LCD_Char_1_ClearDisplay();
 
-    sprintf(lcd_buffer, "Predicted: %d", predicted_label);
-    LCD_Char_1_PrintString(lcd_buffer);
-    CyDelay(2000);
+    //sprintf(lcd_buffer, "Predicted: %d", predicted_label);
+    //LCD_Char_1_PrintString(lcd_buffer);
+    //CyDelay(2000);
 
     // Continue with the rest of your original code...
     //ADC for horizontal movement
@@ -407,55 +412,88 @@ void main()
 
     // Initialize and display TFT
     display_tft();
+    clear_pixel_buffer();  // Clear the pixel buffer
     
     // Test coordinates for line drawing
     uint16_t test_x = 0;
     uint16_t test_y = 120;  // Middle of the screen vertically
     
+    // Add a flag to indicate when drawing is complete
+    uint8_t drawing_complete = 0;
+    
     for(;;)
     {
-        // Display ADC result
-        if( ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_WAIT_FOR_RESULT) )
-        {
-            adcResult = ADC_DelSig_1_GetResult16();     // read the adc and assign the value adcResult 
-            
-            if (adcResult & 0x8000)
-            {
-                adcResult = 0;       // ignore negative ADC results
+        if (!drawing_complete) {
+            // Check if CLR button is pressed to clear display
+            if (CLR_Read() == 0) {
+                display_tft();  // Clear TFT display
+                clear_pixel_buffer();  // Clear pixel buffer
+                x_head = 0;  // Reset head position
+                y_head = 0;
+                CyDelay(200);  // Debounce delay
             }
-            else if (adcResult >= 0xfff)
+
+            // Display ADC result
+            if( ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_WAIT_FOR_RESULT) )
             {
-                adcResult = 0xfff;   // ignore high ADC results
+                adcResult = ADC_DelSig_1_GetResult16();     // read the adc and assign the value adcResult 
+                
+                if (adcResult & 0x8000)
+                {
+                    adcResult = 0;       // ignore negative ADC results
+                }
+                else if (adcResult >= 0xfff)
+                {
+                    adcResult = 0xfff;   // ignore high ADC results
+                }
+                
+                // Map ADC result (0-0xFFF) to screen width (0-320)
+                test_x = adcResult*240/0xFFF;
+                
+                // Draw the line at the new position
+                draw_continuous_line(test_x, test_y);
+                
+                CyDelay(50);  // Small delay to make the movement visible
+            }
+            if( ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT) )
+            {
+                adcResult = ADC_SAR_1_GetResult16();     // read the adc and assign the value adcResult 
+                
+                if (adcResult & 0x8000)
+                {
+                    adcResult = 0;       // ignore negative ADC results
+                }
+                else if (adcResult >= 0xfff)
+                {
+                    adcResult = 0xfff;   // ignore high ADC results
+                }
+                
+                // Map ADC result (0-0xFFF) to screen width (0-320)
+                test_y = adcResult*240/0xFFF;
+                
+                // Draw the line at the new position
+                draw_continuous_line(test_x, test_y);
+                
+                CyDelay(50);  // Small delay to make the movement visible
             }
             
-            // Map ADC result (0-0xFFF) to screen width (0-320)
-            test_x = adcResult*240/0xFFF;
-            
-            // Draw the line at the new position
-            draw_continuous_line(test_x, test_y);
-            
-            CyDelay(50);  // Small delay to make the movement visible
-        }
-        if( ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT) )
-        {
-            adcResult = ADC_SAR_1_GetResult16();     // read the adc and assign the value adcResult 
-            
-            if (adcResult & 0x8000)
-            {
-                adcResult = 0;       // ignore negative ADC results
+            // Check if a button is pressed to complete drawing
+            if (Pin_3_Read() == 0) {  // Pin_3 is connected to SW3
+                drawing_complete = 1;
+                
+                // Downscale the drawing to 16x16
+                int8_t digit_drawn[256] = {0};
+                downscale_to_16x16(digit_drawn);
+                
+                // Run BitNet inference on the drawn digit
+                uint8_t predicted_label = run_bitnet_test(digit_drawn);
+                
+                // Display completion message and prediction
+                LCD_Char_1_ClearDisplay();
+                sprintf(lcd_buffer, "Predicted: %d", predicted_label);
+                LCD_Char_1_PrintString(lcd_buffer);
+                CyDelay(2000);
             }
-            else if (adcResult >= 0xfff)
-            {
-                adcResult = 0xfff;   // ignore high ADC results
-            }
-            
-            // Map ADC result (0-0xFFF) to screen width (0-320)
-            test_y = adcResult*240/0xFFF;
-            
-            // Draw the line at the new position
-            draw_continuous_line(test_x, test_y);
-            
-            CyDelay(50);  // Small delay to make the movement visible
         }
     }
 }

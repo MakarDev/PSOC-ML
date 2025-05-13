@@ -1,5 +1,5 @@
 # LAB2
-# 2025-05-08 16:18:29Z
+# 2025-05-13 08:33:32Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -27,6 +27,8 @@ set_io "LED(0)" iocell 5 2
 set_io "DC(0)" iocell 5 5
 set_io "Pot_V(0)" iocell 1 6
 set_io "\ADC_SAR_1:Bypass(0)\" iocell 0 2
+set_io "Pin_3(0)" iocell 15 5
+set_io "CLR(0)" iocell 6 1
 set_location "\MAC_unit_1:Datapath_1_select_0\" 3 4 0 1
 set_location "\MAC_unit_1:Datapath_1_select_1\" 3 4 0 3
 set_location "\SPIM_1:BSPIM:load_rx_data\" 0 0 1 1

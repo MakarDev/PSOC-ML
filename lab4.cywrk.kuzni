@@ -13,29 +13,23 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="LAB2\LAB2\Source Files\BitNet_test.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="LAB2\LAB2\Generated_Source\PSoC5\Pin_2\Pin_2.c">
 <ExpandedNodeIds>
 <v>LAB2</v>
 <v>LAB2\LAB2</v>
 <v>LAB2\LAB2\TopDesign</v>
 <v>LAB2\LAB2\LAB2.cydwr</v>
 <v>LAB2\LAB2\Header Files</v>
-<v>LAB2\LAB2\Header Files\arch_cpu.h</v>
 <v>LAB2\LAB2\Header Files\BitNetMCU_inference.h</v>
 <v>LAB2\LAB2\Header Files\BitNetMCU_MNIST_test_data.h</v>
 <v>LAB2\LAB2\Header Files\BitNetMCU_model.h</v>
 <v>LAB2\LAB2\Header Files\device.h</v>
 <v>LAB2\LAB2\Header Files\tft.h</v>
-<v>LAB2\LAB2\Header Files\tinymaix.h</v>
-<v>LAB2\LAB2\Header Files\tm_port.h</v>
 <v>LAB2\LAB2\Source Files</v>
 <v>LAB2\LAB2\Source Files\BitNet_test.c</v>
 <v>LAB2\LAB2\Source Files\BitNetMCU_inference.c</v>
 <v>LAB2\LAB2\Source Files\main.c</v>
 <v>LAB2\LAB2\Source Files\tft.c</v>
-<v>LAB2\LAB2\Source Files\tm_layers.c</v>
-<v>LAB2\LAB2\Source Files\tm_model.c</v>
-<v>LAB2\LAB2\Source Files\tm_stat.c</v>
 <v>LAB2\LAB2\Generated_Source</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1\ADC_DelSig_1.c</v>
@@ -67,6 +61,10 @@
 <v>LAB2\LAB2\Generated_Source\PSoC5\Clock_1</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\Clock_1\Clock_1.c</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\Clock_1\Clock_1.h</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\CLR</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\CLR\CLR.c</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\CLR\CLR.h</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\CLR\CLR_aliases.h</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\cy_boot</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\cy_boot\cm3gcc.ld</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\cy_boot\Cm3Iar.icf</v>
@@ -136,6 +134,10 @@
 <v>LAB2\LAB2\Generated_Source\PSoC5\Pin_2\Pin_2.c</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\Pin_2\Pin_2.h</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\Pin_2\Pin_2_aliases.h</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\Pin_3</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\Pin_3\Pin_3.c</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\Pin_3\Pin_3.h</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\Pin_3\Pin_3_aliases.h</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\Pot_V</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\Pot_V\Pot_V.c</v>
 <v>LAB2\LAB2\Generated_Source\PSoC5\Pot_V\Pot_V.h</v>
@@ -183,41 +185,41 @@
 <v>LAB2\LAB2\Generated_Source\PSoC5\project.h</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>LAB2</v>
-<v>LAB2\LAB2</v>
-<v>LAB2\LAB2\TopDesign</v>
-<v>LAB2\LAB2\LAB2.cydwr</v>
-<v>LAB2\LAB2\Header Files</v>
-<v>LAB2\LAB2\Header Files\arch_cpu.h</v>
-<v>LAB2\LAB2\Header Files\BitNetMCU_inference.h</v>
-<v>LAB2\LAB2\Header Files\BitNetMCU_MNIST_test_data.h</v>
-<v>LAB2\LAB2\Header Files\BitNetMCU_model.h</v>
-<v>LAB2\LAB2\Header Files\device.h</v>
-<v>LAB2\LAB2\Header Files\tft.h</v>
-<v>LAB2\LAB2\Header Files\tinymaix.h</v>
-<v>LAB2\LAB2\Header Files\tm_port.h</v>
-<v>LAB2\LAB2\Source Files</v>
-<v>LAB2\LAB2\Source Files\BitNet_test.c</v>
-<v>LAB2\LAB2\Source Files\BitNetMCU_inference.c</v>
-<v>LAB2\LAB2\Source Files\main.c</v>
-<v>LAB2\LAB2\Source Files\tft.c</v>
-<v>LAB2\LAB2\Source Files\tm_layers.c</v>
-<v>LAB2\LAB2\Source Files\tm_model.c</v>
-<v>LAB2\LAB2\Source Files\tm_stat.c</v>
-<v>LAB2\LAB2\Generated_Source</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1_AMux</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1_IRQ</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_DelSig_1_theACLK</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_SAR_1</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_SAR_1_Bypass</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_SAR_1_Bypass\ADC_SAR_1_Bypass.c</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_SAR_1_Bypass\ADC_SAR_1_Bypass.h</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_SAR_1_Bypass\ADC_SAR_1_Bypass_aliases.h</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_SAR_1_IRQ</v>
-<v>LAB2\LAB2\Generated_Source\PSoC5\ADC_SAR_1_IRQ\ADC_SAR_1_IRQ.c</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\RESET\RESET.h</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\RESET\RESET_aliases.h</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\SCLK</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\SCLK\SCLK.c</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\SCLK\SCLK.h</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\SCLK\SCLK_aliases.h</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\SPIM_1</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\SPIM_1\SPIM_1.c</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\SPIM_1\SPIM_1.h</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\SPIM_1\SPIM_1_INT.c</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\SPIM_1\SPIM_1_PM.c</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\SPIM_1\SPIM_1_PVT.h</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\SPIM_1_IntClock</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\SPIM_1_IntClock\SPIM_1_IntClock.c</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\SPIM_1_IntClock\SPIM_1_IntClock.h</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\SS</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\SS\SS.c</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\SS\SS.h</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\SS\SS_aliases.h</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\cycodeshareexport.ld</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\cycodeshareimport.ld</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\cycodeshareimport.scat</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\cydevice.h</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\cydevice_trm.h</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\cydevicegnu.inc</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\cydevicegnu_trm.inc</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\cydeviceiar.inc</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\cydeviceiar_trm.inc</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\cydevicerv.inc</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\cydevicerv_trm.inc</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\cydisabledsheets.h</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\cyfitter.h</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\cyfitter_cfg.c</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\cyfitter_cfg.h</v>
+<v>LAB2\LAB2\Generated_Source\PSoC5\cyfittergnu.inc</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="LAB2\LAB2\MAC_unit\MAC_unit.cyudb">
@@ -264,6 +266,7 @@
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\BitNet_test.lst</v>
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\BitNetMCU_inference.lst</v>
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_1.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\CLR.lst</v>
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
@@ -288,6 +291,7 @@
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\MOSI.lst</v>
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_1.lst</v>
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_2.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_3.lst</v>
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\Pot_V.lst</v>
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\RESET.lst</v>
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\SCLK.lst</v>
@@ -297,9 +301,6 @@
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\SPIM_1_PM.lst</v>
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\SS.lst</v>
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\tft.lst</v>
-<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\tm_layers.lst</v>
-<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\tm_model.lst</v>
-<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\tm_stat.lst</v>
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\LAB2.elf</v>
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\LAB2.hex</v>
 <v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\LAB2.map</v>

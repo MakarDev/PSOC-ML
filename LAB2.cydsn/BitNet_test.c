@@ -25,31 +25,10 @@
 
 uint32_t BitMnistInference(int8_t*);
 
-uint8_t run_bitnet_test(void) {
+uint8_t run_bitnet_test(int8_t* input_data) {
     uint32_t output[10];
     uint8_t predicted_label;
-    // predicted_label = BitMnistInference(input_data_0);
-    // printf("label: %d predicted: %d\n", label_0, predicted_label);
-    // predicted_label = BitMnistInference(input_data_1);
-    // printf("label: %d predicted: %d\n", label_1, predicted_label);
-    // predicted_label = BitMnistInference(input_data_2);
-    // printf("label: %d predicted: %d\n", label_2, predicted_label);
-    // predicted_label = BitMnistInference(input_data_3);
-    // printf("label: %d predicted: %d\n", label_3, predicted_label);
-    // predicted_label = BitMnistInference(input_data_4);
-    // printf("label: %d predicted: %d\n", label_4, predicted_label);
-    // predicted_label = BitMnistInference(input_data_5);
-    // printf("label: %d predicted: %d\n", label_5, predicted_label);
-    // predicted_label = BitMnistInference(input_data_6);
-    // printf("label: %d predicted: %d\n", label_6, predicted_label);
-    // predicted_label = BitMnistInference(input_data_7);
-    // printf("label: %d predicted: %d\n", label_7, predicted_label);
-    // predicted_label = BitMnistInference(input_data_8);
-    // printf("label: %d predicted: %d\n", label_8, predicted_label);
-    // predicted_label = BitMnistInference(input_data_9);
-    // printf("label: %d predicted: %d\n", label_9, predicted_label);
-    predicted_label = BitMnistInference(input_data_0);
-    //printf("label: %d predicted: %d\n", label_10, predicted_label);
+    predicted_label = BitMnistInference(input_data);
     return predicted_label;
 }
 

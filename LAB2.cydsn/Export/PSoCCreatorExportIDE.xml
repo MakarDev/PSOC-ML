@@ -38,16 +38,10 @@
         <Files Root="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn">
           <File BuildType="BUILD" Toolchain="">.\main.c</File>
           <File BuildType="BUILD" Toolchain="">.\tft.c</File>
-          <File BuildType="BUILD" Toolchain="">.\tm_model.c</File>
-          <File BuildType="BUILD" Toolchain="">.\tm_layers.c</File>
-          <File BuildType="BUILD" Toolchain="">.\tm_stat.c</File>
           <File BuildType="BUILD" Toolchain="">.\BitNet_test.c</File>
           <File BuildType="BUILD" Toolchain="">.\BitNetMCU_inference.c</File>
           <File BuildType="BUILD" Toolchain="">.\device.h</File>
           <File BuildType="BUILD" Toolchain="">.\tft.h</File>
-          <File BuildType="BUILD" Toolchain="">.\tinymaix.h</File>
-          <File BuildType="BUILD" Toolchain="">.\tm_port.h</File>
-          <File BuildType="BUILD" Toolchain="">.\arch_cpu.h</File>
           <File BuildType="BUILD" Toolchain="">.\BitNetMCU_inference.h</File>
           <File BuildType="BUILD" Toolchain="">.\BitNetMCU_MNIST_test_data.h</File>
           <File BuildType="BUILD" Toolchain="">.\BitNetMCU_model.h</File>
@@ -176,6 +170,12 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\cmsis_armcc.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\cmsis_gcc.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\project.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Pin_3_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Pin_3.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Pin_3.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\CLR_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\CLR.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\CLR.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="D:\MIT\Microcomputer\Exercise_4\LAB2.cydsn\Export\ARM_GCC_Generic">
