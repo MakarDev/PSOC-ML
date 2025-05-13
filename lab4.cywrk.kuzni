@@ -6,14 +6,14 @@
 <CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
 <userData>
 <dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
-<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Components">
 <TreeKeys>
 <v>Source</v>
 <v>Components</v>
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="LAB2\LAB2\LAB2.cydwr">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="LAB2\LAB2\Source Files\BitNetMCU_inference.c">
 <ExpandedNodeIds>
 <v>LAB2</v>
 <v>LAB2\LAB2</v>
@@ -360,6 +360,40 @@
 <VisibleNodeIds>
 <v>LAB2</v>
 <v>LAB2\LAB2</v>
+<v>LAB2\LAB2\CortexM3</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_1.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_1_AMux.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_1_Ext_CP_Clk.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_1_INT.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_1_IRQ.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_1_PM.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_1_theACLK.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_1.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_1_Bypass.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_1_INT.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_1_IRQ.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_1_PM.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_1_theACLK.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\BitNet_test.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\BitNetMCU_inference.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_1.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\CLR.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\DC.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_Char_1.lst</v>
+<v>LAB2\LAB2\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_Char_1_LCDPort.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -416,7 +450,14 @@
 <OpenDocs>
 <name v=".\LAB2.cydsn\tft.c" />
 <name v=".\LAB2.cydsn\main.c" />
-<name v=".\LAB2.cydsn\ml.c" />
+<name v=".\LAB2.cydsn\BitNet_test.c" />
+<name v=".\LAB2.cydsn\LAB2.cydwr" />
+<name v=".\LAB2.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\LAB2.cydsn\Generated_Source\PSoC5\Pin_2.c" />
+<name v=".\LAB2.cydsn\MAC_unit\MAC_unit.cysym" />
+<name v=".\LAB2.cydsn\MAC_unit\MAC_unit.cyudb" />
+<name v=".\LAB2.cydsn\Generated_Source\PSoC5\cm3gcc.ld" />
+<name v=".\LAB2.cydsn\BitNetMCU_inference.c" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />
