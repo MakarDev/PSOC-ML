@@ -36,12 +36,12 @@ static uint16_t x_head = 0;
 static uint16_t y_head = 0;
 
 // Add these declarations after the global variables
-#define SCREEN_WIDTH 320
+#define SCREEN_WIDTH 240
 #define SCREEN_HEIGHT 240
 #define TARGET_SIZE 16
 
 // Buffer to store drawn pixels (1 bit per pixel)
-static uint8_t drawn_pixels[SCREEN_WIDTH * SCREEN_HEIGHT / 8] = {0};
+static uint8_t drawn_pixels[(SCREEN_WIDTH * SCREEN_HEIGHT + 7) / 8] = {0};
 
 // Function to set a pixel in the buffer
 void set_pixel(uint16_t x, uint16_t y) {
@@ -170,28 +170,27 @@ void draw_continuous_line(uint16_t x_in, uint16_t y_in) {
         uint16_t end_x = (x_in < x_head) ? x_head : x_in;
         uint16_t i;
         
-        write8_a0(0x2A);  // Column Address Set
-        write8_a1(start_x >> 8);
-        write8_a1(start_x & 0x00FF);
-        write8_a1(end_x >> 8);
-        write8_a1(end_x & 0x00FF);
-        
-        write8_a0(0x2B);  // Page Address Set
-        write8_a1(y_in >> 8);
-        write8_a1(y_in & 0x00FF);
-        write8_a1(y_in >> 8);
-        write8_a1(y_in & 0x00FF);
-        
-        write8_a0(0x2C);  // Memory Write
         for (i = start_x; i <= end_x; i++) {
-            // Draw 3x3 block for each point
-            int dy;
-            int dx;
-
+            // Draw 7x7 block for each point
+            int dy, dx;
             for(dy = -3; dy <= 3; dy++) {
                 for(dx = -3; dx <= 3; dx++) {
                     if(i + dx >= 0 && i + dx < SCREEN_WIDTH && 
                        y_in + dy >= 0 && y_in + dy < SCREEN_HEIGHT) {
+                        // Set display window for this pixel
+                        write8_a0(0x2A);  // Column Address Set
+                        write8_a1((i + dx) >> 8);
+                        write8_a1((i + dx) & 0x00FF);
+                        write8_a1((i + dx) >> 8);
+                        write8_a1((i + dx) & 0x00FF);
+                        
+                        write8_a0(0x2B);  // Page Address Set
+                        write8_a1((y_in + dy) >> 8);
+                        write8_a1((y_in + dy) & 0x00FF);
+                        write8_a1((y_in + dy) >> 8);
+                        write8_a1((y_in + dy) & 0x00FF);
+                        
+                        write8_a0(0x2C);  // Memory Write
                         write8_a1(0xFF);  // Orange color
                         write8_a1(0x0F);
                         set_pixel(i + dx, y_in + dy);  // Store pixel in buffer
@@ -207,26 +206,27 @@ void draw_continuous_line(uint16_t x_in, uint16_t y_in) {
         uint16_t end_y = (y_in < y_head) ? y_head : y_in;
         uint16_t i;
         
-        write8_a0(0x2A);  // Column Address Set
-        write8_a1(x_in >> 8);
-        write8_a1(x_in & 0x00FF);
-        write8_a1(x_in >> 8);
-        write8_a1(x_in & 0x00FF);
-        
-        write8_a0(0x2B);  // Page Address Set
-        write8_a1(start_y >> 8);
-        write8_a1(start_y & 0x00FF);
-        write8_a1(end_y >> 8);
-        write8_a1(end_y & 0x00FF);
-        
-        write8_a0(0x2C);  // Memory Write
         for (i = start_y; i <= end_y; i++) {
-            // Draw 3x3 block for each point
-            int dx,dy;
+            // Draw 7x7 block for each point
+            int dy, dx;
             for(dy = -3; dy <= 3; dy++) {
                 for(dx = -3; dx <= 3; dx++) {
                     if(x_in + dx >= 0 && x_in + dx < SCREEN_WIDTH && 
                        i + dy >= 0 && i + dy < SCREEN_HEIGHT) {
+                        // Set display window for this pixel
+                        write8_a0(0x2A);  // Column Address Set
+                        write8_a1((x_in + dx) >> 8);
+                        write8_a1((x_in + dx) & 0x00FF);
+                        write8_a1((x_in + dx) >> 8);
+                        write8_a1((x_in + dx) & 0x00FF);
+                        
+                        write8_a0(0x2B);  // Page Address Set
+                        write8_a1((i + dy) >> 8);
+                        write8_a1((i + dy) & 0x00FF);
+                        write8_a1((i + dy) >> 8);
+                        write8_a1((i + dy) & 0x00FF);
+                        
+                        write8_a0(0x2C);  // Memory Write
                         write8_a1(0xFF);  // Orange color
                         write8_a1(0x0F);
                         set_pixel(x_in + dx, i + dy);  // Store pixel in buffer
@@ -318,11 +318,14 @@ void LCD_Char_1_PrintHorizontalLine(uint16 length)
         LCD_Char_1_PutChar('_');
     }
 }
-
+uint8 buffer[512], length;
 void main()
 {
     CyGlobalIntEnable;                  // Enable global interrupts
-    /* Declare all variables at the start of the block */
+    /* Declare all variables at the start of the block */ 
+    //USB_Start(0, USB_3V_OPERATION); // Start the USB peripheral
+    //while(!USB_GetConfiguration()); // Wait until USB is configured
+    //USB_EnableOutEP(2); // Enable our output endpoint (EP2)
     unsigned char j = 50;                // milliseconds delay
     uint16 lineLength;
     int16 verticalReading = 0;
@@ -423,6 +426,15 @@ void main()
     
     for(;;)
     {
+        //USB_LoadInEP(1, "Check", 5); // Echo the data back into the buffer
+        //while(USB_GetEPState(2) == USB_OUT_BUFFER_EMPTY);   // Wait until we have data
+        //length = USB_GetEPCount(2);                         // Get the length of received data
+        //USB_ReadOutEP(2, buffer, length);                   // Get the data
+        //while(USB_GetEPState(1) != USB_IN_BUFFER_EMPTY);    // Wait until our IN EP is empty
+        //uint8_t buffer[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        //uint8_t buffer_length = sizeof(buffer);
+        //USB_LoadInEP(1, buffer, buffer_length);
+        
         if (!drawing_complete) {
             // Check if CLR button is pressed to clear display
             if (CLR_Read() == 0) {
@@ -484,9 +496,11 @@ void main()
                 // Downscale the drawing to 16x16
                 int8_t digit_drawn[256] = {0};
                 downscale_to_16x16(digit_drawn);
-                
+
                 // Run BitNet inference on the drawn digit
                 uint8_t predicted_label = run_bitnet_test(digit_drawn);
+                
+                
                 
                 // Display completion message and prediction
                 LCD_Char_1_ClearDisplay();

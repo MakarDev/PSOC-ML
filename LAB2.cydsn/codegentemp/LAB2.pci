@@ -1,5 +1,5 @@
 # LAB2
-# 2025-05-13 08:33:31Z
+# 2025-05-13 13:18:19Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -24,8 +24,11 @@ set_io "RESET(0)" iocell 5 6
 set_io "LED(0)" iocell 5 2
 set_io "DC(0)" iocell 5 5
 set_io "Pot_V(0)" iocell 1 6
-set_io "\ADC_SAR_1:Bypass(0)\" iocell 0 2
+set_io "\ADC_SAR_1:Bypass(0)\" iocell 0 4
 set_io "Pin_3(0)" iocell 15 5
 set_io "CLR(0)" iocell 6 1
+set_io "\USB:Dm(0)\" iocell 15 7
+set_io "\USB:Dp(0)\" iocell 15 6
 set_location "\ADC_DelSig_1:DSM\" dsmodcell -1 -1 0
-set_location "\ADC_SAR_1:ADC_SAR\" sarcell -1 -1 1
+set_location "\ADC_SAR_1:ADC_SAR\" sarcell -1 -1 0
+set_location "\USB:USB\" usbcell -1 -1 0

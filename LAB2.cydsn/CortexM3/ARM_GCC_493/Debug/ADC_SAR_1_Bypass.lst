@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 1
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccGl9sid.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 1
   29:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** * Summary:
   30:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** *  Assign a new value to the digital port's data output register.  
   31:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** *
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 2
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccGl9sid.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** * Parameters:  
@@ -80,13 +80,13 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 1
   33              		.loc 1 41 0
   34 0000 044A     		ldr	r2, .L2
   35 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-  36 0004 03F0FB03 		and	r3, r3, #251
+  36 0004 03F0EF03 		and	r3, r3, #239
   37              	.LVL1:
   42:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c ****     ADC_SAR_1_Bypass_DR = staticBits | ((uint8)(value << ADC_SAR_1_Bypass_SHIFT) & ADC_SAR_1_Bypass
   38              		.loc 1 42 0
-  39 0008 8000     		lsls	r0, r0, #2
+  39 0008 0001     		lsls	r0, r0, #4
   40              	.LVL2:
-  41 000a 00F00400 		and	r0, r0, #4
+  41 000a 00F01000 		and	r0, r0, #16
   42 000e 1843     		orrs	r0, r0, r3
   43 0010 1070     		strb	r0, [r2]
   44 0012 7047     		bx	lr
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 1
   53:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** * Parameters:  
   54:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** *  mode:  Change the pins to this drive mode.
   55:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** *
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 3
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccGl9sid.s 			page 3
 
 
   56:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** * Return: 
@@ -146,7 +146,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 1
   75              	.L6:
   76 0012 00BF     		.align	2
   77              	.L5:
-  78 0014 02500040 		.word	1073762306
+  78 0014 04500040 		.word	1073762308
   79              		.cfi_endproc
   80              	.LFE1:
   81              		.size	ADC_SAR_1_Bypass_SetDriveMode, .-ADC_SAR_1_Bypass_SetDriveMode
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 1
   80:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** * Note:
   81:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** *  Macro ADC_SAR_1_Bypass_ReadPS calls this function. 
   82:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** *  
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 4
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccGl9sid.s 			page 4
 
 
   83:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** *******************************************************************************/
@@ -195,7 +195,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 1
   97 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
   87:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** }
   98              		.loc 1 87 0
-  99 0004 C0F38000 		ubfx	r0, r0, #2, #1
+  99 0004 C0F30010 		ubfx	r0, r0, #4, #1
  100 0008 7047     		bx	lr
  101              	.L9:
  102 000a 00BF     		.align	2
@@ -238,13 +238,13 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 1
  106:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c ****     return (ADC_SAR_1_Bypass_DR & ADC_SAR_1_Bypass_MASK) >> ADC_SAR_1_Bypass_SHIFT;
  121              		.loc 1 106 0
  122 0000 024B     		ldr	r3, .L11
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 5
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccGl9sid.s 			page 5
 
 
  123 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
  107:.\Generated_Source\PSoC5/ADC_SAR_1_Bypass.c **** }
  124              		.loc 1 107 0
- 125 0004 C0F38000 		ubfx	r0, r0, #2, #1
+ 125 0004 C0F30010 		ubfx	r0, r0, #4, #1
  126 0008 7047     		bx	lr
  127              	.L12:
  128 000a 00BF     		.align	2
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 1
  176 0050 08       		.byte	0x8
  177 0051 05       		.byte	0x5
  178 0052 56010000 		.4byte	.LASF6
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 6
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccGl9sid.s 			page 6
 
 
  179 0056 02       		.uleb128 0x2
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 1
  233 00c7 29       		.byte	0x29
  234 00c8 6B000000 		.4byte	0x6b
  235 00cc 01       		.uleb128 0x1
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 7
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccGl9sid.s 			page 7
 
 
  236 00cd 53       		.byte	0x53
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 1
  290 000f 10       		.uleb128 0x10
  291 0010 17       		.uleb128 0x17
  292 0011 00       		.byte	0
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 8
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccGl9sid.s 			page 8
 
 
  293 0012 00       		.byte	0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 1
  347 0048 27       		.uleb128 0x27
  348 0049 19       		.uleb128 0x19
  349 004a 11       		.uleb128 0x11
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 9
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccGl9sid.s 			page 9
 
 
  350 004b 01       		.uleb128 0x1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 1
  404 0082 49       		.uleb128 0x49
  405 0083 13       		.uleb128 0x13
  406 0084 11       		.uleb128 0x11
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 10
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccGl9sid.s 			page 10
 
 
  407 0085 01       		.uleb128 0x1
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 1
  461 0028 00000000 		.4byte	.LFB3
  462 002c 10000000 		.4byte	.LFE3-.LFB3
  463 0030 00000000 		.4byte	0
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 11
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccGl9sid.s 			page 11
 
 
  464 0034 00000000 		.4byte	0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 1
  495      6420696E 
  495      7400
  496              	.LASF3:
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 12
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccGl9sid.s 			page 12
 
 
  497 0085 73686F72 		.ascii	"short unsigned int\000"
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 1
  515      5F577269 
  516              	.LASF2:
  517 01a6 73686F72 		.ascii	"short int\000"
-ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccnc1HeD.s 			page 13
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccGl9sid.s 			page 13
 
 
  517      7420696E 

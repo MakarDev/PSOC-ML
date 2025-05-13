@@ -14,7 +14,6 @@
 
 #include "BitNetMCU_model.h"
 #include "BitNetMCU_inference.h"
-#include "BitNetMCU_MNIST_test_data.h"
 
 /**
  * Performs inference on the MNIST dataset using the BitNetMCU model.
