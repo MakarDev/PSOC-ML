@@ -1,0 +1,3261 @@
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"tm_stat.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	__aeabi_f2d
+  19              		.global	__aeabi_i2d
+  20              		.global	__aeabi_dmul
+  21              		.global	__aeabi_ddiv
+  22              		.global	__aeabi_ui2d
+  23              		.section	.text.tm_stat,"ax",%progbits
+  24              		.align	2
+  25              		.global	tm_stat
+  26              		.thumb
+  27              		.thumb_func
+  28              		.type	tm_stat, %function
+  29              	tm_stat:
+  30              	.LFB1:
+  31              		.file 1 ".\\tm_stat.c"
+   1:.\tm_stat.c   **** /* Copyright 2022 Sipeed Technology Co., Ltd. All Rights Reserved.
+   2:.\tm_stat.c   **** Licensed under the Apache License, Version 2.0 (the "License");
+   3:.\tm_stat.c   **** you may not use this file except in compliance with the License.
+   4:.\tm_stat.c   **** You may obtain a copy of the License at
+   5:.\tm_stat.c   ****     http://www.apache.org/licenses/LICENSE-2.0
+   6:.\tm_stat.c   **** Unless required by applicable law or agreed to in writing, software
+   7:.\tm_stat.c   **** distributed under the License is distributed on an "AS IS" BASIS,
+   8:.\tm_stat.c   **** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   9:.\tm_stat.c   **** See the License for the specific language governing permissions and
+  10:.\tm_stat.c   **** limitations under the License.
+  11:.\tm_stat.c   **** ==============================================================================*/
+  12:.\tm_stat.c   **** 
+  13:.\tm_stat.c   **** #include "tinymaix.h"
+  14:.\tm_stat.c   **** 
+  15:.\tm_stat.c   **** #if TM_ENABLE_STAT
+  16:.\tm_stat.c   **** static const char* mdl_type_str[6] = {
+  17:.\tm_stat.c   ****     "int8",   
+  18:.\tm_stat.c   ****     "int16",     
+  19:.\tm_stat.c   ****     "fp32",    
+  20:.\tm_stat.c   ****     "fp16",  
+  21:.\tm_stat.c   ****     "fp8 1.4.3", 
+  22:.\tm_stat.c   ****     "fp8 1.5.2", 
+  23:.\tm_stat.c   **** };
+  24:.\tm_stat.c   **** 
+  25:.\tm_stat.c   **** static const char* tml_str_tbl[TML_MAXCNT] = {
+  26:.\tm_stat.c   ****     "Conv2D",   /*TML_CONV2D  = 0,*/
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 2
+
+
+  27:.\tm_stat.c   ****     "GAP",      /*TML_GAP     = 1,*/
+  28:.\tm_stat.c   ****     "FC",       /*TML_FC      = 2,*/
+  29:.\tm_stat.c   ****     "Softmax",  /*TML_SOFTMAX = 3,*/
+  30:.\tm_stat.c   ****     "Reshape",  /*TML_RESHAPE = 4,*/
+  31:.\tm_stat.c   ****     "DWConv2D", /*TML_DWCONV2D= 5,*/
+  32:.\tm_stat.c   ****     "ADD",      /*TML_ADD     = 6,*/
+  33:.\tm_stat.c   **** };
+  34:.\tm_stat.c   **** 
+  35:.\tm_stat.c   **** static const int tml_headsize_tbl[TML_MAXCNT] = {
+  36:.\tm_stat.c   ****     sizeof(tml_conv2d_dw_t),
+  37:.\tm_stat.c   ****     sizeof(tml_gap_t),
+  38:.\tm_stat.c   ****     sizeof(tml_fc_t),
+  39:.\tm_stat.c   ****     sizeof(tml_softmax_t),
+  40:.\tm_stat.c   ****     sizeof(tml_reshape_t),
+  41:.\tm_stat.c   ****     sizeof(tml_conv2d_dw_t),
+  42:.\tm_stat.c   ****     sizeof(tml_add_t),
+  43:.\tm_stat.c   **** };
+  44:.\tm_stat.c   **** 
+  45:.\tm_stat.c   **** tm_err_t tm_stat(tm_mdlbin_t* b)
+  46:.\tm_stat.c   **** {   
+  32              		.loc 1 46 0
+  33              		.cfi_startproc
+  34              		@ args = 0, pretend = 0, frame = 16
+  35              		@ frame_needed = 0, uses_anonymous_args = 0
+  36              	.LVL0:
+  37 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+  38              		.cfi_def_cfa_offset 36
+  39              		.cfi_offset 4, -36
+  40              		.cfi_offset 5, -32
+  41              		.cfi_offset 6, -28
+  42              		.cfi_offset 7, -24
+  43              		.cfi_offset 8, -20
+  44              		.cfi_offset 9, -16
+  45              		.cfi_offset 10, -12
+  46              		.cfi_offset 11, -8
+  47              		.cfi_offset 14, -4
+  48 0004 97B0     		sub	sp, sp, #92
+  49              		.cfi_def_cfa_offset 128
+  50 0006 8046     		mov	r8, r0
+  47:.\tm_stat.c   ****     printf("================================ model stat ================================\n");
+  51              		.loc 1 47 0
+  52 0008 A748     		ldr	r0, .L15
+  53              	.LVL1:
+  54 000a FFF7FEFF 		bl	puts
+  55              	.LVL2:
+  48:.\tm_stat.c   ****     printf("mdl_type=%d (%s))\n", b->mdl_type, mdl_type_str[b->mdl_type]);
+  56              		.loc 1 48 0
+  57 000e 98F80430 		ldrb	r3, [r8, #4]	@ zero_extendqisi2
+  58 0012 A648     		ldr	r0, .L15+4
+  59 0014 1946     		mov	r1, r3
+  60 0016 A64A     		ldr	r2, .L15+8
+  61 0018 52F82320 		ldr	r2, [r2, r3, lsl #2]
+  62 001c FFF7FEFF 		bl	printf
+  63              	.LVL3:
+  49:.\tm_stat.c   ****     printf("out_deq=%d \n", b->out_deq);
+  64              		.loc 1 49 0
+  65 0020 A448     		ldr	r0, .L15+12
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 3
+
+
+  66 0022 98F80510 		ldrb	r1, [r8, #5]	@ zero_extendqisi2
+  67 0026 FFF7FEFF 		bl	printf
+  68              	.LVL4:
+  50:.\tm_stat.c   ****     printf("input_cnt=%d, output_cnt=%d, layer_cnt=%d\n", b->input_cnt, b->output_cnt, b->layer_cnt
+  69              		.loc 1 50 0
+  70 002a A348     		ldr	r0, .L15+16
+  71 002c B8F80610 		ldrh	r1, [r8, #6]
+  72 0030 B8F80820 		ldrh	r2, [r8, #8]
+  73 0034 B8F80A30 		ldrh	r3, [r8, #10]
+  74 0038 FFF7FEFF 		bl	printf
+  75              	.LVL5:
+  51:.\tm_stat.c   ****     uint16_t* idim = b->in_dims;
+  52:.\tm_stat.c   ****     printf("input %ddims: (%d, %d, %d)\n", idim[0],idim[1],idim[2],idim[3]);
+  76              		.loc 1 52 0
+  77 003c B8F81410 		ldrh	r1, [r8, #20]
+  78 0040 B8F81620 		ldrh	r2, [r8, #22]
+  79 0044 B8F81830 		ldrh	r3, [r8, #24]
+  80 0048 B8F81A00 		ldrh	r0, [r8, #26]
+  81 004c 0090     		str	r0, [sp]
+  82 004e 9B48     		ldr	r0, .L15+20
+  83 0050 FFF7FEFF 		bl	printf
+  84              	.LVL6:
+  53:.\tm_stat.c   ****     uint16_t* odim = b->out_dims;
+  54:.\tm_stat.c   ****     printf("output %ddims: (%d, %d, %d)\n", odim[0],odim[1],odim[2],odim[3]);
+  85              		.loc 1 54 0
+  86 0054 B8F81C10 		ldrh	r1, [r8, #28]
+  87 0058 B8F81E20 		ldrh	r2, [r8, #30]
+  88 005c B8F82030 		ldrh	r3, [r8, #32]
+  89 0060 B8F82200 		ldrh	r0, [r8, #34]
+  90 0064 0090     		str	r0, [sp]
+  91 0066 9648     		ldr	r0, .L15+24
+  92 0068 FFF7FEFF 		bl	printf
+  93              	.LVL7:
+  55:.\tm_stat.c   ****     //printf("model param bin addr: 0x%x\n", (uint32_t)(b->layers_body));
+  56:.\tm_stat.c   ****     printf("main buf size %d; sub buf size %d\n", \
+  94              		.loc 1 56 0
+  95 006c 9548     		ldr	r0, .L15+28
+  96 006e D8F80C10 		ldr	r1, [r8, #12]
+  97 0072 D8F81020 		ldr	r2, [r8, #16]
+  98 0076 FFF7FEFF 		bl	printf
+  99              	.LVL8:
+  57:.\tm_stat.c   ****         b->buf_size,b->sub_size);
+  58:.\tm_stat.c   **** 
+  59:.\tm_stat.c   ****     printf("//Note: PARAM is layer param size, include align padding\r\n\r\n");
+ 100              		.loc 1 59 0
+ 101 007a 9348     		ldr	r0, .L15+32
+ 102 007c FFF7FEFF 		bl	puts
+ 103              	.LVL9:
+  60:.\tm_stat.c   ****     printf("Idx\tLayer\t         outshape\tinoft\toutoft\tPARAM\tMEMOUT OPS\n");
+ 104              		.loc 1 60 0
+ 105 0080 9248     		ldr	r0, .L15+36
+ 106 0082 FFF7FEFF 		bl	puts
+ 107              	.LVL10:
+  61:.\tm_stat.c   ****     printf("---\tInput    \t%3d,%3d,%3d\t-   \t0    \t0 \t%ld \t0\n",\
+  62:.\tm_stat.c   ****         idim[1],idim[2],idim[3], (long int)(idim[1]*idim[2]*idim[3]*sizeof(mtype_t)));
+ 108              		.loc 1 62 0
+ 109 0086 B8F81610 		ldrh	r1, [r8, #22]
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 4
+
+
+ 110 008a B8F81820 		ldrh	r2, [r8, #24]
+ 111 008e 02FB01F0 		mul	r0, r2, r1
+ 112 0092 B8F81A30 		ldrh	r3, [r8, #26]
+ 113 0096 03FB00F0 		mul	r0, r3, r0
+  61:.\tm_stat.c   ****     printf("---\tInput    \t%3d,%3d,%3d\t-   \t0    \t0 \t%ld \t0\n",\
+ 114              		.loc 1 61 0
+ 115 009a 0090     		str	r0, [sp]
+ 116 009c 8C48     		ldr	r0, .L15+40
+ 117 009e FFF7FEFF 		bl	printf
+ 118              	.LVL11:
+  63:.\tm_stat.c   ****     //      000  Input    -     224,224,3  0x40001234 0x40004000 100000 500000 200000
+  64:.\tm_stat.c   ****     //printf("000  Input    -     %3d,%3d,%d  0x%08x   0x%08x     %6d %6d %6d\n",) 
+  65:.\tm_stat.c   ****     int sum_param = 0;
+  66:.\tm_stat.c   ****     int sum_ops   = 0;
+  67:.\tm_stat.c   ****     uint8_t*layer_body  = (uint8_t*)b->layers_body;
+ 119              		.loc 1 67 0
+ 120 00a2 08F14004 		add	r4, r8, #64
+ 121              	.LVL12:
+  68:.\tm_stat.c   ****     int layer_i;
+  69:.\tm_stat.c   ****     for(layer_i = 0; layer_i < b->layer_cnt; layer_i++){
+ 122              		.loc 1 69 0
+ 123 00a6 4FF0000B 		mov	fp, #0
+  66:.\tm_stat.c   ****     uint8_t*layer_body  = (uint8_t*)b->layers_body;
+ 124              		.loc 1 66 0
+ 125 00aa CDF84CB0 		str	fp, [sp, #76]
+  65:.\tm_stat.c   ****     int sum_ops   = 0;
+ 126              		.loc 1 65 0
+ 127 00ae CDF848B0 		str	fp, [sp, #72]
+ 128 00b2 4346     		mov	r3, r8
+ 129 00b4 D846     		mov	r8, fp
+ 130              	.LVL13:
+ 131 00b6 9B46     		mov	fp, r3
+ 132              		.loc 1 69 0
+ 133 00b8 3BE1     		b	.L2
+ 134              	.LVL14:
+ 135              	.L11:
+ 136              	.LBB2:
+  70:.\tm_stat.c   ****         tml_head_t* h = (tml_head_t*)(layer_body);
+  71:.\tm_stat.c   ****         TM_DBG("body oft = %d\n", (uint32_t)((size_t)h - (size_t)(b)));
+ 137              		.loc 1 71 0
+ 138 00ba 864D     		ldr	r5, .L15+44
+ 139 00bc 2846     		mov	r0, r5
+ 140 00be 4721     		movs	r1, #71
+ 141 00c0 FFF7FEFF 		bl	printf
+ 142              	.LVL15:
+ 143 00c4 8448     		ldr	r0, .L15+48
+ 144 00c6 CBEB0401 		rsb	r1, fp, r4
+ 145 00ca FFF7FEFF 		bl	printf
+ 146              	.LVL16:
+  72:.\tm_stat.c   ****         TM_DBG("type=%d, is_out=%d, size=%d, in_oft=%d, out_oft=%d, in_dims=[%d,%d,%d,%d], out_dims
+ 147              		.loc 1 72 0
+ 148 00ce 2846     		mov	r0, r5
+ 149 00d0 4C21     		movs	r1, #76
+ 150 00d2 FFF7FEFF 		bl	printf
+ 151              	.LVL17:
+ 152 00d6 2788     		ldrh	r7, [r4]
+ 153 00d8 6688     		ldrh	r6, [r4, #2]
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 5
+
+
+ 154 00da B4F810A0 		ldrh	r10, [r4, #16]
+ 155 00de B4F81290 		ldrh	r9, [r4, #18]
+ 156 00e2 B4F814C0 		ldrh	ip, [r4, #20]
+ 157 00e6 B4F816E0 		ldrh	lr, [r4, #22]
+ 158 00ea 208B     		ldrh	r0, [r4, #24]
+ 159 00ec 618B     		ldrh	r1, [r4, #26]
+ 160 00ee A28B     		ldrh	r2, [r4, #28]
+ 161 00f0 E38B     		ldrh	r3, [r4, #30]
+ 162 00f2 0993     		str	r3, [sp, #36]
+ 163 00f4 A36A     		ldr	r3, [r4, #40]	@ float
+ 164 00f6 1493     		str	r3, [sp, #80]	@ float
+ 165 00f8 6568     		ldr	r5, [r4, #4]
+ 166 00fa A368     		ldr	r3, [r4, #8]
+ 167 00fc 0093     		str	r3, [sp]
+ 168 00fe E368     		ldr	r3, [r4, #12]
+ 169 0100 0193     		str	r3, [sp, #4]
+ 170 0102 CDF808A0 		str	r10, [sp, #8]
+ 171 0106 CDF80C90 		str	r9, [sp, #12]
+ 172 010a CDF810C0 		str	ip, [sp, #16]
+ 173 010e CDF814E0 		str	lr, [sp, #20]
+ 174 0112 0690     		str	r0, [sp, #24]
+ 175 0114 0791     		str	r1, [sp, #28]
+ 176 0116 0892     		str	r2, [sp, #32]
+ 177 0118 206A     		ldr	r0, [r4, #32]	@ float
+ 178 011a FFF7FEFF 		bl	__aeabi_f2d
+ 179              	.LVL18:
+ 180 011e CDE90A01 		strd	r0, [sp, #40]
+ 181 0122 636A     		ldr	r3, [r4, #36]
+ 182 0124 0C93     		str	r3, [sp, #48]
+ 183 0126 1498     		ldr	r0, [sp, #80]	@ float
+ 184 0128 FFF7FEFF 		bl	__aeabi_f2d
+ 185              	.LVL19:
+ 186 012c CDE90E01 		strd	r0, [sp, #56]
+ 187 0130 E36A     		ldr	r3, [r4, #44]
+ 188 0132 1093     		str	r3, [sp, #64]
+ 189 0134 6948     		ldr	r0, .L15+52
+ 190 0136 3946     		mov	r1, r7
+ 191 0138 3246     		mov	r2, r6
+ 192 013a 2B46     		mov	r3, r5
+ 193 013c FFF7FEFF 		bl	printf
+ 194              	.LVL20:
+  73:.\tm_stat.c   ****                 h->type,h->is_out,h->size,h->in_oft,h->out_oft,\
+  74:.\tm_stat.c   ****                 h->in_dims[0],h->in_dims[1],h->in_dims[2],h->in_dims[3],\
+  75:.\tm_stat.c   ****                 h->out_dims[0],h->out_dims[1],h->out_dims[2],h->out_dims[3],\
+  76:.\tm_stat.c   ****                 h->in_s,(int32_t)(h->in_zp),h->out_s,(int32_t)(h->out_zp));
+  77:.\tm_stat.c   ****         if(h->type < TML_MAXCNT) {
+ 195              		.loc 1 77 0
+ 196 0140 2388     		ldrh	r3, [r4]
+ 197 0142 062B     		cmp	r3, #6
+ 198 0144 00F22281 		bhi	.L12
+ 199              	.LBB3:
+  78:.\tm_stat.c   ****             int memout = h->out_dims[1]*h->out_dims[2]*h->out_dims[3];
+ 200              		.loc 1 78 0
+ 201 0148 668B     		ldrh	r6, [r4, #26]
+ 202 014a A28B     		ldrh	r2, [r4, #28]
+ 203 014c 02FB06F6 		mul	r6, r2, r6
+ 204 0150 E58B     		ldrh	r5, [r4, #30]
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 6
+
+
+ 205 0152 05FB06F6 		mul	r6, r5, r6
+ 206              	.LVL21:
+  79:.\tm_stat.c   ****             sum_param += (h->size - tml_headsize_tbl[h->type]);
+ 207              		.loc 1 79 0
+ 208 0156 6268     		ldr	r2, [r4, #4]
+ 209 0158 5549     		ldr	r1, .L15+8
+ 210 015a 01EB8301 		add	r1, r1, r3, lsl #2
+ 211 015e 8969     		ldr	r1, [r1, #24]
+ 212 0160 521A     		subs	r2, r2, r1
+ 213 0162 1299     		ldr	r1, [sp, #72]
+ 214 0164 1144     		add	r1, r1, r2
+ 215 0166 1291     		str	r1, [sp, #72]
+ 216              	.LVL22:
+  80:.\tm_stat.c   ****             int ops = 0;
+  81:.\tm_stat.c   ****             switch(h->type){
+ 217              		.loc 1 81 0
+ 218 0168 052B     		cmp	r3, #5
+ 219 016a 00F2BF80 		bhi	.L13
+ 220 016e DFE803F0 		tbb	[pc, r3]
+ 221              	.L6:
+ 222 0172 03       		.byte	(.L5-.L6)/2
+ 223 0173 43       		.byte	(.L7-.L6)/2
+ 224 0174 4B       		.byte	(.L8-.L6)/2
+ 225 0175 59       		.byte	(.L9-.L6)/2
+ 226 0176 BD       		.byte	(.L13-.L6)/2
+ 227 0177 5D       		.byte	(.L10-.L6)/2
+ 228              		.p2align 1
+ 229              	.L5:
+ 230              	.LVL23:
+ 231              	.LBB4:
+  82:.\tm_stat.c   ****             case TML_CONV2D: {
+  83:.\tm_stat.c   ****                 tml_conv2d_dw_t* l = (tml_conv2d_dw_t*)(layer_body);
+  84:.\tm_stat.c   ****                 ops = memout*(l->kernel_w)*(l->kernel_h)*(h->in_dims[3]);   //MAC as ops
+ 232              		.loc 1 84 0
+ 233 0178 94F83050 		ldrb	r5, [r4, #48]	@ zero_extendqisi2
+ 234 017c 06FB05F5 		mul	r5, r6, r5
+ 235 0180 94F83130 		ldrb	r3, [r4, #49]	@ zero_extendqisi2
+ 236 0184 03FB05F3 		mul	r3, r3, r5
+ 237 0188 E58A     		ldrh	r5, [r4, #22]
+ 238 018a 05FB03F5 		mul	r5, r5, r3
+ 239              	.LVL24:
+  85:.\tm_stat.c   ****                 TM_DBG("Conv2d: kw=%d, kh=%d, sw=%d, sh=%d, dw=%d, dh=%d, act=%d, pad=[%d,%d,%d,%d]
+ 240              		.loc 1 85 0
+ 241 018e 5148     		ldr	r0, .L15+44
+ 242 0190 5821     		movs	r1, #88
+ 243              	.LVL25:
+ 244 0192 FFF7FEFF 		bl	printf
+ 245              	.LVL26:
+ 246 0196 94F83010 		ldrb	r1, [r4, #48]	@ zero_extendqisi2
+ 247 019a 94F83130 		ldrb	r3, [r4, #49]	@ zero_extendqisi2
+ 248 019e 1493     		str	r3, [sp, #80]
+ 249 01a0 94F83200 		ldrb	r0, [r4, #50]	@ zero_extendqisi2
+ 250 01a4 1590     		str	r0, [sp, #84]
+ 251 01a6 94F83320 		ldrb	r2, [r4, #51]	@ zero_extendqisi2
+ 252 01aa 94F834A0 		ldrb	r10, [r4, #52]	@ zero_extendqisi2
+ 253 01ae 94F83590 		ldrb	r9, [r4, #53]	@ zero_extendqisi2
+ 254 01b2 E38E     		ldrh	r3, [r4, #54]
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 7
+
+
+ 255 01b4 94F838C0 		ldrb	ip, [r4, #56]	@ zero_extendqisi2
+ 256 01b8 94F839E0 		ldrb	lr, [r4, #57]	@ zero_extendqisi2
+ 257 01bc 94F83A70 		ldrb	r7, [r4, #58]	@ zero_extendqisi2
+ 258 01c0 94F83B00 		ldrb	r0, [r4, #59]	@ zero_extendqisi2
+ 259 01c4 0092     		str	r2, [sp]
+ 260 01c6 CDF804A0 		str	r10, [sp, #4]
+ 261 01ca CDF80890 		str	r9, [sp, #8]
+ 262 01ce 0393     		str	r3, [sp, #12]
+ 263 01d0 CDF810C0 		str	ip, [sp, #16]
+ 264 01d4 CDF814E0 		str	lr, [sp, #20]
+ 265 01d8 0697     		str	r7, [sp, #24]
+ 266 01da 0790     		str	r0, [sp, #28]
+ 267 01dc E06B     		ldr	r0, [r4, #60]
+ 268 01de 0890     		str	r0, [sp, #32]
+ 269 01e0 606C     		ldr	r0, [r4, #68]
+ 270 01e2 0990     		str	r0, [sp, #36]
+ 271 01e4 A06C     		ldr	r0, [r4, #72]
+ 272 01e6 0A90     		str	r0, [sp, #40]
+ 273 01e8 E06C     		ldr	r0, [r4, #76]
+ 274 01ea 0B90     		str	r0, [sp, #44]
+ 275 01ec 3C48     		ldr	r0, .L15+56
+ 276 01ee 149A     		ldr	r2, [sp, #80]
+ 277 01f0 159B     		ldr	r3, [sp, #84]
+ 278 01f2 FFF7FEFF 		bl	printf
+ 279              	.LVL27:
+  86:.\tm_stat.c   ****                     l->kernel_w, l->kernel_h, l->stride_w, l->stride_h, l->dilation_w, l->dilation_
+  87:.\tm_stat.c   ****                     l->act, l->pad[0], l->pad[1], l->pad[2], l->pad[3], l->depth_mul, \
+  88:.\tm_stat.c   ****                     l->ws_oft, l->w_oft, l->b_oft);
+  89:.\tm_stat.c   ****                 break;}
+ 280              		.loc 1 89 0
+ 281 01f6 7AE0     		b	.L4
+ 282              	.LVL28:
+ 283              	.L7:
+ 284              	.LBE4:
+  90:.\tm_stat.c   ****             case TML_GAP:
+  91:.\tm_stat.c   ****                 ops = (h->in_dims[1])*(h->in_dims[2])*(h->in_dims[3]);  //SUM as ops
+ 285              		.loc 1 91 0
+ 286 01f8 658A     		ldrh	r5, [r4, #18]
+ 287 01fa A38A     		ldrh	r3, [r4, #20]
+ 288 01fc 03FB05F3 		mul	r3, r3, r5
+ 289 0200 E58A     		ldrh	r5, [r4, #22]
+ 290 0202 05FB03F5 		mul	r5, r5, r3
+ 291              	.LVL29:
+  92:.\tm_stat.c   ****                 break;
+ 292              		.loc 1 92 0
+ 293 0206 72E0     		b	.L4
+ 294              	.LVL30:
+ 295              	.L8:
+ 296              	.LBB5:
+  93:.\tm_stat.c   ****             case TML_FC: {
+  94:.\tm_stat.c   ****                 tml_fc_t* l = (tml_fc_t*)(layer_body);
+  95:.\tm_stat.c   ****                 ops = (h->out_dims[3])*(h->in_dims[3]);         //MAC as ops
+ 297              		.loc 1 95 0
+ 298 0208 E38A     		ldrh	r3, [r4, #22]
+ 299 020a 03FB05F5 		mul	r5, r3, r5
+ 300              	.LVL31:
+  96:.\tm_stat.c   ****                 TM_DBG("FC: ws_oft=%d, w_oft=%d, b_oft=%d\n",\
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 8
+
+
+ 301              		.loc 1 96 0
+ 302 020e 3148     		ldr	r0, .L15+44
+ 303 0210 6121     		movs	r1, #97
+ 304              	.LVL32:
+ 305 0212 FFF7FEFF 		bl	printf
+ 306              	.LVL33:
+ 307 0216 3348     		ldr	r0, .L15+60
+ 308 0218 216B     		ldr	r1, [r4, #48]
+ 309 021a 626B     		ldr	r2, [r4, #52]
+ 310 021c A36B     		ldr	r3, [r4, #56]
+ 311 021e FFF7FEFF 		bl	printf
+ 312              	.LVL34:
+  97:.\tm_stat.c   ****                     l->ws_oft, l->w_oft, l->b_oft);
+  98:.\tm_stat.c   ****                 break;}
+ 313              		.loc 1 98 0
+ 314 0222 64E0     		b	.L4
+ 315              	.LVL35:
+ 316              	.L9:
+ 317              	.LBE5:
+  99:.\tm_stat.c   ****             case TML_SOFTMAX:
+ 100:.\tm_stat.c   ****                 ops = 6*(h->out_dims[3]);                       //mixed
+ 318              		.loc 1 100 0
+ 319 0224 05EB4505 		add	r5, r5, r5, lsl #1
+ 320 0228 6D00     		lsls	r5, r5, #1
+ 321              	.LVL36:
+ 101:.\tm_stat.c   ****                 break;
+ 322              		.loc 1 101 0
+ 323 022a 60E0     		b	.L4
+ 324              	.LVL37:
+ 325              	.L10:
+ 326              	.LBB6:
+ 102:.\tm_stat.c   ****             case TML_DWCONV2D: {
+ 103:.\tm_stat.c   ****                 tml_conv2d_dw_t* l = (tml_conv2d_dw_t*)(layer_body);
+ 104:.\tm_stat.c   ****                 ops = memout*(l->kernel_w)*(l->kernel_h)*1;   //MAC as ops
+ 327              		.loc 1 104 0
+ 328 022c 94F83050 		ldrb	r5, [r4, #48]	@ zero_extendqisi2
+ 329 0230 06FB05F3 		mul	r3, r6, r5
+ 330 0234 94F83150 		ldrb	r5, [r4, #49]	@ zero_extendqisi2
+ 331 0238 05FB03F5 		mul	r5, r5, r3
+ 332              	.LVL38:
+ 105:.\tm_stat.c   ****                 TM_DBG("DWConv2d: kw=%d, kh=%d, sw=%d, sh=%d, dw=%d, dh=%d, act=%d, pad=[%d,%d,%d,%
+ 333              		.loc 1 105 0
+ 334 023c 2548     		ldr	r0, .L15+44
+ 335 023e 6C21     		movs	r1, #108
+ 336              	.LVL39:
+ 337 0240 FFF7FEFF 		bl	printf
+ 338              	.LVL40:
+ 339 0244 94F83010 		ldrb	r1, [r4, #48]	@ zero_extendqisi2
+ 340 0248 94F83130 		ldrb	r3, [r4, #49]	@ zero_extendqisi2
+ 341 024c 1493     		str	r3, [sp, #80]
+ 342 024e 94F83200 		ldrb	r0, [r4, #50]	@ zero_extendqisi2
+ 343 0252 1590     		str	r0, [sp, #84]
+ 344 0254 94F83320 		ldrb	r2, [r4, #51]	@ zero_extendqisi2
+ 345 0258 94F834A0 		ldrb	r10, [r4, #52]	@ zero_extendqisi2
+ 346 025c 94F83590 		ldrb	r9, [r4, #53]	@ zero_extendqisi2
+ 347 0260 E38E     		ldrh	r3, [r4, #54]
+ 348 0262 94F838C0 		ldrb	ip, [r4, #56]	@ zero_extendqisi2
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 9
+
+
+ 349 0266 94F839E0 		ldrb	lr, [r4, #57]	@ zero_extendqisi2
+ 350 026a 94F83A70 		ldrb	r7, [r4, #58]	@ zero_extendqisi2
+ 351 026e 94F83B00 		ldrb	r0, [r4, #59]	@ zero_extendqisi2
+ 352 0272 0092     		str	r2, [sp]
+ 353 0274 CDF804A0 		str	r10, [sp, #4]
+ 354 0278 CDF80890 		str	r9, [sp, #8]
+ 355 027c 0393     		str	r3, [sp, #12]
+ 356 027e CDF810C0 		str	ip, [sp, #16]
+ 357 0282 CDF814E0 		str	lr, [sp, #20]
+ 358 0286 0697     		str	r7, [sp, #24]
+ 359 0288 0790     		str	r0, [sp, #28]
+ 360 028a E06B     		ldr	r0, [r4, #60]
+ 361 028c 0890     		str	r0, [sp, #32]
+ 362 028e 606C     		ldr	r0, [r4, #68]
+ 363 0290 0990     		str	r0, [sp, #36]
+ 364 0292 A06C     		ldr	r0, [r4, #72]
+ 365 0294 0A90     		str	r0, [sp, #40]
+ 366 0296 E06C     		ldr	r0, [r4, #76]
+ 367 0298 0B90     		str	r0, [sp, #44]
+ 368 029a 1348     		ldr	r0, .L15+64
+ 369 029c 149A     		ldr	r2, [sp, #80]
+ 370 029e 159B     		ldr	r3, [sp, #84]
+ 371 02a0 FFF7FEFF 		bl	printf
+ 372              	.LVL41:
+ 106:.\tm_stat.c   ****                     l->kernel_w, l->kernel_h, l->stride_w, l->stride_h, l->dilation_w, l->dilation_
+ 107:.\tm_stat.c   ****                     l->act, l->pad[0], l->pad[1], l->pad[2], l->pad[3], l->depth_mul,\
+ 108:.\tm_stat.c   ****                     l->ws_oft, l->w_oft, l->b_oft);
+ 109:.\tm_stat.c   ****                 break;}
+ 373              		.loc 1 109 0
+ 374 02a4 23E0     		b	.L4
+ 375              	.L16:
+ 376 02a6 00BF     		.align	2
+ 377              	.L15:
+ 378 02a8 00000000 		.word	.LC0
+ 379 02ac 50000000 		.word	.LC1
+ 380 02b0 00000000 		.word	.LANCHOR0
+ 381 02b4 64000000 		.word	.LC2
+ 382 02b8 74000000 		.word	.LC3
+ 383 02bc A0000000 		.word	.LC4
+ 384 02c0 BC000000 		.word	.LC5
+ 385 02c4 DC000000 		.word	.LC6
+ 386 02c8 00010000 		.word	.LC7
+ 387 02cc 3C010000 		.word	.LC8
+ 388 02d0 78010000 		.word	.LC9
+ 389 02d4 A8010000 		.word	.LC10
+ 390 02d8 B4010000 		.word	.LC11
+ 391 02dc C4010000 		.word	.LC12
+ 392 02e0 54020000 		.word	.LC13
+ 393 02e4 CC020000 		.word	.LC14
+ 394 02e8 F0020000 		.word	.LC15
+ 395              	.LVL42:
+ 396              	.L13:
+ 397              	.LBE6:
+ 110:.\tm_stat.c   ****             default:
+ 111:.\tm_stat.c   ****                 ops = 0;
+ 398              		.loc 1 111 0
+ 399 02ec 0025     		movs	r5, #0
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 10
+
+
+ 400              	.LVL43:
+ 401              	.L4:
+ 112:.\tm_stat.c   ****                 break;
+ 113:.\tm_stat.c   ****             }
+ 114:.\tm_stat.c   ****             sum_ops += ops;
+ 402              		.loc 1 114 0
+ 403 02ee 139B     		ldr	r3, [sp, #76]
+ 404 02f0 2B44     		add	r3, r3, r5
+ 405 02f2 1393     		str	r3, [sp, #76]
+ 406              	.LVL44:
+ 115:.\tm_stat.c   ****             printf("%03d\t%s      \t%3d,%3d,%3d\t%d\t%d\t%d\t%ld\t", layer_i, tml_str_tbl[h->type],
+ 407              		.loc 1 115 0
+ 408 02f4 2788     		ldrh	r7, [r4]
+ 116:.\tm_stat.c   ****                 h->out_dims[1], h->out_dims[2], h->out_dims[3], \
+ 409              		.loc 1 116 0
+ 410 02f6 638B     		ldrh	r3, [r4, #26]
+ 411              	.LVL45:
+ 412 02f8 A18B     		ldrh	r1, [r4, #28]
+ 413 02fa E08B     		ldrh	r0, [r4, #30]
+ 117:.\tm_stat.c   ****                 h->in_oft, h->out_oft, h->size - tml_headsize_tbl[h->type], \
+ 414              		.loc 1 117 0
+ 415 02fc 284A     		ldr	r2, .L17+8
+ 416 02fe 02EB8702 		add	r2, r2, r7, lsl #2
+ 417 0302 9769     		ldr	r7, [r2, #24]
+ 115:.\tm_stat.c   ****             printf("%03d\t%s      \t%3d,%3d,%3d\t%d\t%d\t%d\t%ld\t", layer_i, tml_str_tbl[h->type],
+ 418              		.loc 1 115 0
+ 419 0304 526B     		ldr	r2, [r2, #52]
+ 420 0306 0091     		str	r1, [sp]
+ 421 0308 0190     		str	r0, [sp, #4]
+ 422 030a A068     		ldr	r0, [r4, #8]
+ 423 030c 0290     		str	r0, [sp, #8]
+ 424 030e E068     		ldr	r0, [r4, #12]
+ 425 0310 0390     		str	r0, [sp, #12]
+ 426 0312 6168     		ldr	r1, [r4, #4]
+ 427 0314 C91B     		subs	r1, r1, r7
+ 428 0316 0491     		str	r1, [sp, #16]
+ 429 0318 0596     		str	r6, [sp, #20]
+ 430 031a 2248     		ldr	r0, .L17+12
+ 431 031c 4146     		mov	r1, r8
+ 432 031e FFF7FEFF 		bl	printf
+ 433              	.LVL46:
+ 118:.\tm_stat.c   ****                 (long int)(memout*sizeof(mtype_t)));
+ 119:.\tm_stat.c   ****             printf("%d\r\n", ops);
+ 434              		.loc 1 119 0
+ 435 0322 2148     		ldr	r0, .L17+16
+ 436 0324 2946     		mov	r1, r5
+ 437 0326 FFF7FEFF 		bl	printf
+ 438              	.LVL47:
+ 439              	.LBE3:
+ 120:.\tm_stat.c   ****         } else {
+ 121:.\tm_stat.c   ****             return TM_ERR_LAYERTYPE;
+ 122:.\tm_stat.c   ****         }
+ 123:.\tm_stat.c   ****         layer_body += (h->size);
+ 440              		.loc 1 123 0
+ 441 032a 6368     		ldr	r3, [r4, #4]
+ 442 032c 1C44     		add	r4, r4, r3
+ 443              	.LVL48:
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 11
+
+
+ 444              	.LBE2:
+  69:.\tm_stat.c   ****         tml_head_t* h = (tml_head_t*)(layer_body);
+ 445              		.loc 1 69 0
+ 446 032e 08F10108 		add	r8, r8, #1
+ 447              	.LVL49:
+ 448              	.L2:
+  69:.\tm_stat.c   ****         tml_head_t* h = (tml_head_t*)(layer_body);
+ 449              		.loc 1 69 0 is_stmt 0 discriminator 1
+ 450 0332 BBF80A30 		ldrh	r3, [fp, #10]
+ 451 0336 4345     		cmp	r3, r8
+ 452 0338 3FF7BFAE 		bgt	.L11
+ 124:.\tm_stat.c   ****     }
+ 125:.\tm_stat.c   ****     printf("\r\nTotal param ~%.1f KB, OPS ~%.2f MOPS, buffer %.1f KB\r\n\r\n", \
+ 126:.\tm_stat.c   ****         sum_param/1024.0, sum_ops/1000000.0, (b->buf_size + b->sub_size)/1024.0);
+ 453              		.loc 1 126 0 is_stmt 1
+ 454 033c DBF80C40 		ldr	r4, [fp, #12]
+ 455              	.LVL50:
+ 456 0340 DBF81030 		ldr	r3, [fp, #16]
+ 457 0344 1C44     		add	r4, r4, r3
+ 125:.\tm_stat.c   ****         sum_param/1024.0, sum_ops/1000000.0, (b->buf_size + b->sub_size)/1024.0);
+ 458              		.loc 1 125 0
+ 459 0346 1298     		ldr	r0, [sp, #72]
+ 460 0348 FFF7FEFF 		bl	__aeabi_i2d
+ 461              	.LVL51:
+ 462 034c 0022     		movs	r2, #0
+ 463 034e 174B     		ldr	r3, .L17+20
+ 464 0350 FFF7FEFF 		bl	__aeabi_dmul
+ 465              	.LVL52:
+ 466 0354 0646     		mov	r6, r0
+ 467 0356 0F46     		mov	r7, r1
+ 468 0358 1398     		ldr	r0, [sp, #76]
+ 469 035a FFF7FEFF 		bl	__aeabi_i2d
+ 470              	.LVL53:
+ 471 035e 0EA3     		adr	r3, .L17
+ 472 0360 D3E90023 		ldrd	r2, [r3]
+ 473 0364 FFF7FEFF 		bl	__aeabi_ddiv
+ 474              	.LVL54:
+ 475 0368 CDE90001 		strd	r0, [sp]
+ 476 036c 2046     		mov	r0, r4
+ 477 036e FFF7FEFF 		bl	__aeabi_ui2d
+ 478              	.LVL55:
+ 479 0372 0022     		movs	r2, #0
+ 480 0374 0D4B     		ldr	r3, .L17+20
+ 481 0376 FFF7FEFF 		bl	__aeabi_dmul
+ 482              	.LVL56:
+ 483 037a CDE90201 		strd	r0, [sp, #8]
+ 484 037e 0C48     		ldr	r0, .L17+24
+ 485 0380 3246     		mov	r2, r6
+ 486 0382 3B46     		mov	r3, r7
+ 487 0384 FFF7FEFF 		bl	printf
+ 488              	.LVL57:
+ 127:.\tm_stat.c   ****     return TM_OK;
+ 489              		.loc 1 127 0
+ 490 0388 0020     		movs	r0, #0
+ 491 038a 00E0     		b	.L3
+ 492              	.LVL58:
+ 493              	.L12:
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 12
+
+
+ 494              	.LBB7:
+ 121:.\tm_stat.c   ****         }
+ 495              		.loc 1 121 0
+ 496 038c 0520     		movs	r0, #5
+ 497              	.LVL59:
+ 498              	.L3:
+ 499              	.LBE7:
+ 128:.\tm_stat.c   **** } 
+ 500              		.loc 1 128 0
+ 501 038e 17B0     		add	sp, sp, #92
+ 502              		.cfi_def_cfa_offset 36
+ 503              		@ sp needed
+ 504 0390 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 505              	.LVL60:
+ 506              	.L18:
+ 507 0394 AFF30080 		.align	3
+ 508              	.L17:
+ 509 0398 00000000 		.word	0
+ 510 039c 80842E41 		.word	1093567616
+ 511 03a0 00000000 		.word	.LANCHOR0
+ 512 03a4 68030000 		.word	.LC16
+ 513 03a8 90030000 		.word	.LC17
+ 514 03ac 0000503F 		.word	1062207488
+ 515 03b0 98030000 		.word	.LC18
+ 516              		.cfi_endproc
+ 517              	.LFE1:
+ 518              		.size	tm_stat, .-tm_stat
+ 519 03b4 AFF30080 		.section	.rodata
+ 520              		.align	2
+ 521              		.set	.LANCHOR0,. + 0
+ 522              		.type	mdl_type_str, %object
+ 523              		.size	mdl_type_str, 24
+ 524              	mdl_type_str:
+ 525 0000 04040000 		.word	.LC26
+ 526 0004 0C040000 		.word	.LC27
+ 527 0008 14040000 		.word	.LC28
+ 528 000c 1C040000 		.word	.LC29
+ 529 0010 24040000 		.word	.LC30
+ 530 0014 30040000 		.word	.LC31
+ 531              		.type	tml_headsize_tbl, %object
+ 532              		.size	tml_headsize_tbl, 28
+ 533              	tml_headsize_tbl:
+ 534 0018 50000000 		.word	80
+ 535 001c 30000000 		.word	48
+ 536 0020 40000000 		.word	64
+ 537 0024 30000000 		.word	48
+ 538 0028 30000000 		.word	48
+ 539 002c 50000000 		.word	80
+ 540 0030 40000000 		.word	64
+ 541              		.type	tml_str_tbl, %object
+ 542              		.size	tml_str_tbl, 28
+ 543              	tml_str_tbl:
+ 544 0034 D4030000 		.word	.LC19
+ 545 0038 DC030000 		.word	.LC20
+ 546 003c E0030000 		.word	.LC21
+ 547 0040 E4030000 		.word	.LC22
+ 548 0044 EC030000 		.word	.LC23
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 13
+
+
+ 549 0048 F4030000 		.word	.LC24
+ 550 004c 00040000 		.word	.LC25
+ 551              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 552              		.align	2
+ 553              	.LC0:
+ 554 0000 3D3D3D3D 		.ascii	"================================ model stat ======="
+ 554      3D3D3D3D 
+ 554      3D3D3D3D 
+ 554      3D3D3D3D 
+ 554      3D3D3D3D 
+ 555 0033 3D3D3D3D 		.ascii	"=========================\000"
+ 555      3D3D3D3D 
+ 555      3D3D3D3D 
+ 555      3D3D3D3D 
+ 555      3D3D3D3D 
+ 556 004d 000000   		.space	3
+ 557              	.LC1:
+ 558 0050 6D646C5F 		.ascii	"mdl_type=%d (%s))\012\000"
+ 558      74797065 
+ 558      3D256420 
+ 558      28257329 
+ 558      290A00
+ 559 0063 00       		.space	1
+ 560              	.LC2:
+ 561 0064 6F75745F 		.ascii	"out_deq=%d \012\000"
+ 561      6465713D 
+ 561      2564200A 
+ 561      00
+ 562 0071 000000   		.space	3
+ 563              	.LC3:
+ 564 0074 696E7075 		.ascii	"input_cnt=%d, output_cnt=%d, layer_cnt=%d\012\000"
+ 564      745F636E 
+ 564      743D2564 
+ 564      2C206F75 
+ 564      74707574 
+ 565 009f 00       		.space	1
+ 566              	.LC4:
+ 567 00a0 696E7075 		.ascii	"input %ddims: (%d, %d, %d)\012\000"
+ 567      74202564 
+ 567      64696D73 
+ 567      3A202825 
+ 567      642C2025 
+ 568              	.LC5:
+ 569 00bc 6F757470 		.ascii	"output %ddims: (%d, %d, %d)\012\000"
+ 569      75742025 
+ 569      6464696D 
+ 569      733A2028 
+ 569      25642C20 
+ 570 00d9 000000   		.space	3
+ 571              	.LC6:
+ 572 00dc 6D61696E 		.ascii	"main buf size %d; sub buf size %d\012\000"
+ 572      20627566 
+ 572      2073697A 
+ 572      65202564 
+ 572      3B207375 
+ 573 00ff 00       		.space	1
+ 574              	.LC7:
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 14
+
+
+ 575 0100 2F2F4E6F 		.ascii	"//Note: PARAM is layer param size, include align pa"
+ 575      74653A20 
+ 575      50415241 
+ 575      4D206973 
+ 575      206C6179 
+ 576 0133 6464696E 		.ascii	"dding\015\012\015\000"
+ 576      670D0A0D 
+ 576      00
+ 577              	.LC8:
+ 578 013c 49647809 		.ascii	"Idx\011Layer\011         outshape\011inoft\011outof"
+ 578      4C617965 
+ 578      72092020 
+ 578      20202020 
+ 578      2020206F 
+ 579 0163 74095041 		.ascii	"t\011PARAM\011MEMOUT OPS\000"
+ 579      52414D09 
+ 579      4D454D4F 
+ 579      5554204F 
+ 579      505300
+ 580 0176 0000     		.space	2
+ 581              	.LC9:
+ 582 0178 2D2D2D09 		.ascii	"---\011Input    \011%3d,%3d,%3d\011-   \0110    \011"
+ 582      496E7075 
+ 582      74202020 
+ 582      20092533 
+ 582      642C2533 
+ 583 019d 30200925 		.ascii	"0 \011%ld \0110\012\000"
+ 583      6C642009 
+ 583      300A00
+ 584              	.LC10:
+ 585 01a8 2323234C 		.ascii	"###L%d: \000"
+ 585      25643A20 
+ 585      00
+ 586 01b1 000000   		.space	3
+ 587              	.LC11:
+ 588 01b4 626F6479 		.ascii	"body oft = %d\012\000"
+ 588      206F6674 
+ 588      203D2025 
+ 588      640A00
+ 589 01c3 00       		.space	1
+ 590              	.LC12:
+ 591 01c4 74797065 		.ascii	"type=%d, is_out=%d, size=%d, in_oft=%d, out_oft=%d,"
+ 591      3D25642C 
+ 591      2069735F 
+ 591      6F75743D 
+ 591      25642C20 
+ 592 01f7 20696E5F 		.ascii	" in_dims=[%d,%d,%d,%d], out_dims=[%d,%d,%d,%d], in_"
+ 592      64696D73 
+ 592      3D5B2564 
+ 592      2C25642C 
+ 592      25642C25 
+ 593 022a 733D252E 		.ascii	"s=%.3f, in_zp=%d, out_s=%.3f, out_zp=%d\012\000"
+ 593      33662C20 
+ 593      696E5F7A 
+ 593      703D2564 
+ 593      2C206F75 
+ 594 0253 00       		.space	1
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 15
+
+
+ 595              	.LC13:
+ 596 0254 436F6E76 		.ascii	"Conv2d: kw=%d, kh=%d, sw=%d, sh=%d, dw=%d, dh=%d, a"
+ 596      32643A20 
+ 596      6B773D25 
+ 596      642C206B 
+ 596      683D2564 
+ 597 0287 63743D25 		.ascii	"ct=%d, pad=[%d,%d,%d,%d], dmul=%d, ws_oft=%d, w_oft"
+ 597      642C2070 
+ 597      61643D5B 
+ 597      25642C25 
+ 597      642C2564 
+ 598 02ba 3D25642C 		.ascii	"=%d, b_oft=%d\012\000"
+ 598      20625F6F 
+ 598      66743D25 
+ 598      640A00
+ 599 02c9 000000   		.space	3
+ 600              	.LC14:
+ 601 02cc 46433A20 		.ascii	"FC: ws_oft=%d, w_oft=%d, b_oft=%d\012\000"
+ 601      77735F6F 
+ 601      66743D25 
+ 601      642C2077 
+ 601      5F6F6674 
+ 602 02ef 00       		.space	1
+ 603              	.LC15:
+ 604 02f0 4457436F 		.ascii	"DWConv2d: kw=%d, kh=%d, sw=%d, sh=%d, dw=%d, dh=%d,"
+ 604      6E763264 
+ 604      3A206B77 
+ 604      3D25642C 
+ 604      206B683D 
+ 605 0323 20616374 		.ascii	" act=%d, pad=[%d,%d,%d,%d], dmul=%d, ws_oft=%d, w_o"
+ 605      3D25642C 
+ 605      20706164 
+ 605      3D5B2564 
+ 605      2C25642C 
+ 606 0356 66743D25 		.ascii	"ft=%d, b_oft=%d\012\000"
+ 606      642C2062 
+ 606      5F6F6674 
+ 606      3D25640A 
+ 606      00
+ 607 0367 00       		.space	1
+ 608              	.LC16:
+ 609 0368 25303364 		.ascii	"%03d\011%s      \011%3d,%3d,%3d\011%d\011%d\011%d\011"
+ 609      09257320 
+ 609      20202020 
+ 609      20092533 
+ 609      642C2533 
+ 610 038b 256C6409 		.ascii	"%ld\011\000"
+ 610      00
+ 611              	.LC17:
+ 612 0390 25640D0A 		.ascii	"%d\015\012\000"
+ 612      00
+ 613 0395 000000   		.space	3
+ 614              	.LC18:
+ 615 0398 0D0A546F 		.ascii	"\015\012Total param ~%.1f KB, OPS ~%.2f MOPS, buffe"
+ 615      74616C20 
+ 615      70617261 
+ 615      6D207E25 
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 16
+
+
+ 615      2E316620 
+ 616 03c5 7220252E 		.ascii	"r %.1f KB\015\012\015\012\000"
+ 616      3166204B 
+ 616      420D0A0D 
+ 616      0A00
+ 617 03d3 00       		.space	1
+ 618              	.LC19:
+ 619 03d4 436F6E76 		.ascii	"Conv2D\000"
+ 619      324400
+ 620 03db 00       		.space	1
+ 621              	.LC20:
+ 622 03dc 47415000 		.ascii	"GAP\000"
+ 623              	.LC21:
+ 624 03e0 464300   		.ascii	"FC\000"
+ 625 03e3 00       		.space	1
+ 626              	.LC22:
+ 627 03e4 536F6674 		.ascii	"Softmax\000"
+ 627      6D617800 
+ 628              	.LC23:
+ 629 03ec 52657368 		.ascii	"Reshape\000"
+ 629      61706500 
+ 630              	.LC24:
+ 631 03f4 4457436F 		.ascii	"DWConv2D\000"
+ 631      6E763244 
+ 631      00
+ 632 03fd 000000   		.space	3
+ 633              	.LC25:
+ 634 0400 41444400 		.ascii	"ADD\000"
+ 635              	.LC26:
+ 636 0404 696E7438 		.ascii	"int8\000"
+ 636      00
+ 637 0409 000000   		.space	3
+ 638              	.LC27:
+ 639 040c 696E7431 		.ascii	"int16\000"
+ 639      3600
+ 640 0412 0000     		.space	2
+ 641              	.LC28:
+ 642 0414 66703332 		.ascii	"fp32\000"
+ 642      00
+ 643 0419 000000   		.space	3
+ 644              	.LC29:
+ 645 041c 66703136 		.ascii	"fp16\000"
+ 645      00
+ 646 0421 000000   		.space	3
+ 647              	.LC30:
+ 648 0424 66703820 		.ascii	"fp8 1.4.3\000"
+ 648      312E342E 
+ 648      3300
+ 649 042e 0000     		.space	2
+ 650              	.LC31:
+ 651 0430 66703820 		.ascii	"fp8 1.5.2\000"
+ 651      312E352E 
+ 651      3200
+ 652 043a 0000     		.text
+ 653              	.Letext0:
+ 654              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 655              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 17
+
+
+ 656              		.file 4 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 657              		.file 5 ".\\tinymaix.h"
+ 658              		.file 6 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 659              		.file 7 "<built-in>"
+ 660              		.section	.debug_info,"",%progbits
+ 661              	.Ldebug_info0:
+ 662 0000 76080000 		.4byte	0x876
+ 663 0004 0400     		.2byte	0x4
+ 664 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 665 000a 04       		.byte	0x4
+ 666 000b 01       		.uleb128 0x1
+ 667 000c 77020000 		.4byte	.LASF89
+ 668 0010 01       		.byte	0x1
+ 669 0011 55020000 		.4byte	.LASF90
+ 670 0015 FE000000 		.4byte	.LASF91
+ 671 0019 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 672 001d 00000000 		.4byte	0
+ 673 0021 00000000 		.4byte	.Ldebug_line0
+ 674 0025 02       		.uleb128 0x2
+ 675 0026 01       		.byte	0x1
+ 676 0027 06       		.byte	0x6
+ 677 0028 D6010000 		.4byte	.LASF0
+ 678 002c 03       		.uleb128 0x3
+ 679 002d 81010000 		.4byte	.LASF3
+ 680 0031 02       		.byte	0x2
+ 681 0032 1D       		.byte	0x1d
+ 682 0033 37000000 		.4byte	0x37
+ 683 0037 02       		.uleb128 0x2
+ 684 0038 01       		.byte	0x1
+ 685 0039 08       		.byte	0x8
+ 686 003a 94010000 		.4byte	.LASF1
+ 687 003e 02       		.uleb128 0x2
+ 688 003f 02       		.byte	0x2
+ 689 0040 05       		.byte	0x5
+ 690 0041 4A000000 		.4byte	.LASF2
+ 691 0045 03       		.uleb128 0x3
+ 692 0046 B2000000 		.4byte	.LASF4
+ 693 004a 02       		.byte	0x2
+ 694 004b 2B       		.byte	0x2b
+ 695 004c 50000000 		.4byte	0x50
+ 696 0050 02       		.uleb128 0x2
+ 697 0051 02       		.byte	0x2
+ 698 0052 07       		.byte	0x7
+ 699 0053 41030000 		.4byte	.LASF5
+ 700 0057 03       		.uleb128 0x3
+ 701 0058 B7030000 		.4byte	.LASF6
+ 702 005c 02       		.byte	0x2
+ 703 005d 3F       		.byte	0x3f
+ 704 005e 62000000 		.4byte	0x62
+ 705 0062 02       		.uleb128 0x2
+ 706 0063 04       		.byte	0x4
+ 707 0064 05       		.byte	0x5
+ 708 0065 5E010000 		.4byte	.LASF7
+ 709 0069 03       		.uleb128 0x3
+ 710 006a 97000000 		.4byte	.LASF8
+ 711 006e 02       		.byte	0x2
+ 712 006f 41       		.byte	0x41
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 18
+
+
+ 713 0070 74000000 		.4byte	0x74
+ 714 0074 02       		.uleb128 0x2
+ 715 0075 04       		.byte	0x4
+ 716 0076 07       		.byte	0x7
+ 717 0077 2F020000 		.4byte	.LASF9
+ 718 007b 02       		.uleb128 0x2
+ 719 007c 08       		.byte	0x8
+ 720 007d 05       		.byte	0x5
+ 721 007e 3C010000 		.4byte	.LASF10
+ 722 0082 02       		.uleb128 0x2
+ 723 0083 08       		.byte	0x8
+ 724 0084 07       		.byte	0x7
+ 725 0085 E2010000 		.4byte	.LASF11
+ 726 0089 04       		.uleb128 0x4
+ 727 008a 04       		.byte	0x4
+ 728 008b 05       		.byte	0x5
+ 729 008c 696E7400 		.ascii	"int\000"
+ 730 0090 02       		.uleb128 0x2
+ 731 0091 04       		.byte	0x4
+ 732 0092 07       		.byte	0x7
+ 733 0093 19020000 		.4byte	.LASF12
+ 734 0097 03       		.uleb128 0x3
+ 735 0098 CA030000 		.4byte	.LASF13
+ 736 009c 03       		.byte	0x3
+ 737 009d 15       		.byte	0x15
+ 738 009e 2C000000 		.4byte	0x2c
+ 739 00a2 03       		.uleb128 0x3
+ 740 00a3 26020000 		.4byte	.LASF14
+ 741 00a7 03       		.byte	0x3
+ 742 00a8 21       		.byte	0x21
+ 743 00a9 45000000 		.4byte	0x45
+ 744 00ad 03       		.uleb128 0x3
+ 745 00ae 0A030000 		.4byte	.LASF15
+ 746 00b2 03       		.byte	0x3
+ 747 00b3 2C       		.byte	0x2c
+ 748 00b4 57000000 		.4byte	0x57
+ 749 00b8 03       		.uleb128 0x3
+ 750 00b9 03020000 		.4byte	.LASF16
+ 751 00bd 03       		.byte	0x3
+ 752 00be 2D       		.byte	0x2d
+ 753 00bf 69000000 		.4byte	0x69
+ 754 00c3 03       		.uleb128 0x3
+ 755 00c4 54000000 		.4byte	.LASF17
+ 756 00c8 04       		.byte	0x4
+ 757 00c9 D4       		.byte	0xd4
+ 758 00ca 90000000 		.4byte	0x90
+ 759 00ce 02       		.uleb128 0x2
+ 760 00cf 04       		.byte	0x4
+ 761 00d0 07       		.byte	0x7
+ 762 00d1 E5030000 		.4byte	.LASF18
+ 763 00d5 02       		.uleb128 0x2
+ 764 00d6 01       		.byte	0x1
+ 765 00d7 08       		.byte	0x8
+ 766 00d8 72020000 		.4byte	.LASF19
+ 767 00dc 05       		.uleb128 0x5
+ 768 00dd 04       		.byte	0x4
+ 769 00de E2000000 		.4byte	0xe2
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 19
+
+
+ 770 00e2 06       		.uleb128 0x6
+ 771 00e3 D5000000 		.4byte	0xd5
+ 772 00e7 03       		.uleb128 0x3
+ 773 00e8 12030000 		.4byte	.LASF20
+ 774 00ec 05       		.byte	0x5
+ 775 00ed 2D       		.byte	0x2d
+ 776 00ee AD000000 		.4byte	0xad
+ 777 00f2 03       		.uleb128 0x3
+ 778 00f3 32030000 		.4byte	.LASF21
+ 779 00f7 05       		.byte	0x5
+ 780 00f8 5F       		.byte	0x5f
+ 781 00f9 FD000000 		.4byte	0xfd
+ 782 00fd 02       		.uleb128 0x2
+ 783 00fe 04       		.byte	0x4
+ 784 00ff 04       		.byte	0x4
+ 785 0100 29010000 		.4byte	.LASF22
+ 786 0104 07       		.uleb128 0x7
+ 787 0105 01       		.byte	0x1
+ 788 0106 05       		.byte	0x5
+ 789 0107 63       		.byte	0x63
+ 790 0108 49010000 		.4byte	0x149
+ 791 010c 08       		.uleb128 0x8
+ 792 010d D2030000 		.4byte	.LASF23
+ 793 0111 00       		.sleb128 0
+ 794 0112 08       		.uleb128 0x8
+ 795 0113 43000000 		.4byte	.LASF24
+ 796 0117 01       		.sleb128 1
+ 797 0118 08       		.uleb128 0x8
+ 798 0119 F1000000 		.4byte	.LASF25
+ 799 011d 02       		.sleb128 2
+ 800 011e 08       		.uleb128 0x8
+ 801 011f 5B000000 		.4byte	.LASF26
+ 802 0123 03       		.sleb128 3
+ 803 0124 08       		.uleb128 0x8
+ 804 0125 76010000 		.4byte	.LASF27
+ 805 0129 04       		.sleb128 4
+ 806 012a 08       		.uleb128 0x8
+ 807 012b 1B030000 		.4byte	.LASF28
+ 808 012f 05       		.sleb128 5
+ 809 0130 08       		.uleb128 0x8
+ 810 0131 FF030000 		.4byte	.LASF29
+ 811 0135 06       		.sleb128 6
+ 812 0136 08       		.uleb128 0x8
+ 813 0137 1F040000 		.4byte	.LASF30
+ 814 013b 07       		.sleb128 7
+ 815 013c 08       		.uleb128 0x8
+ 816 013d 46020000 		.4byte	.LASF31
+ 817 0141 08       		.sleb128 8
+ 818 0142 08       		.uleb128 0x8
+ 819 0143 AB010000 		.4byte	.LASF32
+ 820 0147 09       		.sleb128 9
+ 821 0148 00       		.byte	0
+ 822 0149 03       		.uleb128 0x3
+ 823 014a 76000000 		.4byte	.LASF33
+ 824 014e 05       		.byte	0x5
+ 825 014f 6E       		.byte	0x6e
+ 826 0150 04010000 		.4byte	0x104
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 20
+
+
+ 827 0154 07       		.uleb128 0x7
+ 828 0155 01       		.byte	0x1
+ 829 0156 05       		.byte	0x5
+ 830 0157 70       		.byte	0x70
+ 831 0158 8D010000 		.4byte	0x18d
+ 832 015c 08       		.uleb128 0x8
+ 833 015d 0F000000 		.4byte	.LASF34
+ 834 0161 00       		.sleb128 0
+ 835 0162 08       		.uleb128 0x8
+ 836 0163 81030000 		.4byte	.LASF35
+ 837 0167 01       		.sleb128 1
+ 838 0168 08       		.uleb128 0x8
+ 839 0169 12040000 		.4byte	.LASF36
+ 840 016d 02       		.sleb128 2
+ 841 016e 08       		.uleb128 0x8
+ 842 016f 2B040000 		.4byte	.LASF37
+ 843 0173 03       		.sleb128 3
+ 844 0174 08       		.uleb128 0x8
+ 845 0175 54030000 		.4byte	.LASF38
+ 846 0179 04       		.sleb128 4
+ 847 017a 08       		.uleb128 0x8
+ 848 017b D8030000 		.4byte	.LASF39
+ 849 017f 05       		.sleb128 5
+ 850 0180 08       		.uleb128 0x8
+ 851 0181 CE000000 		.4byte	.LASF40
+ 852 0185 06       		.sleb128 6
+ 853 0186 08       		.uleb128 0x8
+ 854 0187 EE030000 		.4byte	.LASF41
+ 855 018b 07       		.sleb128 7
+ 856 018c 00       		.byte	0
+ 857 018d 09       		.uleb128 0x9
+ 858 018e 40       		.byte	0x40
+ 859 018f 05       		.byte	0x5
+ 860 0190 97       		.byte	0x97
+ 861 0191 26020000 		.4byte	0x226
+ 862 0195 0A       		.uleb128 0xa
+ 863 0196 19040000 		.4byte	.LASF42
+ 864 019a 05       		.byte	0x5
+ 865 019b 98       		.byte	0x98
+ 866 019c B8000000 		.4byte	0xb8
+ 867 01a0 00       		.byte	0
+ 868 01a1 0A       		.uleb128 0xa
+ 869 01a2 C1030000 		.4byte	.LASF43
+ 870 01a6 05       		.byte	0x5
+ 871 01a7 99       		.byte	0x99
+ 872 01a8 97000000 		.4byte	0x97
+ 873 01ac 04       		.byte	0x4
+ 874 01ad 0A       		.uleb128 0xa
+ 875 01ae 2C000000 		.4byte	.LASF44
+ 876 01b2 05       		.byte	0x5
+ 877 01b3 9A       		.byte	0x9a
+ 878 01b4 97000000 		.4byte	0x97
+ 879 01b8 05       		.byte	0x5
+ 880 01b9 0A       		.uleb128 0xa
+ 881 01ba 6C000000 		.4byte	.LASF45
+ 882 01be 05       		.byte	0x5
+ 883 01bf 9B       		.byte	0x9b
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 21
+
+
+ 884 01c0 A2000000 		.4byte	0xa2
+ 885 01c4 06       		.byte	0x6
+ 886 01c5 0A       		.uleb128 0xa
+ 887 01c6 CB010000 		.4byte	.LASF46
+ 888 01ca 05       		.byte	0x5
+ 889 01cb 9C       		.byte	0x9c
+ 890 01cc A2000000 		.4byte	0xa2
+ 891 01d0 08       		.byte	0x8
+ 892 01d1 0A       		.uleb128 0xa
+ 893 01d2 E7000000 		.4byte	.LASF47
+ 894 01d6 05       		.byte	0x5
+ 895 01d7 9D       		.byte	0x9d
+ 896 01d8 A2000000 		.4byte	0xa2
+ 897 01dc 0A       		.byte	0xa
+ 898 01dd 0A       		.uleb128 0xa
+ 899 01de 23000000 		.4byte	.LASF48
+ 900 01e2 05       		.byte	0x5
+ 901 01e3 9E       		.byte	0x9e
+ 902 01e4 B8000000 		.4byte	0xb8
+ 903 01e8 0C       		.byte	0xc
+ 904 01e9 0A       		.uleb128 0xa
+ 905 01ea 8B010000 		.4byte	.LASF49
+ 906 01ee 05       		.byte	0x5
+ 907 01ef 9F       		.byte	0x9f
+ 908 01f0 B8000000 		.4byte	0xb8
+ 909 01f4 10       		.byte	0x10
+ 910 01f5 0A       		.uleb128 0xa
+ 911 01f6 56010000 		.4byte	.LASF50
+ 912 01fa 05       		.byte	0x5
+ 913 01fb A0       		.byte	0xa0
+ 914 01fc 26020000 		.4byte	0x226
+ 915 0200 14       		.byte	0x14
+ 916 0201 0A       		.uleb128 0xa
+ 917 0202 87000000 		.4byte	.LASF51
+ 918 0206 05       		.byte	0x5
+ 919 0207 A1       		.byte	0xa1
+ 920 0208 26020000 		.4byte	0x226
+ 921 020c 1C       		.byte	0x1c
+ 922 020d 0A       		.uleb128 0xa
+ 923 020e 6E010000 		.4byte	.LASF52
+ 924 0212 05       		.byte	0x5
+ 925 0213 A2       		.byte	0xa2
+ 926 0214 36020000 		.4byte	0x236
+ 927 0218 24       		.byte	0x24
+ 928 0219 0A       		.uleb128 0xa
+ 929 021a 4A010000 		.4byte	.LASF53
+ 930 021e 05       		.byte	0x5
+ 931 021f A3       		.byte	0xa3
+ 932 0220 46020000 		.4byte	0x246
+ 933 0224 40       		.byte	0x40
+ 934 0225 00       		.byte	0
+ 935 0226 0B       		.uleb128 0xb
+ 936 0227 A2000000 		.4byte	0xa2
+ 937 022b 36020000 		.4byte	0x236
+ 938 022f 0C       		.uleb128 0xc
+ 939 0230 CE000000 		.4byte	0xce
+ 940 0234 03       		.byte	0x3
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 22
+
+
+ 941 0235 00       		.byte	0
+ 942 0236 0B       		.uleb128 0xb
+ 943 0237 97000000 		.4byte	0x97
+ 944 023b 46020000 		.4byte	0x246
+ 945 023f 0C       		.uleb128 0xc
+ 946 0240 CE000000 		.4byte	0xce
+ 947 0244 1B       		.byte	0x1b
+ 948 0245 00       		.byte	0
+ 949 0246 0B       		.uleb128 0xb
+ 950 0247 97000000 		.4byte	0x97
+ 951 024b 55020000 		.4byte	0x255
+ 952 024f 0D       		.uleb128 0xd
+ 953 0250 CE000000 		.4byte	0xce
+ 954 0254 00       		.byte	0
+ 955 0255 03       		.uleb128 0x3
+ 956 0256 89030000 		.4byte	.LASF54
+ 957 025a 05       		.byte	0x5
+ 958 025b A4       		.byte	0xa4
+ 959 025c 8D010000 		.4byte	0x18d
+ 960 0260 05       		.uleb128 0x5
+ 961 0261 04       		.byte	0x4
+ 962 0262 55020000 		.4byte	0x255
+ 963 0266 05       		.uleb128 0x5
+ 964 0267 04       		.byte	0x4
+ 965 0268 97000000 		.4byte	0x97
+ 966 026c 09       		.uleb128 0x9
+ 967 026d 30       		.byte	0x30
+ 968 026e 05       		.byte	0x5
+ 969 026f C0       		.byte	0xc0
+ 970 0270 F9020000 		.4byte	0x2f9
+ 971 0274 0A       		.uleb128 0xa
+ 972 0275 05030000 		.4byte	.LASF55
+ 973 0279 05       		.byte	0x5
+ 974 027a C1       		.byte	0xc1
+ 975 027b A2000000 		.4byte	0xa2
+ 976 027f 00       		.byte	0
+ 977 0280 0A       		.uleb128 0xa
+ 978 0281 0B040000 		.4byte	.LASF56
+ 979 0285 05       		.byte	0x5
+ 980 0286 C2       		.byte	0xc2
+ 981 0287 A2000000 		.4byte	0xa2
+ 982 028b 02       		.byte	0x2
+ 983 028c 0A       		.uleb128 0xa
+ 984 028d 6D020000 		.4byte	.LASF57
+ 985 0291 05       		.byte	0x5
+ 986 0292 C3       		.byte	0xc3
+ 987 0293 B8000000 		.4byte	0xb8
+ 988 0297 04       		.byte	0x4
+ 989 0298 0A       		.uleb128 0xa
+ 990 0299 90000000 		.4byte	.LASF58
+ 991 029d 05       		.byte	0x5
+ 992 029e C4       		.byte	0xc4
+ 993 029f B8000000 		.4byte	0xb8
+ 994 02a3 08       		.byte	0x8
+ 995 02a4 0A       		.uleb128 0xa
+ 996 02a5 34000000 		.4byte	.LASF59
+ 997 02a9 05       		.byte	0x5
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 23
+
+
+ 998 02aa C5       		.byte	0xc5
+ 999 02ab B8000000 		.4byte	0xb8
+ 1000 02af 0C       		.byte	0xc
+ 1001 02b0 0A       		.uleb128 0xa
+ 1002 02b1 56010000 		.4byte	.LASF50
+ 1003 02b5 05       		.byte	0x5
+ 1004 02b6 C6       		.byte	0xc6
+ 1005 02b7 26020000 		.4byte	0x226
+ 1006 02bb 10       		.byte	0x10
+ 1007 02bc 0A       		.uleb128 0xa
+ 1008 02bd 87000000 		.4byte	.LASF51
+ 1009 02c1 05       		.byte	0x5
+ 1010 02c2 C7       		.byte	0xc7
+ 1011 02c3 26020000 		.4byte	0x226
+ 1012 02c7 18       		.byte	0x18
+ 1013 02c8 0A       		.uleb128 0xa
+ 1014 02c9 37040000 		.4byte	.LASF60
+ 1015 02cd 05       		.byte	0x5
+ 1016 02ce C9       		.byte	0xc9
+ 1017 02cf F2000000 		.4byte	0xf2
+ 1018 02d3 20       		.byte	0x20
+ 1019 02d4 0A       		.uleb128 0xa
+ 1020 02d5 3B030000 		.4byte	.LASF61
+ 1021 02d9 05       		.byte	0x5
+ 1022 02da CA       		.byte	0xca
+ 1023 02db E7000000 		.4byte	0xe7
+ 1024 02df 24       		.byte	0x24
+ 1025 02e0 0A       		.uleb128 0xa
+ 1026 02e1 2C030000 		.4byte	.LASF62
+ 1027 02e5 05       		.byte	0x5
+ 1028 02e6 CB       		.byte	0xcb
+ 1029 02e7 F2000000 		.4byte	0xf2
+ 1030 02eb 28       		.byte	0x28
+ 1031 02ec 0A       		.uleb128 0xa
+ 1032 02ed A2000000 		.4byte	.LASF63
+ 1033 02f1 05       		.byte	0x5
+ 1034 02f2 CC       		.byte	0xcc
+ 1035 02f3 E7000000 		.4byte	0xe7
+ 1036 02f7 2C       		.byte	0x2c
+ 1037 02f8 00       		.byte	0
+ 1038 02f9 03       		.uleb128 0x3
+ 1039 02fa 3C040000 		.4byte	.LASF64
+ 1040 02fe 05       		.byte	0x5
+ 1041 02ff CE       		.byte	0xce
+ 1042 0300 6C020000 		.4byte	0x26c
+ 1043 0304 09       		.uleb128 0x9
+ 1044 0305 50       		.byte	0x50
+ 1045 0306 05       		.byte	0x5
+ 1046 0307 D0       		.byte	0xd0
+ 1047 0308 B3030000 		.4byte	0x3b3
+ 1048 030c 0E       		.uleb128 0xe
+ 1049 030d 6800     		.ascii	"h\000"
+ 1050 030f 05       		.byte	0x5
+ 1051 0310 D1       		.byte	0xd1
+ 1052 0311 F9020000 		.4byte	0x2f9
+ 1053 0315 00       		.byte	0
+ 1054 0316 0A       		.uleb128 0xa
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 24
+
+
+ 1055 0317 C2010000 		.4byte	.LASF65
+ 1056 031b 05       		.byte	0x5
+ 1057 031c D3       		.byte	0xd3
+ 1058 031d 97000000 		.4byte	0x97
+ 1059 0321 30       		.byte	0x30
+ 1060 0322 0A       		.uleb128 0xa
+ 1061 0323 A2010000 		.4byte	.LASF66
+ 1062 0327 05       		.byte	0x5
+ 1063 0328 D4       		.byte	0xd4
+ 1064 0329 97000000 		.4byte	0x97
+ 1065 032d 31       		.byte	0x31
+ 1066 032e 0A       		.uleb128 0xa
+ 1067 032f D6000000 		.4byte	.LASF67
+ 1068 0333 05       		.byte	0x5
+ 1069 0334 D5       		.byte	0xd5
+ 1070 0335 97000000 		.4byte	0x97
+ 1071 0339 32       		.byte	0x32
+ 1072 033a 0A       		.uleb128 0xa
+ 1073 033b A9000000 		.4byte	.LASF68
+ 1074 033f 05       		.byte	0x5
+ 1075 0340 D6       		.byte	0xd6
+ 1076 0341 97000000 		.4byte	0x97
+ 1077 0345 33       		.byte	0x33
+ 1078 0346 0A       		.uleb128 0xa
+ 1079 0347 AC030000 		.4byte	.LASF69
+ 1080 034b 05       		.byte	0x5
+ 1081 034c D8       		.byte	0xd8
+ 1082 034d 97000000 		.4byte	0x97
+ 1083 0351 34       		.byte	0x34
+ 1084 0352 0A       		.uleb128 0xa
+ 1085 0353 71030000 		.4byte	.LASF70
+ 1086 0357 05       		.byte	0x5
+ 1087 0358 D9       		.byte	0xd9
+ 1088 0359 97000000 		.4byte	0x97
+ 1089 035d 35       		.byte	0x35
+ 1090 035e 0E       		.uleb128 0xe
+ 1091 035f 61637400 		.ascii	"act\000"
+ 1092 0363 05       		.byte	0x5
+ 1093 0364 DA       		.byte	0xda
+ 1094 0365 A2000000 		.4byte	0xa2
+ 1095 0369 36       		.byte	0x36
+ 1096 036a 0E       		.uleb128 0xe
+ 1097 036b 70616400 		.ascii	"pad\000"
+ 1098 036f 05       		.byte	0x5
+ 1099 0370 DC       		.byte	0xdc
+ 1100 0371 B3030000 		.4byte	0x3b3
+ 1101 0375 38       		.byte	0x38
+ 1102 0376 0A       		.uleb128 0xa
+ 1103 0377 F9010000 		.4byte	.LASF71
+ 1104 037b 05       		.byte	0x5
+ 1105 037c DE       		.byte	0xde
+ 1106 037d B8000000 		.4byte	0xb8
+ 1107 0381 3C       		.byte	0x3c
+ 1108 0382 0A       		.uleb128 0xa
+ 1109 0383 6E010000 		.4byte	.LASF52
+ 1110 0387 05       		.byte	0x5
+ 1111 0388 DF       		.byte	0xdf
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 25
+
+
+ 1112 0389 B8000000 		.4byte	0xb8
+ 1113 038d 40       		.byte	0x40
+ 1114 038e 0A       		.uleb128 0xa
+ 1115 038f 95030000 		.4byte	.LASF72
+ 1116 0393 05       		.byte	0x5
+ 1117 0394 E1       		.byte	0xe1
+ 1118 0395 B8000000 		.4byte	0xb8
+ 1119 0399 44       		.byte	0x44
+ 1120 039a 0A       		.uleb128 0xa
+ 1121 039b 6B030000 		.4byte	.LASF73
+ 1122 039f 05       		.byte	0x5
+ 1123 03a0 E3       		.byte	0xe3
+ 1124 03a1 B8000000 		.4byte	0xb8
+ 1125 03a5 48       		.byte	0x48
+ 1126 03a6 0A       		.uleb128 0xa
+ 1127 03a7 F9030000 		.4byte	.LASF74
+ 1128 03ab 05       		.byte	0x5
+ 1129 03ac E4       		.byte	0xe4
+ 1130 03ad B8000000 		.4byte	0xb8
+ 1131 03b1 4C       		.byte	0x4c
+ 1132 03b2 00       		.byte	0
+ 1133 03b3 0B       		.uleb128 0xb
+ 1134 03b4 97000000 		.4byte	0x97
+ 1135 03b8 C3030000 		.4byte	0x3c3
+ 1136 03bc 0C       		.uleb128 0xc
+ 1137 03bd CE000000 		.4byte	0xce
+ 1138 03c1 03       		.byte	0x3
+ 1139 03c2 00       		.byte	0
+ 1140 03c3 03       		.uleb128 0x3
+ 1141 03c4 9C030000 		.4byte	.LASF75
+ 1142 03c8 05       		.byte	0x5
+ 1143 03c9 E7       		.byte	0xe7
+ 1144 03ca 04030000 		.4byte	0x304
+ 1145 03ce 09       		.uleb128 0x9
+ 1146 03cf 40       		.byte	0x40
+ 1147 03d0 05       		.byte	0x5
+ 1148 03d1 ED       		.byte	0xed
+ 1149 03d2 11040000 		.4byte	0x411
+ 1150 03d6 0E       		.uleb128 0xe
+ 1151 03d7 6800     		.ascii	"h\000"
+ 1152 03d9 05       		.byte	0x5
+ 1153 03da EE       		.byte	0xee
+ 1154 03db F9020000 		.4byte	0x2f9
+ 1155 03df 00       		.byte	0
+ 1156 03e0 0A       		.uleb128 0xa
+ 1157 03e1 95030000 		.4byte	.LASF72
+ 1158 03e5 05       		.byte	0x5
+ 1159 03e6 F0       		.byte	0xf0
+ 1160 03e7 B8000000 		.4byte	0xb8
+ 1161 03eb 30       		.byte	0x30
+ 1162 03ec 0A       		.uleb128 0xa
+ 1163 03ed 6B030000 		.4byte	.LASF73
+ 1164 03f1 05       		.byte	0x5
+ 1165 03f2 F1       		.byte	0xf1
+ 1166 03f3 B8000000 		.4byte	0xb8
+ 1167 03f7 34       		.byte	0x34
+ 1168 03f8 0A       		.uleb128 0xa
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 26
+
+
+ 1169 03f9 F9030000 		.4byte	.LASF74
+ 1170 03fd 05       		.byte	0x5
+ 1171 03fe F2       		.byte	0xf2
+ 1172 03ff B8000000 		.4byte	0xb8
+ 1173 0403 38       		.byte	0x38
+ 1174 0404 0A       		.uleb128 0xa
+ 1175 0405 6E010000 		.4byte	.LASF52
+ 1176 0409 05       		.byte	0x5
+ 1177 040a F3       		.byte	0xf3
+ 1178 040b B8000000 		.4byte	0xb8
+ 1179 040f 3C       		.byte	0x3c
+ 1180 0410 00       		.byte	0
+ 1181 0411 03       		.uleb128 0x3
+ 1182 0412 1A000000 		.4byte	.LASF76
+ 1183 0416 05       		.byte	0x5
+ 1184 0417 F4       		.byte	0xf4
+ 1185 0418 CE030000 		.4byte	0x3ce
+ 1186 041c 05       		.uleb128 0x5
+ 1187 041d 04       		.byte	0x4
+ 1188 041e F9020000 		.4byte	0x2f9
+ 1189 0422 0F       		.uleb128 0xf
+ 1190 0423 DF000000 		.4byte	.LASF92
+ 1191 0427 01       		.byte	0x1
+ 1192 0428 2D       		.byte	0x2d
+ 1193 0429 49010000 		.4byte	0x149
+ 1194 042d 00000000 		.4byte	.LFB1
+ 1195 0431 B4030000 		.4byte	.LFE1-.LFB1
+ 1196 0435 01       		.uleb128 0x1
+ 1197 0436 9C       		.byte	0x9c
+ 1198 0437 CA070000 		.4byte	0x7ca
+ 1199 043b 10       		.uleb128 0x10
+ 1200 043c 6200     		.ascii	"b\000"
+ 1201 043e 01       		.byte	0x1
+ 1202 043f 2D       		.byte	0x2d
+ 1203 0440 60020000 		.4byte	0x260
+ 1204 0444 00000000 		.4byte	.LLST0
+ 1205 0448 11       		.uleb128 0x11
+ 1206 0449 7C030000 		.4byte	.LASF77
+ 1207 044d 01       		.byte	0x1
+ 1208 044e 33       		.byte	0x33
+ 1209 044f CA070000 		.4byte	0x7ca
+ 1210 0453 42000000 		.4byte	.LLST1
+ 1211 0457 11       		.uleb128 0x11
+ 1212 0458 37010000 		.4byte	.LASF78
+ 1213 045c 01       		.byte	0x1
+ 1214 045d 35       		.byte	0x35
+ 1215 045e CA070000 		.4byte	0x7ca
+ 1216 0462 81000000 		.4byte	.LLST2
+ 1217 0466 11       		.uleb128 0x11
+ 1218 0467 B8010000 		.4byte	.LASF79
+ 1219 046b 01       		.byte	0x1
+ 1220 046c 41       		.byte	0x41
+ 1221 046d 89000000 		.4byte	0x89
+ 1222 0471 C0000000 		.4byte	.LLST3
+ 1223 0475 11       		.uleb128 0x11
+ 1224 0476 2F010000 		.4byte	.LASF80
+ 1225 047a 01       		.byte	0x1
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 27
+
+
+ 1226 047b 42       		.byte	0x42
+ 1227 047c 89000000 		.4byte	0x89
+ 1228 0480 48010000 		.4byte	.LLST4
+ 1229 0484 11       		.uleb128 0x11
+ 1230 0485 60030000 		.4byte	.LASF81
+ 1231 0489 01       		.byte	0x1
+ 1232 048a 43       		.byte	0x43
+ 1233 048b 66020000 		.4byte	0x266
+ 1234 048f 8B010000 		.4byte	.LLST5
+ 1235 0493 11       		.uleb128 0x11
+ 1236 0494 7F000000 		.4byte	.LASF82
+ 1237 0498 01       		.byte	0x1
+ 1238 0499 44       		.byte	0x44
+ 1239 049a 89000000 		.4byte	0x89
+ 1240 049e A9010000 		.4byte	.LLST6
+ 1241 04a2 12       		.uleb128 0x12
+ 1242 04a3 00000000 		.4byte	.Ldebug_ranges0+0
+ 1243 04a7 D0060000 		.4byte	0x6d0
+ 1244 04ab 13       		.uleb128 0x13
+ 1245 04ac 6800     		.ascii	"h\000"
+ 1246 04ae 01       		.byte	0x1
+ 1247 04af 46       		.byte	0x46
+ 1248 04b0 1C040000 		.4byte	0x41c
+ 1249 04b4 C8010000 		.4byte	.LLST7
+ 1250 04b8 14       		.uleb128 0x14
+ 1251 04b9 48010000 		.4byte	.LBB3
+ 1252 04bd E2010000 		.4byte	.LBE3-.LBB3
+ 1253 04c1 48060000 		.4byte	0x648
+ 1254 04c5 11       		.uleb128 0x11
+ 1255 04c6 3C000000 		.4byte	.LASF83
+ 1256 04ca 01       		.byte	0x1
+ 1257 04cb 4E       		.byte	0x4e
+ 1258 04cc 89000000 		.4byte	0x89
+ 1259 04d0 E6010000 		.4byte	.LLST8
+ 1260 04d4 13       		.uleb128 0x13
+ 1261 04d5 6F707300 		.ascii	"ops\000"
+ 1262 04d9 01       		.byte	0x1
+ 1263 04da 50       		.byte	0x50
+ 1264 04db 89000000 		.4byte	0x89
+ 1265 04df F9010000 		.4byte	.LLST9
+ 1266 04e3 14       		.uleb128 0x14
+ 1267 04e4 78010000 		.4byte	.LBB4
+ 1268 04e8 80000000 		.4byte	.LBE4-.LBB4
+ 1269 04ec 51050000 		.4byte	0x551
+ 1270 04f0 13       		.uleb128 0x13
+ 1271 04f1 6C00     		.ascii	"l\000"
+ 1272 04f3 01       		.byte	0x1
+ 1273 04f4 53       		.byte	0x53
+ 1274 04f5 D0070000 		.4byte	0x7d0
+ 1275 04f9 8B020000 		.4byte	.LLST10
+ 1276 04fd 15       		.uleb128 0x15
+ 1277 04fe 96010000 		.4byte	.LVL26
+ 1278 0502 4E080000 		.4byte	0x84e
+ 1279 0506 1A050000 		.4byte	0x51a
+ 1280 050a 16       		.uleb128 0x16
+ 1281 050b 01       		.uleb128 0x1
+ 1282 050c 51       		.byte	0x51
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 28
+
+
+ 1283 050d 02       		.uleb128 0x2
+ 1284 050e 08       		.byte	0x8
+ 1285 050f 58       		.byte	0x58
+ 1286 0510 16       		.uleb128 0x16
+ 1287 0511 01       		.uleb128 0x1
+ 1288 0512 50       		.byte	0x50
+ 1289 0513 05       		.uleb128 0x5
+ 1290 0514 03       		.byte	0x3
+ 1291 0515 A8010000 		.4byte	.LC10
+ 1292 0519 00       		.byte	0
+ 1293 051a 17       		.uleb128 0x17
+ 1294 051b F6010000 		.4byte	.LVL27
+ 1295 051f 4E080000 		.4byte	0x84e
+ 1296 0523 16       		.uleb128 0x16
+ 1297 0524 01       		.uleb128 0x1
+ 1298 0525 53       		.byte	0x53
+ 1299 0526 03       		.uleb128 0x3
+ 1300 0527 91       		.byte	0x91
+ 1301 0528 54       		.sleb128 -44
+ 1302 0529 06       		.byte	0x6
+ 1303 052a 16       		.uleb128 0x16
+ 1304 052b 01       		.uleb128 0x1
+ 1305 052c 52       		.byte	0x52
+ 1306 052d 03       		.uleb128 0x3
+ 1307 052e 91       		.byte	0x91
+ 1308 052f 50       		.sleb128 -48
+ 1309 0530 06       		.byte	0x6
+ 1310 0531 16       		.uleb128 0x16
+ 1311 0532 01       		.uleb128 0x1
+ 1312 0533 50       		.byte	0x50
+ 1313 0534 05       		.uleb128 0x5
+ 1314 0535 03       		.byte	0x3
+ 1315 0536 54020000 		.4byte	.LC13
+ 1316 053a 16       		.uleb128 0x16
+ 1317 053b 02       		.uleb128 0x2
+ 1318 053c 7D       		.byte	0x7d
+ 1319 053d 18       		.sleb128 24
+ 1320 053e 02       		.uleb128 0x2
+ 1321 053f 77       		.byte	0x77
+ 1322 0540 00       		.sleb128 0
+ 1323 0541 16       		.uleb128 0x16
+ 1324 0542 02       		.uleb128 0x2
+ 1325 0543 7D       		.byte	0x7d
+ 1326 0544 08       		.sleb128 8
+ 1327 0545 02       		.uleb128 0x2
+ 1328 0546 79       		.byte	0x79
+ 1329 0547 00       		.sleb128 0
+ 1330 0548 16       		.uleb128 0x16
+ 1331 0549 02       		.uleb128 0x2
+ 1332 054a 7D       		.byte	0x7d
+ 1333 054b 04       		.sleb128 4
+ 1334 054c 02       		.uleb128 0x2
+ 1335 054d 7A       		.byte	0x7a
+ 1336 054e 00       		.sleb128 0
+ 1337 054f 00       		.byte	0
+ 1338 0550 00       		.byte	0
+ 1339 0551 14       		.uleb128 0x14
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 29
+
+
+ 1340 0552 08020000 		.4byte	.LBB5
+ 1341 0556 1C000000 		.4byte	.LBE5-.LBB5
+ 1342 055a 9C050000 		.4byte	0x59c
+ 1343 055e 13       		.uleb128 0x13
+ 1344 055f 6C00     		.ascii	"l\000"
+ 1345 0561 01       		.byte	0x1
+ 1346 0562 5E       		.byte	0x5e
+ 1347 0563 D6070000 		.4byte	0x7d6
+ 1348 0567 9E020000 		.4byte	.LLST11
+ 1349 056b 15       		.uleb128 0x15
+ 1350 056c 16020000 		.4byte	.LVL33
+ 1351 0570 4E080000 		.4byte	0x84e
+ 1352 0574 88050000 		.4byte	0x588
+ 1353 0578 16       		.uleb128 0x16
+ 1354 0579 01       		.uleb128 0x1
+ 1355 057a 51       		.byte	0x51
+ 1356 057b 02       		.uleb128 0x2
+ 1357 057c 08       		.byte	0x8
+ 1358 057d 61       		.byte	0x61
+ 1359 057e 16       		.uleb128 0x16
+ 1360 057f 01       		.uleb128 0x1
+ 1361 0580 50       		.byte	0x50
+ 1362 0581 05       		.uleb128 0x5
+ 1363 0582 03       		.byte	0x3
+ 1364 0583 A8010000 		.4byte	.LC10
+ 1365 0587 00       		.byte	0
+ 1366 0588 17       		.uleb128 0x17
+ 1367 0589 22020000 		.4byte	.LVL34
+ 1368 058d 4E080000 		.4byte	0x84e
+ 1369 0591 16       		.uleb128 0x16
+ 1370 0592 01       		.uleb128 0x1
+ 1371 0593 50       		.byte	0x50
+ 1372 0594 05       		.uleb128 0x5
+ 1373 0595 03       		.byte	0x3
+ 1374 0596 CC020000 		.4byte	.LC14
+ 1375 059a 00       		.byte	0
+ 1376 059b 00       		.byte	0
+ 1377 059c 14       		.uleb128 0x14
+ 1378 059d 2C020000 		.4byte	.LBB6
+ 1379 05a1 C0000000 		.4byte	.LBE6-.LBB6
+ 1380 05a5 0A060000 		.4byte	0x60a
+ 1381 05a9 13       		.uleb128 0x13
+ 1382 05aa 6C00     		.ascii	"l\000"
+ 1383 05ac 01       		.byte	0x1
+ 1384 05ad 67       		.byte	0x67
+ 1385 05ae D0070000 		.4byte	0x7d0
+ 1386 05b2 B1020000 		.4byte	.LLST12
+ 1387 05b6 15       		.uleb128 0x15
+ 1388 05b7 44020000 		.4byte	.LVL40
+ 1389 05bb 4E080000 		.4byte	0x84e
+ 1390 05bf D3050000 		.4byte	0x5d3
+ 1391 05c3 16       		.uleb128 0x16
+ 1392 05c4 01       		.uleb128 0x1
+ 1393 05c5 51       		.byte	0x51
+ 1394 05c6 02       		.uleb128 0x2
+ 1395 05c7 08       		.byte	0x8
+ 1396 05c8 6C       		.byte	0x6c
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 30
+
+
+ 1397 05c9 16       		.uleb128 0x16
+ 1398 05ca 01       		.uleb128 0x1
+ 1399 05cb 50       		.byte	0x50
+ 1400 05cc 05       		.uleb128 0x5
+ 1401 05cd 03       		.byte	0x3
+ 1402 05ce A8010000 		.4byte	.LC10
+ 1403 05d2 00       		.byte	0
+ 1404 05d3 17       		.uleb128 0x17
+ 1405 05d4 A4020000 		.4byte	.LVL41
+ 1406 05d8 4E080000 		.4byte	0x84e
+ 1407 05dc 16       		.uleb128 0x16
+ 1408 05dd 01       		.uleb128 0x1
+ 1409 05de 53       		.byte	0x53
+ 1410 05df 03       		.uleb128 0x3
+ 1411 05e0 91       		.byte	0x91
+ 1412 05e1 54       		.sleb128 -44
+ 1413 05e2 06       		.byte	0x6
+ 1414 05e3 16       		.uleb128 0x16
+ 1415 05e4 01       		.uleb128 0x1
+ 1416 05e5 52       		.byte	0x52
+ 1417 05e6 03       		.uleb128 0x3
+ 1418 05e7 91       		.byte	0x91
+ 1419 05e8 50       		.sleb128 -48
+ 1420 05e9 06       		.byte	0x6
+ 1421 05ea 16       		.uleb128 0x16
+ 1422 05eb 01       		.uleb128 0x1
+ 1423 05ec 50       		.byte	0x50
+ 1424 05ed 05       		.uleb128 0x5
+ 1425 05ee 03       		.byte	0x3
+ 1426 05ef F0020000 		.4byte	.LC15
+ 1427 05f3 16       		.uleb128 0x16
+ 1428 05f4 02       		.uleb128 0x2
+ 1429 05f5 7D       		.byte	0x7d
+ 1430 05f6 18       		.sleb128 24
+ 1431 05f7 02       		.uleb128 0x2
+ 1432 05f8 77       		.byte	0x77
+ 1433 05f9 00       		.sleb128 0
+ 1434 05fa 16       		.uleb128 0x16
+ 1435 05fb 02       		.uleb128 0x2
+ 1436 05fc 7D       		.byte	0x7d
+ 1437 05fd 08       		.sleb128 8
+ 1438 05fe 02       		.uleb128 0x2
+ 1439 05ff 79       		.byte	0x79
+ 1440 0600 00       		.sleb128 0
+ 1441 0601 16       		.uleb128 0x16
+ 1442 0602 02       		.uleb128 0x2
+ 1443 0603 7D       		.byte	0x7d
+ 1444 0604 04       		.sleb128 4
+ 1445 0605 02       		.uleb128 0x2
+ 1446 0606 7A       		.byte	0x7a
+ 1447 0607 00       		.sleb128 0
+ 1448 0608 00       		.byte	0
+ 1449 0609 00       		.byte	0
+ 1450 060a 15       		.uleb128 0x15
+ 1451 060b 22030000 		.4byte	.LVL46
+ 1452 060f 4E080000 		.4byte	0x84e
+ 1453 0613 2E060000 		.4byte	0x62e
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 31
+
+
+ 1454 0617 16       		.uleb128 0x16
+ 1455 0618 01       		.uleb128 0x1
+ 1456 0619 51       		.byte	0x51
+ 1457 061a 02       		.uleb128 0x2
+ 1458 061b 78       		.byte	0x78
+ 1459 061c 00       		.sleb128 0
+ 1460 061d 16       		.uleb128 0x16
+ 1461 061e 01       		.uleb128 0x1
+ 1462 061f 50       		.byte	0x50
+ 1463 0620 05       		.uleb128 0x5
+ 1464 0621 03       		.byte	0x3
+ 1465 0622 68030000 		.4byte	.LC16
+ 1466 0626 16       		.uleb128 0x16
+ 1467 0627 02       		.uleb128 0x2
+ 1468 0628 7D       		.byte	0x7d
+ 1469 0629 14       		.sleb128 20
+ 1470 062a 02       		.uleb128 0x2
+ 1471 062b 76       		.byte	0x76
+ 1472 062c 00       		.sleb128 0
+ 1473 062d 00       		.byte	0
+ 1474 062e 17       		.uleb128 0x17
+ 1475 062f 2A030000 		.4byte	.LVL47
+ 1476 0633 4E080000 		.4byte	0x84e
+ 1477 0637 16       		.uleb128 0x16
+ 1478 0638 01       		.uleb128 0x1
+ 1479 0639 51       		.byte	0x51
+ 1480 063a 02       		.uleb128 0x2
+ 1481 063b 75       		.byte	0x75
+ 1482 063c 00       		.sleb128 0
+ 1483 063d 16       		.uleb128 0x16
+ 1484 063e 01       		.uleb128 0x1
+ 1485 063f 50       		.byte	0x50
+ 1486 0640 05       		.uleb128 0x5
+ 1487 0641 03       		.byte	0x3
+ 1488 0642 90030000 		.4byte	.LC17
+ 1489 0646 00       		.byte	0
+ 1490 0647 00       		.byte	0
+ 1491 0648 15       		.uleb128 0x15
+ 1492 0649 C4000000 		.4byte	.LVL15
+ 1493 064d 4E080000 		.4byte	0x84e
+ 1494 0651 62060000 		.4byte	0x662
+ 1495 0655 16       		.uleb128 0x16
+ 1496 0656 01       		.uleb128 0x1
+ 1497 0657 51       		.byte	0x51
+ 1498 0658 02       		.uleb128 0x2
+ 1499 0659 08       		.byte	0x8
+ 1500 065a 47       		.byte	0x47
+ 1501 065b 16       		.uleb128 0x16
+ 1502 065c 01       		.uleb128 0x1
+ 1503 065d 50       		.byte	0x50
+ 1504 065e 02       		.uleb128 0x2
+ 1505 065f 75       		.byte	0x75
+ 1506 0660 00       		.sleb128 0
+ 1507 0661 00       		.byte	0
+ 1508 0662 15       		.uleb128 0x15
+ 1509 0663 CE000000 		.4byte	.LVL16
+ 1510 0667 4E080000 		.4byte	0x84e
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 32
+
+
+ 1511 066b 82060000 		.4byte	0x682
+ 1512 066f 16       		.uleb128 0x16
+ 1513 0670 01       		.uleb128 0x1
+ 1514 0671 51       		.byte	0x51
+ 1515 0672 05       		.uleb128 0x5
+ 1516 0673 74       		.byte	0x74
+ 1517 0674 00       		.sleb128 0
+ 1518 0675 7B       		.byte	0x7b
+ 1519 0676 00       		.sleb128 0
+ 1520 0677 1C       		.byte	0x1c
+ 1521 0678 16       		.uleb128 0x16
+ 1522 0679 01       		.uleb128 0x1
+ 1523 067a 50       		.byte	0x50
+ 1524 067b 05       		.uleb128 0x5
+ 1525 067c 03       		.byte	0x3
+ 1526 067d B4010000 		.4byte	.LC11
+ 1527 0681 00       		.byte	0
+ 1528 0682 15       		.uleb128 0x15
+ 1529 0683 D6000000 		.4byte	.LVL17
+ 1530 0687 4E080000 		.4byte	0x84e
+ 1531 068b 9C060000 		.4byte	0x69c
+ 1532 068f 16       		.uleb128 0x16
+ 1533 0690 01       		.uleb128 0x1
+ 1534 0691 51       		.byte	0x51
+ 1535 0692 02       		.uleb128 0x2
+ 1536 0693 08       		.byte	0x8
+ 1537 0694 4C       		.byte	0x4c
+ 1538 0695 16       		.uleb128 0x16
+ 1539 0696 01       		.uleb128 0x1
+ 1540 0697 50       		.byte	0x50
+ 1541 0698 02       		.uleb128 0x2
+ 1542 0699 75       		.byte	0x75
+ 1543 069a 00       		.sleb128 0
+ 1544 069b 00       		.byte	0
+ 1545 069c 17       		.uleb128 0x17
+ 1546 069d 40010000 		.4byte	.LVL20
+ 1547 06a1 4E080000 		.4byte	0x84e
+ 1548 06a5 16       		.uleb128 0x16
+ 1549 06a6 01       		.uleb128 0x1
+ 1550 06a7 53       		.byte	0x53
+ 1551 06a8 02       		.uleb128 0x2
+ 1552 06a9 75       		.byte	0x75
+ 1553 06aa 00       		.sleb128 0
+ 1554 06ab 16       		.uleb128 0x16
+ 1555 06ac 01       		.uleb128 0x1
+ 1556 06ad 52       		.byte	0x52
+ 1557 06ae 02       		.uleb128 0x2
+ 1558 06af 76       		.byte	0x76
+ 1559 06b0 00       		.sleb128 0
+ 1560 06b1 16       		.uleb128 0x16
+ 1561 06b2 01       		.uleb128 0x1
+ 1562 06b3 51       		.byte	0x51
+ 1563 06b4 02       		.uleb128 0x2
+ 1564 06b5 77       		.byte	0x77
+ 1565 06b6 00       		.sleb128 0
+ 1566 06b7 16       		.uleb128 0x16
+ 1567 06b8 01       		.uleb128 0x1
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 33
+
+
+ 1568 06b9 50       		.byte	0x50
+ 1569 06ba 05       		.uleb128 0x5
+ 1570 06bb 03       		.byte	0x3
+ 1571 06bc C4010000 		.4byte	.LC12
+ 1572 06c0 16       		.uleb128 0x16
+ 1573 06c1 02       		.uleb128 0x2
+ 1574 06c2 7D       		.byte	0x7d
+ 1575 06c3 0C       		.sleb128 12
+ 1576 06c4 02       		.uleb128 0x2
+ 1577 06c5 79       		.byte	0x79
+ 1578 06c6 00       		.sleb128 0
+ 1579 06c7 16       		.uleb128 0x16
+ 1580 06c8 02       		.uleb128 0x2
+ 1581 06c9 7D       		.byte	0x7d
+ 1582 06ca 08       		.sleb128 8
+ 1583 06cb 02       		.uleb128 0x2
+ 1584 06cc 7A       		.byte	0x7a
+ 1585 06cd 00       		.sleb128 0
+ 1586 06ce 00       		.byte	0
+ 1587 06cf 00       		.byte	0
+ 1588 06d0 15       		.uleb128 0x15
+ 1589 06d1 0E000000 		.4byte	.LVL2
+ 1590 06d5 64080000 		.4byte	0x864
+ 1591 06d9 E7060000 		.4byte	0x6e7
+ 1592 06dd 16       		.uleb128 0x16
+ 1593 06de 01       		.uleb128 0x1
+ 1594 06df 50       		.byte	0x50
+ 1595 06e0 05       		.uleb128 0x5
+ 1596 06e1 03       		.byte	0x3
+ 1597 06e2 00000000 		.4byte	.LC0
+ 1598 06e6 00       		.byte	0
+ 1599 06e7 15       		.uleb128 0x15
+ 1600 06e8 20000000 		.4byte	.LVL3
+ 1601 06ec 4E080000 		.4byte	0x84e
+ 1602 06f0 FE060000 		.4byte	0x6fe
+ 1603 06f4 16       		.uleb128 0x16
+ 1604 06f5 01       		.uleb128 0x1
+ 1605 06f6 50       		.byte	0x50
+ 1606 06f7 05       		.uleb128 0x5
+ 1607 06f8 03       		.byte	0x3
+ 1608 06f9 50000000 		.4byte	.LC1
+ 1609 06fd 00       		.byte	0
+ 1610 06fe 15       		.uleb128 0x15
+ 1611 06ff 2A000000 		.4byte	.LVL4
+ 1612 0703 4E080000 		.4byte	0x84e
+ 1613 0707 15070000 		.4byte	0x715
+ 1614 070b 16       		.uleb128 0x16
+ 1615 070c 01       		.uleb128 0x1
+ 1616 070d 50       		.byte	0x50
+ 1617 070e 05       		.uleb128 0x5
+ 1618 070f 03       		.byte	0x3
+ 1619 0710 64000000 		.4byte	.LC2
+ 1620 0714 00       		.byte	0
+ 1621 0715 15       		.uleb128 0x15
+ 1622 0716 3C000000 		.4byte	.LVL5
+ 1623 071a 4E080000 		.4byte	0x84e
+ 1624 071e 2C070000 		.4byte	0x72c
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 34
+
+
+ 1625 0722 16       		.uleb128 0x16
+ 1626 0723 01       		.uleb128 0x1
+ 1627 0724 50       		.byte	0x50
+ 1628 0725 05       		.uleb128 0x5
+ 1629 0726 03       		.byte	0x3
+ 1630 0727 74000000 		.4byte	.LC3
+ 1631 072b 00       		.byte	0
+ 1632 072c 15       		.uleb128 0x15
+ 1633 072d 54000000 		.4byte	.LVL6
+ 1634 0731 4E080000 		.4byte	0x84e
+ 1635 0735 43070000 		.4byte	0x743
+ 1636 0739 16       		.uleb128 0x16
+ 1637 073a 01       		.uleb128 0x1
+ 1638 073b 50       		.byte	0x50
+ 1639 073c 05       		.uleb128 0x5
+ 1640 073d 03       		.byte	0x3
+ 1641 073e A0000000 		.4byte	.LC4
+ 1642 0742 00       		.byte	0
+ 1643 0743 15       		.uleb128 0x15
+ 1644 0744 6C000000 		.4byte	.LVL7
+ 1645 0748 4E080000 		.4byte	0x84e
+ 1646 074c 5A070000 		.4byte	0x75a
+ 1647 0750 16       		.uleb128 0x16
+ 1648 0751 01       		.uleb128 0x1
+ 1649 0752 50       		.byte	0x50
+ 1650 0753 05       		.uleb128 0x5
+ 1651 0754 03       		.byte	0x3
+ 1652 0755 BC000000 		.4byte	.LC5
+ 1653 0759 00       		.byte	0
+ 1654 075a 15       		.uleb128 0x15
+ 1655 075b 7A000000 		.4byte	.LVL8
+ 1656 075f 4E080000 		.4byte	0x84e
+ 1657 0763 71070000 		.4byte	0x771
+ 1658 0767 16       		.uleb128 0x16
+ 1659 0768 01       		.uleb128 0x1
+ 1660 0769 50       		.byte	0x50
+ 1661 076a 05       		.uleb128 0x5
+ 1662 076b 03       		.byte	0x3
+ 1663 076c DC000000 		.4byte	.LC6
+ 1664 0770 00       		.byte	0
+ 1665 0771 15       		.uleb128 0x15
+ 1666 0772 80000000 		.4byte	.LVL9
+ 1667 0776 64080000 		.4byte	0x864
+ 1668 077a 88070000 		.4byte	0x788
+ 1669 077e 16       		.uleb128 0x16
+ 1670 077f 01       		.uleb128 0x1
+ 1671 0780 50       		.byte	0x50
+ 1672 0781 05       		.uleb128 0x5
+ 1673 0782 03       		.byte	0x3
+ 1674 0783 00010000 		.4byte	.LC7
+ 1675 0787 00       		.byte	0
+ 1676 0788 15       		.uleb128 0x15
+ 1677 0789 86000000 		.4byte	.LVL10
+ 1678 078d 64080000 		.4byte	0x864
+ 1679 0791 9F070000 		.4byte	0x79f
+ 1680 0795 16       		.uleb128 0x16
+ 1681 0796 01       		.uleb128 0x1
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 35
+
+
+ 1682 0797 50       		.byte	0x50
+ 1683 0798 05       		.uleb128 0x5
+ 1684 0799 03       		.byte	0x3
+ 1685 079a 3C010000 		.4byte	.LC8
+ 1686 079e 00       		.byte	0
+ 1687 079f 15       		.uleb128 0x15
+ 1688 07a0 A2000000 		.4byte	.LVL11
+ 1689 07a4 4E080000 		.4byte	0x84e
+ 1690 07a8 B6070000 		.4byte	0x7b6
+ 1691 07ac 16       		.uleb128 0x16
+ 1692 07ad 01       		.uleb128 0x1
+ 1693 07ae 50       		.byte	0x50
+ 1694 07af 05       		.uleb128 0x5
+ 1695 07b0 03       		.byte	0x3
+ 1696 07b1 78010000 		.4byte	.LC9
+ 1697 07b5 00       		.byte	0
+ 1698 07b6 17       		.uleb128 0x17
+ 1699 07b7 88030000 		.4byte	.LVL57
+ 1700 07bb 4E080000 		.4byte	0x84e
+ 1701 07bf 16       		.uleb128 0x16
+ 1702 07c0 01       		.uleb128 0x1
+ 1703 07c1 50       		.byte	0x50
+ 1704 07c2 05       		.uleb128 0x5
+ 1705 07c3 03       		.byte	0x3
+ 1706 07c4 98030000 		.4byte	.LC18
+ 1707 07c8 00       		.byte	0
+ 1708 07c9 00       		.byte	0
+ 1709 07ca 05       		.uleb128 0x5
+ 1710 07cb 04       		.byte	0x4
+ 1711 07cc A2000000 		.4byte	0xa2
+ 1712 07d0 05       		.uleb128 0x5
+ 1713 07d1 04       		.byte	0x4
+ 1714 07d2 C3030000 		.4byte	0x3c3
+ 1715 07d6 05       		.uleb128 0x5
+ 1716 07d7 04       		.byte	0x4
+ 1717 07d8 11040000 		.4byte	0x411
+ 1718 07dc 0B       		.uleb128 0xb
+ 1719 07dd DC000000 		.4byte	0xdc
+ 1720 07e1 EC070000 		.4byte	0x7ec
+ 1721 07e5 0C       		.uleb128 0xc
+ 1722 07e6 CE000000 		.4byte	0xce
+ 1723 07ea 05       		.byte	0x5
+ 1724 07eb 00       		.byte	0
+ 1725 07ec 18       		.uleb128 0x18
+ 1726 07ed 0C020000 		.4byte	.LASF84
+ 1727 07f1 01       		.byte	0x1
+ 1728 07f2 10       		.byte	0x10
+ 1729 07f3 FD070000 		.4byte	0x7fd
+ 1730 07f7 05       		.uleb128 0x5
+ 1731 07f8 03       		.byte	0x3
+ 1732 07f9 00000000 		.4byte	mdl_type_str
+ 1733 07fd 06       		.uleb128 0x6
+ 1734 07fe DC070000 		.4byte	0x7dc
+ 1735 0802 0B       		.uleb128 0xb
+ 1736 0803 DC000000 		.4byte	0xdc
+ 1737 0807 12080000 		.4byte	0x812
+ 1738 080b 0C       		.uleb128 0xc
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 36
+
+
+ 1739 080c CE000000 		.4byte	0xce
+ 1740 0810 06       		.byte	0x6
+ 1741 0811 00       		.byte	0
+ 1742 0812 18       		.uleb128 0x18
+ 1743 0813 61020000 		.4byte	.LASF85
+ 1744 0817 01       		.byte	0x1
+ 1745 0818 19       		.byte	0x19
+ 1746 0819 23080000 		.4byte	0x823
+ 1747 081d 05       		.uleb128 0x5
+ 1748 081e 03       		.byte	0x3
+ 1749 081f 34000000 		.4byte	tml_str_tbl
+ 1750 0823 06       		.uleb128 0x6
+ 1751 0824 02080000 		.4byte	0x802
+ 1752 0828 0B       		.uleb128 0xb
+ 1753 0829 89000000 		.4byte	0x89
+ 1754 082d 38080000 		.4byte	0x838
+ 1755 0831 0C       		.uleb128 0xc
+ 1756 0832 CE000000 		.4byte	0xce
+ 1757 0836 06       		.byte	0x6
+ 1758 0837 00       		.byte	0
+ 1759 0838 18       		.uleb128 0x18
+ 1760 0839 BD000000 		.4byte	.LASF86
+ 1761 083d 01       		.byte	0x1
+ 1762 083e 23       		.byte	0x23
+ 1763 083f 49080000 		.4byte	0x849
+ 1764 0843 05       		.uleb128 0x5
+ 1765 0844 03       		.byte	0x3
+ 1766 0845 18000000 		.4byte	tml_headsize_tbl
+ 1767 0849 06       		.uleb128 0x6
+ 1768 084a 28080000 		.4byte	0x828
+ 1769 084e 19       		.uleb128 0x19
+ 1770 084f 67010000 		.4byte	.LASF87
+ 1771 0853 06       		.byte	0x6
+ 1772 0854 B2       		.byte	0xb2
+ 1773 0855 89000000 		.4byte	0x89
+ 1774 0859 64080000 		.4byte	0x864
+ 1775 085d 1A       		.uleb128 0x1a
+ 1776 085e DC000000 		.4byte	0xdc
+ 1777 0862 1B       		.uleb128 0x1b
+ 1778 0863 00       		.byte	0
+ 1779 0864 1C       		.uleb128 0x1c
+ 1780 0865 00000000 		.4byte	.LASF88
+ 1781 0869 07       		.byte	0x7
+ 1782 086a 00       		.byte	0
+ 1783 086b 41020000 		.4byte	.LASF93
+ 1784 086f 89000000 		.4byte	0x89
+ 1785 0873 1A       		.uleb128 0x1a
+ 1786 0874 DC000000 		.4byte	0xdc
+ 1787 0878 00       		.byte	0
+ 1788 0879 00       		.byte	0
+ 1789              		.section	.debug_abbrev,"",%progbits
+ 1790              	.Ldebug_abbrev0:
+ 1791 0000 01       		.uleb128 0x1
+ 1792 0001 11       		.uleb128 0x11
+ 1793 0002 01       		.byte	0x1
+ 1794 0003 25       		.uleb128 0x25
+ 1795 0004 0E       		.uleb128 0xe
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 37
+
+
+ 1796 0005 13       		.uleb128 0x13
+ 1797 0006 0B       		.uleb128 0xb
+ 1798 0007 03       		.uleb128 0x3
+ 1799 0008 0E       		.uleb128 0xe
+ 1800 0009 1B       		.uleb128 0x1b
+ 1801 000a 0E       		.uleb128 0xe
+ 1802 000b 55       		.uleb128 0x55
+ 1803 000c 17       		.uleb128 0x17
+ 1804 000d 11       		.uleb128 0x11
+ 1805 000e 01       		.uleb128 0x1
+ 1806 000f 10       		.uleb128 0x10
+ 1807 0010 17       		.uleb128 0x17
+ 1808 0011 00       		.byte	0
+ 1809 0012 00       		.byte	0
+ 1810 0013 02       		.uleb128 0x2
+ 1811 0014 24       		.uleb128 0x24
+ 1812 0015 00       		.byte	0
+ 1813 0016 0B       		.uleb128 0xb
+ 1814 0017 0B       		.uleb128 0xb
+ 1815 0018 3E       		.uleb128 0x3e
+ 1816 0019 0B       		.uleb128 0xb
+ 1817 001a 03       		.uleb128 0x3
+ 1818 001b 0E       		.uleb128 0xe
+ 1819 001c 00       		.byte	0
+ 1820 001d 00       		.byte	0
+ 1821 001e 03       		.uleb128 0x3
+ 1822 001f 16       		.uleb128 0x16
+ 1823 0020 00       		.byte	0
+ 1824 0021 03       		.uleb128 0x3
+ 1825 0022 0E       		.uleb128 0xe
+ 1826 0023 3A       		.uleb128 0x3a
+ 1827 0024 0B       		.uleb128 0xb
+ 1828 0025 3B       		.uleb128 0x3b
+ 1829 0026 0B       		.uleb128 0xb
+ 1830 0027 49       		.uleb128 0x49
+ 1831 0028 13       		.uleb128 0x13
+ 1832 0029 00       		.byte	0
+ 1833 002a 00       		.byte	0
+ 1834 002b 04       		.uleb128 0x4
+ 1835 002c 24       		.uleb128 0x24
+ 1836 002d 00       		.byte	0
+ 1837 002e 0B       		.uleb128 0xb
+ 1838 002f 0B       		.uleb128 0xb
+ 1839 0030 3E       		.uleb128 0x3e
+ 1840 0031 0B       		.uleb128 0xb
+ 1841 0032 03       		.uleb128 0x3
+ 1842 0033 08       		.uleb128 0x8
+ 1843 0034 00       		.byte	0
+ 1844 0035 00       		.byte	0
+ 1845 0036 05       		.uleb128 0x5
+ 1846 0037 0F       		.uleb128 0xf
+ 1847 0038 00       		.byte	0
+ 1848 0039 0B       		.uleb128 0xb
+ 1849 003a 0B       		.uleb128 0xb
+ 1850 003b 49       		.uleb128 0x49
+ 1851 003c 13       		.uleb128 0x13
+ 1852 003d 00       		.byte	0
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 38
+
+
+ 1853 003e 00       		.byte	0
+ 1854 003f 06       		.uleb128 0x6
+ 1855 0040 26       		.uleb128 0x26
+ 1856 0041 00       		.byte	0
+ 1857 0042 49       		.uleb128 0x49
+ 1858 0043 13       		.uleb128 0x13
+ 1859 0044 00       		.byte	0
+ 1860 0045 00       		.byte	0
+ 1861 0046 07       		.uleb128 0x7
+ 1862 0047 04       		.uleb128 0x4
+ 1863 0048 01       		.byte	0x1
+ 1864 0049 0B       		.uleb128 0xb
+ 1865 004a 0B       		.uleb128 0xb
+ 1866 004b 3A       		.uleb128 0x3a
+ 1867 004c 0B       		.uleb128 0xb
+ 1868 004d 3B       		.uleb128 0x3b
+ 1869 004e 0B       		.uleb128 0xb
+ 1870 004f 01       		.uleb128 0x1
+ 1871 0050 13       		.uleb128 0x13
+ 1872 0051 00       		.byte	0
+ 1873 0052 00       		.byte	0
+ 1874 0053 08       		.uleb128 0x8
+ 1875 0054 28       		.uleb128 0x28
+ 1876 0055 00       		.byte	0
+ 1877 0056 03       		.uleb128 0x3
+ 1878 0057 0E       		.uleb128 0xe
+ 1879 0058 1C       		.uleb128 0x1c
+ 1880 0059 0D       		.uleb128 0xd
+ 1881 005a 00       		.byte	0
+ 1882 005b 00       		.byte	0
+ 1883 005c 09       		.uleb128 0x9
+ 1884 005d 13       		.uleb128 0x13
+ 1885 005e 01       		.byte	0x1
+ 1886 005f 0B       		.uleb128 0xb
+ 1887 0060 0B       		.uleb128 0xb
+ 1888 0061 3A       		.uleb128 0x3a
+ 1889 0062 0B       		.uleb128 0xb
+ 1890 0063 3B       		.uleb128 0x3b
+ 1891 0064 0B       		.uleb128 0xb
+ 1892 0065 01       		.uleb128 0x1
+ 1893 0066 13       		.uleb128 0x13
+ 1894 0067 00       		.byte	0
+ 1895 0068 00       		.byte	0
+ 1896 0069 0A       		.uleb128 0xa
+ 1897 006a 0D       		.uleb128 0xd
+ 1898 006b 00       		.byte	0
+ 1899 006c 03       		.uleb128 0x3
+ 1900 006d 0E       		.uleb128 0xe
+ 1901 006e 3A       		.uleb128 0x3a
+ 1902 006f 0B       		.uleb128 0xb
+ 1903 0070 3B       		.uleb128 0x3b
+ 1904 0071 0B       		.uleb128 0xb
+ 1905 0072 49       		.uleb128 0x49
+ 1906 0073 13       		.uleb128 0x13
+ 1907 0074 38       		.uleb128 0x38
+ 1908 0075 0B       		.uleb128 0xb
+ 1909 0076 00       		.byte	0
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 39
+
+
+ 1910 0077 00       		.byte	0
+ 1911 0078 0B       		.uleb128 0xb
+ 1912 0079 01       		.uleb128 0x1
+ 1913 007a 01       		.byte	0x1
+ 1914 007b 49       		.uleb128 0x49
+ 1915 007c 13       		.uleb128 0x13
+ 1916 007d 01       		.uleb128 0x1
+ 1917 007e 13       		.uleb128 0x13
+ 1918 007f 00       		.byte	0
+ 1919 0080 00       		.byte	0
+ 1920 0081 0C       		.uleb128 0xc
+ 1921 0082 21       		.uleb128 0x21
+ 1922 0083 00       		.byte	0
+ 1923 0084 49       		.uleb128 0x49
+ 1924 0085 13       		.uleb128 0x13
+ 1925 0086 2F       		.uleb128 0x2f
+ 1926 0087 0B       		.uleb128 0xb
+ 1927 0088 00       		.byte	0
+ 1928 0089 00       		.byte	0
+ 1929 008a 0D       		.uleb128 0xd
+ 1930 008b 21       		.uleb128 0x21
+ 1931 008c 00       		.byte	0
+ 1932 008d 49       		.uleb128 0x49
+ 1933 008e 13       		.uleb128 0x13
+ 1934 008f 00       		.byte	0
+ 1935 0090 00       		.byte	0
+ 1936 0091 0E       		.uleb128 0xe
+ 1937 0092 0D       		.uleb128 0xd
+ 1938 0093 00       		.byte	0
+ 1939 0094 03       		.uleb128 0x3
+ 1940 0095 08       		.uleb128 0x8
+ 1941 0096 3A       		.uleb128 0x3a
+ 1942 0097 0B       		.uleb128 0xb
+ 1943 0098 3B       		.uleb128 0x3b
+ 1944 0099 0B       		.uleb128 0xb
+ 1945 009a 49       		.uleb128 0x49
+ 1946 009b 13       		.uleb128 0x13
+ 1947 009c 38       		.uleb128 0x38
+ 1948 009d 0B       		.uleb128 0xb
+ 1949 009e 00       		.byte	0
+ 1950 009f 00       		.byte	0
+ 1951 00a0 0F       		.uleb128 0xf
+ 1952 00a1 2E       		.uleb128 0x2e
+ 1953 00a2 01       		.byte	0x1
+ 1954 00a3 3F       		.uleb128 0x3f
+ 1955 00a4 19       		.uleb128 0x19
+ 1956 00a5 03       		.uleb128 0x3
+ 1957 00a6 0E       		.uleb128 0xe
+ 1958 00a7 3A       		.uleb128 0x3a
+ 1959 00a8 0B       		.uleb128 0xb
+ 1960 00a9 3B       		.uleb128 0x3b
+ 1961 00aa 0B       		.uleb128 0xb
+ 1962 00ab 27       		.uleb128 0x27
+ 1963 00ac 19       		.uleb128 0x19
+ 1964 00ad 49       		.uleb128 0x49
+ 1965 00ae 13       		.uleb128 0x13
+ 1966 00af 11       		.uleb128 0x11
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 40
+
+
+ 1967 00b0 01       		.uleb128 0x1
+ 1968 00b1 12       		.uleb128 0x12
+ 1969 00b2 06       		.uleb128 0x6
+ 1970 00b3 40       		.uleb128 0x40
+ 1971 00b4 18       		.uleb128 0x18
+ 1972 00b5 9642     		.uleb128 0x2116
+ 1973 00b7 19       		.uleb128 0x19
+ 1974 00b8 01       		.uleb128 0x1
+ 1975 00b9 13       		.uleb128 0x13
+ 1976 00ba 00       		.byte	0
+ 1977 00bb 00       		.byte	0
+ 1978 00bc 10       		.uleb128 0x10
+ 1979 00bd 05       		.uleb128 0x5
+ 1980 00be 00       		.byte	0
+ 1981 00bf 03       		.uleb128 0x3
+ 1982 00c0 08       		.uleb128 0x8
+ 1983 00c1 3A       		.uleb128 0x3a
+ 1984 00c2 0B       		.uleb128 0xb
+ 1985 00c3 3B       		.uleb128 0x3b
+ 1986 00c4 0B       		.uleb128 0xb
+ 1987 00c5 49       		.uleb128 0x49
+ 1988 00c6 13       		.uleb128 0x13
+ 1989 00c7 02       		.uleb128 0x2
+ 1990 00c8 17       		.uleb128 0x17
+ 1991 00c9 00       		.byte	0
+ 1992 00ca 00       		.byte	0
+ 1993 00cb 11       		.uleb128 0x11
+ 1994 00cc 34       		.uleb128 0x34
+ 1995 00cd 00       		.byte	0
+ 1996 00ce 03       		.uleb128 0x3
+ 1997 00cf 0E       		.uleb128 0xe
+ 1998 00d0 3A       		.uleb128 0x3a
+ 1999 00d1 0B       		.uleb128 0xb
+ 2000 00d2 3B       		.uleb128 0x3b
+ 2001 00d3 0B       		.uleb128 0xb
+ 2002 00d4 49       		.uleb128 0x49
+ 2003 00d5 13       		.uleb128 0x13
+ 2004 00d6 02       		.uleb128 0x2
+ 2005 00d7 17       		.uleb128 0x17
+ 2006 00d8 00       		.byte	0
+ 2007 00d9 00       		.byte	0
+ 2008 00da 12       		.uleb128 0x12
+ 2009 00db 0B       		.uleb128 0xb
+ 2010 00dc 01       		.byte	0x1
+ 2011 00dd 55       		.uleb128 0x55
+ 2012 00de 17       		.uleb128 0x17
+ 2013 00df 01       		.uleb128 0x1
+ 2014 00e0 13       		.uleb128 0x13
+ 2015 00e1 00       		.byte	0
+ 2016 00e2 00       		.byte	0
+ 2017 00e3 13       		.uleb128 0x13
+ 2018 00e4 34       		.uleb128 0x34
+ 2019 00e5 00       		.byte	0
+ 2020 00e6 03       		.uleb128 0x3
+ 2021 00e7 08       		.uleb128 0x8
+ 2022 00e8 3A       		.uleb128 0x3a
+ 2023 00e9 0B       		.uleb128 0xb
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 41
+
+
+ 2024 00ea 3B       		.uleb128 0x3b
+ 2025 00eb 0B       		.uleb128 0xb
+ 2026 00ec 49       		.uleb128 0x49
+ 2027 00ed 13       		.uleb128 0x13
+ 2028 00ee 02       		.uleb128 0x2
+ 2029 00ef 17       		.uleb128 0x17
+ 2030 00f0 00       		.byte	0
+ 2031 00f1 00       		.byte	0
+ 2032 00f2 14       		.uleb128 0x14
+ 2033 00f3 0B       		.uleb128 0xb
+ 2034 00f4 01       		.byte	0x1
+ 2035 00f5 11       		.uleb128 0x11
+ 2036 00f6 01       		.uleb128 0x1
+ 2037 00f7 12       		.uleb128 0x12
+ 2038 00f8 06       		.uleb128 0x6
+ 2039 00f9 01       		.uleb128 0x1
+ 2040 00fa 13       		.uleb128 0x13
+ 2041 00fb 00       		.byte	0
+ 2042 00fc 00       		.byte	0
+ 2043 00fd 15       		.uleb128 0x15
+ 2044 00fe 898201   		.uleb128 0x4109
+ 2045 0101 01       		.byte	0x1
+ 2046 0102 11       		.uleb128 0x11
+ 2047 0103 01       		.uleb128 0x1
+ 2048 0104 31       		.uleb128 0x31
+ 2049 0105 13       		.uleb128 0x13
+ 2050 0106 01       		.uleb128 0x1
+ 2051 0107 13       		.uleb128 0x13
+ 2052 0108 00       		.byte	0
+ 2053 0109 00       		.byte	0
+ 2054 010a 16       		.uleb128 0x16
+ 2055 010b 8A8201   		.uleb128 0x410a
+ 2056 010e 00       		.byte	0
+ 2057 010f 02       		.uleb128 0x2
+ 2058 0110 18       		.uleb128 0x18
+ 2059 0111 9142     		.uleb128 0x2111
+ 2060 0113 18       		.uleb128 0x18
+ 2061 0114 00       		.byte	0
+ 2062 0115 00       		.byte	0
+ 2063 0116 17       		.uleb128 0x17
+ 2064 0117 898201   		.uleb128 0x4109
+ 2065 011a 01       		.byte	0x1
+ 2066 011b 11       		.uleb128 0x11
+ 2067 011c 01       		.uleb128 0x1
+ 2068 011d 31       		.uleb128 0x31
+ 2069 011e 13       		.uleb128 0x13
+ 2070 011f 00       		.byte	0
+ 2071 0120 00       		.byte	0
+ 2072 0121 18       		.uleb128 0x18
+ 2073 0122 34       		.uleb128 0x34
+ 2074 0123 00       		.byte	0
+ 2075 0124 03       		.uleb128 0x3
+ 2076 0125 0E       		.uleb128 0xe
+ 2077 0126 3A       		.uleb128 0x3a
+ 2078 0127 0B       		.uleb128 0xb
+ 2079 0128 3B       		.uleb128 0x3b
+ 2080 0129 0B       		.uleb128 0xb
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 42
+
+
+ 2081 012a 49       		.uleb128 0x49
+ 2082 012b 13       		.uleb128 0x13
+ 2083 012c 02       		.uleb128 0x2
+ 2084 012d 18       		.uleb128 0x18
+ 2085 012e 00       		.byte	0
+ 2086 012f 00       		.byte	0
+ 2087 0130 19       		.uleb128 0x19
+ 2088 0131 2E       		.uleb128 0x2e
+ 2089 0132 01       		.byte	0x1
+ 2090 0133 3F       		.uleb128 0x3f
+ 2091 0134 19       		.uleb128 0x19
+ 2092 0135 03       		.uleb128 0x3
+ 2093 0136 0E       		.uleb128 0xe
+ 2094 0137 3A       		.uleb128 0x3a
+ 2095 0138 0B       		.uleb128 0xb
+ 2096 0139 3B       		.uleb128 0x3b
+ 2097 013a 0B       		.uleb128 0xb
+ 2098 013b 27       		.uleb128 0x27
+ 2099 013c 19       		.uleb128 0x19
+ 2100 013d 49       		.uleb128 0x49
+ 2101 013e 13       		.uleb128 0x13
+ 2102 013f 3C       		.uleb128 0x3c
+ 2103 0140 19       		.uleb128 0x19
+ 2104 0141 01       		.uleb128 0x1
+ 2105 0142 13       		.uleb128 0x13
+ 2106 0143 00       		.byte	0
+ 2107 0144 00       		.byte	0
+ 2108 0145 1A       		.uleb128 0x1a
+ 2109 0146 05       		.uleb128 0x5
+ 2110 0147 00       		.byte	0
+ 2111 0148 49       		.uleb128 0x49
+ 2112 0149 13       		.uleb128 0x13
+ 2113 014a 00       		.byte	0
+ 2114 014b 00       		.byte	0
+ 2115 014c 1B       		.uleb128 0x1b
+ 2116 014d 18       		.uleb128 0x18
+ 2117 014e 00       		.byte	0
+ 2118 014f 00       		.byte	0
+ 2119 0150 00       		.byte	0
+ 2120 0151 1C       		.uleb128 0x1c
+ 2121 0152 2E       		.uleb128 0x2e
+ 2122 0153 01       		.byte	0x1
+ 2123 0154 3F       		.uleb128 0x3f
+ 2124 0155 19       		.uleb128 0x19
+ 2125 0156 03       		.uleb128 0x3
+ 2126 0157 0E       		.uleb128 0xe
+ 2127 0158 3A       		.uleb128 0x3a
+ 2128 0159 0B       		.uleb128 0xb
+ 2129 015a 3B       		.uleb128 0x3b
+ 2130 015b 0B       		.uleb128 0xb
+ 2131 015c 6E       		.uleb128 0x6e
+ 2132 015d 0E       		.uleb128 0xe
+ 2133 015e 27       		.uleb128 0x27
+ 2134 015f 19       		.uleb128 0x19
+ 2135 0160 49       		.uleb128 0x49
+ 2136 0161 13       		.uleb128 0x13
+ 2137 0162 3C       		.uleb128 0x3c
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 43
+
+
+ 2138 0163 19       		.uleb128 0x19
+ 2139 0164 00       		.byte	0
+ 2140 0165 00       		.byte	0
+ 2141 0166 00       		.byte	0
+ 2142              		.section	.debug_loc,"",%progbits
+ 2143              	.Ldebug_loc0:
+ 2144              	.LLST0:
+ 2145 0000 00000000 		.4byte	.LVL0
+ 2146 0004 0A000000 		.4byte	.LVL1
+ 2147 0008 0100     		.2byte	0x1
+ 2148 000a 50       		.byte	0x50
+ 2149 000b 0A000000 		.4byte	.LVL1
+ 2150 000f B6000000 		.4byte	.LVL13
+ 2151 0013 0100     		.2byte	0x1
+ 2152 0015 58       		.byte	0x58
+ 2153 0016 B6000000 		.4byte	.LVL13
+ 2154 001a BA000000 		.4byte	.LVL14
+ 2155 001e 0100     		.2byte	0x1
+ 2156 0020 53       		.byte	0x53
+ 2157 0021 BA000000 		.4byte	.LVL14
+ 2158 0025 94030000 		.4byte	.LVL60
+ 2159 0029 0100     		.2byte	0x1
+ 2160 002b 5B       		.byte	0x5b
+ 2161 002c 94030000 		.4byte	.LVL60
+ 2162 0030 B4030000 		.4byte	.LFE1
+ 2163 0034 0400     		.2byte	0x4
+ 2164 0036 F3       		.byte	0xf3
+ 2165 0037 01       		.uleb128 0x1
+ 2166 0038 50       		.byte	0x50
+ 2167 0039 9F       		.byte	0x9f
+ 2168 003a 00000000 		.4byte	0
+ 2169 003e 00000000 		.4byte	0
+ 2170              	.LLST1:
+ 2171 0042 3C000000 		.4byte	.LVL5
+ 2172 0046 B6000000 		.4byte	.LVL13
+ 2173 004a 0300     		.2byte	0x3
+ 2174 004c 78       		.byte	0x78
+ 2175 004d 14       		.sleb128 20
+ 2176 004e 9F       		.byte	0x9f
+ 2177 004f B6000000 		.4byte	.LVL13
+ 2178 0053 BA000000 		.4byte	.LVL14
+ 2179 0057 0300     		.2byte	0x3
+ 2180 0059 73       		.byte	0x73
+ 2181 005a 14       		.sleb128 20
+ 2182 005b 9F       		.byte	0x9f
+ 2183 005c BA000000 		.4byte	.LVL14
+ 2184 0060 94030000 		.4byte	.LVL60
+ 2185 0064 0300     		.2byte	0x3
+ 2186 0066 7B       		.byte	0x7b
+ 2187 0067 14       		.sleb128 20
+ 2188 0068 9F       		.byte	0x9f
+ 2189 0069 94030000 		.4byte	.LVL60
+ 2190 006d B4030000 		.4byte	.LFE1
+ 2191 0071 0600     		.2byte	0x6
+ 2192 0073 F3       		.byte	0xf3
+ 2193 0074 01       		.uleb128 0x1
+ 2194 0075 50       		.byte	0x50
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 44
+
+
+ 2195 0076 23       		.byte	0x23
+ 2196 0077 14       		.uleb128 0x14
+ 2197 0078 9F       		.byte	0x9f
+ 2198 0079 00000000 		.4byte	0
+ 2199 007d 00000000 		.4byte	0
+ 2200              	.LLST2:
+ 2201 0081 54000000 		.4byte	.LVL6
+ 2202 0085 B6000000 		.4byte	.LVL13
+ 2203 0089 0300     		.2byte	0x3
+ 2204 008b 78       		.byte	0x78
+ 2205 008c 1C       		.sleb128 28
+ 2206 008d 9F       		.byte	0x9f
+ 2207 008e B6000000 		.4byte	.LVL13
+ 2208 0092 BA000000 		.4byte	.LVL14
+ 2209 0096 0300     		.2byte	0x3
+ 2210 0098 73       		.byte	0x73
+ 2211 0099 1C       		.sleb128 28
+ 2212 009a 9F       		.byte	0x9f
+ 2213 009b BA000000 		.4byte	.LVL14
+ 2214 009f 94030000 		.4byte	.LVL60
+ 2215 00a3 0300     		.2byte	0x3
+ 2216 00a5 7B       		.byte	0x7b
+ 2217 00a6 1C       		.sleb128 28
+ 2218 00a7 9F       		.byte	0x9f
+ 2219 00a8 94030000 		.4byte	.LVL60
+ 2220 00ac B4030000 		.4byte	.LFE1
+ 2221 00b0 0600     		.2byte	0x6
+ 2222 00b2 F3       		.byte	0xf3
+ 2223 00b3 01       		.uleb128 0x1
+ 2224 00b4 50       		.byte	0x50
+ 2225 00b5 23       		.byte	0x23
+ 2226 00b6 1C       		.uleb128 0x1c
+ 2227 00b7 9F       		.byte	0x9f
+ 2228 00b8 00000000 		.4byte	0
+ 2229 00bc 00000000 		.4byte	0
+ 2230              	.LLST3:
+ 2231 00c0 A2000000 		.4byte	.LVL11
+ 2232 00c4 BA000000 		.4byte	.LVL14
+ 2233 00c8 0200     		.2byte	0x2
+ 2234 00ca 30       		.byte	0x30
+ 2235 00cb 9F       		.byte	0x9f
+ 2236 00cc BA000000 		.4byte	.LVL14
+ 2237 00d0 68010000 		.4byte	.LVL22
+ 2238 00d4 0200     		.2byte	0x2
+ 2239 00d6 91       		.byte	0x91
+ 2240 00d7 48       		.sleb128 -56
+ 2241 00d8 68010000 		.4byte	.LVL22
+ 2242 00dc 92010000 		.4byte	.LVL25
+ 2243 00e0 0100     		.2byte	0x1
+ 2244 00e2 51       		.byte	0x51
+ 2245 00e3 92010000 		.4byte	.LVL25
+ 2246 00e7 F8010000 		.4byte	.LVL28
+ 2247 00eb 0200     		.2byte	0x2
+ 2248 00ed 91       		.byte	0x91
+ 2249 00ee 48       		.sleb128 -56
+ 2250 00ef F8010000 		.4byte	.LVL28
+ 2251 00f3 12020000 		.4byte	.LVL32
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 45
+
+
+ 2252 00f7 0100     		.2byte	0x1
+ 2253 00f9 51       		.byte	0x51
+ 2254 00fa 12020000 		.4byte	.LVL32
+ 2255 00fe 24020000 		.4byte	.LVL35
+ 2256 0102 0200     		.2byte	0x2
+ 2257 0104 91       		.byte	0x91
+ 2258 0105 48       		.sleb128 -56
+ 2259 0106 24020000 		.4byte	.LVL35
+ 2260 010a 40020000 		.4byte	.LVL39
+ 2261 010e 0100     		.2byte	0x1
+ 2262 0110 51       		.byte	0x51
+ 2263 0111 40020000 		.4byte	.LVL39
+ 2264 0115 EC020000 		.4byte	.LVL42
+ 2265 0119 0200     		.2byte	0x2
+ 2266 011b 91       		.byte	0x91
+ 2267 011c 48       		.sleb128 -56
+ 2268 011d EC020000 		.4byte	.LVL42
+ 2269 0121 EE020000 		.4byte	.LVL43
+ 2270 0125 0100     		.2byte	0x1
+ 2271 0127 51       		.byte	0x51
+ 2272 0128 EE020000 		.4byte	.LVL43
+ 2273 012c 94030000 		.4byte	.LVL60
+ 2274 0130 0200     		.2byte	0x2
+ 2275 0132 91       		.byte	0x91
+ 2276 0133 48       		.sleb128 -56
+ 2277 0134 94030000 		.4byte	.LVL60
+ 2278 0138 B4030000 		.4byte	.LFE1
+ 2279 013c 0200     		.2byte	0x2
+ 2280 013e 7D       		.byte	0x7d
+ 2281 013f 48       		.sleb128 -56
+ 2282 0140 00000000 		.4byte	0
+ 2283 0144 00000000 		.4byte	0
+ 2284              	.LLST4:
+ 2285 0148 A2000000 		.4byte	.LVL11
+ 2286 014c BA000000 		.4byte	.LVL14
+ 2287 0150 0200     		.2byte	0x2
+ 2288 0152 30       		.byte	0x30
+ 2289 0153 9F       		.byte	0x9f
+ 2290 0154 BA000000 		.4byte	.LVL14
+ 2291 0158 F4020000 		.4byte	.LVL44
+ 2292 015c 0200     		.2byte	0x2
+ 2293 015e 91       		.byte	0x91
+ 2294 015f 4C       		.sleb128 -52
+ 2295 0160 F4020000 		.4byte	.LVL44
+ 2296 0164 F8020000 		.4byte	.LVL45
+ 2297 0168 0100     		.2byte	0x1
+ 2298 016a 53       		.byte	0x53
+ 2299 016b F8020000 		.4byte	.LVL45
+ 2300 016f 94030000 		.4byte	.LVL60
+ 2301 0173 0200     		.2byte	0x2
+ 2302 0175 91       		.byte	0x91
+ 2303 0176 4C       		.sleb128 -52
+ 2304 0177 94030000 		.4byte	.LVL60
+ 2305 017b B4030000 		.4byte	.LFE1
+ 2306 017f 0200     		.2byte	0x2
+ 2307 0181 7D       		.byte	0x7d
+ 2308 0182 4C       		.sleb128 -52
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 46
+
+
+ 2309 0183 00000000 		.4byte	0
+ 2310 0187 00000000 		.4byte	0
+ 2311              	.LLST5:
+ 2312 018b A6000000 		.4byte	.LVL12
+ 2313 018f 40030000 		.4byte	.LVL50
+ 2314 0193 0100     		.2byte	0x1
+ 2315 0195 54       		.byte	0x54
+ 2316 0196 8C030000 		.4byte	.LVL58
+ 2317 019a 8E030000 		.4byte	.LVL59
+ 2318 019e 0100     		.2byte	0x1
+ 2319 01a0 54       		.byte	0x54
+ 2320 01a1 00000000 		.4byte	0
+ 2321 01a5 00000000 		.4byte	0
+ 2322              	.LLST6:
+ 2323 01a9 A6000000 		.4byte	.LVL12
+ 2324 01ad BA000000 		.4byte	.LVL14
+ 2325 01b1 0200     		.2byte	0x2
+ 2326 01b3 30       		.byte	0x30
+ 2327 01b4 9F       		.byte	0x9f
+ 2328 01b5 BA000000 		.4byte	.LVL14
+ 2329 01b9 94030000 		.4byte	.LVL60
+ 2330 01bd 0100     		.2byte	0x1
+ 2331 01bf 58       		.byte	0x58
+ 2332 01c0 00000000 		.4byte	0
+ 2333 01c4 00000000 		.4byte	0
+ 2334              	.LLST7:
+ 2335 01c8 BA000000 		.4byte	.LVL14
+ 2336 01cc 2E030000 		.4byte	.LVL48
+ 2337 01d0 0100     		.2byte	0x1
+ 2338 01d2 54       		.byte	0x54
+ 2339 01d3 8C030000 		.4byte	.LVL58
+ 2340 01d7 8E030000 		.4byte	.LVL59
+ 2341 01db 0100     		.2byte	0x1
+ 2342 01dd 54       		.byte	0x54
+ 2343 01de 00000000 		.4byte	0
+ 2344 01e2 00000000 		.4byte	0
+ 2345              	.LLST8:
+ 2346 01e6 56010000 		.4byte	.LVL21
+ 2347 01ea 32030000 		.4byte	.LVL49
+ 2348 01ee 0100     		.2byte	0x1
+ 2349 01f0 56       		.byte	0x56
+ 2350 01f1 00000000 		.4byte	0
+ 2351 01f5 00000000 		.4byte	0
+ 2352              	.LLST9:
+ 2353 01f9 68010000 		.4byte	.LVL22
+ 2354 01fd 8E010000 		.4byte	.LVL24
+ 2355 0201 0200     		.2byte	0x2
+ 2356 0203 30       		.byte	0x30
+ 2357 0204 9F       		.byte	0x9f
+ 2358 0205 8E010000 		.4byte	.LVL24
+ 2359 0209 F8010000 		.4byte	.LVL28
+ 2360 020d 0100     		.2byte	0x1
+ 2361 020f 55       		.byte	0x55
+ 2362 0210 F8010000 		.4byte	.LVL28
+ 2363 0214 06020000 		.4byte	.LVL29
+ 2364 0218 0200     		.2byte	0x2
+ 2365 021a 30       		.byte	0x30
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 47
+
+
+ 2366 021b 9F       		.byte	0x9f
+ 2367 021c 06020000 		.4byte	.LVL29
+ 2368 0220 08020000 		.4byte	.LVL30
+ 2369 0224 0100     		.2byte	0x1
+ 2370 0226 55       		.byte	0x55
+ 2371 0227 08020000 		.4byte	.LVL30
+ 2372 022b 0E020000 		.4byte	.LVL31
+ 2373 022f 0200     		.2byte	0x2
+ 2374 0231 30       		.byte	0x30
+ 2375 0232 9F       		.byte	0x9f
+ 2376 0233 0E020000 		.4byte	.LVL31
+ 2377 0237 24020000 		.4byte	.LVL35
+ 2378 023b 0100     		.2byte	0x1
+ 2379 023d 55       		.byte	0x55
+ 2380 023e 24020000 		.4byte	.LVL35
+ 2381 0242 2A020000 		.4byte	.LVL36
+ 2382 0246 0200     		.2byte	0x2
+ 2383 0248 30       		.byte	0x30
+ 2384 0249 9F       		.byte	0x9f
+ 2385 024a 2A020000 		.4byte	.LVL36
+ 2386 024e 2C020000 		.4byte	.LVL37
+ 2387 0252 0100     		.2byte	0x1
+ 2388 0254 55       		.byte	0x55
+ 2389 0255 2C020000 		.4byte	.LVL37
+ 2390 0259 3C020000 		.4byte	.LVL38
+ 2391 025d 0200     		.2byte	0x2
+ 2392 025f 30       		.byte	0x30
+ 2393 0260 9F       		.byte	0x9f
+ 2394 0261 3C020000 		.4byte	.LVL38
+ 2395 0265 EC020000 		.4byte	.LVL42
+ 2396 0269 0100     		.2byte	0x1
+ 2397 026b 55       		.byte	0x55
+ 2398 026c EC020000 		.4byte	.LVL42
+ 2399 0270 EE020000 		.4byte	.LVL43
+ 2400 0274 0200     		.2byte	0x2
+ 2401 0276 30       		.byte	0x30
+ 2402 0277 9F       		.byte	0x9f
+ 2403 0278 EE020000 		.4byte	.LVL43
+ 2404 027c 32030000 		.4byte	.LVL49
+ 2405 0280 0100     		.2byte	0x1
+ 2406 0282 55       		.byte	0x55
+ 2407 0283 00000000 		.4byte	0
+ 2408 0287 00000000 		.4byte	0
+ 2409              	.LLST10:
+ 2410 028b 78010000 		.4byte	.LVL23
+ 2411 028f F8010000 		.4byte	.LVL28
+ 2412 0293 0100     		.2byte	0x1
+ 2413 0295 54       		.byte	0x54
+ 2414 0296 00000000 		.4byte	0
+ 2415 029a 00000000 		.4byte	0
+ 2416              	.LLST11:
+ 2417 029e 08020000 		.4byte	.LVL30
+ 2418 02a2 24020000 		.4byte	.LVL35
+ 2419 02a6 0100     		.2byte	0x1
+ 2420 02a8 54       		.byte	0x54
+ 2421 02a9 00000000 		.4byte	0
+ 2422 02ad 00000000 		.4byte	0
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 48
+
+
+ 2423              	.LLST12:
+ 2424 02b1 2C020000 		.4byte	.LVL37
+ 2425 02b5 EC020000 		.4byte	.LVL42
+ 2426 02b9 0100     		.2byte	0x1
+ 2427 02bb 54       		.byte	0x54
+ 2428 02bc 00000000 		.4byte	0
+ 2429 02c0 00000000 		.4byte	0
+ 2430              		.section	.debug_aranges,"",%progbits
+ 2431 0000 1C000000 		.4byte	0x1c
+ 2432 0004 0200     		.2byte	0x2
+ 2433 0006 00000000 		.4byte	.Ldebug_info0
+ 2434 000a 04       		.byte	0x4
+ 2435 000b 00       		.byte	0
+ 2436 000c 0000     		.2byte	0
+ 2437 000e 0000     		.2byte	0
+ 2438 0010 00000000 		.4byte	.LFB1
+ 2439 0014 B4030000 		.4byte	.LFE1-.LFB1
+ 2440 0018 00000000 		.4byte	0
+ 2441 001c 00000000 		.4byte	0
+ 2442              		.section	.debug_ranges,"",%progbits
+ 2443              	.Ldebug_ranges0:
+ 2444 0000 BA000000 		.4byte	.LBB2
+ 2445 0004 2E030000 		.4byte	.LBE2
+ 2446 0008 8C030000 		.4byte	.LBB7
+ 2447 000c 8E030000 		.4byte	.LBE7
+ 2448 0010 00000000 		.4byte	0
+ 2449 0014 00000000 		.4byte	0
+ 2450 0018 00000000 		.4byte	.LFB1
+ 2451 001c B4030000 		.4byte	.LFE1
+ 2452 0020 00000000 		.4byte	0
+ 2453 0024 00000000 		.4byte	0
+ 2454              		.section	.debug_line,"",%progbits
+ 2455              	.Ldebug_line0:
+ 2456 0000 21020000 		.section	.debug_str,"MS",%progbits,1
+ 2456      0200C501 
+ 2456      00000201 
+ 2456      FB0E0D00 
+ 2456      01010101 
+ 2457              	.LASF88:
+ 2458 0000 5F5F6275 		.ascii	"__builtin_puts\000"
+ 2458      696C7469 
+ 2458      6E5F7075 
+ 2458      747300
+ 2459              	.LASF34:
+ 2460 000f 544D4C5F 		.ascii	"TML_CONV2D\000"
+ 2460      434F4E56 
+ 2460      324400
+ 2461              	.LASF76:
+ 2462 001a 746D6C5F 		.ascii	"tml_fc_t\000"
+ 2462      66635F74 
+ 2462      00
+ 2463              	.LASF48:
+ 2464 0023 6275665F 		.ascii	"buf_size\000"
+ 2464      73697A65 
+ 2464      00
+ 2465              	.LASF44:
+ 2466 002c 6F75745F 		.ascii	"out_deq\000"
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 49
+
+
+ 2466      64657100 
+ 2467              	.LASF59:
+ 2468 0034 6F75745F 		.ascii	"out_oft\000"
+ 2468      6F667400 
+ 2469              	.LASF83:
+ 2470 003c 6D656D6F 		.ascii	"memout\000"
+ 2470      757400
+ 2471              	.LASF24:
+ 2472 0043 544D5F45 		.ascii	"TM_ERR\000"
+ 2472      525200
+ 2473              	.LASF2:
+ 2474 004a 73686F72 		.ascii	"short int\000"
+ 2474      7420696E 
+ 2474      7400
+ 2475              	.LASF17:
+ 2476 0054 73697A65 		.ascii	"size_t\000"
+ 2476      5F7400
+ 2477              	.LASF26:
+ 2478 005b 544D5F45 		.ascii	"TM_ERR_UNSUPPORT\000"
+ 2478      52525F55 
+ 2478      4E535550 
+ 2478      504F5254 
+ 2478      00
+ 2479              	.LASF45:
+ 2480 006c 696E7075 		.ascii	"input_cnt\000"
+ 2480      745F636E 
+ 2480      7400
+ 2481              	.LASF33:
+ 2482 0076 746D5F65 		.ascii	"tm_err_t\000"
+ 2482      72725F74 
+ 2482      00
+ 2483              	.LASF82:
+ 2484 007f 6C617965 		.ascii	"layer_i\000"
+ 2484      725F6900 
+ 2485              	.LASF51:
+ 2486 0087 6F75745F 		.ascii	"out_dims\000"
+ 2486      64696D73 
+ 2486      00
+ 2487              	.LASF58:
+ 2488 0090 696E5F6F 		.ascii	"in_oft\000"
+ 2488      667400
+ 2489              	.LASF8:
+ 2490 0097 5F5F7569 		.ascii	"__uint32_t\000"
+ 2490      6E743332 
+ 2490      5F7400
+ 2491              	.LASF63:
+ 2492 00a2 6F75745F 		.ascii	"out_zp\000"
+ 2492      7A7000
+ 2493              	.LASF68:
+ 2494 00a9 73747269 		.ascii	"stride_h\000"
+ 2494      64655F68 
+ 2494      00
+ 2495              	.LASF4:
+ 2496 00b2 5F5F7569 		.ascii	"__uint16_t\000"
+ 2496      6E743136 
+ 2496      5F7400
+ 2497              	.LASF86:
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 50
+
+
+ 2498 00bd 746D6C5F 		.ascii	"tml_headsize_tbl\000"
+ 2498      68656164 
+ 2498      73697A65 
+ 2498      5F74626C 
+ 2498      00
+ 2499              	.LASF40:
+ 2500 00ce 544D4C5F 		.ascii	"TML_ADD\000"
+ 2500      41444400 
+ 2501              	.LASF67:
+ 2502 00d6 73747269 		.ascii	"stride_w\000"
+ 2502      64655F77 
+ 2502      00
+ 2503              	.LASF92:
+ 2504 00df 746D5F73 		.ascii	"tm_stat\000"
+ 2504      74617400 
+ 2505              	.LASF47:
+ 2506 00e7 6C617965 		.ascii	"layer_cnt\000"
+ 2506      725F636E 
+ 2506      7400
+ 2507              	.LASF25:
+ 2508 00f1 544D5F45 		.ascii	"TM_ERR_MAGIC\000"
+ 2508      52525F4D 
+ 2508      41474943 
+ 2508      00
+ 2509              	.LASF91:
+ 2510 00fe 443A5C4D 		.ascii	"D:\\MIT\\Microcomputer\\Exercise_4\\LAB2.cydsn\000"
+ 2510      49545C4D 
+ 2510      6963726F 
+ 2510      636F6D70 
+ 2510      75746572 
+ 2511              	.LASF22:
+ 2512 0129 666C6F61 		.ascii	"float\000"
+ 2512      7400
+ 2513              	.LASF80:
+ 2514 012f 73756D5F 		.ascii	"sum_ops\000"
+ 2514      6F707300 
+ 2515              	.LASF78:
+ 2516 0137 6F64696D 		.ascii	"odim\000"
+ 2516      00
+ 2517              	.LASF10:
+ 2518 013c 6C6F6E67 		.ascii	"long long int\000"
+ 2518      206C6F6E 
+ 2518      6720696E 
+ 2518      7400
+ 2519              	.LASF53:
+ 2520 014a 6C617965 		.ascii	"layers_body\000"
+ 2520      72735F62 
+ 2520      6F647900 
+ 2521              	.LASF50:
+ 2522 0156 696E5F64 		.ascii	"in_dims\000"
+ 2522      696D7300 
+ 2523              	.LASF7:
+ 2524 015e 6C6F6E67 		.ascii	"long int\000"
+ 2524      20696E74 
+ 2524      00
+ 2525              	.LASF87:
+ 2526 0167 7072696E 		.ascii	"printf\000"
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 51
+
+
+ 2526      746600
+ 2527              	.LASF52:
+ 2528 016e 72657365 		.ascii	"reserve\000"
+ 2528      72766500 
+ 2529              	.LASF27:
+ 2530 0176 544D5F45 		.ascii	"TM_ERR_OOM\000"
+ 2530      52525F4F 
+ 2530      4F4D00
+ 2531              	.LASF3:
+ 2532 0181 5F5F7569 		.ascii	"__uint8_t\000"
+ 2532      6E74385F 
+ 2532      7400
+ 2533              	.LASF49:
+ 2534 018b 7375625F 		.ascii	"sub_size\000"
+ 2534      73697A65 
+ 2534      00
+ 2535              	.LASF1:
+ 2536 0194 756E7369 		.ascii	"unsigned char\000"
+ 2536      676E6564 
+ 2536      20636861 
+ 2536      7200
+ 2537              	.LASF66:
+ 2538 01a2 6B65726E 		.ascii	"kernel_h\000"
+ 2538      656C5F68 
+ 2538      00
+ 2539              	.LASF32:
+ 2540 01ab 544D5F45 		.ascii	"TM_ERR_KSIZE\000"
+ 2540      52525F4B 
+ 2540      53495A45 
+ 2540      00
+ 2541              	.LASF79:
+ 2542 01b8 73756D5F 		.ascii	"sum_param\000"
+ 2542      70617261 
+ 2542      6D00
+ 2543              	.LASF65:
+ 2544 01c2 6B65726E 		.ascii	"kernel_w\000"
+ 2544      656C5F77 
+ 2544      00
+ 2545              	.LASF46:
+ 2546 01cb 6F757470 		.ascii	"output_cnt\000"
+ 2546      75745F63 
+ 2546      6E7400
+ 2547              	.LASF0:
+ 2548 01d6 7369676E 		.ascii	"signed char\000"
+ 2548      65642063 
+ 2548      68617200 
+ 2549              	.LASF11:
+ 2550 01e2 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2550      206C6F6E 
+ 2550      6720756E 
+ 2550      7369676E 
+ 2550      65642069 
+ 2551              	.LASF71:
+ 2552 01f9 64657074 		.ascii	"depth_mul\000"
+ 2552      685F6D75 
+ 2552      6C00
+ 2553              	.LASF16:
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 52
+
+
+ 2554 0203 75696E74 		.ascii	"uint32_t\000"
+ 2554      33325F74 
+ 2554      00
+ 2555              	.LASF84:
+ 2556 020c 6D646C5F 		.ascii	"mdl_type_str\000"
+ 2556      74797065 
+ 2556      5F737472 
+ 2556      00
+ 2557              	.LASF12:
+ 2558 0219 756E7369 		.ascii	"unsigned int\000"
+ 2558      676E6564 
+ 2558      20696E74 
+ 2558      00
+ 2559              	.LASF14:
+ 2560 0226 75696E74 		.ascii	"uint16_t\000"
+ 2560      31365F74 
+ 2560      00
+ 2561              	.LASF9:
+ 2562 022f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2562      20756E73 
+ 2562      69676E65 
+ 2562      6420696E 
+ 2562      7400
+ 2563              	.LASF93:
+ 2564 0241 70757473 		.ascii	"puts\000"
+ 2564      00
+ 2565              	.LASF31:
+ 2566 0246 544D5F45 		.ascii	"TM_ERR_MDLTYPE\000"
+ 2566      52525F4D 
+ 2566      444C5459 
+ 2566      504500
+ 2567              	.LASF90:
+ 2568 0255 2E5C746D 		.ascii	".\\tm_stat.c\000"
+ 2568      5F737461 
+ 2568      742E6300 
+ 2569              	.LASF85:
+ 2570 0261 746D6C5F 		.ascii	"tml_str_tbl\000"
+ 2570      7374725F 
+ 2570      74626C00 
+ 2571              	.LASF57:
+ 2572 026d 73697A65 		.ascii	"size\000"
+ 2572      00
+ 2573              	.LASF19:
+ 2574 0272 63686172 		.ascii	"char\000"
+ 2574      00
+ 2575              	.LASF89:
+ 2576 0277 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 2576      4320342E 
+ 2576      392E3320 
+ 2576      32303135 
+ 2576      30333033 
+ 2577 02aa 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 2577      20726576 
+ 2577      6973696F 
+ 2577      6E203232 
+ 2577      31323230 
+ 2578 02dd 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 53
+
+
+ 2578      66756E63 
+ 2578      74696F6E 
+ 2578      2D736563 
+ 2578      74696F6E 
+ 2579              	.LASF55:
+ 2580 0305 74797065 		.ascii	"type\000"
+ 2580      00
+ 2581              	.LASF15:
+ 2582 030a 696E7433 		.ascii	"int32_t\000"
+ 2582      325F7400 
+ 2583              	.LASF20:
+ 2584 0312 7A707479 		.ascii	"zptype_t\000"
+ 2584      70655F74 
+ 2584      00
+ 2585              	.LASF28:
+ 2586 031b 544D5F45 		.ascii	"TM_ERR_LAYERTYPE\000"
+ 2586      52525F4C 
+ 2586      41594552 
+ 2586      54595045 
+ 2586      00
+ 2587              	.LASF62:
+ 2588 032c 6F75745F 		.ascii	"out_s\000"
+ 2588      7300
+ 2589              	.LASF21:
+ 2590 0332 73637479 		.ascii	"sctype_t\000"
+ 2590      70655F74 
+ 2590      00
+ 2591              	.LASF61:
+ 2592 033b 696E5F7A 		.ascii	"in_zp\000"
+ 2592      7000
+ 2593              	.LASF5:
+ 2594 0341 73686F72 		.ascii	"short unsigned int\000"
+ 2594      7420756E 
+ 2594      7369676E 
+ 2594      65642069 
+ 2594      6E7400
+ 2595              	.LASF38:
+ 2596 0354 544D4C5F 		.ascii	"TML_RESHAPE\000"
+ 2596      52455348 
+ 2596      41504500 
+ 2597              	.LASF81:
+ 2598 0360 6C617965 		.ascii	"layer_body\000"
+ 2598      725F626F 
+ 2598      647900
+ 2599              	.LASF73:
+ 2600 036b 775F6F66 		.ascii	"w_oft\000"
+ 2600      7400
+ 2601              	.LASF70:
+ 2602 0371 64696C61 		.ascii	"dilation_h\000"
+ 2602      74696F6E 
+ 2602      5F6800
+ 2603              	.LASF77:
+ 2604 037c 6964696D 		.ascii	"idim\000"
+ 2604      00
+ 2605              	.LASF35:
+ 2606 0381 544D4C5F 		.ascii	"TML_GAP\000"
+ 2606      47415000 
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 54
+
+
+ 2607              	.LASF54:
+ 2608 0389 746D5F6D 		.ascii	"tm_mdlbin_t\000"
+ 2608      646C6269 
+ 2608      6E5F7400 
+ 2609              	.LASF72:
+ 2610 0395 77735F6F 		.ascii	"ws_oft\000"
+ 2610      667400
+ 2611              	.LASF75:
+ 2612 039c 746D6C5F 		.ascii	"tml_conv2d_dw_t\000"
+ 2612      636F6E76 
+ 2612      32645F64 
+ 2612      775F7400 
+ 2613              	.LASF69:
+ 2614 03ac 64696C61 		.ascii	"dilation_w\000"
+ 2614      74696F6E 
+ 2614      5F7700
+ 2615              	.LASF6:
+ 2616 03b7 5F5F696E 		.ascii	"__int32_t\000"
+ 2616      7433325F 
+ 2616      7400
+ 2617              	.LASF43:
+ 2618 03c1 6D646C5F 		.ascii	"mdl_type\000"
+ 2618      74797065 
+ 2618      00
+ 2619              	.LASF13:
+ 2620 03ca 75696E74 		.ascii	"uint8_t\000"
+ 2620      385F7400 
+ 2621              	.LASF23:
+ 2622 03d2 544D5F4F 		.ascii	"TM_OK\000"
+ 2622      4B00
+ 2623              	.LASF39:
+ 2624 03d8 544D4C5F 		.ascii	"TML_DWCONV2D\000"
+ 2624      4457434F 
+ 2624      4E563244 
+ 2624      00
+ 2625              	.LASF18:
+ 2626 03e5 73697A65 		.ascii	"sizetype\000"
+ 2626      74797065 
+ 2626      00
+ 2627              	.LASF41:
+ 2628 03ee 544D4C5F 		.ascii	"TML_MAXCNT\000"
+ 2628      4D415843 
+ 2628      4E5400
+ 2629              	.LASF74:
+ 2630 03f9 625F6F66 		.ascii	"b_oft\000"
+ 2630      7400
+ 2631              	.LASF29:
+ 2632 03ff 544D5F45 		.ascii	"TM_ERR_DIMS\000"
+ 2632      52525F44 
+ 2632      494D5300 
+ 2633              	.LASF56:
+ 2634 040b 69735F6F 		.ascii	"is_out\000"
+ 2634      757400
+ 2635              	.LASF36:
+ 2636 0412 544D4C5F 		.ascii	"TML_FC\000"
+ 2636      464300
+ 2637              	.LASF42:
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\ccQh08kr.s 			page 55
+
+
+ 2638 0419 6D616769 		.ascii	"magic\000"
+ 2638      6300
+ 2639              	.LASF30:
+ 2640 041f 544D5F45 		.ascii	"TM_ERR_TODO\000"
+ 2640      52525F54 
+ 2640      4F444F00 
+ 2641              	.LASF37:
+ 2642 042b 544D4C5F 		.ascii	"TML_SOFTMAX\000"
+ 2642      534F4654 
+ 2642      4D415800 
+ 2643              	.LASF60:
+ 2644 0437 696E5F73 		.ascii	"in_s\000"
+ 2644      00
+ 2645              	.LASF64:
+ 2646 043c 746D6C5F 		.ascii	"tml_head_t\000"
+ 2646      68656164 
+ 2646      5F7400
+ 2647              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

@@ -1,0 +1,2367 @@
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"BitNetMCU_inference.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.ReLUNorm,"ax",%progbits
+  19              		.align	2
+  20              		.global	ReLUNorm
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	ReLUNorm, %function
+  24              	ReLUNorm:
+  25              	.LFB0:
+  26              		.file 1 ".\\BitNetMCU_inference.c"
+   1:.\BitNetMCU_inference.c **** /*
+   2:.\BitNetMCU_inference.c ****     BitNetMCU inference functions
+   3:.\BitNetMCU_inference.c ****     @cpldcpu April 2024
+   4:.\BitNetMCU_inference.c **** 
+   5:.\BitNetMCU_inference.c ****     Performs inference on fully connected layer on a very resource constrained MCU.
+   6:.\BitNetMCU_inference.c ****     1,2,4 bit weights are supported.
+   7:.\BitNetMCU_inference.c **** 
+   8:.\BitNetMCU_inference.c **** */
+   9:.\BitNetMCU_inference.c **** 
+  10:.\BitNetMCU_inference.c **** #include <stdint.h>
+  11:.\BitNetMCU_inference.c **** #include <stdio.h>
+  12:.\BitNetMCU_inference.c **** #include "BitNetMCU_inference.h"
+  13:.\BitNetMCU_inference.c **** 
+  14:.\BitNetMCU_inference.c **** /**
+  15:.\BitNetMCU_inference.c ****  * @brief Applies a ReLU activation function to an array of integers and normalizes the result to 8
+  16:.\BitNetMCU_inference.c ****  *
+  17:.\BitNetMCU_inference.c ****  * @param input Pointer to the input array of 32-bit integers.
+  18:.\BitNetMCU_inference.c ****  * @param output Pointer to the output array of 8-bit integers.
+  19:.\BitNetMCU_inference.c ****  * @param n_input The number of elements in the input array.
+  20:.\BitNetMCU_inference.c ****  * @return The position of maximum value found in the input array before applying the ReLU activati
+  21:.\BitNetMCU_inference.c ****  */
+  22:.\BitNetMCU_inference.c **** 
+  23:.\BitNetMCU_inference.c **** uint32_t ReLUNorm(int32_t *input, int8_t *output, uint32_t n_input) {
+  27              		.loc 1 23 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32              	.LVL0:
+  33 0000 F0B4     		push	{r4, r5, r6, r7}
+  34              		.cfi_def_cfa_offset 16
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 2
+
+
+  35              		.cfi_offset 4, -16
+  36              		.cfi_offset 5, -12
+  37              		.cfi_offset 6, -8
+  38              		.cfi_offset 7, -4
+  39              	.LVL1:
+  24:.\BitNetMCU_inference.c ****     int32_t max_val = -INT32_MAX;
+  25:.\BitNetMCU_inference.c ****     int32_t max_pos = 255;
+  26:.\BitNetMCU_inference.c ****     uint32_t scale;
+  27:.\BitNetMCU_inference.c ****     uint32_t shift;
+  28:.\BitNetMCU_inference.c ****     int32_t rounding;
+  29:.\BitNetMCU_inference.c ****     int32_t tmp;
+  30:.\BitNetMCU_inference.c ****     uint32_t i;
+  31:.\BitNetMCU_inference.c **** 
+  32:.\BitNetMCU_inference.c ****     // Find the maximum value in the input array
+  33:.\BitNetMCU_inference.c ****     for (i = 0; i < n_input; i++) {
+  40              		.loc 1 33 0
+  41 0002 0024     		movs	r4, #0
+  25:.\BitNetMCU_inference.c ****     uint32_t scale;
+  42              		.loc 1 25 0
+  43 0004 FF26     		movs	r6, #255
+  24:.\BitNetMCU_inference.c ****     int32_t max_val = -INT32_MAX;
+  44              		.loc 1 24 0
+  45 0006 164B     		ldr	r3, .L13
+  46              		.loc 1 33 0
+  47 0008 06E0     		b	.L2
+  48              	.LVL2:
+  49              	.L4:
+  34:.\BitNetMCU_inference.c ****         if (input[i] > max_val) {
+  50              		.loc 1 34 0
+  51 000a 50F82450 		ldr	r5, [r0, r4, lsl #2]
+  52 000e 9D42     		cmp	r5, r3
+  53 0010 01DD     		ble	.L3
+  54              	.LVL3:
+  35:.\BitNetMCU_inference.c ****             max_val = input[i];
+  36:.\BitNetMCU_inference.c ****             max_pos = i;
+  55              		.loc 1 36 0
+  56 0012 2646     		mov	r6, r4
+  57              	.LVL4:
+  35:.\BitNetMCU_inference.c ****             max_val = input[i];
+  58              		.loc 1 35 0
+  59 0014 2B46     		mov	r3, r5
+  60              	.LVL5:
+  61              	.L3:
+  33:.\BitNetMCU_inference.c ****         if (input[i] > max_val) {
+  62              		.loc 1 33 0 discriminator 2
+  63 0016 0134     		adds	r4, r4, #1
+  64              	.LVL6:
+  65              	.L2:
+  33:.\BitNetMCU_inference.c ****         if (input[i] > max_val) {
+  66              		.loc 1 33 0 is_stmt 0 discriminator 1
+  67 0018 9442     		cmp	r4, r2
+  68 001a F6D3     		bcc	.L4
+  37:.\BitNetMCU_inference.c ****         }
+  38:.\BitNetMCU_inference.c ****     }
+  39:.\BitNetMCU_inference.c **** 
+  40:.\BitNetMCU_inference.c ****     // Normalization
+  41:.\BitNetMCU_inference.c ****     // Dynamic shift according to max value in the input array
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 3
+
+
+  42:.\BitNetMCU_inference.c ****     scale=max_val>>7;  // define max range, all bits above 7 will be shifted down
+  69              		.loc 1 42 0 is_stmt 1
+  70 001c DB11     		asrs	r3, r3, #7
+  71              	.LVL7:
+  43:.\BitNetMCU_inference.c ****     shift=0;
+  72              		.loc 1 43 0
+  73 001e 0024     		movs	r4, #0
+  74              	.LVL8:
+  44:.\BitNetMCU_inference.c **** 
+  45:.\BitNetMCU_inference.c ****     while (scale>0) {
+  75              		.loc 1 45 0
+  76 0020 01E0     		b	.L5
+  77              	.LVL9:
+  78              	.L6:
+  46:.\BitNetMCU_inference.c ****         shift++;
+  79              		.loc 1 46 0
+  80 0022 0134     		adds	r4, r4, #1
+  81              	.LVL10:
+  47:.\BitNetMCU_inference.c ****         scale>>=1;
+  82              		.loc 1 47 0
+  83 0024 5B08     		lsrs	r3, r3, #1
+  84              	.LVL11:
+  85              	.L5:
+  45:.\BitNetMCU_inference.c ****         shift++;
+  86              		.loc 1 45 0
+  87 0026 002B     		cmp	r3, #0
+  88 0028 FBD1     		bne	.L6
+  48:.\BitNetMCU_inference.c ****     }
+  49:.\BitNetMCU_inference.c **** 
+  50:.\BitNetMCU_inference.c ****     // impact of rounding is almost negligible (+0.03% in eval accuracy)
+  51:.\BitNetMCU_inference.c ****     // But rounding affects mismatch to python inference engine
+  52:.\BitNetMCU_inference.c ****     rounding   = (1 << (shift))>>1;
+  89              		.loc 1 52 0
+  90 002a 2746     		mov	r7, r4
+  91 002c 0125     		movs	r5, #1
+  92 002e A540     		lsls	r5, r5, r4
+  93 0030 6D10     		asrs	r5, r5, #1
+  94              	.LVL12:
+  53:.\BitNetMCU_inference.c **** 
+  54:.\BitNetMCU_inference.c ****     // Apply ReLU activation and normalize to 8-bit
+  55:.\BitNetMCU_inference.c ****     for (i = 0; i < n_input; i++) {
+  95              		.loc 1 55 0
+  96 0032 0024     		movs	r4, #0
+  97              	.LVL13:
+  98 0034 0FE0     		b	.L7
+  99              	.LVL14:
+ 100              	.L11:
+  56:.\BitNetMCU_inference.c ****         // Apply ReLU activation
+  57:.\BitNetMCU_inference.c ****         if (input[i] < 0) {
+ 101              		.loc 1 57 0
+ 102 0036 50F82430 		ldr	r3, [r0, r4, lsl #2]
+ 103 003a 002B     		cmp	r3, #0
+ 104 003c 02DA     		bge	.L8
+  58:.\BitNetMCU_inference.c ****             output[i] = 0;
+ 105              		.loc 1 58 0
+ 106 003e 0023     		movs	r3, #0
+ 107 0040 0B55     		strb	r3, [r1, r4]
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 4
+
+
+ 108 0042 07E0     		b	.L9
+ 109              	.L8:
+  59:.\BitNetMCU_inference.c ****         } else {
+  60:.\BitNetMCU_inference.c ****             tmp=(input[i] + rounding) >> shift;
+ 110              		.loc 1 60 0
+ 111 0044 2B44     		add	r3, r3, r5
+ 112 0046 3B41     		asrs	r3, r3, r7
+ 113              	.LVL15:
+  61:.\BitNetMCU_inference.c **** 
+  62:.\BitNetMCU_inference.c ****             // clipping needed to catch overflow from rounding
+  63:.\BitNetMCU_inference.c ****             if (tmp > 127) {
+ 114              		.loc 1 63 0
+ 115 0048 7F2B     		cmp	r3, #127
+ 116 004a 02DD     		ble	.L10
+  64:.\BitNetMCU_inference.c ****                 output[i] = 127;
+ 117              		.loc 1 64 0
+ 118 004c 7F23     		movs	r3, #127
+ 119              	.LVL16:
+ 120 004e 0B55     		strb	r3, [r1, r4]
+ 121              	.LVL17:
+ 122 0050 00E0     		b	.L9
+ 123              	.LVL18:
+ 124              	.L10:
+  65:.\BitNetMCU_inference.c ****             } else {
+  66:.\BitNetMCU_inference.c ****             output[i] = tmp;
+ 125              		.loc 1 66 0
+ 126 0052 0B55     		strb	r3, [r1, r4]
+ 127              	.LVL19:
+ 128              	.L9:
+  55:.\BitNetMCU_inference.c ****         // Apply ReLU activation
+ 129              		.loc 1 55 0 discriminator 2
+ 130 0054 0134     		adds	r4, r4, #1
+ 131              	.LVL20:
+ 132              	.L7:
+  55:.\BitNetMCU_inference.c ****         // Apply ReLU activation
+ 133              		.loc 1 55 0 is_stmt 0 discriminator 1
+ 134 0056 9442     		cmp	r4, r2
+ 135 0058 EDD3     		bcc	.L11
+  67:.\BitNetMCU_inference.c ****             }
+  68:.\BitNetMCU_inference.c ****         }
+  69:.\BitNetMCU_inference.c ****     }
+  70:.\BitNetMCU_inference.c ****     return max_pos;
+  71:.\BitNetMCU_inference.c **** }
+ 136              		.loc 1 71 0 is_stmt 1
+ 137 005a 3046     		mov	r0, r6
+ 138              	.LVL21:
+ 139 005c F0BC     		pop	{r4, r5, r6, r7}
+ 140              		.cfi_restore 7
+ 141              		.cfi_restore 6
+ 142              		.cfi_restore 5
+ 143              		.cfi_restore 4
+ 144              		.cfi_def_cfa_offset 0
+ 145              	.LVL22:
+ 146 005e 7047     		bx	lr
+ 147              	.L14:
+ 148              		.align	2
+ 149              	.L13:
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 5
+
+
+ 150 0060 01000080 		.word	-2147483647
+ 151              		.cfi_endproc
+ 152              	.LFE0:
+ 153              		.size	ReLUNorm, .-ReLUNorm
+ 154              		.section	.text.processfclayer,"ax",%progbits
+ 155              		.align	2
+ 156              		.global	processfclayer
+ 157              		.thumb
+ 158              		.thumb_func
+ 159              		.type	processfclayer, %function
+ 160              	processfclayer:
+ 161              	.LFB1:
+  72:.\BitNetMCU_inference.c **** 
+  73:.\BitNetMCU_inference.c **** /**
+  74:.\BitNetMCU_inference.c ****  * @brief Processes a fully connected layer in a neural network.
+  75:.\BitNetMCU_inference.c ****  *
+  76:.\BitNetMCU_inference.c ****  * This function processes a fully connected layer in a neural network by performing
+  77:.\BitNetMCU_inference.c ****  * the dot product of the input activations and weights, and stores the result in the output array.
+  78:.\BitNetMCU_inference.c ****  *
+  79:.\BitNetMCU_inference.c ****  * @param activations Pointer to the input activations of the layer.
+  80:.\BitNetMCU_inference.c ****  * @param weights Pointer to the weights of the layer.
+  81:.\BitNetMCU_inference.c ****  * @param bits_per_weight The number of bits per weight.
+  82:.\BitNetMCU_inference.c ****  * @param n_input The number of input neurons.
+  83:.\BitNetMCU_inference.c ****  * @param n_output The number of output neurons.
+  84:.\BitNetMCU_inference.c ****  * @param output Pointer to the output array where the result of the layer is stored.
+  85:.\BitNetMCU_inference.c ****  */
+  86:.\BitNetMCU_inference.c **** 
+  87:.\BitNetMCU_inference.c **** void processfclayer( int8_t *activations,  const uint32_t *weights, int32_t bits_per_weight, uint32
+  88:.\BitNetMCU_inference.c **** {
+ 162              		.loc 1 88 0
+ 163              		.cfi_startproc
+ 164              		@ args = 8, pretend = 0, frame = 0
+ 165              		@ frame_needed = 0, uses_anonymous_args = 0
+ 166              	.LVL23:
+ 167 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 168              		.cfi_def_cfa_offset 36
+ 169              		.cfi_offset 4, -36
+ 170              		.cfi_offset 5, -32
+ 171              		.cfi_offset 6, -28
+ 172              		.cfi_offset 7, -24
+ 173              		.cfi_offset 8, -20
+ 174              		.cfi_offset 9, -16
+ 175              		.cfi_offset 10, -12
+ 176              		.cfi_offset 11, -8
+ 177              		.cfi_offset 14, -4
+ 178 0004 DDF82490 		ldr	r9, [sp, #36]
+ 179 0008 DDF828A0 		ldr	r10, [sp, #40]
+ 180              	.LVL24:
+  89:.\BitNetMCU_inference.c ****    const uint32_t *weightidx = weights;
+  90:.\BitNetMCU_inference.c ****    uint32_t i, k, j;
+  91:.\BitNetMCU_inference.c ****    int32_t sum;
+  92:.\BitNetMCU_inference.c ****    int32_t in;
+  93:.\BitNetMCU_inference.c ****    int32_t tmpsum;
+  94:.\BitNetMCU_inference.c ****    int32_t weight;
+  95:.\BitNetMCU_inference.c ****    uint32_t weightChunk;
+  96:.\BitNetMCU_inference.c **** 
+  97:.\BitNetMCU_inference.c ****     for (i = 0; i < n_output; i++) {
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 6
+
+
+ 181              		.loc 1 97 0
+ 182 000c 4FF00008 		mov	r8, #0
+ 183 0010 C3E0     		b	.L16
+ 184              	.LVL25:
+ 185              	.L53:
+ 186              	.LBB2:
+  98:.\BitNetMCU_inference.c ****         int8_t *activations_idx = activations;
+  99:.\BitNetMCU_inference.c ****         sum = 0;
+ 100:.\BitNetMCU_inference.c **** 
+ 101:.\BitNetMCU_inference.c ****         if (bits_per_weight == 1) {
+ 187              		.loc 1 101 0
+ 188 0012 012A     		cmp	r2, #1
+ 189 0014 1CD1     		bne	.L61
+ 190 0016 15E0     		b	.L54
+ 191              	.LVL26:
+ 192              	.L22:
+ 102:.\BitNetMCU_inference.c ****             for (k = 0; k < n_input; k+=32) {
+ 103:.\BitNetMCU_inference.c ****                 weightChunk = *weightidx++;
+ 193              		.loc 1 103 0
+ 194 0018 01F1040C 		add	ip, r1, #4
+ 195              	.LVL27:
+ 196 001c 0E68     		ldr	r6, [r1]
+ 197              	.LVL28:
+ 104:.\BitNetMCU_inference.c ****                 for (j = 0; j < 32; j++) {
+ 198              		.loc 1 104 0
+ 199 001e 0025     		movs	r5, #0
+ 200 0020 0AE0     		b	.L19
+ 201              	.LVL29:
+ 202              	.L21:
+ 105:.\BitNetMCU_inference.c ****                     in=*activations_idx++;
+ 203              		.loc 1 105 0
+ 204 0022 0BF10107 		add	r7, fp, #1
+ 205              	.LVL30:
+ 206 0026 9BF90010 		ldrsb	r1, [fp]
+ 207              	.LVL31:
+ 106:.\BitNetMCU_inference.c ****                     sum += (weightChunk & 0x80000000) ? in : -in;  // Note that sign is flipped for
+ 208              		.loc 1 106 0
+ 209 002a 002E     		cmp	r6, #0
+ 210 002c 00DB     		blt	.L20
+ 211              		.loc 1 106 0 is_stmt 0 discriminator 1
+ 212 002e 4942     		negs	r1, r1
+ 213              	.LVL32:
+ 214              	.L20:
+ 215              		.loc 1 106 0 discriminator 4
+ 216 0030 0C44     		add	r4, r4, r1
+ 217              	.LVL33:
+ 107:.\BitNetMCU_inference.c ****                     weightChunk <<= 1;
+ 218              		.loc 1 107 0 is_stmt 1 discriminator 4
+ 219 0032 7600     		lsls	r6, r6, #1
+ 220              	.LVL34:
+ 104:.\BitNetMCU_inference.c ****                     in=*activations_idx++;
+ 221              		.loc 1 104 0 discriminator 4
+ 222 0034 0135     		adds	r5, r5, #1
+ 223              	.LVL35:
+ 105:.\BitNetMCU_inference.c ****                     sum += (weightChunk & 0x80000000) ? in : -in;  // Note that sign is flipped for
+ 224              		.loc 1 105 0 discriminator 4
+ 225 0036 BB46     		mov	fp, r7
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 7
+
+
+ 226              	.LVL36:
+ 227              	.L19:
+ 104:.\BitNetMCU_inference.c ****                     in=*activations_idx++;
+ 228              		.loc 1 104 0 discriminator 2
+ 229 0038 1F2D     		cmp	r5, #31
+ 230 003a F2D9     		bls	.L21
+ 102:.\BitNetMCU_inference.c ****                 weightChunk = *weightidx++;
+ 231              		.loc 1 102 0 discriminator 2
+ 232 003c 0EF1200E 		add	lr, lr, #32
+ 233              	.LVL37:
+ 103:.\BitNetMCU_inference.c ****                 for (j = 0; j < 32; j++) {
+ 234              		.loc 1 103 0 discriminator 2
+ 235 0040 6146     		mov	r1, ip
+ 236 0042 02E0     		b	.L17
+ 237              	.LVL38:
+ 238              	.L54:
+ 239 0044 8346     		mov	fp, r0
+ 240 0046 0024     		movs	r4, #0
+ 241 0048 A646     		mov	lr, r4
+ 242              	.LVL39:
+ 243              	.L17:
+ 102:.\BitNetMCU_inference.c ****                 weightChunk = *weightidx++;
+ 244              		.loc 1 102 0 discriminator 1
+ 245 004a 9E45     		cmp	lr, r3
+ 246 004c E4D3     		bcc	.L22
+ 247 004e A0E0     		b	.L23
+ 248              	.LVL40:
+ 249              	.L61:
+ 108:.\BitNetMCU_inference.c ****                 }
+ 109:.\BitNetMCU_inference.c ****             }
+ 110:.\BitNetMCU_inference.c ****         } else if (bits_per_weight == 2 ) {
+ 250              		.loc 1 110 0
+ 251 0050 022A     		cmp	r2, #2
+ 252 0052 20D1     		bne	.L62
+ 253 0054 19E0     		b	.L56
+ 254              	.LVL41:
+ 255              	.L30:
+ 111:.\BitNetMCU_inference.c ****             for (k = 0; k < n_input; k+=16) {
+ 112:.\BitNetMCU_inference.c ****                 weightChunk = *weightidx++;
+ 256              		.loc 1 112 0
+ 257 0056 01F1040E 		add	lr, r1, #4
+ 258              	.LVL42:
+ 259 005a 0968     		ldr	r1, [r1]
+ 260              	.LVL43:
+ 113:.\BitNetMCU_inference.c ****                 for (j = 0; j < 16; j++) {
+ 261              		.loc 1 113 0
+ 262 005c 0025     		movs	r5, #0
+ 263 005e 0FE0     		b	.L26
+ 264              	.LVL44:
+ 265              	.L29:
+ 114:.\BitNetMCU_inference.c ****                     in=*activations_idx++;
+ 266              		.loc 1 114 0
+ 267 0060 06F1010C 		add	ip, r6, #1
+ 268              	.LVL45:
+ 269 0064 96F90060 		ldrsb	r6, [r6]
+ 270              	.LVL46:
+ 115:.\BitNetMCU_inference.c ****                     tmpsum = (weightChunk & 0x80000000) ? -in : in; // one complements sign (bit se
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 8
+
+
+ 271              		.loc 1 115 0
+ 272 0068 0029     		cmp	r1, #0
+ 273 006a 00DA     		bge	.L27
+ 274              		.loc 1 115 0 is_stmt 0 discriminator 1
+ 275 006c 7642     		negs	r6, r6
+ 276              	.LVL47:
+ 277              	.L27:
+ 116:.\BitNetMCU_inference.c ****                     sum += tmpsum;                                  // sign*in*1
+ 278              		.loc 1 116 0 is_stmt 1 discriminator 4
+ 279 006e 3444     		add	r4, r4, r6
+ 280              	.LVL48:
+ 117:.\BitNetMCU_inference.c ****                     if (weightChunk & 0x40000000) sum += tmpsum<<1; // sign*in*2
+ 281              		.loc 1 117 0 discriminator 4
+ 282 0070 11F0804F 		tst	r1, #1073741824
+ 283 0074 01D0     		beq	.L28
+ 284              		.loc 1 117 0 is_stmt 0 discriminator 1
+ 285 0076 04EB4604 		add	r4, r4, r6, lsl #1
+ 286              	.LVL49:
+ 287              	.L28:
+ 118:.\BitNetMCU_inference.c ****                     weightChunk <<= 2;
+ 288              		.loc 1 118 0 is_stmt 1 discriminator 2
+ 289 007a 8900     		lsls	r1, r1, #2
+ 290              	.LVL50:
+ 113:.\BitNetMCU_inference.c ****                     in=*activations_idx++;
+ 291              		.loc 1 113 0 discriminator 2
+ 292 007c 0135     		adds	r5, r5, #1
+ 293              	.LVL51:
+ 114:.\BitNetMCU_inference.c ****                     tmpsum = (weightChunk & 0x80000000) ? -in : in; // one complements sign (bit se
+ 294              		.loc 1 114 0 discriminator 2
+ 295 007e 6646     		mov	r6, ip
+ 296              	.LVL52:
+ 297              	.L26:
+ 113:.\BitNetMCU_inference.c ****                     in=*activations_idx++;
+ 298              		.loc 1 113 0 discriminator 1
+ 299 0080 0F2D     		cmp	r5, #15
+ 300 0082 EDD9     		bls	.L29
+ 111:.\BitNetMCU_inference.c ****                 weightChunk = *weightidx++;
+ 301              		.loc 1 111 0 discriminator 2
+ 302 0084 1037     		adds	r7, r7, #16
+ 303              	.LVL53:
+ 112:.\BitNetMCU_inference.c ****                 for (j = 0; j < 16; j++) {
+ 304              		.loc 1 112 0 discriminator 2
+ 305 0086 7146     		mov	r1, lr
+ 306              	.LVL54:
+ 307 0088 02E0     		b	.L24
+ 308              	.LVL55:
+ 309              	.L56:
+ 310 008a 0646     		mov	r6, r0
+ 311 008c 0024     		movs	r4, #0
+ 312 008e 2746     		mov	r7, r4
+ 313              	.LVL56:
+ 314              	.L24:
+ 111:.\BitNetMCU_inference.c ****                 weightChunk = *weightidx++;
+ 315              		.loc 1 111 0 discriminator 1
+ 316 0090 9F42     		cmp	r7, r3
+ 317 0092 E0D3     		bcc	.L30
+ 318 0094 7DE0     		b	.L23
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 9
+
+
+ 319              	.LVL57:
+ 320              	.L62:
+ 119:.\BitNetMCU_inference.c ****                 }
+ 120:.\BitNetMCU_inference.c ****             }
+ 121:.\BitNetMCU_inference.c ****         // Multiplier-less inference for RV32EC
+ 122:.\BitNetMCU_inference.c **** #if defined(__riscv) && !defined(__riscv_mul)
+ 123:.\BitNetMCU_inference.c ****         } else if (bits_per_weight == 4 ) {
+ 124:.\BitNetMCU_inference.c ****             for (k = 0; k < n_input; k+=8) {
+ 125:.\BitNetMCU_inference.c ****                 weightChunk = *weightidx++;
+ 126:.\BitNetMCU_inference.c ****                 for (j = 0; j < 8; j++) {
+ 127:.\BitNetMCU_inference.c ****                     in=*activations_idx++;
+ 128:.\BitNetMCU_inference.c ****                     if (in != 0) { // Skip zero activations to speed up inference in layers after f
+ 129:.\BitNetMCU_inference.c ****                         tmpsum = (weightChunk & 0x80000000) ? -in : in; // one complements sign (bi
+ 130:.\BitNetMCU_inference.c ****                         sum += tmpsum;                                  // sign*in*1
+ 131:.\BitNetMCU_inference.c ****                         if (weightChunk & 0x10000000) sum += tmpsum<<1; // sign*in*2
+ 132:.\BitNetMCU_inference.c ****                         if (weightChunk & 0x20000000) sum += tmpsum<<2; // sign*in*4
+ 133:.\BitNetMCU_inference.c ****                         if (weightChunk & 0x40000000) sum += tmpsum<<3; // sign*in*8
+ 134:.\BitNetMCU_inference.c ****                     }
+ 135:.\BitNetMCU_inference.c ****                     weightChunk <<= 4;
+ 136:.\BitNetMCU_inference.c ****                 }
+ 137:.\BitNetMCU_inference.c ****             }
+ 138:.\BitNetMCU_inference.c **** #else
+ 139:.\BitNetMCU_inference.c ****         } else if (bits_per_weight == 4 ) {
+ 321              		.loc 1 139 0
+ 322 0096 042A     		cmp	r2, #4
+ 323 0098 1FD1     		bne	.L63
+ 324 009a 18E0     		b	.L57
+ 325              	.LVL58:
+ 326              	.L37:
+ 140:.\BitNetMCU_inference.c ****             for (k = 0; k < n_input; k+=8) {
+ 141:.\BitNetMCU_inference.c ****                 weightChunk = *weightidx++;
+ 327              		.loc 1 141 0
+ 328 009c 01F1040E 		add	lr, r1, #4
+ 329              	.LVL59:
+ 330 00a0 0D68     		ldr	r5, [r1]
+ 331              	.LVL60:
+ 142:.\BitNetMCU_inference.c ****                 for (j = 0; j < 8; j++) {
+ 332              		.loc 1 142 0
+ 333 00a2 0021     		movs	r1, #0
+ 334 00a4 0EE0     		b	.L33
+ 335              	.LVL61:
+ 336              	.L36:
+ 143:.\BitNetMCU_inference.c ****                     in=*activations_idx++;
+ 337              		.loc 1 143 0
+ 338 00a6 06F1010C 		add	ip, r6, #1
+ 339              	.LVL62:
+ 340 00aa 96F90060 		ldrsb	r6, [r6]
+ 341              	.LVL63:
+ 144:.\BitNetMCU_inference.c ****                     if (in != 0) { // Skip zero activations to speed up inference in layers after f
+ 342              		.loc 1 144 0
+ 343 00ae 36B1     		cbz	r6, .L34
+ 145:.\BitNetMCU_inference.c ****                         tmpsum = (weightChunk & 0x80000000) ? -in : in; // one complements sign (bi
+ 344              		.loc 1 145 0
+ 345 00b0 002D     		cmp	r5, #0
+ 346 00b2 00DA     		bge	.L35
+ 347              		.loc 1 145 0 is_stmt 0 discriminator 1
+ 348 00b4 7642     		negs	r6, r6
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 10
+
+
+ 349              	.LVL64:
+ 350              	.L35:
+ 146:.\BitNetMCU_inference.c ****                         sum += tmpsum * ((weightChunk>>(32-4))&7);                                 
+ 351              		.loc 1 146 0 is_stmt 1 discriminator 4
+ 352 00b6 C5F3027B 		ubfx	fp, r5, #28, #3
+ 353 00ba 06FB0B44 		mla	r4, r6, fp, r4
+ 354              	.LVL65:
+ 355              	.L34:
+ 147:.\BitNetMCU_inference.c ****                     }
+ 148:.\BitNetMCU_inference.c ****                     weightChunk <<= 4;
+ 356              		.loc 1 148 0 discriminator 2
+ 357 00be 2D01     		lsls	r5, r5, #4
+ 358              	.LVL66:
+ 142:.\BitNetMCU_inference.c ****                     in=*activations_idx++;
+ 359              		.loc 1 142 0 discriminator 2
+ 360 00c0 0131     		adds	r1, r1, #1
+ 361              	.LVL67:
+ 143:.\BitNetMCU_inference.c ****                     if (in != 0) { // Skip zero activations to speed up inference in layers after f
+ 362              		.loc 1 143 0 discriminator 2
+ 363 00c2 6646     		mov	r6, ip
+ 364              	.LVL68:
+ 365              	.L33:
+ 142:.\BitNetMCU_inference.c ****                     in=*activations_idx++;
+ 366              		.loc 1 142 0 discriminator 1
+ 367 00c4 0729     		cmp	r1, #7
+ 368 00c6 EED9     		bls	.L36
+ 140:.\BitNetMCU_inference.c ****                 weightChunk = *weightidx++;
+ 369              		.loc 1 140 0 discriminator 2
+ 370 00c8 0837     		adds	r7, r7, #8
+ 371              	.LVL69:
+ 141:.\BitNetMCU_inference.c ****                 for (j = 0; j < 8; j++) {
+ 372              		.loc 1 141 0 discriminator 2
+ 373 00ca 7146     		mov	r1, lr
+ 374              	.LVL70:
+ 375 00cc 02E0     		b	.L31
+ 376              	.LVL71:
+ 377              	.L57:
+ 378 00ce 0646     		mov	r6, r0
+ 379 00d0 0024     		movs	r4, #0
+ 380 00d2 2746     		mov	r7, r4
+ 381              	.LVL72:
+ 382              	.L31:
+ 140:.\BitNetMCU_inference.c ****                 weightChunk = *weightidx++;
+ 383              		.loc 1 140 0 discriminator 1
+ 384 00d4 9F42     		cmp	r7, r3
+ 385 00d6 E1D3     		bcc	.L37
+ 386 00d8 5BE0     		b	.L23
+ 387              	.LVL73:
+ 388              	.L63:
+ 149:.\BitNetMCU_inference.c ****                 }
+ 150:.\BitNetMCU_inference.c ****             }
+ 151:.\BitNetMCU_inference.c ****         } else if (bits_per_weight == 8 + 4 ) {   // 4 bit twos-complement
+ 389              		.loc 1 151 0
+ 390 00da 0C2A     		cmp	r2, #12
+ 391 00dc 1AD1     		bne	.L64
+ 392 00de 13E0     		b	.L58
+ 393              	.LVL74:
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 11
+
+
+ 394              	.L42:
+ 152:.\BitNetMCU_inference.c ****             for (k = 0; k < n_input; k+=8) {
+ 153:.\BitNetMCU_inference.c ****                 weightChunk = *weightidx++;
+ 395              		.loc 1 153 0
+ 396 00e0 01F1040C 		add	ip, r1, #4
+ 397              	.LVL75:
+ 398 00e4 0D68     		ldr	r5, [r1]
+ 399              	.LVL76:
+ 154:.\BitNetMCU_inference.c ****                 for (j = 0; j < 8; j++) {
+ 400              		.loc 1 154 0
+ 401 00e6 0021     		movs	r1, #0
+ 402 00e8 08E0     		b	.L40
+ 403              	.LVL77:
+ 404              	.L41:
+ 155:.\BitNetMCU_inference.c ****                     in=*activations_idx++;
+ 405              		.loc 1 155 0 discriminator 3
+ 406 00ea 96F90070 		ldrsb	r7, [r6]
+ 407              	.LVL78:
+ 156:.\BitNetMCU_inference.c ****                     weight = (weightChunk) >> (32-4); // extend sign, cut off lower bits
+ 408              		.loc 1 156 0 discriminator 3
+ 409 00ee 4FEA157B 		lsr	fp, r5, #28
+ 410              	.LVL79:
+ 157:.\BitNetMCU_inference.c ****                     sum += in*weight;
+ 411              		.loc 1 157 0 discriminator 3
+ 412 00f2 0BFB0744 		mla	r4, fp, r7, r4
+ 413              	.LVL80:
+ 158:.\BitNetMCU_inference.c ****                     weightChunk <<= 4;
+ 414              		.loc 1 158 0 discriminator 3
+ 415 00f6 2D01     		lsls	r5, r5, #4
+ 416              	.LVL81:
+ 154:.\BitNetMCU_inference.c ****                     in=*activations_idx++;
+ 417              		.loc 1 154 0 discriminator 3
+ 418 00f8 0131     		adds	r1, r1, #1
+ 419              	.LVL82:
+ 155:.\BitNetMCU_inference.c ****                     weight = (weightChunk) >> (32-4); // extend sign, cut off lower bits
+ 420              		.loc 1 155 0 discriminator 3
+ 421 00fa 0136     		adds	r6, r6, #1
+ 422              	.LVL83:
+ 423              	.L40:
+ 154:.\BitNetMCU_inference.c ****                     in=*activations_idx++;
+ 424              		.loc 1 154 0 discriminator 1
+ 425 00fc 0729     		cmp	r1, #7
+ 426 00fe F4D9     		bls	.L41
+ 152:.\BitNetMCU_inference.c ****                 weightChunk = *weightidx++;
+ 427              		.loc 1 152 0 discriminator 2
+ 428 0100 0EF1080E 		add	lr, lr, #8
+ 429              	.LVL84:
+ 153:.\BitNetMCU_inference.c ****                 for (j = 0; j < 8; j++) {
+ 430              		.loc 1 153 0 discriminator 2
+ 431 0104 6146     		mov	r1, ip
+ 432              	.LVL85:
+ 433 0106 02E0     		b	.L38
+ 434              	.LVL86:
+ 435              	.L58:
+ 436 0108 0646     		mov	r6, r0
+ 437 010a 0024     		movs	r4, #0
+ 438 010c A646     		mov	lr, r4
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 12
+
+
+ 439              	.LVL87:
+ 440              	.L38:
+ 152:.\BitNetMCU_inference.c ****                 weightChunk = *weightidx++;
+ 441              		.loc 1 152 0 discriminator 1
+ 442 010e 9E45     		cmp	lr, r3
+ 443 0110 E6D3     		bcc	.L42
+ 444 0112 3EE0     		b	.L23
+ 445              	.LVL88:
+ 446              	.L64:
+ 159:.\BitNetMCU_inference.c ****                 }
+ 160:.\BitNetMCU_inference.c ****             }
+ 161:.\BitNetMCU_inference.c ****         } else if (bits_per_weight == 8 + 8 ) {   // 8 bit twos-complement
+ 447              		.loc 1 161 0
+ 448 0114 102A     		cmp	r2, #16
+ 449 0116 1AD1     		bne	.L65
+ 450 0118 13E0     		b	.L59
+ 451              	.LVL89:
+ 452              	.L47:
+ 162:.\BitNetMCU_inference.c ****             for (k = 0; k < n_input; k+=4) {
+ 163:.\BitNetMCU_inference.c ****                 weightChunk = *weightidx++;
+ 453              		.loc 1 163 0
+ 454 011a 01F1040C 		add	ip, r1, #4
+ 455              	.LVL90:
+ 456 011e 0D68     		ldr	r5, [r1]
+ 457              	.LVL91:
+ 164:.\BitNetMCU_inference.c ****                 for (j = 0; j < 4; j++) {
+ 458              		.loc 1 164 0
+ 459 0120 0021     		movs	r1, #0
+ 460 0122 08E0     		b	.L45
+ 461              	.LVL92:
+ 462              	.L46:
+ 165:.\BitNetMCU_inference.c ****                     in=*activations_idx++;
+ 463              		.loc 1 165 0 discriminator 3
+ 464 0124 96F90070 		ldrsb	r7, [r6]
+ 465              	.LVL93:
+ 166:.\BitNetMCU_inference.c ****                     weight = (weightChunk) >> (32-8); // extend sign, cut off lower bits
+ 466              		.loc 1 166 0 discriminator 3
+ 467 0128 4FEA156B 		lsr	fp, r5, #24
+ 468              	.LVL94:
+ 167:.\BitNetMCU_inference.c ****                     sum += in*weight;
+ 469              		.loc 1 167 0 discriminator 3
+ 470 012c 0BFB0744 		mla	r4, fp, r7, r4
+ 471              	.LVL95:
+ 168:.\BitNetMCU_inference.c ****                     weightChunk <<= 8;
+ 472              		.loc 1 168 0 discriminator 3
+ 473 0130 2D02     		lsls	r5, r5, #8
+ 474              	.LVL96:
+ 164:.\BitNetMCU_inference.c ****                     in=*activations_idx++;
+ 475              		.loc 1 164 0 discriminator 3
+ 476 0132 0131     		adds	r1, r1, #1
+ 477              	.LVL97:
+ 165:.\BitNetMCU_inference.c ****                     weight = (weightChunk) >> (32-8); // extend sign, cut off lower bits
+ 478              		.loc 1 165 0 discriminator 3
+ 479 0134 0136     		adds	r6, r6, #1
+ 480              	.LVL98:
+ 481              	.L45:
+ 164:.\BitNetMCU_inference.c ****                     in=*activations_idx++;
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 13
+
+
+ 482              		.loc 1 164 0 discriminator 1
+ 483 0136 0329     		cmp	r1, #3
+ 484 0138 F4D9     		bls	.L46
+ 162:.\BitNetMCU_inference.c ****                 weightChunk = *weightidx++;
+ 485              		.loc 1 162 0 discriminator 2
+ 486 013a 0EF1040E 		add	lr, lr, #4
+ 487              	.LVL99:
+ 163:.\BitNetMCU_inference.c ****                 for (j = 0; j < 4; j++) {
+ 488              		.loc 1 163 0 discriminator 2
+ 489 013e 6146     		mov	r1, ip
+ 490              	.LVL100:
+ 491 0140 02E0     		b	.L43
+ 492              	.LVL101:
+ 493              	.L59:
+ 494 0142 0646     		mov	r6, r0
+ 495 0144 0024     		movs	r4, #0
+ 496 0146 A646     		mov	lr, r4
+ 497              	.LVL102:
+ 498              	.L43:
+ 162:.\BitNetMCU_inference.c ****                 weightChunk = *weightidx++;
+ 499              		.loc 1 162 0 discriminator 1
+ 500 0148 9E45     		cmp	lr, r3
+ 501 014a E6D3     		bcc	.L47
+ 502 014c 21E0     		b	.L23
+ 503              	.LVL103:
+ 504              	.L65:
+ 169:.\BitNetMCU_inference.c ****                 }
+ 170:.\BitNetMCU_inference.c ****             }
+ 171:.\BitNetMCU_inference.c **** #endif
+ 172:.\BitNetMCU_inference.c ****         }  else if (bits_per_weight == 16 + 4 ) {  // 4 bit shift
+ 505              		.loc 1 172 0
+ 506 014e 142A     		cmp	r2, #20
+ 507 0150 1AD0     		beq	.L60
+  99:.\BitNetMCU_inference.c **** 
+ 508              		.loc 1 99 0
+ 509 0152 0024     		movs	r4, #0
+ 510 0154 1DE0     		b	.L23
+ 511              	.LVL104:
+ 512              	.L52:
+ 173:.\BitNetMCU_inference.c ****             for (k = 0; k < n_input; k+=8) {
+ 174:.\BitNetMCU_inference.c ****                 weightChunk = *weightidx++;
+ 513              		.loc 1 174 0
+ 514 0156 01F1040E 		add	lr, r1, #4
+ 515              	.LVL105:
+ 516 015a 0D68     		ldr	r5, [r1]
+ 517              	.LVL106:
+ 175:.\BitNetMCU_inference.c ****                 for (j = 0; j < 8; j++) {
+ 518              		.loc 1 175 0
+ 519 015c 0026     		movs	r6, #0
+ 520 015e 0EE0     		b	.L49
+ 521              	.LVL107:
+ 522              	.L51:
+ 176:.\BitNetMCU_inference.c ****                     in=*activations_idx++;
+ 523              		.loc 1 176 0
+ 524 0160 0BF1010C 		add	ip, fp, #1
+ 525              	.LVL108:
+ 526 0164 9BF90010 		ldrsb	r1, [fp]
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 14
+
+
+ 527              	.LVL109:
+ 177:.\BitNetMCU_inference.c ****                     tmpsum = (weightChunk & 0x80000000) ? -in : in; // one complements sign (bit se
+ 528              		.loc 1 177 0
+ 529 0168 002D     		cmp	r5, #0
+ 530 016a 00DA     		bge	.L50
+ 531              		.loc 1 177 0 is_stmt 0 discriminator 1
+ 532 016c 4942     		negs	r1, r1
+ 533              	.LVL110:
+ 534              	.L50:
+ 178:.\BitNetMCU_inference.c ****                     sum += tmpsum << ((weightChunk >> 28) & 7); // sign*in*2^log
+ 535              		.loc 1 178 0 is_stmt 1 discriminator 4
+ 536 016e C5F3027B 		ubfx	fp, r5, #28, #3
+ 537              	.LVL111:
+ 538 0172 01FA0BF1 		lsl	r1, r1, fp
+ 539              	.LVL112:
+ 540 0176 0C44     		add	r4, r4, r1
+ 541              	.LVL113:
+ 179:.\BitNetMCU_inference.c ****                     weightChunk <<= 4;
+ 542              		.loc 1 179 0 discriminator 4
+ 543 0178 2D01     		lsls	r5, r5, #4
+ 544              	.LVL114:
+ 175:.\BitNetMCU_inference.c ****                     in=*activations_idx++;
+ 545              		.loc 1 175 0 discriminator 4
+ 546 017a 0136     		adds	r6, r6, #1
+ 547              	.LVL115:
+ 176:.\BitNetMCU_inference.c ****                     tmpsum = (weightChunk & 0x80000000) ? -in : in; // one complements sign (bit se
+ 548              		.loc 1 176 0 discriminator 4
+ 549 017c E346     		mov	fp, ip
+ 550              	.LVL116:
+ 551              	.L49:
+ 175:.\BitNetMCU_inference.c ****                     in=*activations_idx++;
+ 552              		.loc 1 175 0 discriminator 2
+ 553 017e 072E     		cmp	r6, #7
+ 554 0180 EED9     		bls	.L51
+ 173:.\BitNetMCU_inference.c ****                 weightChunk = *weightidx++;
+ 555              		.loc 1 173 0 discriminator 2
+ 556 0182 0837     		adds	r7, r7, #8
+ 557              	.LVL117:
+ 174:.\BitNetMCU_inference.c ****                 for (j = 0; j < 8; j++) {
+ 558              		.loc 1 174 0 discriminator 2
+ 559 0184 7146     		mov	r1, lr
+ 560 0186 02E0     		b	.L48
+ 561              	.LVL118:
+ 562              	.L60:
+ 563 0188 8346     		mov	fp, r0
+ 564 018a 0024     		movs	r4, #0
+ 565 018c 2746     		mov	r7, r4
+ 566              	.LVL119:
+ 567              	.L48:
+ 173:.\BitNetMCU_inference.c ****                 weightChunk = *weightidx++;
+ 568              		.loc 1 173 0 discriminator 1
+ 569 018e 9F42     		cmp	r7, r3
+ 570 0190 E1D3     		bcc	.L52
+ 571              	.LVL120:
+ 572              	.L23:
+ 180:.\BitNetMCU_inference.c ****                 }
+ 181:.\BitNetMCU_inference.c ****             }
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 15
+
+
+ 182:.\BitNetMCU_inference.c ****         }   // else printf("Error: unsupported weight bit width %d\n", bits_per_weight);
+ 183:.\BitNetMCU_inference.c **** 
+ 184:.\BitNetMCU_inference.c ****         output[i] = sum;
+ 573              		.loc 1 184 0 discriminator 2
+ 574 0192 4AF82840 		str	r4, [r10, r8, lsl #2]
+ 575              	.LBE2:
+  97:.\BitNetMCU_inference.c ****         int8_t *activations_idx = activations;
+ 576              		.loc 1 97 0 discriminator 2
+ 577 0196 08F10108 		add	r8, r8, #1
+ 578              	.LVL121:
+ 579              	.L16:
+  97:.\BitNetMCU_inference.c ****         int8_t *activations_idx = activations;
+ 580              		.loc 1 97 0 is_stmt 0 discriminator 1
+ 581 019a C845     		cmp	r8, r9
+ 582 019c FFF439AF 		bcc	.L53
+ 185:.\BitNetMCU_inference.c ****         // printf("%d,", output[i]);
+ 186:.\BitNetMCU_inference.c ****     }
+ 187:.\BitNetMCU_inference.c **** }...
+ 583              		.loc 1 187 0 is_stmt 1
+ 584 01a0 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 585              		.cfi_endproc
+ 586              	.LFE1:
+ 587              		.size	processfclayer, .-processfclayer
+ 588              		.text
+ 589              	.Letext0:
+ 590              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 591              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 592              		.section	.debug_info,"",%progbits
+ 593              	.Ldebug_info0:
+ 594 0000 7A020000 		.4byte	0x27a
+ 595 0004 0400     		.2byte	0x4
+ 596 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 597 000a 04       		.byte	0x4
+ 598 000b 01       		.uleb128 0x1
+ 599 000c DB000000 		.4byte	.LASF34
+ 600 0010 01       		.byte	0x1
+ 601 0011 63000000 		.4byte	.LASF35
+ 602 0015 B6010000 		.4byte	.LASF36
+ 603 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 604 001d 00000000 		.4byte	0
+ 605 0021 00000000 		.4byte	.Ldebug_line0
+ 606 0025 02       		.uleb128 0x2
+ 607 0026 09000000 		.4byte	.LASF4
+ 608 002a 02       		.byte	0x2
+ 609 002b 1B       		.byte	0x1b
+ 610 002c 30000000 		.4byte	0x30
+ 611 0030 03       		.uleb128 0x3
+ 612 0031 01       		.byte	0x1
+ 613 0032 06       		.byte	0x6
+ 614 0033 30020000 		.4byte	.LASF0
+ 615 0037 03       		.uleb128 0x3
+ 616 0038 01       		.byte	0x1
+ 617 0039 08       		.byte	0x8
+ 618 003a 7B000000 		.4byte	.LASF1
+ 619 003e 03       		.uleb128 0x3
+ 620 003f 02       		.byte	0x2
+ 621 0040 05       		.byte	0x5
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 16
+
+
+ 622 0041 F6010000 		.4byte	.LASF2
+ 623 0045 03       		.uleb128 0x3
+ 624 0046 02       		.byte	0x2
+ 625 0047 07       		.byte	0x7
+ 626 0048 B1000000 		.4byte	.LASF3
+ 627 004c 02       		.uleb128 0x2
+ 628 004d 12000000 		.4byte	.LASF5
+ 629 0051 02       		.byte	0x2
+ 630 0052 3F       		.byte	0x3f
+ 631 0053 57000000 		.4byte	0x57
+ 632 0057 03       		.uleb128 0x3
+ 633 0058 04       		.byte	0x4
+ 634 0059 05       		.byte	0x5
+ 635 005a 1E020000 		.4byte	.LASF6
+ 636 005e 02       		.uleb128 0x2
+ 637 005f C4000000 		.4byte	.LASF7
+ 638 0063 02       		.byte	0x2
+ 639 0064 41       		.byte	0x41
+ 640 0065 69000000 		.4byte	0x69
+ 641 0069 03       		.uleb128 0x3
+ 642 006a 04       		.byte	0x4
+ 643 006b 07       		.byte	0x7
+ 644 006c 9F000000 		.4byte	.LASF8
+ 645 0070 03       		.uleb128 0x3
+ 646 0071 08       		.byte	0x8
+ 647 0072 05       		.byte	0x5
+ 648 0073 4D000000 		.4byte	.LASF9
+ 649 0077 03       		.uleb128 0x3
+ 650 0078 08       		.byte	0x8
+ 651 0079 07       		.byte	0x7
+ 652 007a 7D010000 		.4byte	.LASF10
+ 653 007e 04       		.uleb128 0x4
+ 654 007f 04       		.byte	0x4
+ 655 0080 05       		.byte	0x5
+ 656 0081 696E7400 		.ascii	"int\000"
+ 657 0085 03       		.uleb128 0x3
+ 658 0086 04       		.byte	0x4
+ 659 0087 07       		.byte	0x7
+ 660 0088 69010000 		.4byte	.LASF11
+ 661 008c 02       		.uleb128 0x2
+ 662 008d 40000000 		.4byte	.LASF12
+ 663 0091 03       		.byte	0x3
+ 664 0092 14       		.byte	0x14
+ 665 0093 25000000 		.4byte	0x25
+ 666 0097 02       		.uleb128 0x2
+ 667 0098 9B010000 		.4byte	.LASF13
+ 668 009c 03       		.byte	0x3
+ 669 009d 2C       		.byte	0x2c
+ 670 009e 4C000000 		.4byte	0x4c
+ 671 00a2 02       		.uleb128 0x2
+ 672 00a3 15020000 		.4byte	.LASF14
+ 673 00a7 03       		.byte	0x3
+ 674 00a8 2D       		.byte	0x2d
+ 675 00a9 5E000000 		.4byte	0x5e
+ 676 00ad 03       		.uleb128 0x3
+ 677 00ae 04       		.byte	0x4
+ 678 00af 07       		.byte	0x7
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 17
+
+
+ 679 00b0 A3010000 		.4byte	.LASF15
+ 680 00b4 03       		.uleb128 0x3
+ 681 00b5 01       		.byte	0x1
+ 682 00b6 08       		.byte	0x8
+ 683 00b7 1C000000 		.4byte	.LASF16
+ 684 00bb 05       		.uleb128 0x5
+ 685 00bc ED010000 		.4byte	.LASF37
+ 686 00c0 01       		.byte	0x1
+ 687 00c1 17       		.byte	0x17
+ 688 00c2 A2000000 		.4byte	0xa2
+ 689 00c6 00000000 		.4byte	.LFB0
+ 690 00ca 64000000 		.4byte	.LFE0-.LFB0
+ 691 00ce 01       		.uleb128 0x1
+ 692 00cf 9C       		.byte	0x9c
+ 693 00d0 65010000 		.4byte	0x165
+ 694 00d4 06       		.uleb128 0x6
+ 695 00d5 89000000 		.4byte	.LASF17
+ 696 00d9 01       		.byte	0x1
+ 697 00da 17       		.byte	0x17
+ 698 00db 65010000 		.4byte	0x165
+ 699 00df 00000000 		.4byte	.LLST0
+ 700 00e3 07       		.uleb128 0x7
+ 701 00e4 00020000 		.4byte	.LASF18
+ 702 00e8 01       		.byte	0x1
+ 703 00e9 17       		.byte	0x17
+ 704 00ea 6B010000 		.4byte	0x16b
+ 705 00ee 01       		.uleb128 0x1
+ 706 00ef 51       		.byte	0x51
+ 707 00f0 07       		.uleb128 0x7
+ 708 00f1 5B000000 		.4byte	.LASF19
+ 709 00f5 01       		.byte	0x1
+ 710 00f6 17       		.byte	0x17
+ 711 00f7 A2000000 		.4byte	0xa2
+ 712 00fb 01       		.uleb128 0x1
+ 713 00fc 52       		.byte	0x52
+ 714 00fd 08       		.uleb128 0x8
+ 715 00fe 07020000 		.4byte	.LASF20
+ 716 0102 01       		.byte	0x1
+ 717 0103 18       		.byte	0x18
+ 718 0104 97000000 		.4byte	0x97
+ 719 0108 21000000 		.4byte	.LLST1
+ 720 010c 08       		.uleb128 0x8
+ 721 010d 30000000 		.4byte	.LASF21
+ 722 0111 01       		.byte	0x1
+ 723 0112 19       		.byte	0x19
+ 724 0113 97000000 		.4byte	0x97
+ 725 0117 5A000000 		.4byte	.LLST2
+ 726 011b 08       		.uleb128 0x8
+ 727 011c 47000000 		.4byte	.LASF22
+ 728 0120 01       		.byte	0x1
+ 729 0121 1A       		.byte	0x1a
+ 730 0122 A2000000 		.4byte	0xa2
+ 731 0126 9B000000 		.4byte	.LLST3
+ 732 012a 08       		.uleb128 0x8
+ 733 012b 0F020000 		.4byte	.LASF23
+ 734 012f 01       		.byte	0x1
+ 735 0130 1B       		.byte	0x1b
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 18
+
+
+ 736 0131 A2000000 		.4byte	0xa2
+ 737 0135 AE000000 		.4byte	.LLST4
+ 738 0139 08       		.uleb128 0x8
+ 739 013a 00000000 		.4byte	.LASF24
+ 740 013e 01       		.byte	0x1
+ 741 013f 1C       		.byte	0x1c
+ 742 0140 97000000 		.4byte	0x97
+ 743 0144 D8000000 		.4byte	.LLST5
+ 744 0148 09       		.uleb128 0x9
+ 745 0149 746D7000 		.ascii	"tmp\000"
+ 746 014d 01       		.byte	0x1
+ 747 014e 1D       		.byte	0x1d
+ 748 014f 97000000 		.4byte	0x97
+ 749 0153 EB000000 		.4byte	.LLST6
+ 750 0157 09       		.uleb128 0x9
+ 751 0158 6900     		.ascii	"i\000"
+ 752 015a 01       		.byte	0x1
+ 753 015b 1E       		.byte	0x1e
+ 754 015c A2000000 		.4byte	0xa2
+ 755 0160 22010000 		.4byte	.LLST7
+ 756 0164 00       		.byte	0
+ 757 0165 0A       		.uleb128 0xa
+ 758 0166 04       		.byte	0x4
+ 759 0167 97000000 		.4byte	0x97
+ 760 016b 0A       		.uleb128 0xa
+ 761 016c 04       		.byte	0x4
+ 762 016d 8C000000 		.4byte	0x8c
+ 763 0171 0B       		.uleb128 0xb
+ 764 0172 21000000 		.4byte	.LASF38
+ 765 0176 01       		.byte	0x1
+ 766 0177 57       		.byte	0x57
+ 767 0178 00000000 		.4byte	.LFB1
+ 768 017c A4010000 		.4byte	.LFE1-.LFB1
+ 769 0180 01       		.uleb128 0x1
+ 770 0181 9C       		.byte	0x9c
+ 771 0182 72020000 		.4byte	0x272
+ 772 0186 07       		.uleb128 0x7
+ 773 0187 E1010000 		.4byte	.LASF25
+ 774 018b 01       		.byte	0x1
+ 775 018c 57       		.byte	0x57
+ 776 018d 6B010000 		.4byte	0x16b
+ 777 0191 01       		.uleb128 0x1
+ 778 0192 50       		.byte	0x50
+ 779 0193 06       		.uleb128 0x6
+ 780 0194 38000000 		.4byte	.LASF26
+ 781 0198 01       		.byte	0x1
+ 782 0199 57       		.byte	0x57
+ 783 019a 72020000 		.4byte	0x272
+ 784 019e 58010000 		.4byte	.LLST8
+ 785 01a2 07       		.uleb128 0x7
+ 786 01a3 3C020000 		.4byte	.LASF27
+ 787 01a7 01       		.byte	0x1
+ 788 01a8 57       		.byte	0x57
+ 789 01a9 97000000 		.4byte	0x97
+ 790 01ad 01       		.uleb128 0x1
+ 791 01ae 52       		.byte	0x52
+ 792 01af 07       		.uleb128 0x7
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 19
+
+
+ 793 01b0 5B000000 		.4byte	.LASF19
+ 794 01b4 01       		.byte	0x1
+ 795 01b5 57       		.byte	0x57
+ 796 01b6 A2000000 		.4byte	0xa2
+ 797 01ba 01       		.uleb128 0x1
+ 798 01bb 53       		.byte	0x53
+ 799 01bc 07       		.uleb128 0x7
+ 800 01bd 27020000 		.4byte	.LASF28
+ 801 01c1 01       		.byte	0x1
+ 802 01c2 57       		.byte	0x57
+ 803 01c3 A2000000 		.4byte	0xa2
+ 804 01c7 02       		.uleb128 0x2
+ 805 01c8 91       		.byte	0x91
+ 806 01c9 00       		.sleb128 0
+ 807 01ca 07       		.uleb128 0x7
+ 808 01cb 00020000 		.4byte	.LASF18
+ 809 01cf 01       		.byte	0x1
+ 810 01d0 57       		.byte	0x57
+ 811 01d1 65010000 		.4byte	0x165
+ 812 01d5 02       		.uleb128 0x2
+ 813 01d6 91       		.byte	0x91
+ 814 01d7 04       		.sleb128 4
+ 815 01d8 08       		.uleb128 0x8
+ 816 01d9 AC010000 		.4byte	.LASF29
+ 817 01dd 01       		.byte	0x1
+ 818 01de 59       		.byte	0x59
+ 819 01df 72020000 		.4byte	0x272
+ 820 01e3 79010000 		.4byte	.LLST9
+ 821 01e7 09       		.uleb128 0x9
+ 822 01e8 6900     		.ascii	"i\000"
+ 823 01ea 01       		.byte	0x1
+ 824 01eb 5A       		.byte	0x5a
+ 825 01ec A2000000 		.4byte	0xa2
+ 826 01f0 10020000 		.4byte	.LLST10
+ 827 01f4 09       		.uleb128 0x9
+ 828 01f5 6B00     		.ascii	"k\000"
+ 829 01f7 01       		.byte	0x1
+ 830 01f8 5A       		.byte	0x5a
+ 831 01f9 A2000000 		.4byte	0xa2
+ 832 01fd 2F020000 		.4byte	.LLST11
+ 833 0201 09       		.uleb128 0x9
+ 834 0202 6A00     		.ascii	"j\000"
+ 835 0204 01       		.byte	0x1
+ 836 0205 5A       		.byte	0x5a
+ 837 0206 A2000000 		.4byte	0xa2
+ 838 020a BB020000 		.4byte	.LLST12
+ 839 020e 09       		.uleb128 0x9
+ 840 020f 73756D00 		.ascii	"sum\000"
+ 841 0213 01       		.byte	0x1
+ 842 0214 5B       		.byte	0x5b
+ 843 0215 97000000 		.4byte	0x97
+ 844 0219 4D030000 		.4byte	.LLST13
+ 845 021d 09       		.uleb128 0x9
+ 846 021e 696E00   		.ascii	"in\000"
+ 847 0221 01       		.byte	0x1
+ 848 0222 5C       		.byte	0x5c
+ 849 0223 97000000 		.4byte	0x97
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 20
+
+
+ 850 0227 69040000 		.4byte	.LLST14
+ 851 022b 08       		.uleb128 0x8
+ 852 022c 94010000 		.4byte	.LASF30
+ 853 0230 01       		.byte	0x1
+ 854 0231 5D       		.byte	0x5d
+ 855 0232 97000000 		.4byte	0x97
+ 856 0236 12050000 		.4byte	.LLST15
+ 857 023a 08       		.uleb128 0x8
+ 858 023b 76010000 		.4byte	.LASF31
+ 859 023f 01       		.byte	0x1
+ 860 0240 5E       		.byte	0x5e
+ 861 0241 97000000 		.4byte	0x97
+ 862 0245 3B050000 		.4byte	.LLST16
+ 863 0249 08       		.uleb128 0x8
+ 864 024a CF000000 		.4byte	.LASF32
+ 865 024e 01       		.byte	0x1
+ 866 024f 5F       		.byte	0x5f
+ 867 0250 A2000000 		.4byte	0xa2
+ 868 0254 59050000 		.4byte	.LLST17
+ 869 0258 0C       		.uleb128 0xc
+ 870 0259 12000000 		.4byte	.LBB2
+ 871 025d 84010000 		.4byte	.LBE2-.LBB2
+ 872 0261 08       		.uleb128 0x8
+ 873 0262 8F000000 		.4byte	.LASF33
+ 874 0266 01       		.byte	0x1
+ 875 0267 62       		.byte	0x62
+ 876 0268 6B010000 		.4byte	0x16b
+ 877 026c A3050000 		.4byte	.LLST18
+ 878 0270 00       		.byte	0
+ 879 0271 00       		.byte	0
+ 880 0272 0A       		.uleb128 0xa
+ 881 0273 04       		.byte	0x4
+ 882 0274 78020000 		.4byte	0x278
+ 883 0278 0D       		.uleb128 0xd
+ 884 0279 A2000000 		.4byte	0xa2
+ 885 027d 00       		.byte	0
+ 886              		.section	.debug_abbrev,"",%progbits
+ 887              	.Ldebug_abbrev0:
+ 888 0000 01       		.uleb128 0x1
+ 889 0001 11       		.uleb128 0x11
+ 890 0002 01       		.byte	0x1
+ 891 0003 25       		.uleb128 0x25
+ 892 0004 0E       		.uleb128 0xe
+ 893 0005 13       		.uleb128 0x13
+ 894 0006 0B       		.uleb128 0xb
+ 895 0007 03       		.uleb128 0x3
+ 896 0008 0E       		.uleb128 0xe
+ 897 0009 1B       		.uleb128 0x1b
+ 898 000a 0E       		.uleb128 0xe
+ 899 000b 55       		.uleb128 0x55
+ 900 000c 17       		.uleb128 0x17
+ 901 000d 11       		.uleb128 0x11
+ 902 000e 01       		.uleb128 0x1
+ 903 000f 10       		.uleb128 0x10
+ 904 0010 17       		.uleb128 0x17
+ 905 0011 00       		.byte	0
+ 906 0012 00       		.byte	0
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 21
+
+
+ 907 0013 02       		.uleb128 0x2
+ 908 0014 16       		.uleb128 0x16
+ 909 0015 00       		.byte	0
+ 910 0016 03       		.uleb128 0x3
+ 911 0017 0E       		.uleb128 0xe
+ 912 0018 3A       		.uleb128 0x3a
+ 913 0019 0B       		.uleb128 0xb
+ 914 001a 3B       		.uleb128 0x3b
+ 915 001b 0B       		.uleb128 0xb
+ 916 001c 49       		.uleb128 0x49
+ 917 001d 13       		.uleb128 0x13
+ 918 001e 00       		.byte	0
+ 919 001f 00       		.byte	0
+ 920 0020 03       		.uleb128 0x3
+ 921 0021 24       		.uleb128 0x24
+ 922 0022 00       		.byte	0
+ 923 0023 0B       		.uleb128 0xb
+ 924 0024 0B       		.uleb128 0xb
+ 925 0025 3E       		.uleb128 0x3e
+ 926 0026 0B       		.uleb128 0xb
+ 927 0027 03       		.uleb128 0x3
+ 928 0028 0E       		.uleb128 0xe
+ 929 0029 00       		.byte	0
+ 930 002a 00       		.byte	0
+ 931 002b 04       		.uleb128 0x4
+ 932 002c 24       		.uleb128 0x24
+ 933 002d 00       		.byte	0
+ 934 002e 0B       		.uleb128 0xb
+ 935 002f 0B       		.uleb128 0xb
+ 936 0030 3E       		.uleb128 0x3e
+ 937 0031 0B       		.uleb128 0xb
+ 938 0032 03       		.uleb128 0x3
+ 939 0033 08       		.uleb128 0x8
+ 940 0034 00       		.byte	0
+ 941 0035 00       		.byte	0
+ 942 0036 05       		.uleb128 0x5
+ 943 0037 2E       		.uleb128 0x2e
+ 944 0038 01       		.byte	0x1
+ 945 0039 3F       		.uleb128 0x3f
+ 946 003a 19       		.uleb128 0x19
+ 947 003b 03       		.uleb128 0x3
+ 948 003c 0E       		.uleb128 0xe
+ 949 003d 3A       		.uleb128 0x3a
+ 950 003e 0B       		.uleb128 0xb
+ 951 003f 3B       		.uleb128 0x3b
+ 952 0040 0B       		.uleb128 0xb
+ 953 0041 27       		.uleb128 0x27
+ 954 0042 19       		.uleb128 0x19
+ 955 0043 49       		.uleb128 0x49
+ 956 0044 13       		.uleb128 0x13
+ 957 0045 11       		.uleb128 0x11
+ 958 0046 01       		.uleb128 0x1
+ 959 0047 12       		.uleb128 0x12
+ 960 0048 06       		.uleb128 0x6
+ 961 0049 40       		.uleb128 0x40
+ 962 004a 18       		.uleb128 0x18
+ 963 004b 9742     		.uleb128 0x2117
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 22
+
+
+ 964 004d 19       		.uleb128 0x19
+ 965 004e 01       		.uleb128 0x1
+ 966 004f 13       		.uleb128 0x13
+ 967 0050 00       		.byte	0
+ 968 0051 00       		.byte	0
+ 969 0052 06       		.uleb128 0x6
+ 970 0053 05       		.uleb128 0x5
+ 971 0054 00       		.byte	0
+ 972 0055 03       		.uleb128 0x3
+ 973 0056 0E       		.uleb128 0xe
+ 974 0057 3A       		.uleb128 0x3a
+ 975 0058 0B       		.uleb128 0xb
+ 976 0059 3B       		.uleb128 0x3b
+ 977 005a 0B       		.uleb128 0xb
+ 978 005b 49       		.uleb128 0x49
+ 979 005c 13       		.uleb128 0x13
+ 980 005d 02       		.uleb128 0x2
+ 981 005e 17       		.uleb128 0x17
+ 982 005f 00       		.byte	0
+ 983 0060 00       		.byte	0
+ 984 0061 07       		.uleb128 0x7
+ 985 0062 05       		.uleb128 0x5
+ 986 0063 00       		.byte	0
+ 987 0064 03       		.uleb128 0x3
+ 988 0065 0E       		.uleb128 0xe
+ 989 0066 3A       		.uleb128 0x3a
+ 990 0067 0B       		.uleb128 0xb
+ 991 0068 3B       		.uleb128 0x3b
+ 992 0069 0B       		.uleb128 0xb
+ 993 006a 49       		.uleb128 0x49
+ 994 006b 13       		.uleb128 0x13
+ 995 006c 02       		.uleb128 0x2
+ 996 006d 18       		.uleb128 0x18
+ 997 006e 00       		.byte	0
+ 998 006f 00       		.byte	0
+ 999 0070 08       		.uleb128 0x8
+ 1000 0071 34       		.uleb128 0x34
+ 1001 0072 00       		.byte	0
+ 1002 0073 03       		.uleb128 0x3
+ 1003 0074 0E       		.uleb128 0xe
+ 1004 0075 3A       		.uleb128 0x3a
+ 1005 0076 0B       		.uleb128 0xb
+ 1006 0077 3B       		.uleb128 0x3b
+ 1007 0078 0B       		.uleb128 0xb
+ 1008 0079 49       		.uleb128 0x49
+ 1009 007a 13       		.uleb128 0x13
+ 1010 007b 02       		.uleb128 0x2
+ 1011 007c 17       		.uleb128 0x17
+ 1012 007d 00       		.byte	0
+ 1013 007e 00       		.byte	0
+ 1014 007f 09       		.uleb128 0x9
+ 1015 0080 34       		.uleb128 0x34
+ 1016 0081 00       		.byte	0
+ 1017 0082 03       		.uleb128 0x3
+ 1018 0083 08       		.uleb128 0x8
+ 1019 0084 3A       		.uleb128 0x3a
+ 1020 0085 0B       		.uleb128 0xb
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 23
+
+
+ 1021 0086 3B       		.uleb128 0x3b
+ 1022 0087 0B       		.uleb128 0xb
+ 1023 0088 49       		.uleb128 0x49
+ 1024 0089 13       		.uleb128 0x13
+ 1025 008a 02       		.uleb128 0x2
+ 1026 008b 17       		.uleb128 0x17
+ 1027 008c 00       		.byte	0
+ 1028 008d 00       		.byte	0
+ 1029 008e 0A       		.uleb128 0xa
+ 1030 008f 0F       		.uleb128 0xf
+ 1031 0090 00       		.byte	0
+ 1032 0091 0B       		.uleb128 0xb
+ 1033 0092 0B       		.uleb128 0xb
+ 1034 0093 49       		.uleb128 0x49
+ 1035 0094 13       		.uleb128 0x13
+ 1036 0095 00       		.byte	0
+ 1037 0096 00       		.byte	0
+ 1038 0097 0B       		.uleb128 0xb
+ 1039 0098 2E       		.uleb128 0x2e
+ 1040 0099 01       		.byte	0x1
+ 1041 009a 3F       		.uleb128 0x3f
+ 1042 009b 19       		.uleb128 0x19
+ 1043 009c 03       		.uleb128 0x3
+ 1044 009d 0E       		.uleb128 0xe
+ 1045 009e 3A       		.uleb128 0x3a
+ 1046 009f 0B       		.uleb128 0xb
+ 1047 00a0 3B       		.uleb128 0x3b
+ 1048 00a1 0B       		.uleb128 0xb
+ 1049 00a2 27       		.uleb128 0x27
+ 1050 00a3 19       		.uleb128 0x19
+ 1051 00a4 11       		.uleb128 0x11
+ 1052 00a5 01       		.uleb128 0x1
+ 1053 00a6 12       		.uleb128 0x12
+ 1054 00a7 06       		.uleb128 0x6
+ 1055 00a8 40       		.uleb128 0x40
+ 1056 00a9 18       		.uleb128 0x18
+ 1057 00aa 9742     		.uleb128 0x2117
+ 1058 00ac 19       		.uleb128 0x19
+ 1059 00ad 01       		.uleb128 0x1
+ 1060 00ae 13       		.uleb128 0x13
+ 1061 00af 00       		.byte	0
+ 1062 00b0 00       		.byte	0
+ 1063 00b1 0C       		.uleb128 0xc
+ 1064 00b2 0B       		.uleb128 0xb
+ 1065 00b3 01       		.byte	0x1
+ 1066 00b4 11       		.uleb128 0x11
+ 1067 00b5 01       		.uleb128 0x1
+ 1068 00b6 12       		.uleb128 0x12
+ 1069 00b7 06       		.uleb128 0x6
+ 1070 00b8 00       		.byte	0
+ 1071 00b9 00       		.byte	0
+ 1072 00ba 0D       		.uleb128 0xd
+ 1073 00bb 26       		.uleb128 0x26
+ 1074 00bc 00       		.byte	0
+ 1075 00bd 49       		.uleb128 0x49
+ 1076 00be 13       		.uleb128 0x13
+ 1077 00bf 00       		.byte	0
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 24
+
+
+ 1078 00c0 00       		.byte	0
+ 1079 00c1 00       		.byte	0
+ 1080              		.section	.debug_loc,"",%progbits
+ 1081              	.Ldebug_loc0:
+ 1082              	.LLST0:
+ 1083 0000 00000000 		.4byte	.LVL0
+ 1084 0004 5C000000 		.4byte	.LVL21
+ 1085 0008 0100     		.2byte	0x1
+ 1086 000a 50       		.byte	0x50
+ 1087 000b 5C000000 		.4byte	.LVL21
+ 1088 000f 64000000 		.4byte	.LFE0
+ 1089 0013 0400     		.2byte	0x4
+ 1090 0015 F3       		.byte	0xf3
+ 1091 0016 01       		.uleb128 0x1
+ 1092 0017 50       		.byte	0x50
+ 1093 0018 9F       		.byte	0x9f
+ 1094 0019 00000000 		.4byte	0
+ 1095 001d 00000000 		.4byte	0
+ 1096              	.LLST1:
+ 1097 0021 02000000 		.4byte	.LVL1
+ 1098 0025 0A000000 		.4byte	.LVL2
+ 1099 0029 0600     		.2byte	0x6
+ 1100 002b 9E       		.byte	0x9e
+ 1101 002c 04       		.uleb128 0x4
+ 1102 002d 01000080 		.4byte	0x80000001
+ 1103 0031 0A000000 		.4byte	.LVL2
+ 1104 0035 12000000 		.4byte	.LVL3
+ 1105 0039 0100     		.2byte	0x1
+ 1106 003b 53       		.byte	0x53
+ 1107 003c 12000000 		.4byte	.LVL3
+ 1108 0040 16000000 		.4byte	.LVL5
+ 1109 0044 0100     		.2byte	0x1
+ 1110 0046 55       		.byte	0x55
+ 1111 0047 16000000 		.4byte	.LVL5
+ 1112 004b 1E000000 		.4byte	.LVL7
+ 1113 004f 0100     		.2byte	0x1
+ 1114 0051 53       		.byte	0x53
+ 1115 0052 00000000 		.4byte	0
+ 1116 0056 00000000 		.4byte	0
+ 1117              	.LLST2:
+ 1118 005a 02000000 		.4byte	.LVL1
+ 1119 005e 0A000000 		.4byte	.LVL2
+ 1120 0062 0300     		.2byte	0x3
+ 1121 0064 08       		.byte	0x8
+ 1122 0065 FF       		.byte	0xff
+ 1123 0066 9F       		.byte	0x9f
+ 1124 0067 0A000000 		.4byte	.LVL2
+ 1125 006b 14000000 		.4byte	.LVL4
+ 1126 006f 0100     		.2byte	0x1
+ 1127 0071 56       		.byte	0x56
+ 1128 0072 14000000 		.4byte	.LVL4
+ 1129 0076 16000000 		.4byte	.LVL5
+ 1130 007a 0100     		.2byte	0x1
+ 1131 007c 54       		.byte	0x54
+ 1132 007d 16000000 		.4byte	.LVL5
+ 1133 0081 5E000000 		.4byte	.LVL22
+ 1134 0085 0100     		.2byte	0x1
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 25
+
+
+ 1135 0087 56       		.byte	0x56
+ 1136 0088 5E000000 		.4byte	.LVL22
+ 1137 008c 64000000 		.4byte	.LFE0
+ 1138 0090 0100     		.2byte	0x1
+ 1139 0092 50       		.byte	0x50
+ 1140 0093 00000000 		.4byte	0
+ 1141 0097 00000000 		.4byte	0
+ 1142              	.LLST3:
+ 1143 009b 1E000000 		.4byte	.LVL7
+ 1144 009f 36000000 		.4byte	.LVL14
+ 1145 00a3 0100     		.2byte	0x1
+ 1146 00a5 53       		.byte	0x53
+ 1147 00a6 00000000 		.4byte	0
+ 1148 00aa 00000000 		.4byte	0
+ 1149              	.LLST4:
+ 1150 00ae 1E000000 		.4byte	.LVL7
+ 1151 00b2 22000000 		.4byte	.LVL9
+ 1152 00b6 0200     		.2byte	0x2
+ 1153 00b8 30       		.byte	0x30
+ 1154 00b9 9F       		.byte	0x9f
+ 1155 00ba 22000000 		.4byte	.LVL9
+ 1156 00be 34000000 		.4byte	.LVL13
+ 1157 00c2 0100     		.2byte	0x1
+ 1158 00c4 54       		.byte	0x54
+ 1159 00c5 34000000 		.4byte	.LVL13
+ 1160 00c9 5E000000 		.4byte	.LVL22
+ 1161 00cd 0100     		.2byte	0x1
+ 1162 00cf 57       		.byte	0x57
+ 1163 00d0 00000000 		.4byte	0
+ 1164 00d4 00000000 		.4byte	0
+ 1165              	.LLST5:
+ 1166 00d8 32000000 		.4byte	.LVL12
+ 1167 00dc 5E000000 		.4byte	.LVL22
+ 1168 00e0 0100     		.2byte	0x1
+ 1169 00e2 55       		.byte	0x55
+ 1170 00e3 00000000 		.4byte	0
+ 1171 00e7 00000000 		.4byte	0
+ 1172              	.LLST6:
+ 1173 00eb 48000000 		.4byte	.LVL15
+ 1174 00ef 4E000000 		.4byte	.LVL16
+ 1175 00f3 0100     		.2byte	0x1
+ 1176 00f5 53       		.byte	0x53
+ 1177 00f6 4E000000 		.4byte	.LVL16
+ 1178 00fa 50000000 		.4byte	.LVL17
+ 1179 00fe 0F00     		.2byte	0xf
+ 1180 0100 74       		.byte	0x74
+ 1181 0101 00       		.sleb128 0
+ 1182 0102 32       		.byte	0x32
+ 1183 0103 24       		.byte	0x24
+ 1184 0104 70       		.byte	0x70
+ 1185 0105 00       		.sleb128 0
+ 1186 0106 22       		.byte	0x22
+ 1187 0107 06       		.byte	0x6
+ 1188 0108 75       		.byte	0x75
+ 1189 0109 00       		.sleb128 0
+ 1190 010a 22       		.byte	0x22
+ 1191 010b 77       		.byte	0x77
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 26
+
+
+ 1192 010c 00       		.sleb128 0
+ 1193 010d 26       		.byte	0x26
+ 1194 010e 9F       		.byte	0x9f
+ 1195 010f 52000000 		.4byte	.LVL18
+ 1196 0113 54000000 		.4byte	.LVL19
+ 1197 0117 0100     		.2byte	0x1
+ 1198 0119 53       		.byte	0x53
+ 1199 011a 00000000 		.4byte	0
+ 1200 011e 00000000 		.4byte	0
+ 1201              	.LLST7:
+ 1202 0122 02000000 		.4byte	.LVL1
+ 1203 0126 0A000000 		.4byte	.LVL2
+ 1204 012a 0200     		.2byte	0x2
+ 1205 012c 30       		.byte	0x30
+ 1206 012d 9F       		.byte	0x9f
+ 1207 012e 0A000000 		.4byte	.LVL2
+ 1208 0132 20000000 		.4byte	.LVL8
+ 1209 0136 0100     		.2byte	0x1
+ 1210 0138 54       		.byte	0x54
+ 1211 0139 32000000 		.4byte	.LVL12
+ 1212 013d 36000000 		.4byte	.LVL14
+ 1213 0141 0200     		.2byte	0x2
+ 1214 0143 30       		.byte	0x30
+ 1215 0144 9F       		.byte	0x9f
+ 1216 0145 36000000 		.4byte	.LVL14
+ 1217 0149 5E000000 		.4byte	.LVL22
+ 1218 014d 0100     		.2byte	0x1
+ 1219 014f 54       		.byte	0x54
+ 1220 0150 00000000 		.4byte	0
+ 1221 0154 00000000 		.4byte	0
+ 1222              	.LLST8:
+ 1223 0158 00000000 		.4byte	.LVL23
+ 1224 015c 12000000 		.4byte	.LVL25
+ 1225 0160 0100     		.2byte	0x1
+ 1226 0162 51       		.byte	0x51
+ 1227 0163 12000000 		.4byte	.LVL25
+ 1228 0167 A4010000 		.4byte	.LFE1
+ 1229 016b 0400     		.2byte	0x4
+ 1230 016d F3       		.byte	0xf3
+ 1231 016e 01       		.uleb128 0x1
+ 1232 016f 51       		.byte	0x51
+ 1233 0170 9F       		.byte	0x9f
+ 1234 0171 00000000 		.4byte	0
+ 1235 0175 00000000 		.4byte	0
+ 1236              	.LLST9:
+ 1237 0179 0C000000 		.4byte	.LVL24
+ 1238 017d 1C000000 		.4byte	.LVL27
+ 1239 0181 0100     		.2byte	0x1
+ 1240 0183 51       		.byte	0x51
+ 1241 0184 1C000000 		.4byte	.LVL27
+ 1242 0188 44000000 		.4byte	.LVL38
+ 1243 018c 0100     		.2byte	0x1
+ 1244 018e 5C       		.byte	0x5c
+ 1245 018f 44000000 		.4byte	.LVL38
+ 1246 0193 5A000000 		.4byte	.LVL42
+ 1247 0197 0100     		.2byte	0x1
+ 1248 0199 51       		.byte	0x51
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 27
+
+
+ 1249 019a 5A000000 		.4byte	.LVL42
+ 1250 019e 8A000000 		.4byte	.LVL55
+ 1251 01a2 0100     		.2byte	0x1
+ 1252 01a4 5E       		.byte	0x5e
+ 1253 01a5 8A000000 		.4byte	.LVL55
+ 1254 01a9 A0000000 		.4byte	.LVL59
+ 1255 01ad 0100     		.2byte	0x1
+ 1256 01af 51       		.byte	0x51
+ 1257 01b0 A0000000 		.4byte	.LVL59
+ 1258 01b4 CE000000 		.4byte	.LVL71
+ 1259 01b8 0100     		.2byte	0x1
+ 1260 01ba 5E       		.byte	0x5e
+ 1261 01bb CE000000 		.4byte	.LVL71
+ 1262 01bf E4000000 		.4byte	.LVL75
+ 1263 01c3 0100     		.2byte	0x1
+ 1264 01c5 51       		.byte	0x51
+ 1265 01c6 E4000000 		.4byte	.LVL75
+ 1266 01ca 08010000 		.4byte	.LVL86
+ 1267 01ce 0100     		.2byte	0x1
+ 1268 01d0 5C       		.byte	0x5c
+ 1269 01d1 08010000 		.4byte	.LVL86
+ 1270 01d5 1E010000 		.4byte	.LVL90
+ 1271 01d9 0100     		.2byte	0x1
+ 1272 01db 51       		.byte	0x51
+ 1273 01dc 1E010000 		.4byte	.LVL90
+ 1274 01e0 42010000 		.4byte	.LVL101
+ 1275 01e4 0100     		.2byte	0x1
+ 1276 01e6 5C       		.byte	0x5c
+ 1277 01e7 42010000 		.4byte	.LVL101
+ 1278 01eb 5A010000 		.4byte	.LVL105
+ 1279 01ef 0100     		.2byte	0x1
+ 1280 01f1 51       		.byte	0x51
+ 1281 01f2 5A010000 		.4byte	.LVL105
+ 1282 01f6 88010000 		.4byte	.LVL118
+ 1283 01fa 0100     		.2byte	0x1
+ 1284 01fc 5E       		.byte	0x5e
+ 1285 01fd 88010000 		.4byte	.LVL118
+ 1286 0201 A4010000 		.4byte	.LFE1
+ 1287 0205 0100     		.2byte	0x1
+ 1288 0207 51       		.byte	0x51
+ 1289 0208 00000000 		.4byte	0
+ 1290 020c 00000000 		.4byte	0
+ 1291              	.LLST10:
+ 1292 0210 0C000000 		.4byte	.LVL24
+ 1293 0214 12000000 		.4byte	.LVL25
+ 1294 0218 0200     		.2byte	0x2
+ 1295 021a 30       		.byte	0x30
+ 1296 021b 9F       		.byte	0x9f
+ 1297 021c 12000000 		.4byte	.LVL25
+ 1298 0220 A4010000 		.4byte	.LFE1
+ 1299 0224 0100     		.2byte	0x1
+ 1300 0226 58       		.byte	0x58
+ 1301 0227 00000000 		.4byte	0
+ 1302 022b 00000000 		.4byte	0
+ 1303              	.LLST11:
+ 1304 022f 18000000 		.4byte	.LVL26
+ 1305 0233 44000000 		.4byte	.LVL38
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 28
+
+
+ 1306 0237 0100     		.2byte	0x1
+ 1307 0239 5E       		.byte	0x5e
+ 1308 023a 4A000000 		.4byte	.LVL39
+ 1309 023e 50000000 		.4byte	.LVL40
+ 1310 0242 0100     		.2byte	0x1
+ 1311 0244 5E       		.byte	0x5e
+ 1312 0245 56000000 		.4byte	.LVL41
+ 1313 0249 8A000000 		.4byte	.LVL55
+ 1314 024d 0100     		.2byte	0x1
+ 1315 024f 57       		.byte	0x57
+ 1316 0250 90000000 		.4byte	.LVL56
+ 1317 0254 96000000 		.4byte	.LVL57
+ 1318 0258 0100     		.2byte	0x1
+ 1319 025a 57       		.byte	0x57
+ 1320 025b 9C000000 		.4byte	.LVL58
+ 1321 025f CE000000 		.4byte	.LVL71
+ 1322 0263 0100     		.2byte	0x1
+ 1323 0265 57       		.byte	0x57
+ 1324 0266 D4000000 		.4byte	.LVL72
+ 1325 026a DA000000 		.4byte	.LVL73
+ 1326 026e 0100     		.2byte	0x1
+ 1327 0270 57       		.byte	0x57
+ 1328 0271 E0000000 		.4byte	.LVL74
+ 1329 0275 08010000 		.4byte	.LVL86
+ 1330 0279 0100     		.2byte	0x1
+ 1331 027b 5E       		.byte	0x5e
+ 1332 027c 0E010000 		.4byte	.LVL87
+ 1333 0280 14010000 		.4byte	.LVL88
+ 1334 0284 0100     		.2byte	0x1
+ 1335 0286 5E       		.byte	0x5e
+ 1336 0287 1A010000 		.4byte	.LVL89
+ 1337 028b 42010000 		.4byte	.LVL101
+ 1338 028f 0100     		.2byte	0x1
+ 1339 0291 5E       		.byte	0x5e
+ 1340 0292 48010000 		.4byte	.LVL102
+ 1341 0296 4E010000 		.4byte	.LVL103
+ 1342 029a 0100     		.2byte	0x1
+ 1343 029c 5E       		.byte	0x5e
+ 1344 029d 56010000 		.4byte	.LVL104
+ 1345 02a1 88010000 		.4byte	.LVL118
+ 1346 02a5 0100     		.2byte	0x1
+ 1347 02a7 57       		.byte	0x57
+ 1348 02a8 8E010000 		.4byte	.LVL119
+ 1349 02ac 92010000 		.4byte	.LVL120
+ 1350 02b0 0100     		.2byte	0x1
+ 1351 02b2 57       		.byte	0x57
+ 1352 02b3 00000000 		.4byte	0
+ 1353 02b7 00000000 		.4byte	0
+ 1354              	.LLST12:
+ 1355 02bb 1E000000 		.4byte	.LVL28
+ 1356 02bf 22000000 		.4byte	.LVL29
+ 1357 02c3 0200     		.2byte	0x2
+ 1358 02c5 30       		.byte	0x30
+ 1359 02c6 9F       		.byte	0x9f
+ 1360 02c7 22000000 		.4byte	.LVL29
+ 1361 02cb 44000000 		.4byte	.LVL38
+ 1362 02cf 0100     		.2byte	0x1
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 29
+
+
+ 1363 02d1 55       		.byte	0x55
+ 1364 02d2 5C000000 		.4byte	.LVL43
+ 1365 02d6 60000000 		.4byte	.LVL44
+ 1366 02da 0200     		.2byte	0x2
+ 1367 02dc 30       		.byte	0x30
+ 1368 02dd 9F       		.byte	0x9f
+ 1369 02de 60000000 		.4byte	.LVL44
+ 1370 02e2 8A000000 		.4byte	.LVL55
+ 1371 02e6 0100     		.2byte	0x1
+ 1372 02e8 55       		.byte	0x55
+ 1373 02e9 A2000000 		.4byte	.LVL60
+ 1374 02ed A6000000 		.4byte	.LVL61
+ 1375 02f1 0200     		.2byte	0x2
+ 1376 02f3 30       		.byte	0x30
+ 1377 02f4 9F       		.byte	0x9f
+ 1378 02f5 A6000000 		.4byte	.LVL61
+ 1379 02f9 CC000000 		.4byte	.LVL70
+ 1380 02fd 0100     		.2byte	0x1
+ 1381 02ff 51       		.byte	0x51
+ 1382 0300 E6000000 		.4byte	.LVL76
+ 1383 0304 EA000000 		.4byte	.LVL77
+ 1384 0308 0200     		.2byte	0x2
+ 1385 030a 30       		.byte	0x30
+ 1386 030b 9F       		.byte	0x9f
+ 1387 030c EA000000 		.4byte	.LVL77
+ 1388 0310 06010000 		.4byte	.LVL85
+ 1389 0314 0100     		.2byte	0x1
+ 1390 0316 51       		.byte	0x51
+ 1391 0317 20010000 		.4byte	.LVL91
+ 1392 031b 24010000 		.4byte	.LVL92
+ 1393 031f 0200     		.2byte	0x2
+ 1394 0321 30       		.byte	0x30
+ 1395 0322 9F       		.byte	0x9f
+ 1396 0323 24010000 		.4byte	.LVL92
+ 1397 0327 40010000 		.4byte	.LVL100
+ 1398 032b 0100     		.2byte	0x1
+ 1399 032d 51       		.byte	0x51
+ 1400 032e 5C010000 		.4byte	.LVL106
+ 1401 0332 60010000 		.4byte	.LVL107
+ 1402 0336 0200     		.2byte	0x2
+ 1403 0338 30       		.byte	0x30
+ 1404 0339 9F       		.byte	0x9f
+ 1405 033a 60010000 		.4byte	.LVL107
+ 1406 033e 88010000 		.4byte	.LVL118
+ 1407 0342 0100     		.2byte	0x1
+ 1408 0344 56       		.byte	0x56
+ 1409 0345 00000000 		.4byte	0
+ 1410 0349 00000000 		.4byte	0
+ 1411              	.LLST13:
+ 1412 034d 12000000 		.4byte	.LVL25
+ 1413 0351 18000000 		.4byte	.LVL26
+ 1414 0355 0200     		.2byte	0x2
+ 1415 0357 30       		.byte	0x30
+ 1416 0358 9F       		.byte	0x9f
+ 1417 0359 18000000 		.4byte	.LVL26
+ 1418 035d 44000000 		.4byte	.LVL38
+ 1419 0361 0100     		.2byte	0x1
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 30
+
+
+ 1420 0363 54       		.byte	0x54
+ 1421 0364 44000000 		.4byte	.LVL38
+ 1422 0368 4A000000 		.4byte	.LVL39
+ 1423 036c 0200     		.2byte	0x2
+ 1424 036e 30       		.byte	0x30
+ 1425 036f 9F       		.byte	0x9f
+ 1426 0370 4A000000 		.4byte	.LVL39
+ 1427 0374 50000000 		.4byte	.LVL40
+ 1428 0378 0100     		.2byte	0x1
+ 1429 037a 54       		.byte	0x54
+ 1430 037b 50000000 		.4byte	.LVL40
+ 1431 037f 56000000 		.4byte	.LVL41
+ 1432 0383 0200     		.2byte	0x2
+ 1433 0385 30       		.byte	0x30
+ 1434 0386 9F       		.byte	0x9f
+ 1435 0387 56000000 		.4byte	.LVL41
+ 1436 038b 8A000000 		.4byte	.LVL55
+ 1437 038f 0100     		.2byte	0x1
+ 1438 0391 54       		.byte	0x54
+ 1439 0392 8A000000 		.4byte	.LVL55
+ 1440 0396 90000000 		.4byte	.LVL56
+ 1441 039a 0200     		.2byte	0x2
+ 1442 039c 30       		.byte	0x30
+ 1443 039d 9F       		.byte	0x9f
+ 1444 039e 90000000 		.4byte	.LVL56
+ 1445 03a2 96000000 		.4byte	.LVL57
+ 1446 03a6 0100     		.2byte	0x1
+ 1447 03a8 54       		.byte	0x54
+ 1448 03a9 96000000 		.4byte	.LVL57
+ 1449 03ad 9C000000 		.4byte	.LVL58
+ 1450 03b1 0200     		.2byte	0x2
+ 1451 03b3 30       		.byte	0x30
+ 1452 03b4 9F       		.byte	0x9f
+ 1453 03b5 9C000000 		.4byte	.LVL58
+ 1454 03b9 CE000000 		.4byte	.LVL71
+ 1455 03bd 0100     		.2byte	0x1
+ 1456 03bf 54       		.byte	0x54
+ 1457 03c0 CE000000 		.4byte	.LVL71
+ 1458 03c4 D4000000 		.4byte	.LVL72
+ 1459 03c8 0200     		.2byte	0x2
+ 1460 03ca 30       		.byte	0x30
+ 1461 03cb 9F       		.byte	0x9f
+ 1462 03cc D4000000 		.4byte	.LVL72
+ 1463 03d0 DA000000 		.4byte	.LVL73
+ 1464 03d4 0100     		.2byte	0x1
+ 1465 03d6 54       		.byte	0x54
+ 1466 03d7 DA000000 		.4byte	.LVL73
+ 1467 03db E0000000 		.4byte	.LVL74
+ 1468 03df 0200     		.2byte	0x2
+ 1469 03e1 30       		.byte	0x30
+ 1470 03e2 9F       		.byte	0x9f
+ 1471 03e3 E0000000 		.4byte	.LVL74
+ 1472 03e7 08010000 		.4byte	.LVL86
+ 1473 03eb 0100     		.2byte	0x1
+ 1474 03ed 54       		.byte	0x54
+ 1475 03ee 08010000 		.4byte	.LVL86
+ 1476 03f2 0E010000 		.4byte	.LVL87
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 31
+
+
+ 1477 03f6 0200     		.2byte	0x2
+ 1478 03f8 30       		.byte	0x30
+ 1479 03f9 9F       		.byte	0x9f
+ 1480 03fa 0E010000 		.4byte	.LVL87
+ 1481 03fe 14010000 		.4byte	.LVL88
+ 1482 0402 0100     		.2byte	0x1
+ 1483 0404 54       		.byte	0x54
+ 1484 0405 14010000 		.4byte	.LVL88
+ 1485 0409 1A010000 		.4byte	.LVL89
+ 1486 040d 0200     		.2byte	0x2
+ 1487 040f 30       		.byte	0x30
+ 1488 0410 9F       		.byte	0x9f
+ 1489 0411 1A010000 		.4byte	.LVL89
+ 1490 0415 42010000 		.4byte	.LVL101
+ 1491 0419 0100     		.2byte	0x1
+ 1492 041b 54       		.byte	0x54
+ 1493 041c 42010000 		.4byte	.LVL101
+ 1494 0420 48010000 		.4byte	.LVL102
+ 1495 0424 0200     		.2byte	0x2
+ 1496 0426 30       		.byte	0x30
+ 1497 0427 9F       		.byte	0x9f
+ 1498 0428 48010000 		.4byte	.LVL102
+ 1499 042c 4E010000 		.4byte	.LVL103
+ 1500 0430 0100     		.2byte	0x1
+ 1501 0432 54       		.byte	0x54
+ 1502 0433 4E010000 		.4byte	.LVL103
+ 1503 0437 56010000 		.4byte	.LVL104
+ 1504 043b 0200     		.2byte	0x2
+ 1505 043d 30       		.byte	0x30
+ 1506 043e 9F       		.byte	0x9f
+ 1507 043f 56010000 		.4byte	.LVL104
+ 1508 0443 88010000 		.4byte	.LVL118
+ 1509 0447 0100     		.2byte	0x1
+ 1510 0449 54       		.byte	0x54
+ 1511 044a 88010000 		.4byte	.LVL118
+ 1512 044e 8E010000 		.4byte	.LVL119
+ 1513 0452 0200     		.2byte	0x2
+ 1514 0454 30       		.byte	0x30
+ 1515 0455 9F       		.byte	0x9f
+ 1516 0456 8E010000 		.4byte	.LVL119
+ 1517 045a 9A010000 		.4byte	.LVL121
+ 1518 045e 0100     		.2byte	0x1
+ 1519 0460 54       		.byte	0x54
+ 1520 0461 00000000 		.4byte	0
+ 1521 0465 00000000 		.4byte	0
+ 1522              	.LLST14:
+ 1523 0469 2A000000 		.4byte	.LVL31
+ 1524 046d 30000000 		.4byte	.LVL32
+ 1525 0471 0100     		.2byte	0x1
+ 1526 0473 51       		.byte	0x51
+ 1527 0474 30000000 		.4byte	.LVL32
+ 1528 0478 38000000 		.4byte	.LVL36
+ 1529 047c 0900     		.2byte	0x9
+ 1530 047e 7B       		.byte	0x7b
+ 1531 047f 00       		.sleb128 0
+ 1532 0480 94       		.byte	0x94
+ 1533 0481 01       		.byte	0x1
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 32
+
+
+ 1534 0482 48       		.byte	0x48
+ 1535 0483 24       		.byte	0x24
+ 1536 0484 48       		.byte	0x48
+ 1537 0485 26       		.byte	0x26
+ 1538 0486 9F       		.byte	0x9f
+ 1539 0487 68000000 		.4byte	.LVL46
+ 1540 048b 6E000000 		.4byte	.LVL47
+ 1541 048f 0100     		.2byte	0x1
+ 1542 0491 56       		.byte	0x56
+ 1543 0492 6E000000 		.4byte	.LVL47
+ 1544 0496 80000000 		.4byte	.LVL52
+ 1545 049a 0900     		.2byte	0x9
+ 1546 049c 7C       		.byte	0x7c
+ 1547 049d 7F       		.sleb128 -1
+ 1548 049e 94       		.byte	0x94
+ 1549 049f 01       		.byte	0x1
+ 1550 04a0 48       		.byte	0x48
+ 1551 04a1 24       		.byte	0x24
+ 1552 04a2 48       		.byte	0x48
+ 1553 04a3 26       		.byte	0x26
+ 1554 04a4 9F       		.byte	0x9f
+ 1555 04a5 AE000000 		.4byte	.LVL63
+ 1556 04a9 B6000000 		.4byte	.LVL64
+ 1557 04ad 0100     		.2byte	0x1
+ 1558 04af 56       		.byte	0x56
+ 1559 04b0 B6000000 		.4byte	.LVL64
+ 1560 04b4 C4000000 		.4byte	.LVL68
+ 1561 04b8 0900     		.2byte	0x9
+ 1562 04ba 7C       		.byte	0x7c
+ 1563 04bb 7F       		.sleb128 -1
+ 1564 04bc 94       		.byte	0x94
+ 1565 04bd 01       		.byte	0x1
+ 1566 04be 48       		.byte	0x48
+ 1567 04bf 24       		.byte	0x24
+ 1568 04c0 48       		.byte	0x48
+ 1569 04c1 26       		.byte	0x26
+ 1570 04c2 9F       		.byte	0x9f
+ 1571 04c3 EE000000 		.4byte	.LVL78
+ 1572 04c7 FC000000 		.4byte	.LVL83
+ 1573 04cb 0100     		.2byte	0x1
+ 1574 04cd 57       		.byte	0x57
+ 1575 04ce 28010000 		.4byte	.LVL93
+ 1576 04d2 36010000 		.4byte	.LVL98
+ 1577 04d6 0100     		.2byte	0x1
+ 1578 04d8 57       		.byte	0x57
+ 1579 04d9 68010000 		.4byte	.LVL109
+ 1580 04dd 6E010000 		.4byte	.LVL110
+ 1581 04e1 0100     		.2byte	0x1
+ 1582 04e3 51       		.byte	0x51
+ 1583 04e4 6E010000 		.4byte	.LVL110
+ 1584 04e8 72010000 		.4byte	.LVL111
+ 1585 04ec 0900     		.2byte	0x9
+ 1586 04ee 7B       		.byte	0x7b
+ 1587 04ef 00       		.sleb128 0
+ 1588 04f0 94       		.byte	0x94
+ 1589 04f1 01       		.byte	0x1
+ 1590 04f2 48       		.byte	0x48
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 33
+
+
+ 1591 04f3 24       		.byte	0x24
+ 1592 04f4 48       		.byte	0x48
+ 1593 04f5 26       		.byte	0x26
+ 1594 04f6 9F       		.byte	0x9f
+ 1595 04f7 72010000 		.4byte	.LVL111
+ 1596 04fb 7E010000 		.4byte	.LVL116
+ 1597 04ff 0900     		.2byte	0x9
+ 1598 0501 7C       		.byte	0x7c
+ 1599 0502 7F       		.sleb128 -1
+ 1600 0503 94       		.byte	0x94
+ 1601 0504 01       		.byte	0x1
+ 1602 0505 48       		.byte	0x48
+ 1603 0506 24       		.byte	0x24
+ 1604 0507 48       		.byte	0x48
+ 1605 0508 26       		.byte	0x26
+ 1606 0509 9F       		.byte	0x9f
+ 1607 050a 00000000 		.4byte	0
+ 1608 050e 00000000 		.4byte	0
+ 1609              	.LLST15:
+ 1610 0512 6E000000 		.4byte	.LVL47
+ 1611 0516 80000000 		.4byte	.LVL52
+ 1612 051a 0100     		.2byte	0x1
+ 1613 051c 56       		.byte	0x56
+ 1614 051d B6000000 		.4byte	.LVL64
+ 1615 0521 BE000000 		.4byte	.LVL65
+ 1616 0525 0100     		.2byte	0x1
+ 1617 0527 56       		.byte	0x56
+ 1618 0528 6E010000 		.4byte	.LVL110
+ 1619 052c 76010000 		.4byte	.LVL112
+ 1620 0530 0100     		.2byte	0x1
+ 1621 0532 51       		.byte	0x51
+ 1622 0533 00000000 		.4byte	0
+ 1623 0537 00000000 		.4byte	0
+ 1624              	.LLST16:
+ 1625 053b F2000000 		.4byte	.LVL79
+ 1626 053f FC000000 		.4byte	.LVL83
+ 1627 0543 0100     		.2byte	0x1
+ 1628 0545 5B       		.byte	0x5b
+ 1629 0546 2C010000 		.4byte	.LVL94
+ 1630 054a 36010000 		.4byte	.LVL98
+ 1631 054e 0100     		.2byte	0x1
+ 1632 0550 5B       		.byte	0x5b
+ 1633 0551 00000000 		.4byte	0
+ 1634 0555 00000000 		.4byte	0
+ 1635              	.LLST17:
+ 1636 0559 1E000000 		.4byte	.LVL28
+ 1637 055d 44000000 		.4byte	.LVL38
+ 1638 0561 0100     		.2byte	0x1
+ 1639 0563 56       		.byte	0x56
+ 1640 0564 5C000000 		.4byte	.LVL43
+ 1641 0568 88000000 		.4byte	.LVL54
+ 1642 056c 0100     		.2byte	0x1
+ 1643 056e 51       		.byte	0x51
+ 1644 056f A2000000 		.4byte	.LVL60
+ 1645 0573 CE000000 		.4byte	.LVL71
+ 1646 0577 0100     		.2byte	0x1
+ 1647 0579 55       		.byte	0x55
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 34
+
+
+ 1648 057a E6000000 		.4byte	.LVL76
+ 1649 057e 08010000 		.4byte	.LVL86
+ 1650 0582 0100     		.2byte	0x1
+ 1651 0584 55       		.byte	0x55
+ 1652 0585 20010000 		.4byte	.LVL91
+ 1653 0589 42010000 		.4byte	.LVL101
+ 1654 058d 0100     		.2byte	0x1
+ 1655 058f 55       		.byte	0x55
+ 1656 0590 5C010000 		.4byte	.LVL106
+ 1657 0594 88010000 		.4byte	.LVL118
+ 1658 0598 0100     		.2byte	0x1
+ 1659 059a 55       		.byte	0x55
+ 1660 059b 00000000 		.4byte	0
+ 1661 059f 00000000 		.4byte	0
+ 1662              	.LLST18:
+ 1663 05a3 12000000 		.4byte	.LVL25
+ 1664 05a7 18000000 		.4byte	.LVL26
+ 1665 05ab 0100     		.2byte	0x1
+ 1666 05ad 50       		.byte	0x50
+ 1667 05ae 18000000 		.4byte	.LVL26
+ 1668 05b2 26000000 		.4byte	.LVL30
+ 1669 05b6 0100     		.2byte	0x1
+ 1670 05b8 5B       		.byte	0x5b
+ 1671 05b9 26000000 		.4byte	.LVL30
+ 1672 05bd 38000000 		.4byte	.LVL36
+ 1673 05c1 0100     		.2byte	0x1
+ 1674 05c3 57       		.byte	0x57
+ 1675 05c4 38000000 		.4byte	.LVL36
+ 1676 05c8 44000000 		.4byte	.LVL38
+ 1677 05cc 0100     		.2byte	0x1
+ 1678 05ce 5B       		.byte	0x5b
+ 1679 05cf 44000000 		.4byte	.LVL38
+ 1680 05d3 4A000000 		.4byte	.LVL39
+ 1681 05d7 0100     		.2byte	0x1
+ 1682 05d9 50       		.byte	0x50
+ 1683 05da 4A000000 		.4byte	.LVL39
+ 1684 05de 50000000 		.4byte	.LVL40
+ 1685 05e2 0100     		.2byte	0x1
+ 1686 05e4 5B       		.byte	0x5b
+ 1687 05e5 50000000 		.4byte	.LVL40
+ 1688 05e9 56000000 		.4byte	.LVL41
+ 1689 05ed 0100     		.2byte	0x1
+ 1690 05ef 50       		.byte	0x50
+ 1691 05f0 56000000 		.4byte	.LVL41
+ 1692 05f4 64000000 		.4byte	.LVL45
+ 1693 05f8 0100     		.2byte	0x1
+ 1694 05fa 56       		.byte	0x56
+ 1695 05fb 64000000 		.4byte	.LVL45
+ 1696 05ff 80000000 		.4byte	.LVL52
+ 1697 0603 0100     		.2byte	0x1
+ 1698 0605 5C       		.byte	0x5c
+ 1699 0606 80000000 		.4byte	.LVL52
+ 1700 060a 8A000000 		.4byte	.LVL55
+ 1701 060e 0100     		.2byte	0x1
+ 1702 0610 56       		.byte	0x56
+ 1703 0611 8A000000 		.4byte	.LVL55
+ 1704 0615 90000000 		.4byte	.LVL56
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 35
+
+
+ 1705 0619 0100     		.2byte	0x1
+ 1706 061b 50       		.byte	0x50
+ 1707 061c 90000000 		.4byte	.LVL56
+ 1708 0620 96000000 		.4byte	.LVL57
+ 1709 0624 0100     		.2byte	0x1
+ 1710 0626 56       		.byte	0x56
+ 1711 0627 96000000 		.4byte	.LVL57
+ 1712 062b 9C000000 		.4byte	.LVL58
+ 1713 062f 0100     		.2byte	0x1
+ 1714 0631 50       		.byte	0x50
+ 1715 0632 9C000000 		.4byte	.LVL58
+ 1716 0636 AA000000 		.4byte	.LVL62
+ 1717 063a 0100     		.2byte	0x1
+ 1718 063c 56       		.byte	0x56
+ 1719 063d AA000000 		.4byte	.LVL62
+ 1720 0641 C4000000 		.4byte	.LVL68
+ 1721 0645 0100     		.2byte	0x1
+ 1722 0647 5C       		.byte	0x5c
+ 1723 0648 C4000000 		.4byte	.LVL68
+ 1724 064c CE000000 		.4byte	.LVL71
+ 1725 0650 0100     		.2byte	0x1
+ 1726 0652 56       		.byte	0x56
+ 1727 0653 CE000000 		.4byte	.LVL71
+ 1728 0657 D4000000 		.4byte	.LVL72
+ 1729 065b 0100     		.2byte	0x1
+ 1730 065d 50       		.byte	0x50
+ 1731 065e D4000000 		.4byte	.LVL72
+ 1732 0662 DA000000 		.4byte	.LVL73
+ 1733 0666 0100     		.2byte	0x1
+ 1734 0668 56       		.byte	0x56
+ 1735 0669 DA000000 		.4byte	.LVL73
+ 1736 066d E0000000 		.4byte	.LVL74
+ 1737 0671 0100     		.2byte	0x1
+ 1738 0673 50       		.byte	0x50
+ 1739 0674 E0000000 		.4byte	.LVL74
+ 1740 0678 EA000000 		.4byte	.LVL77
+ 1741 067c 0100     		.2byte	0x1
+ 1742 067e 56       		.byte	0x56
+ 1743 067f EA000000 		.4byte	.LVL77
+ 1744 0683 FC000000 		.4byte	.LVL83
+ 1745 0687 0300     		.2byte	0x3
+ 1746 0689 76       		.byte	0x76
+ 1747 068a 01       		.sleb128 1
+ 1748 068b 9F       		.byte	0x9f
+ 1749 068c FC000000 		.4byte	.LVL83
+ 1750 0690 08010000 		.4byte	.LVL86
+ 1751 0694 0100     		.2byte	0x1
+ 1752 0696 56       		.byte	0x56
+ 1753 0697 08010000 		.4byte	.LVL86
+ 1754 069b 0E010000 		.4byte	.LVL87
+ 1755 069f 0100     		.2byte	0x1
+ 1756 06a1 50       		.byte	0x50
+ 1757 06a2 0E010000 		.4byte	.LVL87
+ 1758 06a6 14010000 		.4byte	.LVL88
+ 1759 06aa 0100     		.2byte	0x1
+ 1760 06ac 56       		.byte	0x56
+ 1761 06ad 14010000 		.4byte	.LVL88
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 36
+
+
+ 1762 06b1 1A010000 		.4byte	.LVL89
+ 1763 06b5 0100     		.2byte	0x1
+ 1764 06b7 50       		.byte	0x50
+ 1765 06b8 1A010000 		.4byte	.LVL89
+ 1766 06bc 24010000 		.4byte	.LVL92
+ 1767 06c0 0100     		.2byte	0x1
+ 1768 06c2 56       		.byte	0x56
+ 1769 06c3 24010000 		.4byte	.LVL92
+ 1770 06c7 36010000 		.4byte	.LVL98
+ 1771 06cb 0300     		.2byte	0x3
+ 1772 06cd 76       		.byte	0x76
+ 1773 06ce 01       		.sleb128 1
+ 1774 06cf 9F       		.byte	0x9f
+ 1775 06d0 36010000 		.4byte	.LVL98
+ 1776 06d4 42010000 		.4byte	.LVL101
+ 1777 06d8 0100     		.2byte	0x1
+ 1778 06da 56       		.byte	0x56
+ 1779 06db 42010000 		.4byte	.LVL101
+ 1780 06df 48010000 		.4byte	.LVL102
+ 1781 06e3 0100     		.2byte	0x1
+ 1782 06e5 50       		.byte	0x50
+ 1783 06e6 48010000 		.4byte	.LVL102
+ 1784 06ea 4E010000 		.4byte	.LVL103
+ 1785 06ee 0100     		.2byte	0x1
+ 1786 06f0 56       		.byte	0x56
+ 1787 06f1 4E010000 		.4byte	.LVL103
+ 1788 06f5 56010000 		.4byte	.LVL104
+ 1789 06f9 0100     		.2byte	0x1
+ 1790 06fb 50       		.byte	0x50
+ 1791 06fc 56010000 		.4byte	.LVL104
+ 1792 0700 64010000 		.4byte	.LVL108
+ 1793 0704 0100     		.2byte	0x1
+ 1794 0706 5B       		.byte	0x5b
+ 1795 0707 64010000 		.4byte	.LVL108
+ 1796 070b 7E010000 		.4byte	.LVL116
+ 1797 070f 0100     		.2byte	0x1
+ 1798 0711 5C       		.byte	0x5c
+ 1799 0712 7E010000 		.4byte	.LVL116
+ 1800 0716 88010000 		.4byte	.LVL118
+ 1801 071a 0100     		.2byte	0x1
+ 1802 071c 5B       		.byte	0x5b
+ 1803 071d 88010000 		.4byte	.LVL118
+ 1804 0721 8E010000 		.4byte	.LVL119
+ 1805 0725 0100     		.2byte	0x1
+ 1806 0727 50       		.byte	0x50
+ 1807 0728 8E010000 		.4byte	.LVL119
+ 1808 072c 92010000 		.4byte	.LVL120
+ 1809 0730 0100     		.2byte	0x1
+ 1810 0732 5B       		.byte	0x5b
+ 1811 0733 00000000 		.4byte	0
+ 1812 0737 00000000 		.4byte	0
+ 1813              		.section	.debug_aranges,"",%progbits
+ 1814 0000 24000000 		.4byte	0x24
+ 1815 0004 0200     		.2byte	0x2
+ 1816 0006 00000000 		.4byte	.Ldebug_info0
+ 1817 000a 04       		.byte	0x4
+ 1818 000b 00       		.byte	0
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 37
+
+
+ 1819 000c 0000     		.2byte	0
+ 1820 000e 0000     		.2byte	0
+ 1821 0010 00000000 		.4byte	.LFB0
+ 1822 0014 64000000 		.4byte	.LFE0-.LFB0
+ 1823 0018 00000000 		.4byte	.LFB1
+ 1824 001c A4010000 		.4byte	.LFE1-.LFB1
+ 1825 0020 00000000 		.4byte	0
+ 1826 0024 00000000 		.4byte	0
+ 1827              		.section	.debug_ranges,"",%progbits
+ 1828              	.Ldebug_ranges0:
+ 1829 0000 00000000 		.4byte	.LFB0
+ 1830 0004 64000000 		.4byte	.LFE0
+ 1831 0008 00000000 		.4byte	.LFB1
+ 1832 000c A4010000 		.4byte	.LFE1
+ 1833 0010 00000000 		.4byte	0
+ 1834 0014 00000000 		.4byte	0
+ 1835              		.section	.debug_line,"",%progbits
+ 1836              	.Ldebug_line0:
+ 1837 0000 FA020000 		.section	.debug_str,"MS",%progbits,1
+ 1837      02002601 
+ 1837      00000201 
+ 1837      FB0E0D00 
+ 1837      01010101 
+ 1838              	.LASF24:
+ 1839 0000 726F756E 		.ascii	"rounding\000"
+ 1839      64696E67 
+ 1839      00
+ 1840              	.LASF4:
+ 1841 0009 5F5F696E 		.ascii	"__int8_t\000"
+ 1841      74385F74 
+ 1841      00
+ 1842              	.LASF5:
+ 1843 0012 5F5F696E 		.ascii	"__int32_t\000"
+ 1843      7433325F 
+ 1843      7400
+ 1844              	.LASF16:
+ 1845 001c 63686172 		.ascii	"char\000"
+ 1845      00
+ 1846              	.LASF38:
+ 1847 0021 70726F63 		.ascii	"processfclayer\000"
+ 1847      65737366 
+ 1847      636C6179 
+ 1847      657200
+ 1848              	.LASF21:
+ 1849 0030 6D61785F 		.ascii	"max_pos\000"
+ 1849      706F7300 
+ 1850              	.LASF26:
+ 1851 0038 77656967 		.ascii	"weights\000"
+ 1851      68747300 
+ 1852              	.LASF12:
+ 1853 0040 696E7438 		.ascii	"int8_t\000"
+ 1853      5F7400
+ 1854              	.LASF22:
+ 1855 0047 7363616C 		.ascii	"scale\000"
+ 1855      6500
+ 1856              	.LASF9:
+ 1857 004d 6C6F6E67 		.ascii	"long long int\000"
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 38
+
+
+ 1857      206C6F6E 
+ 1857      6720696E 
+ 1857      7400
+ 1858              	.LASF19:
+ 1859 005b 6E5F696E 		.ascii	"n_input\000"
+ 1859      70757400 
+ 1860              	.LASF35:
+ 1861 0063 2E5C4269 		.ascii	".\\BitNetMCU_inference.c\000"
+ 1861      744E6574 
+ 1861      4D43555F 
+ 1861      696E6665 
+ 1861      72656E63 
+ 1862              	.LASF1:
+ 1863 007b 756E7369 		.ascii	"unsigned char\000"
+ 1863      676E6564 
+ 1863      20636861 
+ 1863      7200
+ 1864              	.LASF17:
+ 1865 0089 696E7075 		.ascii	"input\000"
+ 1865      7400
+ 1866              	.LASF33:
+ 1867 008f 61637469 		.ascii	"activations_idx\000"
+ 1867      76617469 
+ 1867      6F6E735F 
+ 1867      69647800 
+ 1868              	.LASF8:
+ 1869 009f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1869      20756E73 
+ 1869      69676E65 
+ 1869      6420696E 
+ 1869      7400
+ 1870              	.LASF3:
+ 1871 00b1 73686F72 		.ascii	"short unsigned int\000"
+ 1871      7420756E 
+ 1871      7369676E 
+ 1871      65642069 
+ 1871      6E7400
+ 1872              	.LASF7:
+ 1873 00c4 5F5F7569 		.ascii	"__uint32_t\000"
+ 1873      6E743332 
+ 1873      5F7400
+ 1874              	.LASF32:
+ 1875 00cf 77656967 		.ascii	"weightChunk\000"
+ 1875      68744368 
+ 1875      756E6B00 
+ 1876              	.LASF34:
+ 1877 00db 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1877      4320342E 
+ 1877      392E3320 
+ 1877      32303135 
+ 1877      30333033 
+ 1878 010e 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1878      20726576 
+ 1878      6973696F 
+ 1878      6E203232 
+ 1878      31323230 
+ 1879 0141 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 39
+
+
+ 1879      66756E63 
+ 1879      74696F6E 
+ 1879      2D736563 
+ 1879      74696F6E 
+ 1880              	.LASF11:
+ 1881 0169 756E7369 		.ascii	"unsigned int\000"
+ 1881      676E6564 
+ 1881      20696E74 
+ 1881      00
+ 1882              	.LASF31:
+ 1883 0176 77656967 		.ascii	"weight\000"
+ 1883      687400
+ 1884              	.LASF10:
+ 1885 017d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1885      206C6F6E 
+ 1885      6720756E 
+ 1885      7369676E 
+ 1885      65642069 
+ 1886              	.LASF30:
+ 1887 0194 746D7073 		.ascii	"tmpsum\000"
+ 1887      756D00
+ 1888              	.LASF13:
+ 1889 019b 696E7433 		.ascii	"int32_t\000"
+ 1889      325F7400 
+ 1890              	.LASF15:
+ 1891 01a3 73697A65 		.ascii	"sizetype\000"
+ 1891      74797065 
+ 1891      00
+ 1892              	.LASF29:
+ 1893 01ac 77656967 		.ascii	"weightidx\000"
+ 1893      68746964 
+ 1893      7800
+ 1894              	.LASF36:
+ 1895 01b6 443A5C4D 		.ascii	"D:\\MIT\\Microcomputer\\Exercise_4\\LAB2.cydsn\000"
+ 1895      49545C4D 
+ 1895      6963726F 
+ 1895      636F6D70 
+ 1895      75746572 
+ 1896              	.LASF25:
+ 1897 01e1 61637469 		.ascii	"activations\000"
+ 1897      76617469 
+ 1897      6F6E7300 
+ 1898              	.LASF37:
+ 1899 01ed 52654C55 		.ascii	"ReLUNorm\000"
+ 1899      4E6F726D 
+ 1899      00
+ 1900              	.LASF2:
+ 1901 01f6 73686F72 		.ascii	"short int\000"
+ 1901      7420696E 
+ 1901      7400
+ 1902              	.LASF18:
+ 1903 0200 6F757470 		.ascii	"output\000"
+ 1903      757400
+ 1904              	.LASF20:
+ 1905 0207 6D61785F 		.ascii	"max_val\000"
+ 1905      76616C00 
+ 1906              	.LASF23:
+ARM GAS  C:\Users\kuzni\AppData\Local\Temp\cc7Ky549.s 			page 40
+
+
+ 1907 020f 73686966 		.ascii	"shift\000"
+ 1907      7400
+ 1908              	.LASF14:
+ 1909 0215 75696E74 		.ascii	"uint32_t\000"
+ 1909      33325F74 
+ 1909      00
+ 1910              	.LASF6:
+ 1911 021e 6C6F6E67 		.ascii	"long int\000"
+ 1911      20696E74 
+ 1911      00
+ 1912              	.LASF28:
+ 1913 0227 6E5F6F75 		.ascii	"n_output\000"
+ 1913      74707574 
+ 1913      00
+ 1914              	.LASF0:
+ 1915 0230 7369676E 		.ascii	"signed char\000"
+ 1915      65642063 
+ 1915      68617200 
+ 1916              	.LASF27:
+ 1917 023c 62697473 		.ascii	"bits_per_weight\000"
+ 1917      5F706572 
+ 1917      5F776569 
+ 1917      67687400 
+ 1918              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
